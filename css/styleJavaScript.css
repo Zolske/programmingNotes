@@ -1,5 +1,12 @@
 :root {
     --codeBackColor: lightgrey;
+    --tableHeadColor: rgba(243, 187, 45, 0.3);
+    --tableDataColor: rgba(52, 213, 235, 0.2);
+}
+
+main {
+    margin: auto;
+    width: max-content;
 }
 
 code {
@@ -9,16 +16,52 @@ code {
 
 table {
     border-collapse: collapse;
+    max-width: 100ch;
 }
 
 td,
 th {
-    border: black solid 1px;
+    border: white dashed 2px;
     padding: 2px 4px 2px 4px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--tableHeadColor);
+}
+
+td {
+    background-color: var(--tableDataColor);
 }
 
 td ul {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 18px;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2 {
+    text-transform: capitalize;
+}
+
+h2+p {
+    border-left: solid dimgray 4px;
+    padding-left: 2ch;
+    font-style: italic;
+    font-size: 1.1rem;
+    max-width: 80ch;
+
+}
+
+h3 {
+    text-transform: lowercase;
+    border-top: solid dimgray 1px;
+    padding-top: 1rem;
+    padding-left: 4ch;
+    margin-bottom: -0rem;
 }

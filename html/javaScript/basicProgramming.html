@@ -13,45 +13,147 @@
     <main>
         <h1>The basic in programming</h1>
         <h2>variable</h2>
-        <p>A variable reference a specific place in memory. Data can be stored and recalled from that place. The name of
-            the variable is than evaluated to the data which is stored at its location.</p>
+        <p>A variable reserves and references space in memory. Data can be stored and recalled from that space. The name
+            of the variable is than evaluated to the data which is stored at its location.<br>The type of the data dose
+            not need to be defined before and can change when the variable is updated.</p>
         <h3>naming convention</h3>
+        <ul>
+            <li>can not start with a number</li>
+            <li>can not contain special characters (&#223;, &#228;) , empty space, hyphen</li>
+            <li>can not be a key- or reserved- word</li>
+            <li>can contain small / capital letters, numbers, underscore</li>
+            <li>the name should convey the purpose and be notated in camelCase</li>
+        </ul>
         <h3>variable types</h3>
+
         <table>
             <thead>
                 <tr>
                     <th>variable</th>
-                    <th>description</th>
+                    <th>scoop</th>
+                    <th>declare without value</th>
+                    <th>update value</th>
+                    <th>re-declare</th>
+                    <th>hoisting</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th><code>const</code></th>
-                    <td>
-                        <ul>
-                            <li>needs to be declared with an value</li>
-                            <li>its value can not be changed after it has been declared</li>
-                            <li>elements of an array or object can be still changed</li>
-                        </ul>
-                    </td>
+                    <td rowspan="2">block</td>
+                    <td colspan="2">ERROR</td>
+                    <td colspan="2" rowspan="2">ERROR</td>
                 </tr>
                 <tr>
                     <th><code>let</code></th>
-                    <td>
-                        <ul>
-                            <li>dose not need to be declared with an value ("undefined")</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </td>
+                    <td rowspan="2">"undefined"</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <th><code>var</code></th>
+                    <td>global / function</td>
+                    <td colspan="2">yes</td>
+                    <td>"undefined"</td>
                 </tr>
             </tbody>
         </table>
-        <ul>
-            <li><code>const</code> the data can not be changed </li>
-        </ul>
+        <h3>syntax</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>KEYWORD</th>
+                    <th>NAME</th>
+                    <th>=</th>
+                    <th>VALUE</th>
+                    <th>;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>const</code></td>
+                    <td rowspan="3"><code>exampleName</code></td>
+                    <td rowspan="3"><code>=</code></td>
+                    <td rowspan="3"><code>'hello'</code></td>
+                    <td rowspan="3"><code>;</code></td>
+                </tr>
+                <tr>
+                    <td><code>let</code></td>
+                </tr>
+                <tr>
+                    <td><code>var</code></td>
+                </tr>
+                <tr>
+                    <th colspan="9">declaring multiple variables in one line</th>
+                </tr>
+                <tr>
+                    <th>KEYWORD</th>
+                    <th>NAME</th>
+                    <th>=</th>
+                    <th>VALUE1</th>
+                    <th>,</th>
+                    <th>NAME2</th>
+                    <th>=</th>
+                    <th>VALUE2</th>
+                    <th>;</th>
+                </tr>
+                <tr>
+                    <td><code>let</code></td>
+                    <td rowspan="2"><code>exampleName1</code></td>
+                    <td rowspan="2"><code>=</code></td>
+                    <td rowspan="2"><code>'hello1'</code></td>
+                    <td rowspan="2"><code>,</code></td>
+                    <td rowspan="2"><code>exampleName2</code></td>
+                    <td rowspan="2"><code>=</code></td>
+                    <td rowspan="2"><code>'hello2'</code></td>
+                    <td rowspan="2"><code>;</code></td>
 
+                </tr>
+                <tr>
+                    <td><code>var</code></td>
+                </tr>
+                <tr>
+                    <th colspan="9">declaring without value</th>
+                </tr>
+                <tr>
+                    <th>KEYWORD</th>
+                    <th>NAME</th>
+                    <th>;</th>
+                    <th colspan="6"></th>
+                </tr>
+                <tr>
+                    <td><code>let</code></td>
+                    <td rowspan="2"><code>exampleName3</code></td>
+                    <td rowspan="2"><code>;</code></td>
+                    <td rowspan="2" colspan="6">// value is "undefined"</td>
+                </tr>
+                <tr>
+                    <td><code>var</code></td>
+                </tr>
+                <tr>
+                    <th colspan="9">declaring without keyword (<b>Not Recommended</b>)</th>
+                </tr>
+                <tr>
+                    <th>KEYWORD</th>
+                    <th>NAME</th>
+                    <th>=</th>
+                    <th>VALUE</th>
+                    <th>;</th>
+                    <th colspan="4"></th>
+                </tr>
+                <tr>
+                    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code></td>
+                    <td><code>exampleName4</code></td>
+                    <td><code>=</code></td>
+                    <td><code>'hello4'</code></td>
+                    <td><code>;</code></td>
+                    <td colspan="4">// must have a value</td>
+                </tr>
+                <tr>
+                    <td colspan="9">The scope becomes global irrespective of where it is declared. It can accidently
+                        overwrite an existing global variable.</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 </body>
 
