@@ -2,6 +2,7 @@
     --codeBackColor: lightgrey;
     --tableHeadColor: rgba(243, 187, 45, 0.3);
     --tableDataColor: rgba(52, 213, 235, 0.2);
+    --exampleBackColor: coral;
 }
 
 main {
@@ -38,6 +39,11 @@ td ul {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 18px;
+    text-align: left;
+}
+
+ul {
+    max-width: 80ch;
 }
 
 h1 {
@@ -64,4 +70,27 @@ h3 {
     padding-top: 1rem;
     padding-left: 4ch;
     margin-bottom: -0rem;
+}
+
+summary {
+    background-color: var(--exampleBackColor);
+    text-align: center;
+}
+
+summary::after {
+    content: "for example:";
+    letter-spacing: 0.2rem;
+    font-style: italic;
+}
+
+details {
+    text-align: left;
+}
+
+.exCode {
+    display: block;
+    background-color: var(--codeBackColor);
+    font-family: monospace;
+    margin-top: 0.1rem;
+    margin-bottom: 00.1rem;
 }

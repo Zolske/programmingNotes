@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <title>JavaScript reference</title>
+</head>
+
+<body>
+    <main>
+        <h1>JavaScript reference</h1>
+        <h2>methods</h2>
+        <p>Methods are functions stored as object properties.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">window object (should be window.METHOD() but the first part 'window.' can be
+                        omitted)
+                    </th>
+                </tr>
+                <tr>
+                    <th>syntax</th>
+                    <th>description</th>
+                    <th>example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- prompt -->
+                <tr>
+                    <td><code>prompt('STRING1', 'STRING2');</code></td>
+                    <td>
+                        <ul>
+                            <li>ask user for input</li>
+                            <li>stops the execution of the program till the user has reacted to the message</li>
+                            <li><code>'STRING1'</code> message to the user</li>
+                            <li><code>'STRING2'</code> place holder for the user input</li>
+                            <li>user select <b>OK</b>, data from input field is returned</li>
+                            <li>user select <b>Cancel</b>, the value <b>null</b> is returned</li>
+                        </ul>
+                    </td>
+                    <td><img style="width: 300px;" src="/images/reference/promptWindow.svg" alt=""></td>
+                </tr>
+                <!-- alert -->
+                <tr>
+                    <td><code>alert('STRING1');</code></td>
+                    <td>
+                        <ul>
+                            <li>display message to user ('STRING1')</li>
+                            <li>stops the execution of the program till the user has reacted to the message</li>
+                            <li><code>'STRING1'</code> message to the user</li>
+                        </ul>
+                    </td>
+                    <td><img style="width: 300px;" src="/images/reference/alertWindow.svg" alt=""></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

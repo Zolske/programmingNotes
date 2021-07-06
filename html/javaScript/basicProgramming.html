@@ -12,6 +12,7 @@
 <body>
     <main>
         <h1>The basic in programming</h1>
+        <!-- variable -->
         <h2>variable</h2>
         <p>A variable reserves and references space in memory. Data can be stored and recalled from that space. The name
             of the variable is than evaluated to the data which is stored at its location.<br>The type of the data dose
@@ -25,7 +26,7 @@
             <li>the name should convey the purpose and be notated in camelCase</li>
         </ul>
         <h3>variable types</h3>
-
+        <!-- type -->
         <table>
             <thead>
                 <tr>
@@ -56,6 +57,7 @@
                     <td>"undefined"</td>
                 </tr>
             </tbody>
+            <!-- syntax -->
         </table>
         <h3>syntax</h3>
         <table>
@@ -154,6 +156,296 @@
                 </tr>
             </tbody>
         </table>
+        <hr>
+        <!-- data types -->
+        <h2>data types</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">data type categories</th>
+                </tr>
+                <tr>
+                    <th>primitive (primary)</th>
+                    <th>composite (reference)</th>
+                    <th>special</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>string</li>
+                            <li>number</li>
+                            <li>boolean</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>objects</li>
+                            <li>array</li>
+                            <li>functions</li>
+                        </ul>
+                    </td>
+                    <td rowspan="2">
+                        <ul>
+                            <li>undefined</li>
+                            <li>null</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>single value</td>
+                    <td>collection of values</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- The String Data Type -->
+        <h3>The String Data Type</h3>
+        <ul>
+            <li>A sequence of <b>letters, numbers, special characters and arithmetic values</b> or combination of all.
+            </li>
+            <li>Created by enclosing the string literal (string characters) either within matching <code><b>'</b></code>
+                or matching <code><b>"</b></code>.</li>
+            <li>html elements can be included, <code>document.write("&lt;b>Erste Zahl:&lt;/b>");</code> // <b>Erste
+                    Zahl:</b></li>
+        </ul>
+        <!-- escape sequences -->
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">escape sequences</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>\n</code> is replaced by the newline character</td>
+                    <td><code>\t</code> is replaced by the tab character</td>
+                    <td><code>\r</code> is replaced by the carriage-return character</td>
+                </tr>
+                <tr>
+                    <td><code>\b</code> is replaced by the backspace character</td>
+                    <td><code>\\</code> is replaced by a single backslash <code>(\)</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <!-- Performing Operations on Strings -->
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">performing operations on strings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">JavaScript provides <b>properties</b> and <b>methods</b> to perform operations on
+                        string values.
+                        Technically, only objects can have properties and methods. But in JavaScript primitive data
+                        types can act like objects when you refer to them with the property access notation (dot
+                        notation).</td>
+                </tr>
+            </tbody>
+            <!-- Concatenating Two or More Strings -->
+            <thead>
+                <tr>
+                    <th colspan="2">concatenating two or more strings</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <td><code>+</code><br><code>+=</code></td>
+                    <td>You can concatenate or combine two or more strings using the + and += assignment operators.
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var hello = "Hello";
+var world = "World";
+var greet = hello + " " + world;
+document.write(greet); // Prints: Hello World
+ 
+var wish  = "Happy";
+    wish += " New Year";
+document.write(wish); // Prints: Happy New Year</pre>
+                        </details>
+                    </td>
+                </tr>
+            </thead>
+            <!-- Accessing Individual Characters from a String -->
+            <thead>
+                <tr>
+                    <th colspan="2">accessing individual characters from a string</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>VARIABLE[INDEX] <br> VARIABLE.charAt(INDEX)</code></td>
+                    <td>The index determines the position of the to return letter from the string. <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str = "Hello World!";
+document.write(str.charAt());  // Prints: H
+document.write(str.charAt(6)); // Prints: W
+document.write(str.charAt(30)); // Prints nothing
+document.write(str.charAt(str.length - 1)); // Prints: !
+
+var str = "Hello World!";
+document.write(str[0]); // Prints: H
+document.write(str[6]); // Prints: W
+document.write(str[str.length - 1]); // Prints: !
+document.write(str[30]); // Prints: undefined</pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- .length -->
+            <thead>
+                <tr>
+                    <th colspan="2">getting the length of a string</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>VARIABLE.length</code></td>
+                    <td>Returns the length of the string, which is the number of characters contained in the string
+                        (including special characters such as \t or \n).
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str1 = "This is a paragraph of text.";
+document.write(str1.length); // Prints 28
+ 
+var str2 = "This is a \n paragraph of text.";
+document.write(str2.length); // Prints 30, because \n is only one character
+</pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- .indexOf -->
+            <thead>
+                <th colspan="2">finding a string inside another string</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>VARIABLE.indexOf('SUBSTRING')<br>VARIABLE.indexOf('SUBSTRING', INTEGER)</code></td>
+                    <td>Returns the index of the <b>first</b> occurrence of a specified (sub) string within a string.
+                        Returns <code>-1</code> if not found. <br>INTEGER the number specifies from where to start
+                        to look for the SUBSTRING.<details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str = "If the facts don't fit the theory, change the facts.";
+var pos = str.indexOf("facts");
+alert(pos); // 0utputs: 7</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>VARIABLE.lastIndexOf('SUBSTRING')<br>VARIABLE.lastIndexOf('SUBSTRING', INTEGER)</code>
+                    </td>
+                    <td>Returns the index of the <b>last</b> occurrence of the (sub) specified string within a
+                        string. Returns <code>-1</code> if not found.<br>INTEGER the number specifies from where to
+                        start
+                        to look for the SUBSTRING.<details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str = "If the facts don't fit the theory, change the facts.";
+var pos = str.lastIndexOf("facts");
+alert(pos); // 0utputs: 46</pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- search -->
+            <thead>
+                <tr>
+                    <th colspan="2">extracting a substring from a string</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2"><code>VARIABLE.slice(startINDEX, endINDEX)</code></td>
+                    <td>Takes 2 parameters: start index (index at which to begin extraction), and an optional end index
+                        (index before which to end extraction). If no end index than the rest of the string is returned.
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str = "The quick brown fox jumps over the lazy dog.";
+var subStr = str.slice(4, 15);
+document.write(subStr); // Prints: quick brown
+</pre>
+                        </details>
+                    </td>
+                <tr>
+                    <td>A negative parameter is counted backwards from the end of the string. <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str = "The quick brown fox jumps over the lazy dog.";
+document.write(str.slice(-28, -19)); // Prints: fox jumps
+document.write(str.slice(31)); // Prints: the lazy dog.    
+</pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th colspan="2">replacing the contents of a string</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>VARIABLE.replace('oldSTRING', 'newSTRING')</code></td>
+                    <td>This replace() method returns a new string, it doesn't affect the original string that will
+                        remain unchanged. Replaces part of a string with another string. This method takes two
+                        parameters, oldSTRING is the string which will be replaced with newSTRING. <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str = "Color red looks brighter than color blue.";
+var result = str.replace("color", "paint");
+alert(result); // 0utputs: Color red looks brighter than paint blue.</pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th colspan="2">converting a string to uppercase or lowercase</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>VARIABLE.toUpperCase()</code></td>
+                    <td>Convert a string to uppercase, no parameter. <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str = "Hello World!";
+var result = str.toUpperCase();
+document.write(result); // Prints: HELLO WORLD!</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>VARIABLE.toLowerCase()</code></td>
+                    <td>Convert a string to lowercase, no parameter. <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var str = "Hello World!";
+var result = str.toLowerCase();
+document.write(result); // Prints: hello world!</pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Numbers -->
+        <h3>the number data type</h3>
+        <ul>
+            <li>Can be represented in decimal (2.1), hexadecimal (0xff) or octal notation.</li>
+            <li>JavaScript does not treat integer (2) and floating-point (3.14) numbers differently.</li>
+            <li>All numbers in JavaScript are represented as floating-point numbers.</li>
+            <li> exponential notation: <code>4.25e+6</code> = <code>4250000</code> and <code>4.25e-6</code> =
+                <code>0.00000425</code></li>
+        </ul>
     </main>
 </body>
 
