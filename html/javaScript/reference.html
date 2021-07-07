@@ -30,14 +30,14 @@
             <tbody>
                 <!-- prompt -->
                 <tr>
-                    <td><code>prompt('STRING1', 'STRING2');</code></td>
+                    <td><code>prompt('STRING');</code> or<br><code>prompt('STRING1', 'STRING2');</code></td>
                     <td>
                         <ul>
                             <li>ask user for input</li>
                             <li>stops the execution of the program till the user has reacted to the message</li>
                             <li><code>'STRING1'</code> message to the user</li>
                             <li><code>'STRING2'</code> place holder for the user input</li>
-                            <li>user select <b>OK</b>, data from input field is returned</li>
+                            <li>user select <b>OK</b>, data from input field is returned as a <b>string</b>!</li>
                             <li>user select <b>Cancel</b>, the value <b>null</b> is returned</li>
                         </ul>
                     </td>
@@ -54,6 +54,32 @@
                         </ul>
                     </td>
                     <td><img style="width: 300px;" src="/images/reference/alertWindow.svg" alt=""></td>
+                </tr>
+                <!-- confirm  -->
+                <tr>
+                    <td><code>confirm('STRING');</code></td>
+                    <td>
+                        <ul>
+                            <li>Display a dialog with an optional message ('STRING'), and to
+                                wait until the user either confirms or cancels the dialog.</li>
+                            <li>If the user selects OK, true is returned.</li>
+                            <li>If the user selects Cancel or ignores the message, false is returned <details>
+                                    <summary></summary>
+                                    <pre class="exCode">
+const answer = confirm("Do you confirm?"); 
+if(answer) // returns true
+    document.write("You have confirmed.");
+else       // returns false
+    document.write("You have not confirmed."); </pre>
+                                    <p>The "window.confirm" method is executed,<br>if the user has selected
+                                        "OK", true
+                                        is saved to const answer.<br>if the user has selected "Cancel", false is saved
+                                        to const answer.</p>
+                                </details>
+                            </li>
+                        </ul>
+                    </td>
+                    <td><img src="/images/reference/confirmWindow.svg" alt=""></td>
                 </tr>
             </tbody>
         </table>

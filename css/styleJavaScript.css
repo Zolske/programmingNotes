@@ -63,7 +63,18 @@ h2+p {
     font-style: italic;
     font-size: 1.1rem;
     max-width: 80ch;
+}
 
+p {
+    max-width: 100ch;
+}
+
+.expText {
+    border-left: solid dimgray 4px;
+    padding-left: 2ch;
+    font-style: italic;
+    font-size: 1.1rem;
+    max-width: 80ch;
 }
 
 h3 {

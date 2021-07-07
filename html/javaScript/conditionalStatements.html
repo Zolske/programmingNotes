@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <title>Conditional statements</title>
+</head>
+<h1>conditional statements</h1>
+<ul>
+    <li>Condition evaluates to true or truthy, the code inside the block is executed.</li>
+    <li>Condition evaluates to false or falsy, the code inside the block is <b>NOT</b> executed.</li>
+    <li>A default code block can be run if the condition is false / falsy.</li>
+</ul>
+<h3>if statement</h3>
+<ul>
+    <li>"if - else if - else", statements are parsed from top to bottom.</li>
+    <li><b>Only the first</b> "true-condition-statement-block" is executed, any following conditions are not checked!
+    </li>
+    <li><b>No brackets</b> {} are needed if there is only <b>one statement</b> after the condition.</li>
+</ul>
+<table>
+    <thead>
+        <tr>
+            <th>syntax</th>
+            <th>explanation</th>
+            <th>example</th>
+        </tr>
+        <tr>
+            <th colspan="3">if statement</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>if (CONDITION)
+                    STATEMENT;</code> or<br><code>if&nbsp;(CONDITION)&nbsp;{STATEMENT;&nbsp;STATEMENT2;}</code></td>
+            <td>
+                <ul>
+                    <li>If the condition evaluate to true / truthy, than the statements are executed.</li>
+                    <li>The "if statement" can stand by its own.</li>
+                </ul>
+            </td>
+            <td>
+                <details>
+                    <summary></summary>
+                    <pre class="exCode">
+const a = 12, b = 7;
+
+if(a > b) // condition is true, statement is executed 
+   document.write("&lt;p>a is bigger than b&lt;/p>"); </pre>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="3">else if statement</th>
+        </tr>
+        <tr>
+            <td><code>else if (CONDITION)
+                    STATEMENT;</code> or<br><code>else&nbsp;if&nbsp;(CONDITION)&nbsp;{STATEMENT;&nbsp;STATMENT2;}</code>
+            </td>
+            <td>
+                <ul>
+                    <li>Can only be attached <b>after</b> an "if" statement.</li>
+                    <li>Is only checked if the previous conditions is false / falsy.</li>
+                    <li>If the condition evaluate to true / truthy, than the statements are executed.</li>
+                    <li>No limit of how many "else if" statements can be chained together.</li>
+                </ul>
+            </td>
+            <td>
+                <details>
+                    <summary></summary>
+                    <pre class="exCode">
+const a = 7, b = 12;
+
+if(a > b) // condition is false
+    document.write("&lt;p>a is bigger than b&lt;/p>");
+else if(a &lt; b) // condition is true
+    document.write("&lt;p>a is smaller than b&lt;/p>");</pre>
+                </details>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="3">else statement</th>
+        </tr>
+        <tr>
+            <td><code>else STATEMENT;</code> or<br><code>else {STATEMENT; STATEMENT2;}</code></td>
+            <td>
+                <ul>
+                    <li>Is the last statement, <b>after</b> "if" or "else if"</li>
+                    <li>No condition, is only executed if no other condition is true / truthy</li>
+                </ul>
+            </td>
+            <td>
+                <details>
+                    <summary></summary>
+                    <pre class="exCode">
+const a = 12, b = 7; 
+                    
+if(a &lt; b) // condition is false
+    document.write("&lt;p>a is smaller then b&lt;/p>"); 
+else // no true / truthy condition previous
+    document.write("&lt;a is bigger than b&lt;/p>"); </pre>
+                </details>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<body>
+
+</body>
+
+</html>

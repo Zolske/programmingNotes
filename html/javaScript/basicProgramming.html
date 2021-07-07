@@ -186,7 +186,7 @@
                             <li>functions</li>
                         </ul>
                     </td>
-                    <td rowspan="2">
+                    <td>
                         <ul>
                             <li>undefined</li>
                             <li>null</li>
@@ -196,6 +196,29 @@
                 <tr>
                     <td>single value</td>
                     <td>collection of values</td>
+                    <td>absence of an value</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <tbody>
+                <tr>
+                    <td>console.log(<code>typeof VALUE</code>);</td>
+                    <td>Returns the type of the VALUE.</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+console.log(typeof 42); // expected output: "number"
+
+console.log(typeof 'blubber'); // expected output: "string"
+
+console.log(typeof true); // expected output: "boolean"
+
+console.log(typeof undeclaredVariable); // expected output: "undefined"</pre>
+                        </details>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -230,22 +253,35 @@
             </tbody>
         </table>
         <br>
-        <!-- Performing Operations on Strings -->
+        <!-- String Interpolation (embedding variables into a string) -->
+        <h4>String Interpolation (embedding variables into a string)</h4>
         <table>
-            <thead>
-                <tr>
-                    <th colspan="2">performing operations on strings</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="2">JavaScript provides <b>properties</b> and <b>methods</b> to perform operations on
-                        string values.
-                        Technically, only objects can have properties and methods. But in JavaScript primitive data
-                        types can act like objects when you refer to them with the property access notation (dot
-                        notation).</td>
-                </tr>
-            </tbody>
+            <tr>
+                <td><code>`STRING ${VARIABLE} STRING`</code></td>
+                <td>
+                    <ul>
+                        <li><code>` `</code> the template literal is wrapped by <b>backticks</b> <code>`</code></li>
+                        <li><code>${VARIABLE}</code> is replaced with the content of the variable.</li>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+let name = 'Mike';
+console.log(`His name is ${name}.`); //display His name is Mike.</pre>
+                    </details>
+                </td>
+                </ul>
+                </td>
+            </tr>
+        </table>
+        <!-- Performing Operations on Strings -->
+        <h4>Performing Operations on Strings</h4>
+        <p class="expText">JavaScript provides <b>properties</b> and <b>methods</b> to perform operations on
+            string values.
+            Technically, only objects can have properties and methods. But in JavaScript primitive data
+            types can act like objects when you refer to them with the property access notation (dot
+            notation).</p>
+        <table>
             <!-- Concatenating Two or More Strings -->
             <thead>
                 <tr>
@@ -446,6 +482,7 @@ document.write(result); // Prints: hello world!</pre>
             <li>All numbers in JavaScript are represented as floating-point numbers.</li>
             <li> exponential notation: <code>4.25e+6</code> = <code>4250000</code> and <code>4.25e-6</code> =
                 <code>0.00000425</code></li>
+            <li>The underscore <code>_</code> can be used to visually separate long numbers 1000 = 1_000.</li>
         </ul>
         <!-- addition on Numbers and Strings -->
         <h4>addition on numbers and strings</h4>
@@ -722,6 +759,268 @@ document.write(Math.max(...numbers));  // Prints: 3
 document.write(Math.min(...numbers));  // Prints: 1</pre>
                         </details>
                     </td>
+                </tr>
+                <tr>
+                    <td><code>parseInt()</code><br><code>parseFloat()</code></td>
+                    <td>If the parseInt() or parseFloat() method encounters a character that is not numeric in the
+                        specified base, it stops parsing and returns the integer value parsed up to that point. If the
+                        first character cannot be converted into a number, the method will return <code>NaN</code> (not
+                        a number).</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+                                console.log(parseInt("3.14"));  // 3
+                                console.log(parseInt("50px"));  // 50
+                                console.log(parseInt("12pt"));  // 12
+                                console.log(parseInt("0xFF", 16));  // 255
+                                console.log(parseInt("20 years"));  // 20
+                                console.log(parseInt("Year 2048"));  // NaN
+                                console.log(parseInt("10 12 2018"));  // 10
+                            
+                                console.log(parseFloat("3.14"));  // 3.14
+                                console.log(parseFloat("50px"));  // 50
+                                console.log(parseFloat("1.6em"));  // 1.6
+                                console.log(parseFloat("124.5 lbs"));  // 124.5
+                                console.log(parseFloat("weight 124.5 lbs"));  // NaN
+                                console.log(parseFloat("6.5 acres"));  // 6.5</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>toString()</code></td>
+                    <td>Convert a number to its string equivalent.</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+var x = 10;
+var y = x.toString();
+console.log(y);  // '10'
+console.log(typeof y);  // string
+console.log(typeof x);  // number
+
+console.log((12).toString());  // '12'
+console.log((15.6).toString());  // '15.6'
+console.log((6).toString(2));  // '110'
+console.log((255).toString(16));  // 'ff'</pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- The Boolean Data Type -->
+        <h3>The Boolean Data Type</h3>
+        <ul>
+            <li>The Boolean data type can hold only two values: true or false.</li>
+        </ul>
+        <hr>
+        <!-- Operators -->
+        <h2>Operator</h2>
+        <ul>
+            <li>Operations are solved from left to right but higher priority operations are solved first.</li>
+            <li><code>**</code> exponentiation has the highest priority</li>
+            <li><code>*</code> multiplication and <code>/</code> division has second highest priority</li>
+            <li><code>+</code> addition and <code>-</code> subtraction have the lowest</li>
+            <li>Operations which should be solved first can be encapsulated in parentheses <code>( )</code> .</li>
+        </ul>
+        <table>
+            <thead>
+                <!-- arithmetic operators -->
+                <tr>
+                    <th colspan="3">arithmetic operators</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>+</code> addition (string, concatenate) <code>+=</code> add and assign</td>
+                    <td><code>++</code> increase by 1</td>
+                    <td><code>*</code> multiply <code>*=</code> multiply and assign</td>
+                </tr>
+                <tr>
+                    <td><code>-</code> subtract <code>-=</code> subtract and assign</td>
+                    <td><code>--</code> decrease by 1</td>
+                    <td><code>/</code> divide <code>/=</code> divide and assign</td>
+                </tr>
+                <tr>
+                    <td><code>%</code> The modulo returns the number that remains after the
+                        right-hand number divides into the left-hand number as many times as it evenly can.</td>
+                    <td colspan="2"><code>**</code> Exponentiation, calculates the base to the exponent power, that is,
+                        base^exponent. <code>2 ** 3</code> // returns 8 (2*2*2)</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <!-- unary operator -->
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">unary operator: negation (-) and plus (+)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>The unary negation operator <code>-</code> precedes its operand and negates it.</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+const x = 4;
+console.log(-x); // expected output: -4 
+
+const z = -5;
+console.log(-z); // expected output: 5 
+
+const a = '4';
+console.log(-a); // expected output: -4 </pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The unary plus operator <code>+</code> precedes its operand and evaluates to its operand but
+                        attempts to
+                        convert it into a number, if it isn't already.</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+const x = 1;
+const y = -1;
+
+console.log(+x); // expected output: 1 
+
+console.log(+y); // expected output: -1 
+
+console.log(+''); // expected output: 0 
+
+console.log(+true); // expected output: 1 
+
+console.log(+false); // expected output: 0 
+
+console.log(+'hello'); // expected output: NaN </pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        <h4>operator returning boolean values</h4>
+        <!-- comparison operators -->
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">comparison operators (compare two values and evaluate to
+                        true or false)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;</code> less than</td>
+                    <td><code>&lt;=</code> less than or equal to</td>
+                    <td><code>&gt;</code> greater than</td>
+                    <td><code>&gt;=</code> greater than or equal to</td>
+                </tr>
+                <tr>
+                    <td><code>==</code> is equal to (value)</td>
+                    <td><code>===</code> strictly equal to (value and type)</td>
+                    <td><code>!==</code> is not equal to</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <!-- boolean context -->
+        <h4>boolean context</h4>
+        <ul>
+            <li>Non boolean values are treated as false (falsy) or true (truthy) in an "boolean context".</li>
+            <li>A "boolean context" is created when "logical operator" or "if condition" evaluate.</li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5">falsy value (evaluated to false in Boolean context)</th>
+                    <th>truthy value (evaluated to true in Boolean context)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>0</b></td>
+                    <td><b>""</b> or <b>''</b> (empty string)</td>
+                    <td><b>null</b> (when there is no value at all)</td>
+                    <td><b>undefined</b> (when an declared value has no value)</td>
+                    <td><b>NaN</b></td>
+                    <td>everything that is not falsy is truthy</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">logical operators (evaluating true / truthy - false / falsy)</th>
+                </tr>
+                <tr>
+                    <th>operator</th>
+                    <th>explanation</th>
+                    <th>short circuit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&&</code> and</td>
+                    <td>Both conditions must evaluate to true for the entire condition to evaluate to true.
+                    </td>
+                    <td>If the first condition in an && condition evaluates to false, the second condition won’t even be
+                        checked.</td>
+                </tr>
+                <tr>
+                    <td><code>||</code> or</td>
+                    <td>Only one of the conditions must evaluate to true for the overall statement to evaluate to true.
+                    </td>
+                    <td>If the first condition in an || condition evaluates to true, the second condition won’t even be
+                        checked.</td>
+                </tr>
+                <tr>
+                    <td><code>!</code> not (bang)</td>
+                    <td colspan="2">Changes its boolean value to the opposite. (true becomes false)</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">short-circuit evaluation</th>
+                </tr>
+                <tr>
+                    <th>example code</th>
+                    <th>explanation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>let defaultName = username || 'Stranger';</code></td>
+                    <td>
+                        <ul>
+                            <li>The "<b>or</b> operator" checks from left to right.</li>
+                            <li>Only the first value (username) on the left is checked.</li>
+                            <li>truthy, only the left value (username) is assigned to the variable (defaultName).</li>
+                            <li>falsy, only the right value ('Stranger') is assigned to the variable (defaultName).</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <pre class="exCode">
+let defaultName;
+if (username) {
+  defaultName = username;
+} else {
+  defaultName = 'Stranger';
+}</pre>
+                    </td>
+                    <td>If the “username” would be “undefined” (falsy) then the else statement is executed. If the
+                        username has a value (truthy), then the if statement is executed.</td>
                 </tr>
             </tbody>
         </table>
