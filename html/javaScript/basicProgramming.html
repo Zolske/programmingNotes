@@ -210,6 +210,7 @@
                     Zahl:</b></li>
         </ul>
         <!-- escape sequences -->
+        <h4>escape sequences</h4>
         <table>
             <thead>
                 <tr>
@@ -446,6 +447,284 @@ document.write(result); // Prints: hello world!</pre>
             <li> exponential notation: <code>4.25e+6</code> = <code>4250000</code> and <code>4.25e-6</code> =
                 <code>0.00000425</code></li>
         </ul>
+        <!-- addition on Numbers and Strings -->
+        <h4>addition on numbers and strings</h4>
+        <ul>
+            <li>If a sting is part of an addition, than the numbers are converted to strings.<br>
+                <details>
+                    <summary></summary>
+                    <pre class="exCode">
+var x = 10;
+var y = 20;
+var z = "30";
+
+// Adding a number with a number, the result will be sum of numbers
+console.log(x + y); // 30
+
+// Adding a string with a string, the result will be string concatenation
+console.log(z + z); // '3030'
+
+// Adding a number with a string, the result will be string concatenation
+console.log(x + z); // '1030'
+
+// Adding a string with a number, the result will be string concatenation
+console.log(z + x); // '3010'
+
+// Adding strings and numbers, the result will be string concatenation
+console.log("The result is: " + x + y); // 'The result is: 1020'</pre>
+                </details>
+            </li>
+            <li>Operations a solved from left to right, two or more numbers are added before if a string is coming
+                after.<br>
+                <details>
+                    <summary></summary>
+                    <pre class="exCode">
+var x = 10;
+var y = 20;
+var z = "30";
+
+// Adding numbers and strings, calculation performed from left to right
+console.log(x + y + z); // 'The result is: 3030'</pre>
+                </details>
+        </ul>
+        <h4>operating on numbers and strings (except addition)</h4>
+        <ul>
+            <li>String is converted to a number. <details>
+                    <summary></summary>
+                    <pre class="exCode">
+var x = 10;
+var y = 20;
+var z = "30";
+
+// Subtracting a number from a number
+console.log(y - x); // 10
+
+// Subtracting a number from a numeric string
+console.log(z - x); // 20
+
+// Multiplying a number with a numeric string
+console.log(x * z); // 300
+
+// Dividing a number with a numeric string
+console.log(z / x); // 3</pre>
+                </details>
+            </li>
+            <li>If string can not be converted to a number, <code>NaN</code> (Not a Number) is returned.<details>
+                    <summary></summary>
+                    <pre class="exCode">
+var x = 10;
+var y = "foo";
+var z = NaN;
+
+// Subtracting a number from a non-numeric string
+console.log(y - x); // NaN
+
+// Multiplying a number with a non-numeric string
+console.log(x * y); // NaN
+
+// Dividing a number with a non-numeric string
+console.log(x / y); // NaN
+
+// Adding NaN to a number 
+console.log(x + z); // NaN
+                        
+// Adding NaN to a string 
+console.log(y + z); // fooNaN</pre>
+                </details>
+            </li>
+        </ul>
+        <!-- representing infinity -->
+        <h4>representing infinity</h4>
+        <ul>
+            <li>Infinity represents a number too big for JavaScript to handle.</li>
+            <li>JavaScript has special keyword <code>Infinity</code> and <code>-Infinity</code> to represent positive
+                and negative infinity respectively. <details>
+                    <summary></summary>
+                    <pre class="exCode">
+var x = 5 / 0;
+console.log(x); // Infinity
+
+var y = -5 / 0;
+console.log(y); // -Infinity</pre>
+                </details>
+            </li>
+        </ul>
+        <!-- Avoiding Precision Problems -->
+        <h4>Avoiding Precision Problems (representation error)</h4>
+        <ul>
+            <li>JavaScript and many other languages uses binary (base 2) form to represent decimal (base 10) numbers
+                internally. Unfortunately, most decimal fractions can't be represented exactly in binary form, so small
+                differences occur. <details>
+                    <summary></summary>
+                    <pre class="exCode">
+var x = 0.1 + 0.2;
+console.log(x) // 0.30000000000000004</pre>
+                </details>
+            </li>
+            <li>To avoid this problem, the fractions can be multiplied by a factor so they become "whole" numbers,
+                operated on and than divided by the same factor.<details>
+                    <summary></summary>
+                    <pre class="exCode">
+var x = (0.1 * 10 + 0.2 * 10) / 10;
+console.log(x) // 0.3</pre>
+                </details>
+            </li>
+            <li><b>Floating-point</b> numbers are rounded up if <b>longer than 16 digits</b> after the floating pint
+                <code>.</code>.</li>
+            <li><b>Integers</b> (numbers without fractional parts or exponential notation) are rounded up if <b>longer
+                    than 15
+                    digits</b>.<details>
+                    <summary></summary>
+                    <pre class="exCode">
+var x = 999999999999999;
+console.log(x); // 999999999999999
+
+var y = 9999999999999999;
+console.log(y); // 10000000000000000</pre>
+                </details>
+            </li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">math operations (objects)</th>
+                </tr>
+                <tr>
+                    <th>syntax</th>
+                    <th>description</th>
+                    <th>example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>Math.abs()</code></td>
+                    <td>Calculate the absolute (positive) value of a number. Therefore, -1 is returned as 1.</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+document.write(Math.abs(-1));  // Prints: 1
+document.write(Math.abs(1));  // Prints: 1
+document.write(Math.abs(-5));  // Prints: 5
+document.write(Math.abs(-10.5));  // Prints: 10.5</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>Math.random()</code></td>
+                    <td>Generate a floating-point random number between 0 and 1 (but not 1).</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+Math.random();  // Expected output: a number between 0 and 1<br>// Could be 0.46722224</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>Math.floor(Math.random() * <b>MAX</b>)</code></td>
+                    <td>Generates a random number between 0 and <b>MAX</b>-1.</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+Math.floor(Math.random() * 3) // Expected output: 0, 1 or 2
+Math.floor(Math.random() * 1) // Expected output: 0</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>Math.sqrt()</code></td>
+                    <td>Calculates the square root of a number. If the number is negative, <code>NaN</code> is returned.
+                    </td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+Math.sqrt(4);  // Prints: 2
+Math.sqrt(16);  // Prints: 4
+Math.sqrt(0.25);  // Prints: 0.5
+Math.sqrt(-9);  // Prints: NaN</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>Math.ceil()</code></td>
+                    <td>Rounds a number up to the next highest integer. So, 3.5 becomes 4, -5.7 becomes -5 (because -5
+                        is greater than -6).</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+Math.ceil(3.5);  // Prints: 4
+Math.ceil(-5.7);  // Prints: -5
+Math.ceil(9.99);  // Prints: 10
+Math.ceil(-9.99);  // Prints: -9
+Math.ceil(0);  // Prints: 0</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>Math.floor()</code></td>
+                    <td>Rounds a number down to the next lowest integer. So, 3.5 becomes 3, -5.7 becomes -6 (because -6
+                        is lesser than -5).</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+Math.floor(3.5);  // Prints: 3
+Math.floor(-5.7);  // Prints: -6
+Math.floor(9.99);  // Prints: 9
+Math.floor(-9.99);  // Prints: -10
+Math.floor(0);  // Prints: 0</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>Math.round()</code></td>
+                    <td>Rounds a number to the nearest integer in such a way that if the decimal part is .5 or greater,
+                        number is rounded up, otherwise rounded down. So, 3.5 becomes 4, -5.7 becomes -6, 4.49 becomes 4
+                    </td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+Math.round(3.5);  // Prints: 4
+Math.round(-5.7);  // Prints: -6
+Math.round(7.25);  // Prints: 7
+Math.round(4.49);  // Prints: 4
+Math.round(0);  // Prints: 0</pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>Math.max()</code><br><code>Math.min()</code></td>
+                    <td>Finds which number is the largest or smallest in a group of numbers, respectively. It works also
+                        on arrays.</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+document.write(Math.max(1, 3, 2));  // Prints: 3
+document.write(Math.max(-1, -3, -2));  // Prints: -1
+ 
+document.write(Math.min(1, 3, 2));  // Prints: 1
+document.write(Math.min(-1, -3, -2));  // Prints: -3
+
+var numbers = [1, 3, 2]; // works also on array
+ 
+document.write(Math.max.apply(null, numbers));  // Prints: 3
+document.write(Math.min.apply(null, numbers));  // Prints: 1
+
+var numbers = [1, 3, 2]; // or with the spread operator ...
+ 
+document.write(Math.max(...numbers));  // Prints: 3
+document.write(Math.min(...numbers));  // Prints: 1</pre>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 </body>
 

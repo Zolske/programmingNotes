@@ -49,10 +49,12 @@ ul {
 h1 {
     text-transform: uppercase;
     text-align: center;
+    font-size: 2.5rem;
 }
 
 h2 {
     text-transform: capitalize;
+    font-size: 2rem;
 }
 
 h2+p {
@@ -70,6 +72,14 @@ h3 {
     padding-top: 1rem;
     padding-left: 4ch;
     margin-bottom: -0rem;
+    font-size: 1.5rem;
+}
+
+h4 {
+    text-decoration: underline;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    text-transform: lowercase;
 }
 
 summary {
