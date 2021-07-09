@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Fehler finden</title>
+   <script>
+      function errorMessage(message, source, lineno, colno, error) {
+         alert("error message: " + message + "\nsource: " + source +
+            "\nlineno: " + lineno + "\ncolumn: " + colno + "\nerror: " + error);
+      }
+   </script>
+</head>
+
+<body>
+   <p>
+      <script>
+         onerror = errorMessage;
+         const y = 42;
+         //     const x = 11; // is not declared, which courses the error
+         document.write(x + "<br>");
+         document.write(y + "<br>");
+      </script>
+   </p>
+</body>
+
+</html>

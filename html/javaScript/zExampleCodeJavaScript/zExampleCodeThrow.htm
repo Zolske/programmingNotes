@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>throw</title>
+   <link rel="stylesheet" href="js4.css">
+</head>
+
+<body>
+   <p>
+      <script>
+         const number = parseFloat(prompt(
+            "Please, enter a number > 0."));
+
+         try {
+            if (isNaN(number))
+               throw "Not a valid number.";
+            if (number <= 0)
+               throw "Number to small.";
+            document.write("Number: " + number);
+         } catch (errorObject) {
+            alert(errorObject);
+         }
+      </script>
+   </p>
+</body>
+
+</html>
