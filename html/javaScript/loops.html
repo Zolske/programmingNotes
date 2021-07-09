@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <title>Loops</title>
+</head>
+
+<body>
+    <main>
+        <h1>loops</h1>
+        <h2>general rules for all loops</h2>
+        <ol>
+            <li>Every loop has a <b>iterator variable</b> which can be set outside the loop or as part of its
+                condition.</li>
+            <li>The <b>stopping condition</b> is checked against the iterator variable, as long the condition is true
+                the loop
+                runs.
+            </li>
+            <li>The <b>iterator variable</b> needs to be updated so the "stopping condition" can become false and stop
+                the loop!
+            </li>
+        </ol>
+        <ul>
+            <li>The statement(s) within the loop are executed once for every loop (iteration).</li>
+            <li>The statement of the loop dose not need to be put in brackets if it is no more than one.</li>
+            <li>The iterator variable can be used within the loops statement.</li>
+            <li>Any global variable can be used inside the loop but they will be also changed by the loop.</li>
+        </ul>
+        <ul>
+            <li><code>i</code> stands for <b>i</b>terator variable, but it could have any arbitrary name.</li>
+            <li><code>break;</code> the parser exits the loop.</li>
+            <li><code>continue;</code> the parser leaves out this one iteration and continues with the next iteration.
+            </li>
+        </ul>
+        <!-- for loop /////////////////////////////////////////////////////////////////////////////////////////-->
+        <h3>for loop</h3>
+        <table>
+            <thead>
+                <tr class="tabEx">
+                    <td></td>
+                    <td></td>
+                    <td>declares the starting value of the <b>iterator</b> variable</td>
+                    <td></td>
+                    <td>as long the condition is true the loop runs</td>
+                    <td></td>
+                    <td>update the <b>iterator</b> variable on each loop</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>keyword</th>
+                    <th></th>
+                    <th>iterator</th>
+                    <th></th>
+                    <th>stopping condition</th>
+                    <th></th>
+                    <th>updater</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="tabCode">
+                <tr>
+                    <td>for</td>
+                    <td>(</td>
+                    <td>let i = 0</td>
+                    <td>;</td>
+                    <td>i &lt; 4</td>
+                    <td>;</td>
+                    <td>i++ <mark title="with -- (-1 , -2) the iterator variable can be decreased">*</mark></td>
+                    <td>)&nbsp;{</td>
+                </tr>
+                <tr>
+                    <td colspan="8">STATEMENT1 ; <mark title="no { } needed if there is only one statement">*</mark>
+                        <br>STATEMENT2 ;</td>
+                </tr>
+                <tr>
+                    <td>}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>declaring the iterator variable outside of the loop</h4>
+        <ul>
+            <li>Variables from outside the loop can be used as counter, its value will be updated.</li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>iterator</th>
+                </tr>
+                <tr class="tabCode">
+                    <td>let i = 0;</td>
+                </tr>
+                <tr>
+                    <th>keyword</th>
+                    <th></th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th></th>
+                    <th>stopping condition</th>
+                    <th></th>
+                    <th>updater</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="tabCode">
+                <tr>
+                    <td>for</td>
+                    <td>(</td>
+                    <td><mark title="must be left empty">*</mark></td>
+                    <td>;</td>
+                    <td>i &lt; 4</td>
+                    <td>;</td>
+                    <td>i++ <mark title="with -- (-1 , -2) the iterator variable can be decreased">*</mark></td>
+                    <td>)</td>
+                </tr>
+                <tr>
+                    <td colspan="8">STATEMENT1 ; <mark title="no { } needed if there is only one statement">*</mark>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+                        let i = 0;
+                        for (; i &lt; 2; i++) {
+                            console.log(i); // output 0
+                        }                   //        1 
+                        
+                        console.log(i);     //        2 // variable i is updated outside the loop, is 1 higher because i++</pre>
+        </details>
+        <h4>looping through an array (or string)</h4>
+        <ul>
+            <li>To loop through each element in an array, a for loop has to use the .length property of the array (or
+                string) in its condition.</li>
+        </ul>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+const vacationSpots = ['Bali', 'Paris', 'Tulum']; // instead of an array it could be also a string variable
+
+for (let i = 0; i &lt; vacationSpots.length; i++){
+      console.log(`I would love to visit ${vacationSpots[i]}`);
+} // I would love to visit Bali   // I would love to visit Paris   // I would love to visit Tulum </pre>
+        </details>
+        <!-- for...of Loop (for arrays and strings) //////////////////////////////////////////////////////////-->
+        <h3>for...of Loop (arrays and strings)</h3>
+        <p><code>const ARRAY = [ELEMENT, ELEMENT1, ELEMENT2];</code></p>
+        <ul>
+            <li>Loops through arrays and strings.</li>
+            <li>For each element in the array, there is one iteration in which the arbitrary name is replace
+                with one of the elements <mark
+                    title="or each character if it is a variable with an string value">*</mark>.</li>
+            <li>The same arbitrary name has to be used in the statement which will be replaced with the element.</li>
+        </ul>
+        <table>
+            <thead>
+                <tr class="tabEx">
+                    <td></td>
+                    <td></td>
+                    <td>use <b>let</b> if the variable needs to be reassign inside the block</td>
+                    <td>can be any arbitrary name, for each iteration, the name is replaced with one of the arrays
+                        elements <mark title="or each character if it is a variable with an string value">*</mark></td>
+                    <td></td>
+                    <td>name of the array <mark title="or variable if its value is a string">*</mark></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>keyword</th>
+                    <th></th>
+                    <th></th>
+                    <th>arbitrary name</th>
+                    <th>keyword</th>
+                    <th>array</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody class="tabCode">
+                <tr>
+                    <td>for</td>
+                    <td>(</td>
+                    <td>const</td>
+                    <td>ELEMENT</td>
+                    <td>of</td>
+                    <td>ARRAY</td>
+                    <td>)&nbsp;{</td>
+                </tr>
+                <tr>
+                    <td colspan="7">STATEMENT1 ; <mark title="no { } needed if there is only one statement">*</mark>
+                        <br>STATEMENT2 ;</td>
+                </tr>
+                <tr>
+                    <td>}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+const iterable = [10, 20, 30];
+
+for (const value of iterable) {
+  console.log(value);
+}
+// 10
+// 20
+// 30
+
+// You can use let instead of const too, if you reassign the variable inside the block.
+const iterable = [10, 20, 30];
+
+for (let value of iterable) {
+  value += 1;
+  console.log(value);
+}
+// 11
+// 21
+// 31
+
+// Iterating over a String
+const iterable = 'boo';
+
+for (const value of iterable) {
+  console.log(value);
+}
+// "b"
+// "o"
+// "o"</pre>
+        </details>
+        <!-- for...in loop (for objects) /////////////////////////////////////////////////////////////////-->
+        <h3>for...in loop (for objects)</h3>
+        <p><code>const OBJECT = { PROPERTYkey: PROPERTYvalue, PROPERTYkey1: PROPERTYvalue1 };</code></p>
+        <ul>
+            <li>Loops through the properties of an object.</li>
+            <li><code>PROPERTYkey</code> is replace with one of the objects property-keys in each iteration.
+            </li>
+            <li><code>OBJECT[PROPERTYkey]</code> is replaced with one of the objects property-values in each
+                iteration.</li>
+        </ul>
+        <table>
+            <thead>
+                <tr class="tabEx">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>can be any arbitrary name, for each iteration, the name is replaced with one of the objects
+                        property-keys</td>
+                    <td></td>
+                    <td>name of the object</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>keyword</th>
+                    <th></th>
+                    <th></th>
+                    <th>arbitrary name</th>
+                    <th>keyword</th>
+                    <th>object</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody class="tabCode">
+                <tr>
+                    <td>for</td>
+                    <td>(</td>
+                    <td>const</td>
+                    <td>PROPERTYkey</td>
+                    <td>in</td>
+                    <td>OBJECT</td>
+                    <td>)&nbsp;{</td>
+                </tr>
+                <tr>
+                    <td colspan="7">STATEMENT1 ; <mark title="no { } needed if there is only one statement">*</mark>
+                        <br>STATEMENT2 ;</td>
+                </tr>
+                <tr>
+                    <td>}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+            const object = { a: 1, b: 2, c: 3 };                // expected output:
+                                                                // "a: 1"
+            for (const property in object) {                    // "b: 2"
+              console.log(`${property}: ${object[property]}`);  // "c: 3"
+            }</pre>
+        </details>
+        <!-- While Loop ////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>While Loop</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td class="tabEx" colspan="3"></td>
+                    <td class="tabEx">as long the condition<br>is true the loop runs</td>
+                </tr>
+                <tr>
+                    <td class="tabEx" colspan="3"></td>
+                    <th>stopping condition</th>
+                    <td class="tabEx"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tabEx">declares the starting value<br>of the iterator variable</td>
+                    <th>iterator</th>
+                    <td style="background: lightgray; font-family: monospace;">let i = 0;</td>
+                    <td class="tabEx"></td>
+                </tr>
+                <tr>
+                    <td class="tabEx"></td>
+                    <th>keyword</th>
+                    <td style="background: lightgray; font-family: monospace;">while</td>
+                    <td style="background: lightgray; font-family: monospace;">( i &lt; 4 )</td>
+                    <td style="background: lightgray; font-family: monospace;">{</td>
+                </tr>
+                <tr>
+                    <td class="tabEx" colspan="2"></td>
+                    <td style="background: lightgray; font-family: monospace;">STATEMENT ;</td>
+                </tr>
+                <tr>
+                    <td class="tabEx">update the iterator<br>variable on each loop</td>
+                    <th>updater</th>
+                    <td style="background: lightgray; font-family: monospace;">i++</td>
+                </tr>
+                <tr>
+                    <td class="tabEx" colspan="2"></td>
+                    <td style="background: lightgray; font-family: monospace; text-align: left;">}</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- do while loop //////////////////////////////////////////////////////////////////////////////////////////-->
+        <h3>do while loop</h3>
+        <ul>
+            <li>Is always executed at least once even if the condition is false.</li>
+        </ul>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="tabEx">declares the starting value<br>of the iterator variable</td>
+                    <th>iterator</th>
+                    <td style="background: lightgray; font-family: monospace;">let i = 0;</td>
+                    <td class="tabEx"></td>
+                </tr>
+                <tr>
+                    <td class="tabEx"></td>
+                    <th>keyword</th>
+                    <td style="background: lightgray; font-family: monospace;">do {</td>
+                    <td class="tabEx"></td>
+                </tr>
+                <tr>
+                    <td class="tabEx" colspan="2"></td>
+                    <td style="background: lightgray; font-family: monospace;">STATEMENT ;</td>
+                </tr>
+                <tr>
+                    <td class="tabEx">update the iterator<br>variable on each loop</td>
+                    <th>updater</th>
+                    <td style="background: lightgray; font-family: monospace;">i++</td>
+                    <td class="tabEx"></td>
+                    <td class="tabEx">as long the condition<br>is true the loop runs</td>
+                </tr>
+                <tr>
+                    <td class="tabEx"></td>
+                    <th>keyboard</th>
+                    <td style="background: lightgray; font-family: monospace;">} while </td>
+                    <td style="background: lightgray; font-family: monospace;">( i &lt; 4 );</td>
+                    <th>stopping condition</th>
+                </tr>
+            </tbody>
+        </table>
+        <!-- nested loops ///////////////////////////////////////////////////////////////////////////////////////////-->
+        <h3>nested loops</h3>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5">outer loop</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>for</td>
+                    <td>( let i = 0;</td>
+                    <td>i &lt; 4;</td>
+                    <td>i++ )</td>
+                    <td>{</td>
+                </tr>
+                <tr>
+                    <td colspan="5">STATEMENT(outer loop) ;</td>
+                </tr>
+                <tr>
+                    <td class="tabEx"></td>
+                    <th colspan="5">inner loop</th>
+                    <td class="borderTop"></td>
+                    <td rowspan="3" class="borderTop">for every single iteration<br>the outer-loop
+                        makes,<br>the
+                        inner-loop
+                        runs a full loop</td>
+                </tr>
+                <tr>
+                    <td class="tabEx"></td>
+                    <td>for</td>
+                    <td>( let i = 0;</td>
+                    <td>i &lt; 4;</td>
+                    <td>i++ )</td>
+                    <td>{</td>
+                </tr>
+                <tr>
+
+                    <td class="tabEx"></td>
+                    <td colspan="5">STATEMENT(inner loop) ; }</td>
+                </tr>
+                <tr>
+                    <td colspan="5">STATEMENT2(outer loop) ;</td>
+                    <td class="tabEx"></td>
+                    <td colspan="2" class="borderTop"></td>
+                </tr>
+                <tr>
+                    <td>}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+const bobsFollowers = ['Mike','David','Jack','Anne'];  //looking for the same names
+const tinasFollowers = ['Michael','Jack','Anne'];      //in two different arrays
+const mutualFollowers = [];                            //same names to be saved in here
+
+for (let i = 0; i &lt; bobsFollowers.length; i++) {
+  for (let z = 0; z &lt; tinasFollowers.length; z++) {
+    if (bobsFollowers[i] === tinasFollowers[z]) {      //if both elements are equal
+        mutualFollowers.push(tinasFollowers[z]);       //pushes equal name into array
+    };
+  };
+};
+
+console.log(mutualFollowers);   // [ 'Jack', 'Anne' ]</pre>
+        </details>
+    </main>
+</body>
+
+</html>

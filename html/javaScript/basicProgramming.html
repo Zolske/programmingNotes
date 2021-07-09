@@ -42,7 +42,11 @@
                 <tr>
                     <th><code>const</code></th>
                     <td rowspan="2">block</td>
-                    <td colspan="2">ERROR</td>
+                    <td>ERROR</td>
+                    <td title="The value of an variable declared with const can not be updated.
+But the elements of an array and the property of an object can be updated / added.
+Constant can not be overwritten with other variable or objects.">
+                        ERROR<mark>*</mark></td>
                     <td colspan="2" rowspan="2">ERROR</td>
                 </tr>
                 <tr>
@@ -57,8 +61,8 @@
                     <td>"undefined"</td>
                 </tr>
             </tbody>
-            <!-- syntax -->
         </table>
+        <!-- syntax -->
         <h3>syntax</h3>
         <table>
             <thead>
@@ -735,6 +739,25 @@ Math.round(0);  // Prints: 0</pre>
                     </td>
                 </tr>
                 <tr>
+                    <td>NUMBER.<code>toFixed()</code></td>
+                    <td>The parameter detriment how many digits after the dot the number (NUMBER) is rounded.</td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+function financial(x) {
+    return Number.parseFloat(x).toFixed(2); // round 2 digits after .
+  }
+  
+  console.log(financial(123.456));  // expected output: "123.46"
+  
+  console.log(financial(0.004));    // expected output: "0.00"
+  
+  console.log(financial('1.23e+5')); // expected output: "123000.00" </pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
                     <td><code>Math.max()</code><br><code>Math.min()</code></td>
                     <td>Finds which number is the largest or smallest in a group of numbers, respectively. It works also
                         on arrays.</td>
@@ -807,6 +830,17 @@ console.log((255).toString(16));  // 'ff'</pre>
                         </details>
                     </td>
                 </tr>
+                <tr>
+                    <td><code>isNaN()</code></td>
+                    <td>
+                        <ul>
+                            <li>Checks if its parameter is NaN</li>
+                            <li>returns true, is NaN</li>
+                            <li>returns false, is a number</li>
+                        </ul>
+                    </td>
+                    <td></td>
+                </tr>
             </tbody>
         </table>
         <!-- The Boolean Data Type -->
@@ -824,6 +858,41 @@ console.log((255).toString(16));  // 'ff'</pre>
             <li><code>+</code> addition and <code>-</code> subtraction have the lowest</li>
             <li>Operations which should be solved first can be encapsulated in parentheses <code>( )</code> .</li>
         </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="10">priority list</th>
+                </tr>
+                <tr>
+                    <th>01.</th>
+                    <th>02.</th>
+                    <th>03.</th>
+                    <th>04.</th>
+                    <th>05.</th>
+                    <th>06.</th>
+                    <th>07.</th>
+                    <th>08.</th>
+                    <th>09.</th>
+                    <th>10.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>( )</code> parentheses</td>
+                    <td><code>!</code>&nbsp;not <code>-</code>&nbsp;negation <code>++</code> <code>--</code></td>
+                    <td><code>**</code></td>
+                    <td><code>*</code> <code>/</code> <code>%</code></td>
+                    <td><code>+</code> <code>-</code></td>
+                    <td><code>&lt;</code> <code>&lt;=</code> <code>></code> <code>>=</code></td>
+                    <td><code>==</code> <code>!=</code> <code>===</code> <code>!==</code></td>
+                    <td><code>&&</code></td>
+                    <td><code>||</code></td>
+                    <td><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
         <table>
             <thead>
                 <!-- arithmetic operators -->
@@ -922,9 +991,10 @@ console.log(+'hello'); // expected output: NaN </pre>
                     <td><code>&gt;=</code> greater than or equal to</td>
                 </tr>
                 <tr>
-                    <td><code>==</code> is equal to (value)</td>
-                    <td><code>===</code> strictly equal to (value and type)</td>
-                    <td><code>!==</code> is not equal to</td>
+                    <td><code>==</code> is equal to <br>(value, can be falsy/truthy)</td>
+                    <td><code>!=</code> is not equal to <br>(value can be falsy/truthy)</td>
+                    <td><code>===</code> strictly equal to <br>(value and type)</td>
+                    <td><code>!==</code> is strictly not equal to <br>(value and type)</td>
                 </tr>
             </tbody>
         </table>

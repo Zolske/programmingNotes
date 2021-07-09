@@ -3,6 +3,8 @@
     --tableHeadColor: rgba(243, 187, 45, 0.3);
     --tableDataColor: rgba(52, 213, 235, 0.2);
     --exampleBackColor: coral;
+    --backColorPage: white;
+    --fontColor: black;
 }
 
 main {
@@ -22,7 +24,7 @@ table {
 
 td,
 th {
-    border: white dashed 2px;
+    border: var(--backColorPage) dashed 2px;
     padding: 2px 4px 2px 4px;
     text-align: center;
 }
@@ -44,6 +46,7 @@ td ul {
 
 ul {
     max-width: 80ch;
+    margin-top: 00.5rem;
 }
 
 h1 {
@@ -91,6 +94,11 @@ h4 {
     letter-spacing: 0.1rem;
     font-size: 1rem;
     text-transform: lowercase;
+    margin-bottom: 00.5rem;
+}
+
+h4+* {
+    margin-top: 0.5rem;
 }
 
 summary {
@@ -114,4 +122,42 @@ details {
     font-family: monospace;
     margin-top: 0.1rem;
     margin-bottom: 00.1rem;
+}
+
+.tabEx {
+    background-color: var(--backColorPage);
+    border: 0px;
+    font-style: italic;
+}
+
+.tabEx td {
+    background-color: var(--backColorPage);
+    border: 0px;
+    font-style: italic;
+}
+
+.tabCode * {
+    background-color: var(--codeBackColor);
+    font-family: monospace;
+}
+
+/* IMPORTANT RULE //////////////////////////////////////////////////////////////////////*/
+mark {
+    background-color: yellow !important;
+}
+
+/* IMPORTANT END ///////////////////////////////////////////////////////////////////////*/
+
+.borderTop {
+    border: 0px;
+    border-top: dashed 1px var(--fontColor);
+    background-color: var(--backColorPage);
+    font-style: italic;
+}
+
+.borderBottom {
+    border: 0px;
+    border-bottom: dashed 1px var(--fontColor);
+    background-color: var(--backColorPage);
+    font-style: italic;
 }

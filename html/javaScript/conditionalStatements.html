@@ -8,108 +8,207 @@
     <link rel="stylesheet" href="/css/styleJavaScript.css">
     <title>Conditional statements</title>
 </head>
-<h1>conditional statements</h1>
-<ul>
-    <li>Condition evaluates to true or truthy, the code inside the block is executed.</li>
-    <li>Condition evaluates to false or falsy, the code inside the block is <b>NOT</b> executed.</li>
-    <li>A default code block can be run if the condition is false / falsy.</li>
-</ul>
-<h3>if statement</h3>
-<ul>
-    <li>"if - else if - else", statements are parsed from top to bottom.</li>
-    <li><b>Only the first</b> "true-condition-statement-block" is executed, any following conditions are not checked!
-    </li>
-    <li><b>No brackets</b> {} are needed if there is only <b>one statement</b> after the condition.</li>
-</ul>
-<table>
-    <thead>
-        <tr>
-            <th>syntax</th>
-            <th>explanation</th>
-            <th>example</th>
-        </tr>
-        <tr>
-            <th colspan="3">if statement</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>if (CONDITION)
-                    STATEMENT;</code> or<br><code>if&nbsp;(CONDITION)&nbsp;{STATEMENT;&nbsp;STATEMENT2;}</code></td>
-            <td>
-                <ul>
-                    <li>If the condition evaluate to true / truthy, than the statements are executed.</li>
-                    <li>The "if statement" can stand by its own.</li>
-                </ul>
-            </td>
-            <td>
-                <details>
-                    <summary></summary>
-                    <pre class="exCode">
+
+<body>
+    <main>
+        <h1>conditional statements</h1>
+        <ul>
+            <li>Condition evaluates to true or truthy, the code inside the block is executed.</li>
+            <li>Condition evaluates to false or falsy, the code inside the block is <b>NOT</b> executed.</li>
+            <li>A default code block can be run if the condition is false / falsy.</li>
+        </ul>
+        <h3>if statement</h3>
+        <ul>
+            <li>"if - else if - else", statements are parsed from top to bottom.</li>
+            <li><b>Only the first</b> "true-condition-statement-block" is executed, any following conditions are not
+                checked!
+            </li>
+            <li><b>No brackets</b> {} are needed if there is only <b>one statement</b> after the condition.</li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>syntax</th>
+                    <th>explanation</th>
+                    <th>example</th>
+                </tr>
+                <tr>
+                    <th colspan="3">if statement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>if (CONDITION)
+                            STATEMENT;</code> or<br><code>if&nbsp;(CONDITION)&nbsp;{STATEMENT;&nbsp;STATEMENT2;}</code>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>If the condition evaluate to true / truthy, than the statements are executed.</li>
+                            <li>The "if statement" can stand by its own.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
 const a = 12, b = 7;
 
 if(a > b) // condition is true, statement is executed 
    document.write("&lt;p>a is bigger than b&lt;/p>"); </pre>
-                </details>
-            </td>
-        </tr>
-        <tr>
-            <th colspan="3">else if statement</th>
-        </tr>
-        <tr>
-            <td><code>else if (CONDITION)
-                    STATEMENT;</code> or<br><code>else&nbsp;if&nbsp;(CONDITION)&nbsp;{STATEMENT;&nbsp;STATMENT2;}</code>
-            </td>
-            <td>
-                <ul>
-                    <li>Can only be attached <b>after</b> an "if" statement.</li>
-                    <li>Is only checked if the previous conditions is false / falsy.</li>
-                    <li>If the condition evaluate to true / truthy, than the statements are executed.</li>
-                    <li>No limit of how many "else if" statements can be chained together.</li>
-                </ul>
-            </td>
-            <td>
-                <details>
-                    <summary></summary>
-                    <pre class="exCode">
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="3">else if statement (optional)</th>
+                </tr>
+                <tr>
+                    <td><code>else if (CONDITION)
+                            STATEMENT;</code>
+                        or<br><code>else&nbsp;if&nbsp;(CONDITION)&nbsp;{STATEMENT;&nbsp;STATMENT2;}</code>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Can only be attached <b>after</b> an "if" statement.</li>
+                            <li>Is only checked if the previous conditions is false / falsy.</li>
+                            <li>If the condition evaluate to true / truthy, than the statements are executed.</li>
+                            <li>No limit of how many "else if" statements can be chained together.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
 const a = 7, b = 12;
 
 if(a > b) // condition is false
     document.write("&lt;p>a is bigger than b&lt;/p>");
 else if(a &lt; b) // condition is true
     document.write("&lt;p>a is smaller than b&lt;/p>");</pre>
-                </details>
-            </td>
-        </tr>
-        <tr>
-            <th colspan="3">else statement</th>
-        </tr>
-        <tr>
-            <td><code>else STATEMENT;</code> or<br><code>else {STATEMENT; STATEMENT2;}</code></td>
-            <td>
-                <ul>
-                    <li>Is the last statement, <b>after</b> "if" or "else if"</li>
-                    <li>No condition, is only executed if no other condition is true / truthy</li>
-                </ul>
-            </td>
-            <td>
-                <details>
-                    <summary></summary>
-                    <pre class="exCode">
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="3">else statement (optional)</th>
+                </tr>
+                <tr>
+                    <td><code>else STATEMENT;</code> or<br><code>else {STATEMENT; STATEMENT2;}</code></td>
+                    <td>
+                        <ul>
+                            <li>Is the last statement, <b>after</b> "if" or "else if"</li>
+                            <li>No condition, is only executed if no other condition is true / truthy</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
 const a = 12, b = 7; 
                     
 if(a &lt; b) // condition is false
     document.write("&lt;p>a is smaller then b&lt;/p>"); 
 else // no true / truthy condition previous
     document.write("&lt;a is bigger than b&lt;/p>"); </pre>
-                </details>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- switch -->
+        <h3>switch statement</h3>
+        <ul>
+            <li>It is not possible to define a range for the case to match the condition<br>e.g. <code>case &lt;
+                    10 :</code> or <code>case
+                    >=10 && &lt;=20 :</code></li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>syntax</th>
+                    <th>explanation</th>
+                    <th>example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>switch&nbsp;(CONDITION)</code><br><code>{</code></td>
+                    <td>The condition (value) to which the cases (values) are compared to.</td>
+                    <td rowspan="7">
+                        <details>
+                            <summary></summary>
+                            <pre class="exCode">
+const country = prompt("Please, enter a country:"); 
+let city;
 
-<body>
+switch(country)
+    {
+        case "italy":
+           city = "Rom";    // city = "Rom"
+           break;           // exit switch statement 
+        case "england":     // city = "London"
+        case "wales":       // city = "London"
+        case "scotland":    // city = "London"
+           city = "London"; 
+           break;           // exit switch statement 
+             default:       // if no case match
+                city = "unknown";
+      } </pre>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>case VALUE1 :</code></td>
+                    <td>The value is compared to the condition.</td>
+                </tr>
+                <tr>
+                    <td><code>STATEMENT1;</code></td>
+                    <td>One or more statements which are executed if the case matches the condition.</td>
+                </tr>
+                <tr>
+                    <td><code>break;</code></td>
+                    <td>Is optional, at this point the parser exits the switch statement</td>
+                </tr>
+                <tr>
+                    <td><code>case VALUE2 :</code><br><code>case VALUE3 :</code><br><code>case VALUE4
+                            :</code><br><code>STATEMENT1-4;</code><br><code>break;</code></td>
+                    <td>Any of the "case values" which matches the "condition value" will trigger the following
+                        statement.
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>default:</code><br><code>STATEMENT;</code></td>
+                    <td>Is optional, if none of the cases matches, than the statement(s) after the default keyword are
+                        executed.</td>
+                </tr>
+                <tr>
+                    <td><code>}</code></td>
+                    <td>closing bracket</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Ternary Operator -->
+        <h3>Ternary Operator</h3>
+        <p><code>CONDITION ? TRUE : FALSE</code></p>
+        <ul>
+            <li>If the <code>CONDITION</code> evaluates to ...</li>
+            <li>... true / truthy, the whole expression evaluates to the value after the <code>?</code> ("TRUE")
+            </li>
+            <li>... false / falsy, the whole expression evaluates to the value after the <code>:</code> ("FALSE")
+            </li>
+        </ul>
+        <h4>assigning value to variable depending on condition</h4>
+        <p><code>VARIABLE = CONDITION ? VALUE1 : VALUE2 ;</code><br>// "condition" is ... true VALUE1 is assigned ...
+            false VALUE2 is assigned</p>
+        <h4>executing statement depending on condition</h4>
+        <p><code>CONDITION ? STATEMENT1 : STATEMENT2 ;</code><br>// "condition" is ... true STATEMENT1 is executed ...
+            false STATEMENT2 is executed</p>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+                let isNightTime = true; // true = light on / false = light off
 
+                isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');</pre>
+        </details>
+    </main>
 </body>
 
 </html>
