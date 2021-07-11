@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Beliebige Parameteranzahl</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function summe() {
+         let ergebnis = 0;
+         for (let i = 0; i < arguments.length; i++)
+            ergebnis += arguments[i];
+         return ergebnis;
+      }
+   </script>
+</head>
+
+<body>
+   <p>
+      <script>
+         const x = 12;
+         document.write("Summe: " + summe(3 * x, 3.5) + "<br>");
+         document.write("Summe: " + summe(-9, 3, x, 5.5) + "<br>");
+         document.write("Summe: " + summe());
+      </script>
+   </p>
+</body>
+
+</html>

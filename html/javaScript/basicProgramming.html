@@ -160,6 +160,156 @@ Constant can not be overwritten with other variable or objects.">
                 </tr>
             </tbody>
         </table>
+        <!-- Destructuring assignment ///////////////////////////////////////////////////////////////////////////////// -->
+        <h3>Destructuring assignment</h3>
+        <p class="expText">The destructuring assignment syntax is a JavaScript expression that makes it possible to
+            unpack values from arrays, or properties from objects, into distinct variables.</p>
+        <h4>... variable</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">variable declared before</th>
+                    <td class="tabEx"></td>
+                    <th colspan="3">declared in same line</th>
+                    <td class="tabEx"></td>
+                    <th colspan="3">variables assigned</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tabCode" colspan="3">let a, b;</td>
+                    <td class="tabEx" rowspan="4">is the same</td>
+                    <td class="tabCode" rowspan="2">let [a,b]</td>
+                    <td class="tabCode" rowspan="2">=</td>
+                    <td class="tabCode" rowspan="2">[10,20];</td>
+                    <td class="tabEx" rowspan="4">is the same</td>
+                    <td class="tabCode" rowspan="2">let [x,y]</td>
+                    <td class="tabCode" rowspan="2">=</td>
+                    <td class="tabCode" rowspan="2">[a,b];</td>
+                </tr>
+                <tr class="tabCode">
+                    <td>[a, b]</td>
+                    <td>=</td>
+                    <td>[10, 20];</td>
+                </tr>
+                <tr class="tabCode">
+                    <td colspan="3">console.log(a); // 10<br>console.log(b); // 20</td>
+                    <td colspan="3">console.log(a); // 10<br>console.log(b); // 20</td>
+                    <td colspan="3">console.log(a); // 10<br>console.log(b); // 20</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- destructuring assignment on array //////////////////////////////////////////////////////////////////// -->
+        <h4>... array</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>array to variable</th>
+                    <td class="tabEx"></td>
+                    <th>values to variable / array</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tabCode">const foo = ['one', 'two', 'three'];</td>
+                    <td class="tabEx"></td>
+                    <td class="tabCode">let a, b, rest;</td>
+                </tr>
+                <tr>
+                    <td class="tabCode">const [red, yellow, green] = foo;</td>
+                    <td class="tabEx"></td>
+                    <td class="tabCode">[a, b, ...rest] = [10, 20, 30, 40, 50];</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;" class="tabCode">console.log(red); // "one"<br>console.log(yellow); //
+                        "two"<br>console.log(green);
+                        // "three"</td>
+                    <td class="tabEx"></td>
+                    <td style="text-align: left;" class="tabCode">console.log(a); // 10<br>
+                        console.log(b); // 20<br>
+                        console.log(rest); // [30, 40, 50]</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- ... to object ////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h4>... object</h4>
+        <ul>
+            <li>the assignment needs to be contained in parentheses</li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>object to variable / object</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tabCode">({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;" class="tabCode">
+                        console.log(a); // 10<br>
+                        console.log(b); // 20<br>
+                        console.log(rest); // {c: 30, d: 40}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- ... uneven assignment and default value ///////////////////////////////////////////////////////// -->
+        <h4>... uneven assignment and default value</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>assign more and gab</th>
+                    <td class="tabEx"></td>
+                    <th>assign less</th>
+                    <td class="tabEx"></td>
+                    <th>default values</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tabCode">let [a, ,b] = [10, 20, 30, 40];</td>
+                    <td class="tabEx"></td>
+                    <td class="tabCode">let [a, b, c] = [10, 20];</td>
+                    <td class="tabEx"></td>
+                    <td class="tabCode">let [a=5, b=7] = [1];</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;" class="tabCode">console.log(a); //10<br> //20
+                        unassigned<br>console.log(b); //30<br> //40 not
+                        assigned</td>
+                    <td class="tabEx"></td>
+                    <td style="text-align: left;" class="tabCode">console.log(a); //10<br>console.log(b);
+                        //20<br>console.log(c); //undefined</td>
+                    <td class="tabEx"></td>
+                    <td style="text-align: left;" class="tabCode">console.log(a); // 1<br>console.log(b); // 7</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>... function</h4>
+        <table>
+            <thead>
+                <th>function return</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tabCode" style="text-align: left;">
+                        function f() {<br>
+                        return [1, 2, 3];<br>
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tabCode" style="text-align: left;">const [a, , b] = f();</td>
+                </tr>
+                <tr>
+                    <td class="tabCode">console.log(a); // 1<br>
+                        //2 is not assigned<br>
+                        console.log(b); // 3</td>
+                </tr>
+            </tbody>
+        </table>
         <hr>
         <!-- data types -->
         <h2>data types</h2>
@@ -1023,7 +1173,8 @@ console.log(+'hello'); // expected output: NaN </pre>
                 </tr>
             </tbody>
         </table>
-        <br>
+        <!-- logical operators and short circuit ///////////////////////////////////////////////////////////////////////// -->
+        <h4>logical operators and short circuit</h4>
         <table>
             <thead>
                 <tr>

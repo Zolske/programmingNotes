@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <title>functions</title>
+</head>
+
+<body>
+    <main>
+        <h1>functions (modularization)</h1>
+        <p class="expText">A program can be modularized into smaller modules with the help of functions.<br>
+            <ul>
+                <li>easier to develop and maintain</li>
+                <li>functions are reusable and easy to modify</li>
+            </ul>
+        </p>
+        <h3>function syntax</h3>
+        <!-- declaring a function ////////////////////////////////////////////////////////////////////////////////// -->
+        <h4>declaring a function</h4>
+        <ul>
+            <li>Usually declared in the &lt;head>, before it is called.</li>
+            <li>Could be declared in an external js file and than be linked.</li>
+            <li>No <code>;</code> semicolon after the "function body".</li>
+        </ul>
+        <table>
+            <thead>
+                <tr class="tabEx">
+                    <td></td>
+                    <td>same naming convention<br>as for variables <mark title="can not start with a number
+can not contain special characters (ß, ä) , empty space, hyphen
+can not be a key- or reserved- word
+can contain small / capital letters, numbers, underscore
+the name should convey the purpose and be notated in camelCase">*</mark></td>
+                    <td>parentheses needed even<br>if there are no parameters</td>
+                </tr>
+                <tr>
+                    <th>keyword</th>
+                    <th>function name</th>
+                    <th>parameter</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="tabCode">
+                <tr>
+                    <td>function</td>
+                    <td style="text-align: right;">NAME</td>
+                    <td style="text-align: left;">(PARAMETER1, PARAMETER2)</td>
+                    <td>{</td>
+                </tr>
+                <tr>
+                    <td colspan="4">STATEMENT (PARAMETER1 + PARAMETER2) ;</td>
+                    <td class="borderToBo">function<br>body</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>calling a function</h4>
+        <ul>
+            <li>Should be called after it has been declared.</li>
+
+        </ul>
+        <table>
+            <thead>
+                <th>function name</th>
+                <th>argument</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr class="tabCode">
+                    <td style="text-align: right;">NAME</td>
+                    <td>(ARGUMENT1, ARGUMENT2)</td>
+                    <td>;</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- changing the copy of an variable in the "body" //////////////////////////////////////////////////////////-->
+        <h4>changing the copy of an variable in the "body"</h4>
+        <ul>
+            <li>Inside of the "function body" ... <ol>
+                    <li>
+                        Global variables can be changed.
+                    </li>
+                    <li><b>Primitive data types</b> are "called by value" when they are <b>copied</b> to another
+                        variable,
+                        the original <b>variable is unchanged</b> if the copy changes.</li>
+                    <li><b>Composite data types</b> are "called by reference" when they are copied to another variable,
+                        (only) changes to the <b>element / property are also updated on the original!</b><br>If the name
+                        of the
+                        copy was overwritten the original would not change (only if elements / properties are changed).
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+let name = 'Anna', number = 66, boolean = true;  // primitive data type string, number, boolean
+
+let array = ['element1', 'element2'];            // composite data type array
+let object = {person: 'Mike', age: 42};          // composite data type object
+
+function test (a, b, c, d, f){              // declare function, parameters copied, get new values 
+  a = 'NEW_Anna';
+  b = 'NEW_66';
+  c = 'NEW_true';
+  d[0] = 'WHAT'                              // individual element is changed! outside as well!
+  d = ['NEW_element1', 'NEW_element2'];      // copy is overwritten again but no elements, not changed outside 
+  f = 'NEW_STRING_TYPE'                      // object is changed to a string, but not outside
+  console.log(a +'\n '+ b +'\n ' + c +'\n ' + d +'\n ' + f);  // output
+  name = 'NEW_Anna';                         // global variable directly changed, outside as well
+}
+
+console.log(name);                               // output before function call
+console.log(number);
+console.log(boolean);
+console.log(array);     
+console.log(object); 
+</pre><img src="/images/functions/parameterChanged3.JPG" alt="">
+            <pre class="exCode">
+test(name, number, boolean, array, object);      // function is called with arguments</pre><img
+                src="/images/functions/parameterChanged1.JPG" alt="">
+            <pre class="exCode">
+console.log(name);       // variable has been directly changed without copy
+console.log(number);
+console.log(boolean);
+console.log(array);     // first element in the array changed
+console.log(object);    // object did not change, no individual
+                        //properties have been change but the entire variable.
+</pre><img src="/images/functions/parameterChanged2.JPG" alt="">
+        </details>
+        <!-- function return //////////////////////////////////////////////////////////////////////////////////////////     -->
+        <h4>function return</h4>
+        <p style="font-family: monospace;"><code>return</code> STATEMENT ;</p>
+        <ul>
+            <li>When the parser reads <code>return</code> ...<ol>
+                    <li>any statements after return is not executed</li>
+                    <li>the function <b>evaluate to the return value</b> at the point in the code in which it was called
+                    </li>
+                </ol>
+            </li>
+            <li><code>"undefined"</code> is returned if the "function body" dose not has a return statement.</li>
+        </ul>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+  &lt;script>
+      function sum(a, b)
+      {
+         const result = a + b;
+         return result;
+      }
+   &lt;/script>
+&lt;/head>
+&lt;body>
+   &lt;p>&lt;script>
+      const x = 3, y = 5;
+      const z = sum(x, y);
+      document.write("Sum: " + z + "&lt;br>");     //output 8
+      document.write("Sum: " + sum(14, 20/4));  //output 19
+   &lt;/script>&lt;/p></pre>
+        </details>
+        <!-- Parameters //////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>Parameter</h3>
+        <ul>
+            <li>functions are declared with parameters and called with arguments</li>
+            <li>parameter1 is replaced with the value of argument1, the order can not be changed<br><code>function
+                    x(Para1, Para2){...};</code> when called, the argument for Para1, has to be passed first</li>
+            <li>calculations are performed before the value is passed to the function<br><code>function x(a*4)</code> if
+                a
+                is 4 than 12 is passed to the "function body"</li>
+            <li>argument > parameter = remaining arguments are ignored</li>
+            <li>parameter > arguments = missing string is replaced with <code>"undefined"</code>, missing number
+                returns <code>NaN</code></li>
+            <li>parameter are local variables, only accessible within the function</li>
+            <li>variables can not have the same name as the parameter in there function</li>
+        </ul>
+        <!-- arguments "object" /////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h4>arguments "object"</h4>
+        <ul>
+            <li>is a local variable accessible inside a function (except arrow functions)</li>
+            <li>it lacks all array properties except length</li>
+        </ul>
+        <ul>
+            <li><code>arguments.length</code> evaluates to the amount of parameters given to the function<br>no
+                parameter = 0, 1 parameter = 1, ...
+            </li>
+            <li><code>arguments[0]</code> the index of the arguments is the position of the parameter<br> first
+                parameter = index[0], second parameter = index[1], ...</li>
+        </ul>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+function sum()
+{
+   let result = 0;
+   for(let i=0; i &lt; arguments.length; i++) //if the function has 2 arguments, the loop runs 2x
+      result += arguments[i];              //counts the value of each argument together in result  
+   return result;
+}     
+        </pre>
+        </details>
+        <!-- default parameter ////////////////////////////////////////////////////////////////////////// -->
+        <h4>default parameter</h4>
+        <ul>
+            <li>default values are only used if there are not enough arguments</li>
+            <li><code>function x(a, b = 2, c = 'text'){...};</code>
+                <ul>
+                    <li>if the function is called with only one argument, b becomes 2, c becomes 'text'</li>
+                    <li>if function is called with three arguments, than the default values are not used</li>
+                </ul>
+            </li>
+        </ul>
+        </li>
+        </ul>
+        <!-- scoop ////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h4>variable scoop</h4>
+        <ol>
+            <li>(global) variables declared outside a block { } can be used and changed everywhere in the code</li>
+            <li>(local) variables declared within a block { } are only accessible within the block</li>
+            <li>a local variable can have the same name as a global variable, local variables take always precedence<br>
+                over global variables within there block</li>
+            <li>*BestPractise* <ol>
+                    <li>define variables close to where they are needed</li>
+                    <li>avoid having "different" variables with the same name</li>
+                    <li>avoid using global variables in functions, it is better to pass them to another variable,<br>to
+                        minimize the risk of overwriting the global variable accidentally</li>
+                </ol>
+            </li>
+        </ol>
+        <table>
+            <thead>
+                <tr>
+                    <th>global variable</th>
+                    <td colspan="2" class="tabEx"></td>
+                    <th>global variable</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tabCode">let variableX = 11;</td>
+                    <td colspan="2" class="tabEx"></td>
+                    <td class="tabCode">let variableX = 11;</td>
+                </tr>
+                <tr>
+                    <td class="tabEx"></td>
+                    <td class="tabEx"></td>
+                </tr>
+                <tr>
+                    <th>function</th>
+                    <td colspan="2" class="tabEx"></td>
+                    <th>function</th>
+                </tr>
+                <tr>
+                    <td class="tabCode" style="text-align: left;">function functionX () {<br><br>return variableX;<br>}
+                    </td>
+                    <td class="borderToBo"><b>no</b> local variable<br>declared with same<br>name (variableX)</td>
+                    <td class="tabEx">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </td>
+                    <td class="tabCode" style="text-align: left;">function functionX () {<br>let variableX =
+                        66<br>return
+                        variableX;<br>}</td>
+                    <td class="borderToBo">local variable <b>is</b><br>declared with same<br>name (variableX)</td>
+                </tr>
+                <tr>
+                    <td class="tabEx"></td>
+                </tr>
+                <tr>
+                    <td>console.log(functionX);<br>//output 11</td>
+                    <td colspan="2" class="tabEx"></td>
+                    <td>console.log(functionX);<br>//output 66<br>console.log(variableX);<br>//output 11</td>
+                    <td class="borderToBo">the global variable is<br>not overwritten by the function,<br>because it was
+                        using the local<br>variable with the same name</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

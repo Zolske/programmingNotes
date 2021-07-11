@@ -136,6 +136,11 @@ details {
     font-style: italic;
 }
 
+.tabCode {
+    background-color: var(--codeBackColor);
+    font-family: monospace;
+}
+
 .tabCode * {
     background-color: var(--codeBackColor);
     font-family: monospace;
@@ -157,6 +162,14 @@ mark {
 
 .borderBottom {
     border: 0px;
+    border-bottom: dashed 1px var(--fontColor);
+    background-color: var(--backColorPage);
+    font-style: italic;
+}
+
+.borderToBo {
+    border: 0px;
+    border-top: dashed 1px var(--fontColor);
     border-bottom: dashed 1px var(--fontColor);
     background-color: var(--backColorPage);
     font-style: italic;
