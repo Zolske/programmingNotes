@@ -279,7 +279,174 @@ function sum()
                 </tr>
             </tbody>
         </table>
+        <!-- recursive functions /////////////////////////////////////////////////////////////// -->
+        <h3>recursive functions</h3>
+        <p class="expText">A recursive function is a function that calls itself until it doesn’t (recursion).</p>
+        <ul>
+            <li>It must have a "stopping" condition to end the recursion, otherwise it will become a infinite loop.</li>
+            <li>After the parser has parsed a function, it jumps back to the point in the code where the function was
+                called.</li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>recursive function syntax</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tabCode" style="text-align: left;">function halve(number) {<br>
+                        &nbsp;halve /= 2;</td>
+                </tr>
+                <tr>
+                    <td class="tabCode" style="text-align: left;"> &nbsp;&nbsp;if(<mark title="stopping condition, without it the the
+function would keep calling itself (infinite loop)">number
+                            > 1</mark>) {<br>
+                        &nbsp;&nbsp;&nbsp;halve(number); }</td>
+                    <td class="borderToBo">as long the "number"<br>is bigger than 1,<br>the if statement
+                        keeps<br>calling the function</td>
+                </tr>
+                <tr>
+                    <td class="tabCode" style="text-align: left;">}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+function halve(value, i) {
+    document.write("&lt;mark>" + i + "&lt;/mark>" + ". time function calls itself, the value is: " + value + "&lt;br>"); 
+    value /= 2;
+    i++;
+    if (value > 0.1)
+       halve(value, i);
+    document.write("Function is jumping back to where it called itself, position : " + "&lt;mark>" + (i - 1) +
+       "&lt;/mark>" + ")&lt;br>");
+ }
+
+const value = 3.5, i = 1;
+halve(value, i);
+document.write("End of program.");
+</pre>
+            <figure></figure>
+            <figcaption>*html output*</figcaption>
+            <img src="/images/functions/recusion.JPG" alt="">
+            </figure>
+            <a href="/html/javaScript/zExampleCodeJavaScript/zExampleCodeFunktion_rekursiv.htm" target="_blank">page
+                example</a>
+        </details>
+        <!-- named function ///////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>named function (function statement)</h3>
+        <a href="https://www.youtube.com/watch?v=SHINoHxvTso" target="_blank">good explanation</a>
+
+        <!-- anonymous functions //////////////////////////////////////////////////////////////////////// -->
+        <h3>anonymous functions</h3>
+        <ul>
+            <li>Anonymous functions are functions without names. There are two types :
+                <ol>
+                    <li>
+                        <p>
+                            <b>anonymous function</b> <code>function(PARAMETER) {STATEMENTS;}</code>
+                        </p>
+                    </li>
+                    <li>
+                        <p><b>arrow function</b> <code>(PARAMETER) => {STATEMENTS;}</code></p>
+                    </li>
+                </ol>
+            </li>
+            <li>They <b>can not stand by them self</b> (syntax error), they need to be : <ol>
+                    <li>
+                        <p>assigned to a variable (function expression)<br><code>let VARIABLE = function(PARAMETER)
+                                {STATEMENTS PARAMETER;}</code>
+                            <code><br>let VARIABLE = (PARAMETER) => {STATEMENTS PARAMETER;}</code></p>
+                    </li>
+                    <li>
+                        <p>or called immediately (parentheses for para. and argu. need to be set even if
+                            empty)<br><code><mark
+                                    title="anonymous function needs to be set in parentheses">(</mark>function(PARAMETER)
+                                {STATEMENTS PARAMETER;}
+                                (ARGUMENT)<mark
+                                    title="( ) need to be set inside even if no argument">)</mark>;</code><br>
+                            <code><mark title="anonymous function needs to be set in parentheses">(</mark>(PARAMETER) =>
+                                {STATEMENTS PARAMETER;}<mark
+                                    title="( ) need to be set outside even if no argument">)</mark> (ARGUMENT);</code>
+                        </p>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <!-- function expression //////////////////////////////////////////////////////// -->
+        <h3>function expression</h3>
+        <ul>
+            <li>Is basically a anonymous function assigned to an variable.</li>
+            <li>Can not be hoisted ("function statements" can be hoisted).</li>
+        </ul>
+        <ol>
+            <p><code>let NAME1 = function(PARA) {STATEMENTS PARA;}
+                </code><br><code>let NAME2 = function(PARA) {STATEMENTS PARA;}</code></p>
+            <li>Can be passed as argument of another function:<br><code>name1(name2);</code><br></li>
+            <li>Its evaluated value can be assigned to a variable:<br><code>const NAME3 = NAME2('text');</code>
+                //NAME3 has the value of 'text'</li>
+            <li>Its function can be copied to another variable:<br><code>const NAME3 = NAME2;</code> //NAME3 has the
+                function of NAME2 // NAME3 === NAME2</li>
+        </ol>
+
+
+        <!-- named function expression ////////////////////////////////////////////// -->
+        <h3>named function expression</h3>
+        <p><code>let VARIABLE = function NAME(PARAMETER) { STATEMENT PARAMETER;}</code></p>
+        <ul>
+            <li>Is called with the name of the variable <code>VARIABLE(ARGUMENT);</code></li>
+            <li>The name of the function changes to local scoop and can not be called on. <code>NAME(ARGUMENT);
+                    <mark>ERROR</mark></code></li>
+        </ul>
+        <!-- callback functions /////////////////////////////////////////////////////////////////// -->
+        <h3>callback functions</h3>
+        <p class="expText">Is a function which has been passed as an argument to another function. It is the callbacks
+            functionality which is used not its value.</p>
+        <ul>
+            <li>can be a anonymous or named function</li>
+        </ul>
+        <table>
+            <tr>
+                <th>callback function is declared</th>
+            </tr>
+            <tr>
+                <td class="tabCode">function CALLBACK(PARA_1) {return PARA_1 * PARA_1; }</td>
+            </tr>
+            <tr>
+                <th>function</th>
+            </tr>
+            <tr>
+                <td style="text-align: left;" class="tabCode">function USE_FUNCTION(PARA_3, PARA_NUM) {<br>return
+                    console.log(PARA_3(PARA_NUM));<br>}</td>
+                <td class="tabEx"></td>
+                <td class="tabEx">the parameter <code>PARA_3</code> can take a callback function as argument<br>the
+                    parameter
+                    <code>PARA_NUM</code> can take the argument of the callback function</td>
+            </tr>
+        </table>
+        <br>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+function square(x)                      //callback function declared
+{
+   return x * x;
+}
+            
+function output(von, bis, step, fkt)    //function which is using the callback function
+{
+   for(let p = von; p &lt; bis + step / 2.0; p += step) //callback function can be used
+        document.write(p + " " + fkt(p) + "&lt;br>");   //as function internal
+        document.write("&lt;br>");
+}
+
+    output(5.0, 15.0, 2.5, square);                     //function is called with callback function "square"</pre>
+        </details>
     </main>
+
 </body>
 
 </html>

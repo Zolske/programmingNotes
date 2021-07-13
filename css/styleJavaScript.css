@@ -174,3 +174,8 @@ mark {
     background-color: var(--backColorPage);
     font-style: italic;
 }
+
+dt {
+    font-style: italic;
+    font-size: 1.4rem;
+}

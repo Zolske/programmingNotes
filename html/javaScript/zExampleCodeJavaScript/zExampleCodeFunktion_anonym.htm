@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Anonyme Funktion</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function gruss() {
+         document.write("Hallo Welt Z<br>");
+      }
+
+      function summe(a, b) {
+         const s = a + b;
+         return s;
+      }
+
+      function oskar(begruessung) {
+         begruessung();
+      }
+   </script>
+</head>
+
+<body>
+   <p>
+      <script>
+         gruss();
+         oskar(gruss);
+
+         const ergebnis = summe(35, 7);
+         document.write(ergebnis + "<br>");
+
+         const addieren = summe;
+         document.write(addieren(45, 17) + "<br>");
+
+         document.write((function () {
+            return "Guten Tag<br>";
+         })());
+         document.write((function (a, b) {
+            return a * b;
+         })(12, 6));
+      </script>
+   </p>
+</body>
+
+</html>

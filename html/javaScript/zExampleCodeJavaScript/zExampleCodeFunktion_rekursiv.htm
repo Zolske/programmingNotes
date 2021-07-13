@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Rekursive Funktion</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      function halve(value, i) {
+         document.write("<mark>" + i + "</mark>" + ". time function calls itself, the value is: " + value + "<br>");
+         value /= 2;
+         i++;
+         if (value > 0.1)
+            halve(value, i);
+         document.write("Function is jumping back to where it called itself, position : " + "<mark>" + (i - 1) +
+            "</mark>" + ")<br>");
+      }
+   </script>
+</head>
+
+<body>
+   <p>
+      <script>
+         const value = 3.5,
+            i = 1;
+         halve(value, i);
+         document.write("End of program");
+      </script>
+   </p>
+</body>
+
+</html>

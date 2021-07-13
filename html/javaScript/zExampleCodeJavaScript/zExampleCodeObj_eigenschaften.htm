@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+   <meta charset="utf-8">
+   <title>Eigenschaften</title>
+   <link rel="stylesheet" href="js4.css">
+   <script>
+      class vehicle {
+         constructor(c, s) {
+            this.color = c;
+            this.speed = s;
+         }
+      }
+   </script>
+</head>
+
+<body>
+   <p>
+      <script>
+         const dacia = new vehicle("Red", 50);
+         document.write("Color: " + dacia.color +
+            ", Speed: " + dacia.speed + "<br>");
+
+         dacia.speed = 75;
+         document.write("Color: " + dacia.color +
+            ", Speed: " + dacia.speed + "<br>");
+
+         let renault = new vehicle("Yellow", 65);
+         renault = new vehicle("Blue", 85);
+         document.write("Color: " + renault.color +
+            ", Speed: " + renault.speed);
+      </script>
+   </p>
+</body>
+
+</html>

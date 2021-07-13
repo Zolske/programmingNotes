@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <title>object</title>
+</head>
+<main>
+
+    <body>
+        <h3>objects</h3>
+        <dl>
+            <dt>class</dt>
+            <dd>
+                <ul>
+                    <li>different objects with the same class are <b>related</b>, they are <b>members</b></li>
+                    <li>they all have the <b>same properties</b> but can have different property-values</li>
+                    <li>a class can be defined and its <b>constructor method</b> works as blueprint for the construction
+                        of new objects</li>
+                </ul>
+            </dd>
+            <dd>defining a class :<br>
+                <table>
+                    <tr>
+                        <th>class keyword</th>
+                        <th>name of the class</th>
+                        <td rowspan="2" class="borderToBo">object will be<br>"member" of this class</td>
+                    </tr>
+                    <tr class="tabCode">
+                        <td>class</td>
+                        <td>NAME_CLASS</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;" colspan="3" class="tabCode">{</td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <th>constructor keyword</th>
+                        <th>parameter</th>
+                        <td class="borderToBo" rowspan="2" colspan="4">the parameter will define
+                            the<br>property-value of the object
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td class="tabCode">constructor</td>
+                        <td class="tabCode">(<mark
+                                title="the parameter need to be passed in the same order when constructed">PARA_1</mark>,
+                            PARA_2)</td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td style="text-align: left;" colspan="7" class="tabCode">{</td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td rowspan="3" class="borderToBo">"this" refers to<br>the object which will<br>be constructed
+                        </td>
+                        <th>this keyword</th>
+                        <th>property accessors</th>
+                        <th>property-key</th>
+                        <th></th>
+                        <th>value</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td class="tabCode">this</td>
+                        <td class="tabCode"><b>.</b></td>
+                        <td class="tabCode">PROP_NAME_1</td>
+                        <td class="tabCode">=</td>
+                        <td class="tabCode"><mark
+                                title="needs to match the name of the constructor parameter">PARA_1</mark></td>
+                        <td class="tabCode">;</td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td class="tabCode">this</td>
+                        <td class="tabCode"><b>.</b></td>
+                        <td class="tabCode">PROP_NAME_2</td>
+                        <td class="tabCode">=</td>
+                        <td class="tabCode">PARA_2</td>
+                        <td class="tabCode">;</td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td style="text-align: left;" colspan="7" class="tabCode">}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;" colspan="3" class="tabCode">}</td>
+                    </tr>
+                </table>
+            </dd>
+            <dd><br>constructing a class object :
+                <table>
+                    <tr>
+                        <th>variable<br>keyword</th>
+                        <th>name of the<br>object</th>
+                        <th></th>
+                        <th>keyword</th>
+                        <th>name of the class</th>
+                        <th>arguments</th>
+                    </tr>
+                    <tr class="tabCode">
+                        <td><mark title="the properties of the object can change, but not its name">const</mark></td>
+                        <td>OBJECT_NAME</td>
+                        <td>=</td>
+                        <td>new</td>
+                        <td>NAME_CLASS</td>
+                        <td>(ARGU_1, ARGU_2)</td>
+                        <td>;</td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td class="tabEx">is the name<br>the object gets</td>
+                        <td colspan="2" class="tabEx"></td>
+                        <td class="tabEx">has to match the name of<br>the class to which the object<br>will be
+                            "member" of</td>
+                        <td class="tabEx">the order correspond to the<br>parameter, property-value<br>of the object
+                        </td>
+                    </tr>
+                </table>
+            </dd>
+            <dd><br>overwriting property-values of an class object :
+                <table>
+                    <tr>
+                        <th>variable<br>keyword</th>
+                        <th>name of the<br>object</th>
+                        <th></th>
+                        <th>keyword</th>
+                        <th>name of the class</th>
+                        <th>arguments</th>
+                    </tr>
+                    <tr class="tabCode">
+                        <td><mark title="name and properties can change">let</mark></td>
+                        <td>OBJECT_NAME_1</td>
+                        <td>=</td>
+                        <td>new</td>
+                        <td>NAME_CLASS</td>
+                        <td>(ARGU_1, ARGU_2)</td>
+                        <td>;</td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td class="tabCode">OBJECT_NAME_1</td>
+                        <td class="tabCode">=</td>
+                        <td class="tabCode">new</td>
+                        <td class="tabCode">NAME_CLASS</td>
+                        <td class="tabCode">(ARGU_3, ARGU_4)</td>
+                        <td class="tabCode">;</td>
+                    </tr>
+                    <tr>
+                        <td class="tabEx"></td>
+                        <td class="tabEx" colspan="6">ARGU_3 overwrites ARGU_1, ARGU_4 overwrites ARGU_2</td>
+                    </tr>
+
+                </table>
+            </dd>
+        </dl>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+class vehicle                           //defining the class
+{
+   constructor(c, s)                    //defining the constructor method
+   {                                    //is the "blueprint" for the objects
+      this.color = c;                   //and its properties
+      this.speed = s;
+   }
+
+const dacia = new vehicle("Red", 50);   //dacia = {color:red, speed:50}
+document.write("Color: " + dacia.color
+  + ", Speed: " + dacia.speed + "&lt;br>");
+
+dacia.speed = 75;                       //changes the speed property of dacia
+document.write("Color: " + dacia.color
+   + ", Speed: " + dacia.speed + "&lt;br>");
+
+let renault = new vehicle("Yellow", 65);  //renault = {color:yellow, speed:65}
+
+renault = new vehicle("Blue", 85);        //renault = {color:blue, speed:85}
+document.write("Color: " + renault.color  //overwrites the property-values of renault
+   + ", Speed: " + renault.speed);
+        </pre>
+            <caption>
+                <figcaption>*output*</figcaption><img src="/images/objects/constructor.JPG" alt="">
+            </caption>
+        </details>
+        <a href="/html/javaScript/zExampleCodeJavaScript/zExampleCodeObj_eigenschaften.htm" target="_blank">example
+            page</a>
+        <h3>method</h3>
+        <p class="expText">Methods are functions which can only be called on object, which are "member" of the same
+            class in which the object was defined. Methods usually change the properties of the objects.</p>
+    </body>
+</main>
+
+</html>
