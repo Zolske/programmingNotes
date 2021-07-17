@@ -8,158 +8,156 @@
     <link rel="stylesheet" href="/css/styleJavaScript.css">
     <title>object</title>
 </head>
-<main>
 
-    <body>
-        <h3>objects</h3>
-        <dl>
-            <dt>class</dt>
-            <dd>
-                <ul>
-                    <li>different objects with the same class are <b>related</b>, they are <b>members</b></li>
-                    <li>they all have the <b>same properties</b> but can have different property-values</li>
-                    <li>a class can be defined and its <b>constructor method</b> works as blueprint for the construction
-                        of new objects</li>
-                </ul>
-            </dd>
-            <dd>defining a class :<br>
-                <table>
-                    <tr>
-                        <th>class keyword</th>
-                        <th>name of the class</th>
-                        <td rowspan="2" class="borderToBo">object will be<br>"member" of this class</td>
-                    </tr>
-                    <tr class="tabCode">
-                        <td>class</td>
-                        <td>NAME_CLASS</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;" colspan="3" class="tabCode">{</td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <th>constructor keyword</th>
-                        <th>parameter</th>
-                        <td class="borderToBo" rowspan="2" colspan="4">the parameter will define
-                            the<br>property-value of the object
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td class="tabCode">constructor</td>
-                        <td class="tabCode">(<mark
-                                title="the parameter need to be passed in the same order when constructed">PARA_1</mark>,
-                            PARA_2)</td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td style="text-align: left;" colspan="7" class="tabCode">{</td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td rowspan="3" class="borderToBo">"this" refers to<br>the object which will<br>be constructed
-                        </td>
-                        <th>this keyword</th>
-                        <th>property accessors</th>
-                        <th>property-key</th>
-                        <th></th>
-                        <th>value</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td class="tabCode">this</td>
-                        <td class="tabCode"><b>.</b></td>
-                        <td class="tabCode">PROP_NAME_1</td>
-                        <td class="tabCode">=</td>
-                        <td class="tabCode"><mark
-                                title="needs to match the name of the constructor parameter">PARA_1</mark></td>
-                        <td class="tabCode">;</td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td class="tabCode">this</td>
-                        <td class="tabCode"><b>.</b></td>
-                        <td class="tabCode">PROP_NAME_2</td>
-                        <td class="tabCode">=</td>
-                        <td class="tabCode">PARA_2</td>
-                        <td class="tabCode">;</td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td style="text-align: left;" colspan="7" class="tabCode">}</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;" colspan="3" class="tabCode">}</td>
-                    </tr>
-                </table>
-            </dd>
-            <dd><br>constructing a class object :
-                <table>
-                    <tr>
-                        <th>variable<br>keyword</th>
-                        <th>name of the<br>object</th>
-                        <th></th>
-                        <th>keyword</th>
-                        <th>name of the class</th>
-                        <th>arguments</th>
-                    </tr>
-                    <tr class="tabCode">
-                        <td><mark title="the properties of the object can change, but not its name">const</mark></td>
-                        <td>OBJECT_NAME</td>
-                        <td>=</td>
-                        <td>new</td>
-                        <td>NAME_CLASS</td>
-                        <td>(ARGU_1, ARGU_2)</td>
-                        <td>;</td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td class="tabEx">is the name<br>the object gets</td>
-                        <td colspan="2" class="tabEx"></td>
-                        <td class="tabEx">has to match the name of<br>the class to which the object<br>will be
-                            "member" of</td>
-                        <td class="tabEx">the order correspond to the<br>parameter, property-value<br>of the object
-                        </td>
-                    </tr>
-                </table>
-            </dd>
-            <dd><br>overwriting property-values of an class object :
-                <table>
-                    <tr>
-                        <th>variable<br>keyword</th>
-                        <th>name of the<br>object</th>
-                        <th></th>
-                        <th>keyword</th>
-                        <th>name of the class</th>
-                        <th>arguments</th>
-                    </tr>
-                    <tr class="tabCode">
-                        <td><mark title="name and properties can change">let</mark></td>
-                        <td>OBJECT_NAME_1</td>
-                        <td>=</td>
-                        <td>new</td>
-                        <td>NAME_CLASS</td>
-                        <td>(ARGU_1, ARGU_2)</td>
-                        <td>;</td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td class="tabCode">OBJECT_NAME_1</td>
-                        <td class="tabCode">=</td>
-                        <td class="tabCode">new</td>
-                        <td class="tabCode">NAME_CLASS</td>
-                        <td class="tabCode">(ARGU_3, ARGU_4)</td>
-                        <td class="tabCode">;</td>
-                    </tr>
-                    <tr>
-                        <td class="tabEx"></td>
-                        <td class="tabEx" colspan="6">ARGU_3 overwrites ARGU_1, ARGU_4 overwrites ARGU_2</td>
-                    </tr>
-
-                </table>
-            </dd>
-        </dl>
+<body>
+    <main>
+        <h1>objects</h1>
+        <h2>class</h2>
+        <p class="expText">Different objects with the same class are <b>related</b>, they are <b>members</b>. They all
+            have the <b>same properties</b> but can have different property-values. The methods which are defined in the
+            class, are accessible by all its <b>members</b>.</p>
+        <h3>creating a class with the constructor method</h3>
+        <p class="expText">A class can be defined and its <b>constructor method</b> works as blueprint for the
+            construction of new objects belonging to the same class. Those objects are referred as "instance" of the
+            class.</p>
+        <h4>defining a class and its constructor method :</h4>
+        <ul>
+            <li>classes are usually defined in the &lt;head> of the html document or in an linked js file</li>
+        </ul>
+        <table>
+            <tr>
+                <th>class keyword</th>
+                <th>name of the class</th>
+                <td rowspan="2" class="borderToBo">object will be<br>"member" of this class</td>
+            </tr>
+            <tr class="tabCode">
+                <td>class</td>
+                <td>NAME_CLASS</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;" colspan="3" class="tabCode">{</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <th>constructor keyword</th>
+                <th>parameter</th>
+                <td class="borderToBo" rowspan="2" colspan="4">the parameter will define
+                    the<br>property-value of the object
+                </td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td class="tabCode">constructor</td>
+                <td class="tabCode">(<mark
+                        title="the parameter need to be passed in the same order when constructed">PARA_1</mark>,
+                    PARA_2)</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td style="text-align: left;" colspan="7" class="tabCode">{</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td rowspan="3" class="borderToBo">"this" refers to<br>the object which will<br>be constructed
+                </td>
+                <th>this keyword</th>
+                <th>property accessors</th>
+                <th>property-key</th>
+                <th></th>
+                <th>value</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td class="tabCode">this</td>
+                <td class="tabCode"><b>.</b></td>
+                <td class="tabCode">PROP_NAME_1</td>
+                <td class="tabCode">=</td>
+                <td class="tabCode"><mark title="needs to match the name of the constructor parameter">PARA_1</mark>
+                </td>
+                <td class="tabCode">;</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td class="tabCode">this</td>
+                <td class="tabCode"><b>.</b></td>
+                <td class="tabCode">PROP_NAME_2</td>
+                <td class="tabCode">=</td>
+                <td class="tabCode">PARA_2</td>
+                <td class="tabCode">;</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td style="text-align: left;" colspan="7" class="tabCode">}</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;" colspan="3" class="tabCode">}</td>
+            </tr>
+        </table>
+        <!-- constructing a class object : -->
+        <h4>constructing a class object :</h4>
+        <table>
+            <tr>
+                <th>variable<br>keyword</th>
+                <th>name of the<br>object</th>
+                <th></th>
+                <th>keyword</th>
+                <th>name of the class</th>
+                <th>arguments</th>
+            </tr>
+            <tr class="tabCode">
+                <td><mark title="the properties of the object can change, but not its name">const</mark></td>
+                <td>OBJECT_NAME</td>
+                <td>=</td>
+                <td>new</td>
+                <td>NAME_CLASS</td>
+                <td>(ARGU_1, ARGU_2)</td>
+                <td>;</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td class="tabEx">is the name<br>the object gets</td>
+                <td colspan="2" class="tabEx"></td>
+                <td class="tabEx">has to match the name of<br>the class to which the object<br>will be
+                    "member" of</td>
+                <td class="tabEx">the order correspond to the<br>parameter, property-value<br>of the object
+                </td>
+            </tr>
+        </table>
+        <!-- overwriting property-values of an class object : -->
+        <h4>overwriting property-values of an class object :</h4>
+        <table>
+            <tr>
+                <th>variable<br>keyword</th>
+                <th>name of the<br>object</th>
+                <th></th>
+                <th>keyword</th>
+                <th>name of the class</th>
+                <th>arguments</th>
+            </tr>
+            <tr class="tabCode">
+                <td><mark title="name and properties can change">let</mark></td>
+                <td>OBJECT_NAME_1</td>
+                <td>=</td>
+                <td>new</td>
+                <td>NAME_CLASS</td>
+                <td>(ARGU_1, ARGU_2)</td>
+                <td>;</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td class="tabCode">OBJECT_NAME_1</td>
+                <td class="tabCode">=</td>
+                <td class="tabCode">new</td>
+                <td class="tabCode">NAME_CLASS</td>
+                <td class="tabCode">(ARGU_3, ARGU_4)</td>
+                <td class="tabCode">;</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td class="tabEx" colspan="6">ARGU_3 overwrites ARGU_1, ARGU_4 overwrites ARGU_2</td>
+            </tr>
+        </table>
         <details>
             <summary></summary>
             <pre class="exCode">
@@ -192,9 +190,391 @@ document.write("Color: " + renault.color  //overwrites the property-values of re
         <a href="/html/javaScript/zExampleCodeJavaScript/zExampleCodeObj_eigenschaften.htm" target="_blank">example
             page</a>
         <h3>method</h3>
-        <p class="expText">Methods are functions which can only be called on object, which are "member" of the same
-            class in which the object was defined. Methods usually change the properties of the objects.</p>
-    </body>
-</main>
+        <p class="expText">Methods are functions which can be only called on objects of whom they are a property. They
+            usually change the properties of an object. Methods which are defined in an class are accessible to all its
+            "members" (objects).</p>
+        <h4>defining an method in its class :</h4>
+        <table>
+            <tr>
+                <th>name of the method</th>
+                <th>parameter</th>
+            </tr>
+            <tr class="tabCode">
+                <td style="text-align:right">METHOD_NAME</td>
+                <td style="text-align:left">(PARA1, PARA2)</td>
+            </tr>
+            <tr class="tabCode">
+                <td style="text-align: left;" colspan="2">{</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td class="tabCode">this.POPERTY-KEY = VALUE;<br>STATEMENTS(PARA1, PARA2);</td>
+                <td class="borderToBo"><code>this.</code> refers to the object on<br> which the method is
+                    called</td>
+            </tr>
+            <tr>
+                <td class="tabCode" style="text-align: left;" colspan="2">}</td>
+            </tr>
+        </table>
+        <h4>calling a method :</h4>
+        <table>
+            <tr>
+                <th>name of the object</th>
+                <th>property accessors</th>
+                <th>name of the method</th>
+                <th>argument(s)</th>
+            </tr>
+            <tr class="tabCode">
+                <td>OBJECT_NAME</td>
+                <td><b>.</b></td>
+                <td>METHOD_NAME</td>
+                <td>(ARGU1, ARGU2)</td>
+                <td>;</td>
+            </tr>
+        </table>
+        <h3>objects within objects</h3>
+        <p class="expText">The property of an object can be a object.</p>
+        <h4>constructing an object of an object</h4>
+        <table>
+
+            <tr>
+                <th rowspan="2">variable keyword</th>
+                <th rowspan="2">object name</th>
+                <th rowspan="2"></th>
+                <th rowspan="2">keyword</th>
+                <th rowspan="2">name of the class</th>
+                <th colspan="5">arguments</th>
+
+            </tr>
+            <th></th>
+            <th>argument(s)</th>
+            <th>name of the class</th>
+            <th>argument(s)</th>
+            <th></th>
+            <tr>
+
+            </tr>
+            <tr class="tabCode">
+                <td>const</td>
+                <td>OBJECT_NAME</td>
+                <td>=</td>
+                <td>new</td>
+                <td>NAME_CLASS_1</td>
+                <td>(</td>
+                <td>ARG_1,</td>
+                <td>NAME_CLASS_2</td>
+                <td>(ARG_3, ARG_4)</td>
+                <td>)</td>
+                <td>;</td>
+            </tr>
+        </table>
+        <details>
+            <summary style="text-align: left;">defining two classes</summary>
+            <pre class="exCode">
+class NAME_CLASS_1
+{
+    constructor(PARA_1, PARA_2)
+    {
+        this.PROPERTY_KEY_1 = PROPERTY_VALUE_1;
+        this.PROPERTY_KEY_2 = PROPERTY_VALUE_2;
+    }
+}
+
+class NAME_CLASS_2
+{
+    constructor(PARA_3, PARA_4)
+    {
+        this.PROPERTY_KEY_3 = PROPERTY_VALUE_3;
+        this.PROPERTY_KEY_4 = PROPERTY_VALUE_4;
+    }
+}</pre>
+        </details>
+        <details>
+            <summary style="text-align: left;">constructing an object as an property of another object</summary>
+            <pre class="exCode">
+const OBJECT_NAME =	new	NAME_CLASS_1(ARG_1,	NAME_CLASS_2(ARG_3, ARG_4));</pre>
+        </details>
+        <details>
+            <summary style="text-align: left;">created object </summary>
+            <pre class="exCode">
+OBJECT_NAME {
+                PROPERTY_KEY_1: PROPERTY_VALUE_1,
+                PROPERTY_KEY_2: {
+                                        PROPERTY_KEY_3: PROPERTY_VALUE_3,
+                                        PROPERTY_KEY_4: PROPERTY_VALUE_4
+                                }
+            }</pre>
+        </details>
+        <h4>accessing an object of an object</h4>
+        <table>
+            <tr>
+                <th>name of the object</th>
+                <th>property accessors</th>
+                <th>name of the objects object</th>
+                <th>property accessors</th>
+                <th>name of the objects object-property</th>
+            </tr>
+            <tr class="tabCode">
+                <td>OBJECT_NAME</td>
+                <td><b>.</b></td>
+                <td>PROPERTY_KEY_2</td>
+                <td><b>.</b></td>
+                <td>PROPERTY_KEY_3</td>
+            </tr>
+        </table>
+        <details>
+            <summary style="text-align: left;">changing the value of an objects object-property</summary>
+            <pre class="exCode">
+OBJECT_NAME.PROPERTY_KEY_2.PROPERTY_KEY_3 = 'new value';</pre>
+        </details>
+        <details>
+            <summary style="text-align: left;">changed object</summary>
+            <pre class="exCode">
+OBJECT_NAME {
+    PROPERTY_KEY_1: PROPERTY_VALUE_1,
+    PROPERTY_KEY_2: {
+                            PROPERTY_KEY_3: 'new value',
+                            PROPERTY_KEY_4: PROPERTY_VALUE_4
+                    }
+}</pre>
+        </details>
+        <!-- Inheritance //////////////////////////////////////////////////////// -->
+        <h3>Inheritance</h3>
+        <p class="expText">A new class can be created based of the properties of another class.</p>
+        <table>
+            <tr>
+                <th>keyword</th>
+                <th>name of class</th>
+                <th>keyword</th>
+                <th>name of class on which<br>properties are based on</th>
+            </tr>
+            <tr class="tabCode">
+                <td>class</td>
+                <td><mark title="name of the new class">NAME_CLASS_NEW</mark></td>
+                <td>extends</td>
+                <td><mark title="name of the class on which the properties are based on">NAME_CLASS_ORIGINAL</mark></td>
+            </tr>
+            <tr class="tabCode">
+                <td style="text-align: left;" colspan="4">{</td>
+            </tr>
+            <tr>
+                <td class="tabEx"></td>
+                <td class="tabCode" style="text-align: right;">constructor(PARA_1, PARA_2, PARA_3)<br>{</td>
+                <td class="borderToBo">defining construction method for<br>the new class with 3 parameter</td>
+            </tr>
+            <tr>
+                <td class="tabEx" colspan="2"></td>
+                <td style="text-align: left;" class="tabCode">super(<mark title="the 1. and 2. parameter are the 1. and 2.
+    parameter of the original class">PARA_1, PARA_2</mark>);<br>this.NEW_PROPERTY = PARA_3;
+                </td>
+                <td class="borderToBo">super refers to original class<br>this. refers to object of the new class</td>
+            </tr>
+            <tr>
+                <td class="tabEx" rowspan="4"></td>
+                <td class="tabCode" style="text-align: right;">}</td>
+            </tr>
+            <tr>
+                <td class="tabCode" style="text-align: left;">METHOD_NEW()<br>{</td>
+
+            </tr>
+            <tr>
+                <td class="tabCode">super.METHOD_ORIGINAL()</td>
+                <td class="borderToBo">super refers to the method<br>from the original class</td>
+            </tr>
+            <tr>
+                <td class="tabCode" style="text-align: left;">}</td>
+            </tr>
+            <tr>
+                <td class="tabCode" style="text-align: left;" colspan="4">}</td>
+            </tr>
+        </table>
+        <h3>accessing the property of an object</h3>
+        <dl>
+            <dt>dot notation</dt>
+            <dd><code>object.propertyKey</code> evaluates to the property-value of the object</dd>
+            <dd><b>object</b> object name of the property</dd>
+            <dd><b>propertyKey</b> name of the property-key, needs to follow the naming convention for variable
+                names<br>
+            </dd>
+            <dd><code>object.property()</code> accesses the method of the object (arguments can be passed inside ( ) )
+            </dd>
+            <dt>bracket notation</dt>
+            <dd><code>object['propertyKey']</code> evaluates to the property-value of the object</dd>
+            <dd><b>object</b> object name of the property</dd>
+            <dd><b>propertyKey</b> is just a string (or Symbol) of the property-key, dose not need to follow the
+                naming convention for variable names. The string can be created trough expressions or variables.</dd>
+            <dd><code>object['propertyKey']()</code> accesses the method of the object (arguments can be passed inside
+                ( ) )
+            </dd>
+        </dl>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+let objectName = {
+    property1 : 'hello',
+    3 : 'why not'
+  }
+  
+let a = 'property1';
+  
+  // dot notation
+console.log(objectName.property1);              //output 'hello'
+  //console.log(objectName.3); syntax error
+  
+  // bracket notation
+console.log(objectName['property1']);           //output 'hello'
+console.log(objectName['3']);                   //output 'why not'
+console.log(objectName['pro'+'perty1']);        //output 'hello'
+console.log(objectName[3]);                     //output 'why not'
+console.log(objectName[1+2]);                   //output 'why not'
+console.log(objectName[a]);                     //output 'hello'</pre>
+        </details>
+        <!-- creating a reference to an object and comparing ////////////////////////////////////////////////////////// -->
+        <h3>creating a reference to an object and comparing</h3>
+        <p class="expText">When an object is crated, it is assigned to a (original) variable which references the
+            object. Assigning the (original) variable to another variable dose not create a new object, it just
+            <b>references the same object</b>. Because it is the same object which is referenced, it dose not matter
+            over which variable the object is changed.</p>
+        <p>Can be used as condition in an if statements, <code>( variable_1 OPERATOR variable_2 )</code></p>
+        <dl>
+            <dt><code>==</code></dt>
+            <dd><code>true</code> both variable reference the <b>same</b> object<br><code>false</code> do <b>not</b>
+                reference the
+                same object</dd>
+            <dt><code>!=</code></dt>
+            <dd><code>true</code> both variable do <b>not</b> reference the same object<br><code>false</code>
+                reference the <b>same</b> object
+            </dd>
+        </dl>
+        <!-- checking the instance of an object ///////////////////////////////////////////////////////////////// -->
+        <h3>checking the instance of an object</h3>
+        <p class="expText">Objects of an class are referred as the instance of there class.</p>
+        <p>Can be used as condition in an if statements, evaluate to <code>true</code> if it is an instance and to
+            <code>false</code> if not.</p>
+        <table>
+            <tr>
+                <th>variable name</th>
+                <th>keyword</th>
+                <th>class</th>
+            </tr>
+            <tr class="tabCode ">
+                <td>VARIABLE_NAME_OBJECT</td>
+                <td>instanceof</td>
+                <td>CLASS_NAME</td>
+            </tr>
+        </table>
+        <h3>typeof ...</h3>
+        <p class="expText">The expression <code>typeof VARIABLE_NAME</code> evaluates to the data type of the variable.
+        </p>
+        <table>
+            <tr>
+                <th>type</th>
+                <th>result</th>
+            </tr>
+            <tr class="tabCode ">
+                <td>class</td>
+                <td>"function"</td>
+            </tr>
+            <tr class="tabCode ">
+                <td>method</td>
+                <td>"function"</td>
+            </tr>
+            <tr class="tabCode ">
+                <td>object</td>
+                <td>"object"</td>
+            </tr>
+        </table>
+        <!-- member check ////////////////////////////////////////////////// -->
+        <h3>member check</h3>
+        <p class="expText">Checks if the left operand is a member of the right operand.</p>
+        <p><code>'VARIABLE_NAME' <b>in</b> OBJECT_NAME</code> if it is a member than the expression evaluates to
+            <code>true</code> otherwise <code>false</code></p>
+        <!-- passing objects as arguments to an function ///////////////////// -->
+        <h3>passing objects as arguments to an function</h3>
+        <p class="expText">A variable which references an object, can be passed as an argument to an function. All its
+            properties and method can be changed or accsessed within the function.</p>
+        <!-- deleting properties //////////////////////////////////////////////// -->
+        <h3>deleting properties</h3>
+        <p class="expText">Properties of an object can be deleted, the properties of the other objects which are member
+            of the same class are not effected. But the objects are not "similar" to each other any more.</p>
+        <table>
+            <tr>
+                <th>keyword</th>
+                <th>reference to property key</th>
+            </tr>
+            <tr>
+                <td class="tabCode ">delete</td>
+                <td class="tabCode ">OBJECT.PROPERTY_KEY</td>
+                <td class="tabCode ">;</td>
+                <td class="borderToBo" rowspan="2">property-key and property-value<br> are deleted from the object</td>
+            </tr>
+            <tr>
+                <td class="tabCode ">delete</td>
+                <td class="tabCode ">OBJECT['PROPERTY_KEY']</td>
+                <td class="tabCode ">;</td>
+            </tr>
+        </table>
+        <!-- prototypes and constructor functions ////////////////////////////////////// -->
+        <h3>prototypes and constructor functions</h3>
+        <p class="expText">There is a older form of writing prototypes and constructor functions. Modern browsers are
+            still able to read them.</p>
+        <h3>JSON</h3>
+        <p class="expText"><b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>otation is a compact form of writing objects
+            (with there key-value pairs) and arrays in string form together. It makes it easier to exchange data.</p>
+        <table>
+            <tr>
+                <th>json</th>
+                <th class="borderLeRi"></th>
+                <th>keyword</th>
+                <th>object</th>
+                <td class="borderLeRi" colspan="2"></td>
+                <th>object</th>
+                <th class="borderLeRi"></th>
+                <th>keyword</th>
+                <th>json</th>
+            </tr>
+            <tr class="tabCode">
+                <td>VARIABLE</td>
+                <td>=</td>
+                <td>JSON.stringify</td>
+                <td>(VARIABLE)</td>
+                <td>;</td>
+                <td class="borderLeRi"></td>
+                <td>VARIABLE</td>
+                <td>=</td>
+                <td>JSON.parse</td>
+                <td>(VARIABLE)</td>
+                <td>;</td>
+            </tr>
+            <tr>
+                <td class="borderLeRi">variable in which the string is saved</td>
+                <td class="borderLeRi" colspan="2"></td>
+                <td class="borderLeRi">variable references the object from which a copy will be transformed into a
+                    string</td>
+                <td class="borderLeRi" colspan="2"></td>
+                <td class="borderLeRi">variable will reference the object, which will be crated from the json
+                    string</td>
+                <td class="borderLeRi" colspan="2"></td>
+                <td class="borderLeRi">variable which holds the json string</td>
+            </tr>
+        </table>
+        <details>
+            <summary></summary>
+            <pre class="exCode">
+    let testObject = {
+        key1 : 'value1',
+        key2 : 'value2'
+      };
+      
+      console.log(testObject);                      //{ key1: 'value1', key2: 'value2' }
+      
+      let testJson = JSON.stringify(testObject);
+      
+      console.log(testJson);                        //'{"key1":"value1","key2":"value2"}'
+      
+      console.log(JSON.parse(testJson))             //{ key1: 'value1', key2: 'value2' }</pre>
+        </details>
+    </main>
+</body>
 
 </html>

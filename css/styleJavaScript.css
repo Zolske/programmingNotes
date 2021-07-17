@@ -106,8 +106,8 @@ summary {
     text-align: center;
 }
 
-summary::after {
-    content: "for example:";
+summary::before {
+    content: "for example: ";
     letter-spacing: 0.2rem;
     font-style: italic;
 }
@@ -175,7 +175,19 @@ mark {
     font-style: italic;
 }
 
+.borderLeRi {
+    border: 0px;
+    border-left: dashed 1px var(--fontColor);
+    border-right: dashed 1px var(--fontColor);
+    background-color: var(--backColorPage);
+    font-style: italic;
+}
+
 dt {
     font-style: italic;
     font-size: 1.4rem;
+}
+
+dd {
+    max-width: 95ch;
 }
