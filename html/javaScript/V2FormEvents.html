@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <title>form elements and events</title>
+</head>
+
+<body>
+    <main>
+        <h1>form elements and events</h1>
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // html form elements ////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <hr>
+        <h2>html form elements</h2>
+        <!-- HTML form element //////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>HTML: form element</h3>
+        <p class="expText">Wraps around the elements of an form, its attributes determine how and where the form is send
+            to.</p>
+        <p><code>&lt;form <span class="attri">ATTRIBUTE</span class="attri">></code> &lt;FORM_ELEMENTS>
+            <code>&lt;/form></code></p>
+        <ul><span class="attri">ATTRIBUTE</span class="attri">
+            <li><code>method=" "</code><br>is how the data is transmitted, <code>post</code> is more secure.</li>
+            <li><code>action=" "</code><br>where the the data is send to <i>(backend e.g. .php)</i>.</li>
+        </ul>
+        <!-- HTML attributes for "input" & "select" //////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>HTML: attributes for "input", "textarea" & "select"</h3>
+        <ul><span class="attri">ATTRIBUTE</span class="attri">
+            <li><code>id="</code>IDENTIFIER<code>"</code><br>CSS & JS can "target" the form-element by its unique id
+            </li>
+            <li><code>name="</code>NAME<code>"</code><br>the value of the input/selection is referenced by the backend
+                under the given "NAME" after submitting.</li>
+            <li><code>required="required"</code><br>the form can not be submitted if there is no input/selection
+                (<i>error message</i>).<img src="/images/form/required.JPG" alt=""></li>
+            <li><code>disabled</code><br>user can not change the value of the <code>&lt;input></code>,
+                <code>&lt;textarea></code> and <code>&lt;select></code>
+                element, can be changed with JS.<br>
+                <i>not disabled</i> <input type="button" value="button">, <input type="text" value="you can write"> /
+                <i>disabled</i> <input disabled type="button" value="button">, <input disabled type="text"
+                    value="you can NOT write"></li>
+            <li><code>readonly="readonly"</code><br>user can not change the value of the <code>&lt;input></code> and
+                <code>&lt;textarea></code> element, can be changed with JS.<br>
+                <i>not readonly</i> <input type="text" value="you can write"> /
+                <i>readonly</i> <input readonly="readonly" type="text" value="you can NOT write"></li>
+        </ul>
+        <!-- html: "label for" element /////////////////////////////////////////////////////////////////////////////// -->
+        <h3>html: "label for" element</h3>
+        <ul>
+            <li><code>&lt;label
+                    for="</code>VALUE<code>"></code>DESCRIBING_FORM_ELEMENT<code>&lt;/label></code>
+                <ul>
+                    <li>connects
+                        a description (<i>in browser visible</i>) to the
+                        "form_element", so the user knows what the input is for.</li>
+                    <li>The value of "for" has to match the "id" of
+                        the "form_element" for which the label is for.</li>
+                </ul>
+            </li>
+        </ul>
+        <p><i>example of labeling a "form_element" :</i></p>
+        <div class="flex">
+            <div style="text-align: center;">
+                <label for="radioButton"><i><mark
+                            title='&lt;label for="radioButton">&lt;i>top&lt;/i>&lt;/label>'>top</mark></i><br><label
+                        for="radioButton"><i><mark
+                                title='&lt;br>&lt;label for="radioButton">&lt;i>left&lt;/i>&lt;/label>'>left</mark></i></label>&nbsp;&nbsp;&nbsp;<mark
+                        title='&lt;input type="radio" id="radioButton">'><input type="radio"
+                            name="radioButton"></mark>&nbsp;&nbsp;&nbsp;<label for="radioButton"><i><mark
+                                title='&lt;label for="radioButton">&lt;i>right&lt;/i>&lt;/label>'>right</mark></i></label><br><label
+                        for="radioButton"><i><mark
+                                title='&lt;br>&lt;label for="radioButton">&lt;i>bottom&lt;/i>&lt;/label>'>bottom</mark></i></label>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                <pre class="exCode">
+&lt;label for="radioButton">&lt;i>top&lt;/i>&lt;/label>
+&lt;br>&lt;label for="radioButton">&lt;i>left&lt;/i>&lt;/label>
+&lt;input type="radio" id="radioButton">
+&lt;label for="radioButton">&lt;i>right&lt;/i>&lt;/label>
+&lt;br>&lt;label for="radioButton">&lt;i>bottom&lt;/i>&lt;/label></pre>
+            </div>
+        </div>
+        <!-- html: input element types ///////////////////////////////////////////////////////////////////////// -->
+        <h3>html: &lt;input> element</h3>
+        <ul>
+            <li><code>&lt;input type="</code><span class="attri">VALUE</span><code>"></code></li>
+            <li>the users input can be accessed by JS through <code>.value</code></li>
+        </ul>
+        <table>
+            <!-- simple input text field /////////////////////////////// -->
+            <tr>
+                <th><span class="attri">VALUE</span></th>
+                <th>example</th>
+                <th>explanation</th>
+                <th>example code</th>
+            </tr>
+            <tr>
+                <td style="text-decoration: line-through;"><code>type="</code><span
+                        class="attri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><code>"</code>
+                </td>
+                <td><input value="default value"></td>
+                <td>
+                    <ul>
+                        <li>simple text input field</li>
+                        <li><span class="attri">value="default value"</span> initial text, user can change</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input <mark title="can be omitted, default text">value="default value"</mark>></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- search /////////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">search</span></td>
+                <td><input type="search"></td>
+                <td>
+                    <ul>
+                        <li>an "X" to reset the search field appears after entry</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="search"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- search with list  /////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td style="text-align: left;"><span class="attri">search</span> <code>list="idList&gt;</code>
+                    <code><br>&lt;datalist id="idList></code>
+                    <code><br>&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="VALUE_1"></code>
+                    <code><br>&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="VALUE_2"></code>
+                    <code><br>&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="VALUE_3"></code>
+                    <code><br>&lt;/datalist></code></td>
+                <td>
+                    <input type="search" list="cityList"><datalist id="cityList">
+                        <option value="London">
+                        <option value="Debrecen">
+                        <option value="Dresden">
+                    </datalist>
+                </td>
+                <td>
+                    <ul>
+                        <li>an "X" to reset the search field appears after entry</li>
+                        <li>contains a list, which adjusts to the user input (<i>typing "D" + another character, only
+                                items on the list with d remain</i>)</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="search" list="cityList">
+  &lt;datalist id="cityList">
+    &lt;option value="London">
+    &lt;option value="Debrecen">
+    &lt;option value="Dresden">
+  &lt;/datalist></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- email ////////////////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">email</span></td>
+                <td><input type="email" value="example@mail.com">
+                    <input type="email" value="ex@.com,ex_2@.com" multiple="multiple"></td>
+                <td>
+                    <ul>
+                        <li>can be submitted empty or with the correct email pattern</li>
+                        <li><code>multiple="multiple"</code> more than one address separated with comma</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="email" value="example@mail.com">
+</pre><br>
+                        <pre class="exCode">
+&lt;input type="email" value="ex@.com,ex_2@.com" multiple="multiple"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- password input field //////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">password</span></td>
+                <td><input type="password" value="default value"></td>
+                <td>
+                    <ul>
+                        <li>hide character for password</li>
+                        <li><span class="attri">value="default value"</span> initial text, user can change</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type"password" <mark title="can be omitted, default text">value="default value"</mark>></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- URL ////////////////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">url</span></td>
+                <td><input type="url" value="http://www.example.com"></td>
+                <td>
+                    <ul>
+                        <li>can be submitted empty but must match url pattern if filled in otherwise the form can not be
+                            submitted</li>
+                        <li>only one url can be entered</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="url" value="http://www.example.com"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- telephone number //////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">tel</span></td>
+                <td><input type="tel"></td>
+                <td>
+                    <ul>
+                        <li>could be connected to the address book of the user</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="tel"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- radio button //////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">radio</span></td>
+                <td><input name="radio1" type="radio"> <input checked="checked" name="radio1" type="radio">
+                </td>
+                <td>
+                    <ul>
+                        <li>needs to be grouped together under the <b>same "name"</b></li>
+                        <li>only one button can be selected / value submitted</li>
+                        <li>"id" can be different for each button of a group</li>
+                        <li><span class="attri">checked="checked"</span> pre selected (true), user can change</li>
+                        <!-- <li>checked box evaluates in JS to "true"</li> -->
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input name="radio1" type="radio" value="VALUE_A">
+&lt;input name="radio1" type="radio" value="VALUE_B" <mark title="is initially selected, user can change">checked="checked"</mark>></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- check box /////////////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">checkbox</span></td>
+                <td><input type="checkbox"> <input type="checkbox" checked="checked"></td>
+                <td>
+                    <ul>
+                        <li>each box needs to have a <b>different "name"</b></li>
+                        <li><span class="attri">checked="checked"</span> pre selected (true), user can change</li>
+                        <!-- <li>checked box evaluates in JS to "true"</li> -->
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+                    &lt;input type="checkbox" name="checkBox1">
+                    &lt;input type="checkbox" name="checkBox2" <mark title="is initially selected, user can change">checked="checked"</mark>></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- generic button //////////////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">button</span></td>
+                <td><input type="button" value="click me"></td>
+                <td>
+                    <ul>
+                        <li>the value of the "value-attribute" determines the message on the button</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="button" value="click me"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- submit button ///////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">submit</span></td>
+                <td><input type="submit"></td>
+                <td>
+                    <ul>
+                        <li>submits the form to the in "action" specified backend</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="submit"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- reset button ////////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">reset</span></td>
+                <td><input type="reset"></td>
+                <td>
+                    <ul>
+                        <li>resets the form to its original status</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="reset"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- color selection //////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">color</span></td>
+                <td><input type="color" value="#E29D29"></td>
+                <td>
+                    <ul>
+                        <li>user can choose a colour</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+    &lt;input type="color" value="#E29D29"></pre>
+                    </details>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <!-- text input field attributes /////////////////////////////////////////////////////////////////// -->
+        <table>
+            <!-- size //////////////////////////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <th colspan="4">input fields of the types: <code>text</code> <code>search</code> <code>tel</code>
+                    <code>url</code>
+                    <code>email</code>
+                    <code>password</code> can have the attribute :</th>
+            </tr>
+            <tr>
+                <th><span class="attri">ATTRIBUTE</span></th>
+                <th>example</th>
+                <th>explanation</th>
+                <th>example code</th>
+            </tr>
+            <tr>
+                <td><span class="attri">size=" "</span></td>
+                <td><input type="text" size="1"> <input type="text" size="4"></td>
+                <td>its value determines the horizontal size</td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="text" size="1"> &lt;input type="text" size="4"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- placeholder /////////////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">placeholder="&nbsp;"</span></td>
+                <td><input type="text" placeholder="Placeholder Text"></td>
+                <td>
+                    <ul>
+                        <li>explains the expected input</li>
+                        <li>disappears when user starts entry</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="text" placeholder="Placeholder Text"></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- autofocus /////////////////////////////////////////////////////////////////////////////////////  -->
+            <tr>
+                <td><span class="attri">autofocus</span></td>
+                <td><input type="text" autofocus></td>
+                <td>
+                    <ul>
+                        <li>the cursor starts automatically in this field</li>
+                        <li>containing text is marked</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;input type="text" autofocus></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- pattern ////////////////////////////////////////////////////////////////////// -->
+            <td><span class="attri">pattern=" "</span></td>
+            <td><input type="text" pattern="[A-Z]{1,2}"></td>
+            <td colspan="2">The pattern attribute specifies a <b>regular expression</b> the form control's value should
+                match.
+            </td>
+        </table>
+
+        <!-- html: textarea element /////////////////////////////////////////////////////////////////////////// -->
+        <h3>html: &lt;textarea> &lt;/textarea> element</h3>
+        <ul>
+            <li><code>&lt;textarea <span class="attri">ATTRIBUTE</span>></code>PLACEHOLDER
+                TEXT<code>&lt;/textarea></code></li>
+            <li>the users input can be accessed by JS through <code>.value</code></li>
+        </ul>
+        <table>
+            <tr>
+                <th><span class="attri">ATTRIBUTE</span></th>
+                <th>example</th>
+                <th>explanation</th>
+                <th>example code</th>
+            </tr>
+            <tr>
+                <td><span class="attri">cols=" "</span><br><span class="attri">rows=" "</span><br><span
+                        class="attri">value="
+                        "</span></td>
+                <td><textarea cols="15" rows="2">PLACEHOLDER TEXT</textarea></td>
+                <td>
+                    <ul>
+                        <li><span class="attri">cols=" "</span> horizontal size of textarea in characters</li>
+                        <li><span class="attri">rows=" "</span> vertical size of textarea in characters</li>
+                        <li><span class="attri">value=" "</span> preset text, user can change</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;textarea cols="15" rows="2">PLACEHOLDER TEXT&lt;/textarea></pre>
+                    </details>
+                </td>
+            </tr>
+        </table>
+        <!-- select ///////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>html: &lt;select> &lt;/select> element</h3>
+        <ul>
+            <li>
+                <pre class="exCode" style="display:inline-block;">
+&lt;select <span class="attri">ATTRIBUTE</span> &lt;option <span class="attri">ATTRIBUTE</span> <mark title="every option needs to have a unique value, which is send with the name to the backend">value="VALUE_1"</mark>> <mark title="is the name displayed for the option">OPTION_1</mark> &lt;/option>
+                            &lt;option value="VALUE_2"> OPTION_2 &lt;/option>
+                            &lt;option value="VALUE_3"> OPTION_3 &lt;/option> &lt;/select></pre>
+            </li>
+            <li>every <code>&lt;option></code> needs to have a unique <b>value</b> (<i>is send together with <b>name="
+                        "</b> to the backend</i>)</li>
+            <li>on <b>multi select</b>, the value of the name attribute needs to have <code>[]</code> at the end</li>
+            <!-- <li>the users selection can be accessed by JS through <code>.option</code></li> -->
+        </ul>
+        <table>
+            <!-- single selection //////////////////////////////////////////////////////////////////// -->
+            <tr>
+                <th><code>&lt;select&nbsp;</code><span class="attri">ATTRIBUTE</span><code>></code></th>
+                <th>example</th>
+                <th>explanation</th>
+                <th>example code</th>
+            </tr>
+            <tr>
+                <td style="text-decoration: line-through;"><span class="attri">ATTRIBUTE</span></td>
+                <td><select>
+                        <option> OPTION_1 </option>
+                        <option> OPTION_2 </option>
+                        <option> OPTION_3 </option>
+                    </select></td>
+                <td>
+                    <ul>
+                        <li>only one option can be selected</li>
+                        <!-- <li>every <code>&lt;option></code> has the property "selected", which evaluates to true in JS if
+                            selected
+                        </li> -->
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;select>
+    &lt;option> OPTION_1 &lt;/option>
+    &lt;option> OPTION_2 &lt;/option>
+    &lt;option> OPTION_3 &lt;/option>
+&lt;/select></pre>
+                    </details>
+                </td>
+            </tr>
+            <!-- multiple selection ///////////////////////////////////////////// -->
+            <tr>
+                <td><span class="attri">multiple="multiple"</span><br><span class="attri">name="NAME[ ]"</span></td>
+                <td><select name="NAME[]" multiple="multiple">
+                        <option> OPTION_1 </option>
+                        <option> OPTION_2 </option>
+                        <option> OPTION_3 </option>
+                    </select></td>
+                <td>
+                    <ul>
+                        <li>multiple option can be selected (<i>Ctrl + left-mouse</i>)</li>
+                        <li><span class="attri">name="NAME[ ]"</span> <code>[]</code> need to be added to the value of
+                            name so it can store multiple values</li>
+                        <li>every <code>&lt;option></code> has the property "selected", which evaluates to true in JS if
+                            selected
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;select name="NAME[]" multiple="multiple">
+    &lt;option> OPTION_1 &lt;/option>
+    &lt;option> OPTION_2 &lt;/option>
+    &lt;option> OPTION_3 &lt;/option>
+&lt;/select></pre>
+                    </details>
+                </td>
+            </tr>
+        </table>
+        <!-- pre selected ///////////////////////////////////////////////////////// -->
+        <table>
+            <tr>
+                <th><code>&lt;option&nbsp;</code><span class="attri">ATTRIBUTE</span><code>></code></th>
+                <th>example</th>
+                <th>explanation</th>
+                <th>example code</th>
+            </tr>
+            <tr>
+                <td><span class="attri">selected="selected"</span></td>
+                <td><select name="NAME[]" multiple="multiple">
+                        <option selected="selected"> OPTION_1 </option>
+                        <option> OPTION_2 </option>
+                        <option selected="selected"> OPTION_3 </option>
+                    </select></td>
+                <td>
+                    <ul>
+                        <li>pre select, user can change</li>
+                        <li>can be used on <b>single-</b> and <b>multiple-</b> select</li>
+                    </ul>
+                </td>
+                <td>
+                    <details>
+                        <summary></summary>
+                        <pre class="exCode">
+&lt;select name="NAME[]" multiple="multiple">
+    &lt;option selected="selected"> OPTION_1 &lt;/option>
+    &lt;option> OPTION_2 &lt;/option>
+    &lt;option selected="selected"> OPTION_3 &lt;/option>
+&lt;/select></pre>
+                    </details>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // sending a form ////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <hr>
+        <h2>sending a form to the "backend"</h2>
+        <!-- sending a form /////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>sending a form</h3>
+        <div class="flex">
+            <figure>
+                <figcaption><i>html output</i></figcaption>
+                <img src="/images/form/form.JPG" alt="">
+            </figure>
+
+            <figure>
+                <figcaption><i>html code</i></figcaption>
+                <br>
+                <pre class="exCode">
+&lt;form <mark title="is how the date is transmitted, post is more secure">method="post"</mark> <mark title="is where the data is send to, send to an php file
+which in this example will return a new page">action="z_form_send.php"</mark>>
+    &lt;p>&lt;input <mark title="the data from this field can be accessed from the php under 'entry'">name="entry"</mark>>&lt;br>Please, enter a message.&lt;/p> 
+    &lt;p>&lt;input type="submit"> &lt;input type="reset">&lt;/p>
+&lt;/form></pre>
+            </figure>
+        </div>
+        <dl>
+            <dt>&lt;form> attributes</dt>
+            <dd><code>method="post"</code> is how the date is transmitted, post is more secure</dd>
+            <dd><code>action=" "</code> is where the data is send to</dd>
+            <dt>&lt;input> attribute</dt>
+            <dd><code>name=" "</code> the data entered into the input field is send under the name given to the
+                attribute</dd>
+        </dl>
+        <details>
+            <summary> link to a local hosted sample page which returns user input in a new page</summary>
+            <p>This link leads to a local hosted page, which will send a form and receive an answer with the information
+                entered by the user. The returning page is created with php.</p>
+            <p>(may not work when the site is online)</p>
+            <a href="http://localhost/JavaScriptTest/z_form_send.html" target="_blank">link to local hosted page</a>
+            <ol>
+                <li>The local "apache" server needs to be switched on (<a
+                        href="https://www.apachefriends.org/index.html" target="_blank">XAMPP</a>).
+                    <img src="/images/form/xampp.JPG" alt="">
+                </li>
+                <li>Both files, the <a href="/html/javaScript/zExampleCodeJavaScript/z_form_send.html" download>html</a>
+                    and the <a href="/html/javaScript/zExampleCodeJavaScript/z_form_send.php" download>php</a> need to
+                    be saved under: C:\xampp\<b>htdocs</b>\JavaScriptTest</li>
+                <li>The html file must run from the browser: http://localhost/JavaScriptTest/z_form_send.html .</li>
+            </ol>
+            <figure>
+                <figcaption><i>php return page after user entered: <mark>Hello Zolt&aacute;n</mark></i></figcaption>
+                <br><img src="/images/form/phpReturnPage.JPG" alt="">
+            </figure>
+        </details>
+        <!-- receiving a form ///////////////////////////////////////////////////////////////////////// -->
+        <h3>receiving a form</h3>
+        <ul>
+            <li>Is a html file saved with the extension .php instead of .html .</li>
+            <li>php code is written between <code>&lt;?php</code> and <code>?>&lt;/p></code></li>
+            <li><code>echo</code>...<code>;</code> displays output to the user.</li>
+            <li>html elements can be used between <code>" "</code></li>
+            <li><code>&nbsp;. </code>&nbsp;Is used to concatenate a string together.</li>
+            <li><code>$_POST["NAME_ATTRIBUTE"]</code> evaluates to the data send from the form, which was entered into
+                the &lt;input> field with the attribute name="NAME_ATTRIBUTE"</li>
+            <li>the function <code>htmlentities()</code> helps to protect from user entering malicious code</li>
+        </ul>
+        <pre class="exCode">
+&lt;?php
+   echo "The user has submitted: " . "&lt;mark>" . htmlentities($_POST["entry"]) . "&lt;/mark>" . "&lt;br>" . "Thank you :)";
+?>&lt;/p></pre>
+
+        <details>
+            <summary> complete php page</summary>
+            <pre class="exCode">
+    &lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>answer from server&lt;/title>
+&lt;/head>
+&lt;body>
+&lt;?php
+   echo "The user has submitted: " . "&lt;mark>" . htmlentities($_POST["entry"]) . "&lt;/mark>" . "&lt;br>" . "Thank you :)";
+?>&lt;/p> 
+&lt;/body>
+&lt;/html>
+</pre>
+        </details>
+        <br>
+        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Events /////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <hr>
+        <h2>Events</h2>
+        <h3>events</h3>
+        <table>
+            <tr>
+                <th>event</th>
+                <th>description</th>
+            </tr>
+            <tr>
+                <td><code>change</code></td>
+                <td>change the contained of an input- or textarea- field or selecting another option</td>
+            </tr>
+            <tr>
+                <td><code>keyup</code></td>
+                <td>after pressing a key on the keyboard in an input- or textarea- field</td>
+            </tr>
+            <tr>
+                <td><code>focus</code></td>
+                <td>curser is in the element</td>
+            </tr>
+            <tr>
+                <td><code>blur</code></td>
+                <td>curser has left the element</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th colspan="2">mouse events</th>
+            </tr>
+            <tr>
+                <th>event</th>
+                <th>description</th>
+            </tr>
+            <tr>
+                <td><code>click</code></td>
+                <td>mouse click on an element</td>
+            </tr>
+            <tr>
+                <td><code>mousemove</code></td>
+                <td>move mouse over an element</td>
+            </tr>
+            <tr>
+                <td><code>mousedown</code></td>
+                <td>pressing down a mouse-button over an element</td>
+            </tr>
+            <tr>
+                <td><code>mouseup</code></td>
+                <td>releasing a mouse-button over an element</td>
+            </tr>
+            <tr>
+                <td><code>mouseover</code></td>
+                <td>entering an element</td>
+            </tr>
+            <tr>
+                <td><code>mouseout</code></td>
+                <td>leaving an element</td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>
