@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <title>the DOM</title>
+</head>
+
+<body>
+    <main>
+        <h1>the dom</h1>
+        <p class="expText">When a web page is loaded, the browser creates a <b>D</b>ocument <b>O</b>bject <b>M</b>odel
+            of the page.<br>
+            The DOM is a platform and language-neutral interface that allows programs and scripts to dynamically access
+            and update the content, structure, and style of a document (the original document is not changed, only its
+            model).<br>The content of the DOM can be accessed by JS over the "document object" (<code>document.</code>).
+            Which provides methods
+            to change, read and create nodes in the DOM.</p>
+        <h2>the dom tree</h2>
+        <p class="expText">When the browser creates the DOM tree, it stores it in the browsers memory.<br>Every
+            "html-element" is represented as "element-node" to which its attribute as "attribute-node" are attached.
+            The text (<i>which is "visible" on the browser</i>) of an "html-element" is represented as "text-node",
+            which is attached to the "element-node" as child.</p>
+        <img src="/images/DOM/html-DOM-JS.svg" alt="">
+        <details>
+            <summary>turn lightbulb image on/off</summary>
+            <img id="lightId" src="/images/DOM/JonDuckett/pic_bulboff.gif" width="100" height="180" alt="">
+            <p>Click the button to turn the light off or on.</p>
+            <button id="lightButton" onclick="lightFunction()">Light ON</button>
+            <script>
+                let lightImage;
+                let buttonTextLight;
+
+                function lightFunction() {
+                    if (buttonTextLight === 'Light OFF') {
+                        buttonTextLight = 'Light ON';
+                        lightImage = '/images/DOM/JonDuckett/pic_bulboff.gif';
+                    } else {
+                        buttonTextLight = 'Light OFF';
+                        lightImage = '/images/DOM/JonDuckett/pic_bulbon.gif';
+                    }
+
+                    document.getElementById('lightButton').firstChild.nodeValue = buttonTextLight;
+                    document.getElementById('lightId').setAttribute('src', lightImage);
+                }
+            </script>
+            <pre class="exCode">
+&LT;img id="lightId" src="/images/DOM/JonDuckett/pic_bulboff.gif" width="100" height="180" alt="">
+&LT;p>Click the button to turn the light off or on.&LT;/p>
+&LT;button id="lightButton" onclick="lightFunction()">Light ON&LT;/button>
+&LT;script>
+    let lightImage;
+    let buttonTextLigh
+    function lightFunction() {
+        if (buttonTextLight === 'Light OFF') {
+            buttonTextLight = 'Light ON';
+            lightImage = '/images/DOM/JonDuckett/pic_bulboff.gif';
+        } else {
+            buttonTextLight = 'Light OFF';
+            lightImage = '/images/DOM/JonDuckett/pic_bulbon.gif';
+    
+        document.getElementById('lightButton').firstChild.nodeValue = buttonTextLight;
+        document.getElementById('lightId').setAttribute('src', lightImage);
+    }
+&LT;/script></pre>
+        </details>
+        <!-- ACCESS THE ELEMENTS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>referencing DOM elements in JavaScript</h3>
+        <p class="expText">JS can change the properties of an node after it has been referenced.<br>A reference is like
+            the path to the "node" in the DOM.<ul>
+                <li><code>document.getElementsByTagName("p")[0].firstChild.nodeValue = "Good bye
+                        ";</code><br><i>//changes the text of the "text-node" from "Hello " to "Good bye "</i>
+                </li>
+            </ul>
+        </p>
+        <p class="expText">The reference (path) can be stored in an variable:
+            <ul>
+                <li>
+                    <pre style="display: inline-block" class="exCode">let textVar = document.getElementsByTagName("p")[0].firstChild;
+textVar.nodeValue = "Good bye ";</pre><br><i>//the variable can be used to referer to the "text-node"</i>
+                </li>
+            </ul>
+        </p>
+        <p class="expText">Over the "<b>element-node</b>", the "<b>attribute-node</b>" and the "<b>text-node</b>"
+            can be
+            referenced.
+        </p>
+
+        <!-- referencing the "ELEMENT-node" ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h4>referencing the "ELEMENT-node"</h4>
+        <table>
+            <tr>
+                <th><img src="/images/DOM/JonDuckett/individualElement.JPG" alt=""></th>
+                <th>REFERENCING AN ELEMENT-NODE</th>
+            </tr>
+            <tr>
+                <td class="tabCode">document.getElementByld(' ')</td>
+                <td>Uses the value of an element's id attribute (which should be unique within the page).</td>
+            </tr>
+            <tr>
+                <td class="tabCode">document.querySelector(' ')</td>
+                <td>Uses a CSS selector, and returns the first matching element.</td>
+            </tr>
+            <tr>
+                <th><img src="/images/DOM/JonDuckett/multipleElements.JPG" alt=""></th>
+                <th>REFERENCING A ELEMENT-NODELIST<br><br><i>Even if there is only one element matching, it
+                        is still saved in an "node-list". The element can be accessed by appending the index in
+                        brackets
+                        <code>[0]</code>.<br>"Node-lists" are not arrays, they have the <code>.length</code>
+                        property
+                        but all other methods and properties which work on arrays do not work on "node-lists"</i>
+                </th>
+            </tr>
+            <tr>
+                <td class="tabCode">document.getElement<b class="unli">s</b>ByClassName(' ')</td>
+                <td>References all elements that have a specific value for their class attribute.</td>
+            </tr>
+            <tr>
+                <td class="tabCode">document.getElement<b class="unli">s</b>ByTagName(' ')</td>
+                <td>References all elements that have the specified tag name.</td>
+            </tr>
+            <tr>
+                <td class="tabCode">document.querySelectorAll(' ')</td>
+                <td>Uses a CSS selector to select all matching elements.</td>
+            </tr>
+            <tr>
+                <th><img src="/images/DOM/JonDuckett/traversing.JPG" alt=""></th>
+                <th>REFERENCING A ELEMENT-NODE BY TRAVERSING BETWEEN ELEMENTS<br><i>(relative to the before
+                        "referenced-element"
+                        <code>document."referenced-element".firstChild</code>)</i><br><br><i>You can move from one
+                        element-node to a related element node.<br>Has no arguments.</i></th>
+            </tr>
+            <tr>
+                <td class="tabCode">.parentNode</td>
+                <td>References the parent of the current element node (which will return just one element).</td>
+            </tr>
+            <tr>
+                <td class="tabCode">.previousSibling / .nextSibling</td>
+                <td>References the previous or next sibling from the DOM tree.</td>
+            </tr>
+            <tr>
+                <td class="tabCode">.firstChild / .lastChild</td>
+                <td>References the first or last child of the current element. </td>
+            </tr>
+            <tr>
+                <td class="tabCode">.chidNodes[ ]</td>
+                <td>References the child according to its index position (<i>first [0], second [1], ...</i>)</td>
+            </tr>
+        </table>
+        <!-- manipulating nodes ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h4>referencing "text-nodes"</h4>
+        <p class="expText">Is always a child of an "element-node", as such it is <b>referenced over the
+                "element-node"</b> as child.<br>Whitespace in the html document is considered as a "text-node".
+        </p>
+        <table>
+            <tr>
+                <th><img src="/images/DOM/JonDuckett/text-node.JPG" alt=""></th>
+                <th>REFERENCING TEXT-NODE<br><br><i>The "visible" text inside any element is
+                        stored inside a "text-node" (e.g. the text between &lt;p> &lt;/p> or &lt;button>
+                        &lt;/button>,
+                        ... ).</i></th>
+            </tr>
+            <tr>
+                <td class="tabCode">.firstChild</td>
+                <td rowspan="2">
+                    <ul>
+                        <li>"text-nodes" are <b>usually</b> the first children of there parent "element-node"</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode">.chidNodes[0]</td>
+            </tr>
+        </table>
+        <!-- cut out //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- <tr>
+                <td class="tabCode">.firstChild.nodeValue</td>
+                <td>This property lets you access or update contents of a text node.<br>
+                    <Ul>
+                        <li><code>document.ELEMENT-METHOD_Property.firstChild.nodeValue;</code> evaluates to the
+                            text as
+                            a string</li>
+                        <li><code>document.ELEMENT-METHOD_Property.firstChild.nodeValue = 'different text';</code>
+                            overwrites the text with 'different text'</li>
+                        <li>evaluates to <code>null</code> if there is no text</li>
+                        <details>
+                            <summary> change button text</summary>
+                            <button id="BUTTON" onclick="myFunction()">OLD TEXT</button>
+                            <label for="BURRON">//the text of the button is read with the nodeValue property and
+                                over
+                                written </label>
+                            <script>
+                                function myFunction() {
+                                    let buttonText = document.getElementById("BUTTON").firstChild.nodeValue;
+                                    buttonText = (buttonText === "OLD TEXT") ? "NEW TEXT" : "OLD TEXT";
+                                    document.getElementById("BUTTON").firstChild.nodeValue = buttonText;
+                                }
+                            </script>
+                        </details>
+                    </Ul>
+                </td>
+            </tr> -->
+        <!-- cut out //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h4>referencing "attribute-nodes"</h4>
+        <p class="expText">Dose not need to be further referenced, because it is part of the "element-node".</p>
+        <!-- <table>
+            <tr>
+                <th><img src="/images/DOM/JonDuckett/attribute-node.JPG" alt=""></th>
+                <th>ACCESS OR UPDATE ATTRIBUTE VALUES</th>
+            </tr>
+            <tr>
+                <td class="tabCode">.hasAttribute(' ')</td>
+                <td>
+                    <ul>
+                        <li>evaluates to <b>true</b> if the attribute is present, otherwise <b>false</b></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode">.getAttribute('<span class="attri">attributeName</span>')</td>
+                <td>
+                    <ul>
+                        <li><span class="attri">attributeName</span> attribute name ("style", "src", "class", ...)
+                        </li>
+                        <li>evaluates to the value of the attribute name (e.g. class="<b>first</b>" <i>evaluates to
+                                first</i>)
+                        </li>
+                        <li><b>Check if it has the attribute name first!</b> Some browsers return an empty string
+                            and
+                            others "null" if there is no value.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode">setAttribute('<span class="attri">attributeName</span>', '<span
+                        class="attri">attributeValue</span>')
+                </td>
+                <td>
+                    <ul>
+                        <li>sets the <b>value</b> of the <b>named</b> attribute<ul>
+                                <li>
+                                    if the attribute already exist, its value is changed
+                                </li>
+                                <li>
+                                    if the attribute dose not exist, creates an attribute with the specified
+                                    value
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="attri">attributeName</span> <b>name</b> of the attribute</li>
+                        <li><span class="attri">attributeValue</span> <b>value</b> of the attribute</li>
+                        <details>
+                            <summary>turn lightbulb image on/off</summary>
+                            <img id="lightId" src="/images/DOM/JonDuckett/pic_bulboff.gif" width="100" height="180"
+                                alt="">
+                            <p>Click the button to turn the light off or on.</p>
+                            <button id="lightButton" onclick="lightFunction()">Light ON</button>
+                            <script>
+                                let lightImage;
+                                let buttonTextLight;
+
+                                function lightFunction() {
+                                    if (buttonTextLight === 'Light OFF') {
+                                        buttonTextLight = 'Light ON';
+                                        lightImage = '/images/DOM/JonDuckett/pic_bulboff.gif';
+                                    } else {
+                                        buttonTextLight = 'Light OFF';
+                                        lightImage = '/images/DOM/JonDuckett/pic_bulbon.gif';
+                                    }
+
+                                    document.getElementById('lightButton').firstChild.nodeValue = buttonTextLight;
+                                    document.getElementById('lightId').setAttribute('src', lightImage);
+                                }
+                            </script>
+                            <pre class="exCode">
+&lt;img id="lightId" src="/images/DOM/JonDuckett/pic_bulboff.gif" width="100" height="180" 
+    alt="">
+&lt;p>Click the button to turn the light off or on.&lt;/p>
+&lt;button id="lightButton" onclick="lightFunction()">Light ON&lt;/button>
+&lt;script>
+    let lightImage;
+    let buttonText;
+    function lightFunction() {
+        if (buttonTextLight === 'Light OFF') {
+            buttonTextLight = 'Light ON';
+            lightImage = '/images/DOM/JonDuckett/pic_bulboff.gif';
+        } else {
+            buttonTextLight = 'Light OFF';
+            lightImage = '/images/DOM/JonDuckett/pic_bulbon.gif';
+
+        document.getElementById('lightButton').firstChild.nodeValue = buttonTextLight;
+        document.getElementById('lightId').setAttribute('src', lightImage);
+    }
+&lt;/script></pre>
+                        </details>
+                    </ul>
+                </td>
+            </tr>
+        </table> -->
+        <!-- manipulating the dom ///////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>manipulating the dom</h3>
+        <table>
+            <tr>
+                <th colspan="2">manipulating "text-nodes"</th>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="cN">CHILD-NODE</span>.nodeValue</td>
+                <td>
+                    <ul>
+                        <li>returns the text value of an "text-node"</li>
+                        <li><code>....nodeValue = "new text"</code> assigning a new text to it (<i>overwrite the
+                                previous text</i>).</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span>.innerHTML</td>
+                <td>
+                    <ul>
+                        <li>overwrites the text-nodes content of the element-node to which the property is applied
+                            to
+                        </li>
+                        <li><code>....innerHTML = "new text";</code></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <th colspan="2">Never use document.write() after the document is loaded. It will overwrite the
+                    document.
+                </th>
+            </tr>
+            <tr>
+                <td class="tabCode">document.write()</td>
+                <td>
+                    <ul>
+                        <li>can be used to write directly to the HTML output stream</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <th colspan="2">manipulating "attribute-elements"</th>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span>.setAttribute("<span
+                        class="attri">PARA1</span>,&nbsp;<span class="attri">PARA2</span>")</td>
+                <td>
+                    <ul>
+                        <li>creates/overwrites the attribute <b>-name</b> and <b>-value</b> of the<br>"element-node"
+                            to
+                            which the method is applied</li>
+                        <li><span class="attri">PARA1</span>: "attribute-name"</li>
+                        <li><span class="attri">PARA2</span>: "attribute-value"</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span>.ATTRIBUTE_NAME = "ATTRIBUTE_VALUE";</td>
+                <td>
+                    <ul>
+                        <li>overwrites the value of the attribute (<i>...src = "new.jpg";</i>)</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <th colspan="2">child-nodes and types</th>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span>.hasChildNodes()</td>
+                <td>
+                    <ul>
+                        <li>dose not take arguments</li>
+                        <li>returns <b>true</b> if the element has child-nodes, otherwise <b>false</b></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span>.childNodes</td>
+                <td>
+                    <ul>
+                        <li>returns a collection of the child-nodes, which can be accessed through <code>[ ]</code>
+                        </li>
+                        <li>comments are considered as "comment-nodes" (<code>//</code> or <code>&lt;!-- ...
+                                --></code>)
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode">.nodeType</td>
+                <td>
+                    <ul>
+                        <li>returns the node type, as a number, of the specified node</li>
+                        <li>"element-node" 1, "attribute-node" 2, "text-node" 3, "comment-node" 8</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <th colspan="2">creating new nodes</th>
+            </tr>
+            <tr>
+                <td class="tabCode">document.createTextNode(" ")</td>
+                <td>
+                    <ul>
+                        <li>the parameter contains the string of the new created "text-node"</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode">document.createElement(" ")</td>
+                <td>
+                    <ul>
+                        <li>the parameter contains the "tag-name" of the new created "element-node"</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <th colspan="2">attaching nodes</th>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span>.appendChild( )</td>
+                <td>
+                    <ul>
+                        <li>the parameter contains the <b>reference</b> to the node which will be added as last
+                            child to
+                            the
+                            element-node</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span> .insertBefore("<span
+                        class="attri">PARA1</span>,&nbsp;<span class="attri">PARA2</span>")</td>
+                <td>
+                    <ul>
+                        <li>inserts the referenced node as child to the node to which the method is applied</li>
+                        <li><span class="attri">PARA1</span>: reference to the node which will be attached as
+                            child</li>
+                        <li><span class="attri">PARA2</span>: is the reference to the node to which <span
+                                class="attri">PARA1</span> will be placed before to</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span>.cloneNode(<span class="attri">&nbsp;</span>)
+                </td>
+                <td>
+                    <ul>
+                        <li>clones the element-node to which the method is applied to</li>
+                        <li><span class="attri">true</span>: <b>ALL</b> child-nodes are cloned</li>
+                        <li><span class="attri">false</span>: child-nodes are <b>NOT</b> cloned</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span> .replaceChild("<span
+                        class="attri">PARA1</span>,&nbsp;<span class="attri">PARA2</span>")</td>
+                <td>
+                    <ul>
+                        <li>replaces the child-node with another child-node of the element-node to which the method
+                            is
+                            applied to</li>
+                        <li><span class="attri">PARA1</span>: reference to the child-node which is added</li>
+                        <li><span class="attri">PARA2</span>: reference to the child-node which will be replaced
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <th colspan="2">deleting nodes</th>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span>.removeChild(&nbsp;)
+                </td>
+                <td>
+                    <ul>
+                        <li>deletes the <b>referenced</b> child-node of the element-node to which the method is
+                            applied
+                            to</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabCode"><span class="eN">ELEMENT-NODE</span> .removeAttribute("&nbsp;")</td>
+                <td>
+                    <ul>
+                        <li>deletes the attribute of the element-node to which the method is applied to</li>
+                        <li>the parameter is tne attribute-name (<i>"style", "class"</i>)</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>

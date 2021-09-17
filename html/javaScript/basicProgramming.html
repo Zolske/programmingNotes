@@ -5,43 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The basic in programming</title>
+    <title>the basic</title>
+    <link rel="icon" href="/images/LOGO/javascript.svg" type="image/svg" sizes="16x16">
     <link rel="stylesheet" href="/css/styleJavaScript.css">
-</head>
+    <link rel="stylesheet" href="/css/style.css">
 
 <body>
     <main>
-        <h1>The basic in programming</h1>
+        <h1>The basic</h1>
         <!-- variable -->
         <h2>variable</h2>
         <p>A variable reserves and references space in memory. Data can be stored and recalled from that space. The name
             of the variable is than evaluated to the data which is stored at its location.<br>The type of the data dose
             not need to be defined before and can change when the variable is updated.</p>
-        <h3>naming convention</h3>
+        <!-- naming variables ///////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>naming variables</h3>
         <ul>
-            <li>can not start with a number</li>
-            <li>can not contain special characters (&#223;, &#228;) , empty space, hyphen</li>
-            <li>can not be a key- or reserved- word</li>
-            <li>can contain small / capital letters, numbers, underscore</li>
-            <li>the name should convey the purpose and be notated in camelCase</li>
+            <li class="listH">naming rules:</li>
+            <li>can contain only letters, numbers, underscore _ , dollar sign $</li>
+            <li>can not start with an number</li>
+            <li>can not be a keyword or reserve keyword</li>
         </ul>
+        <ul>
+            <li class="listH">naming convention:</li>
+            <li>lower camelCase <ul>
+                    <li>every word starts lowercase</li>
+                    <li>every other word is added without space in uppercase</li>
+                </ul>
+            </li>
+            <li>the name should be descriptive</li>
+        </ul>
+        <!-- variable types ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
         <h3>variable types</h3>
         <!-- type -->
         <table>
             <thead>
                 <tr>
                     <th>variable</th>
-                    <th>scoop</th>
+                    <th>scope</th>
                     <th>declare without value</th>
-                    <th>update value</th>
-                    <th>re-declare</th>
-                    <th>hoisting</th>
+                    <th>update value <mark
+                            title="assigning a new value to a already declared variable, let x = 2; x = 4;">*</mark>
+                    </th>
+                    <th>re-declare <mark
+                            title="declaring a variable again with the same name, var x = 2; var x = 4;">*</mark></th>
+                    <th>hoisting <mark title="calling a variable before it is declared, the program stores the variable in the first run and puts it in the second run on top of the code 'hoisted'
+works only on var but its value is 'undefined'">*</mark></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th><code>const</code></th>
-                    <td rowspan="2">block</td>
+                    <td rowspan="2">block-scoped</td>
                     <td>ERROR</td>
                     <td title="The value of an variable declared with const can not be updated.
 But the elements of an array and the property of an object can be updated / added.
@@ -56,12 +71,122 @@ Constant can not be overwritten with other variable or objects.">
                 </tr>
                 <tr>
                     <th><code>var</code></th>
-                    <td>global / function</td>
+                    <td>window-scoped / function-scoped</td>
                     <td colspan="2">yes</td>
                     <td>"undefined"</td>
                 </tr>
             </tbody>
         </table>
+        <ul>
+            <li><code>var</code> should not be used :<ul>
+                    <li>function-scoped, can be accidentally changed</li>
+                    <li>window-scoped, takes up the names-space in the global window-object, and can overwrite 3th
+                        party variable names</li>
+                </ul>
+            </li>
+        </ul>
+        <!-- scoop /////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>scope</h3>
+        <p class="expText">Defines where a variable is accessible in the code.</p>
+        <ul>
+            <li>a <b>block</b> is <code>{ }</code> <mark title="In some cases the block can be omitted if only a single statement is followed after a function, if, a loop, ... 
+the single statement followed after is still considered a block even if there is no { } surrounding it.">*</mark>
+            </li>
+            <li><b>global-scoped</b> variables are declared outside of the block are accessible everywhere in the code
+                <details>
+                    <summary></summary>
+                    <pre class="exCode">
+const constVariable = 'you can see const';   //global scoped
+let letVariable = 'you can see let';         //global scoped
+var varVariable = 'you can see var';         //global scoped
+
+function localScope(){
+    console.log(constVariable);              //-> you can see const
+    console.log(letVariable);                //-> you can see let
+    console.log(varVariable);                //-> you can see var
+}
+
+localScope();</pre>
+                </details>
+            </li>
+            <li><b>local-scoped</b> variables declared within a block are only accessible within there ... <ul>
+                    <li><b>block</b>, <code>let</code> <code>const</code></li>
+                    <li><b>function-block</b>, <code>var</code> <i>(everywhere within the function)</i></li>
+                </ul>
+                <details>
+                    <summary><i>local scoped</i></summary>
+                    <pre class="exCode">
+function localScope(){
+    const constVariable = 'you can see const';   //local scoped
+    let letVariable = 'you can see let';         //local scoped
+    var varVariable = 'you can see var';         //local scoped
+}
+localScope();
+
+console.log(constVariable);              //ReferenceError: constVariable is not defined
+console.log(letVariable);                //ReferenceError: letVariable is not defined
+console.log(varVariable);                //ReferenceError: varVariable is not defined</pre>
+                </details>
+                <details>
+                    <summary><i>block-scoped and function-scoped</i></summary>
+                    <pre class="exCode">
+    function localScope(){
+        if(true){
+            const constVariable = 'you can see const';   //local block-scoped
+            let letVariable = 'you can see let';         //local block-scoped
+            var varVariable = 'you can see var';         //local function-scoped
+        }
+        console.log(varVariable);          
+        console.log(constVariable);   
+        console.log(letVariable);      
+}
+
+    localScope();                       //-> you can see var
+                                        //ReferenceError: constVariable is not defined
+                                        //ReferenceError: letVariable is not defined</pre>
+                </details>
+            </li>
+            <li>local-scoped variable take <b>local precedence</b> over global-scoped variable with the same name
+                <details>
+                    <summary><i>local presidency</i></summary>
+                    <pre class="exCode">
+const constVariable = 'global const';   //global scoped
+let letVariable = 'global let';         //global scoped
+var varVariable = 'global var';         //global scoped
+
+function localScope(){
+const constVariable = 'local const';   //local scoped
+let letVariable = 'local let';         //local scoped
+var varVariable = 'local var';         //local scoped
+console.log(constVariable);
+console.log(letVariable);
+console.log(varVariable);
+}
+
+localScope();                           //-> local const
+                                        //-> local let
+                                        //-> local var
+
+console.log(constVariable);             //-> global const
+console.log(letVariable);               //-> global let
+console.log(varVariable);               //-> global var</pre>
+                </details>
+            </li>
+            <li><code>var</code> is <b>function-scoped</b>, care has to be taken that it does not get unintentionally
+                changed
+                <details>
+                    <summary></summary>
+                    <pre class="exCode">
+var greeter = "hey hi";
+if (true) {                                 //note that it is only a ...
+    var greeter = "say Hello instead";      //if statement not a function
+}
+
+console.log(greeter) // "say Hello instead"</pre>
+                </details>
+            </li>
+        </ul>
+
         <!-- syntax -->
         <h3>syntax</h3>
         <table>
@@ -338,7 +463,6 @@ Constant can not be overwritten with other variable or objects.">
                 </tr>
             </tbody>
         </table>
-        <hr>
         <!-- data types -->
         <h2>data types</h2>
         <table>
@@ -1280,6 +1404,7 @@ if (username) {
             </tbody>
         </table>
     </main>
+    <script src="/js/navBar.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <title>the DOM</title>
+</head>
+
+<body>
+    <main>
+        <h1>the dom</h1>
+        <div class="expText">
+            <ul>
+                <li>When a web page is loaded, the browser creates a <b>D</b>ocument <b>O</b>bject <b>M</b>odel of the
+                    page.</li>
+                <li>The DOM is a platform and language-neutral interface that allows programs and
+                    scripts to dynamically access and update the content, structure, and style of a document (the
+                    original document is not changed only its model).</li><br>
+                <li>The W3C DOM standard is separated into 3 different parts: <ol>
+                        <li>Core DOM - standard model for all document types</li>
+                        <li>XML DOM - standard model for XML documents</li>
+                        <li>HTML DOM - standard model for HTML documents</li><br>
+                    </ol>
+                </li>
+                <li>html elements are represented as nodes, those nodes them self can have "attribute" nodes and "text"
+                    nodes</li>
+                <li>the content of the DOM can be accessed by JS over the "document object". Which provides methods to
+                    change, read and create nodes in the DOM</li>
+                <li>the DOM is represented as a tree structure with the "root" node at the top from which the "child"
+                    nodes ascent.</li>
+            </ul>
+        </div>
+        <div class="flex">
+            <figure>
+                <figcaption><i>html code:</i></figcaption>
+                <pre class="exCode">
+&lt;html>
+    &lt;head>
+        &lt;title>Title of the page&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;h1>Heading&lt;/h1>
+        &lt;p style="color: red;">Text 1 &lt;mark>yellow&lt;/mark>&lt;/p>
+        &lt;div>
+            &lt;ul>
+                &lt;li id="ID">Text 2&lt;/li>
+                &lt;li>Text 3&lt;/li>
+            &lt;/ul>
+            &lt;p>Text 4&lt;/p>
+        &lt;/div>
+    &lt;/body>
+&lt;/html></pre>
+            </figure>
+            <figure>
+                <figcaption><i>html output:</i></figcaption>
+                <h1>Heading</h1>
+                <p style="color: red;">Text 1 <mark>yellow</mark></p>
+                <div>
+                    <ul>
+                        <li>Text 2</li>
+                        <li>Text 3</li>
+                    </ul>
+                    <p>Text 4</p>
+                </div>
+            </figure>
+        </div>
+        <figure>
+            <figcaption><i>model of the DOM:</i></figcaption>
+            <img src="/images/DOM/DOM model.svg" alt="">
+        </figure>
+        <figure>
+            <figcaption><i>access the node:</i></figcaption>
+        </figure>
+        <img src="/images/DOM/DOM model access.svg" alt="">
+        <hr>
+        <!-- accessing a node element -->
+        <h2>accessing the node element</h2>
+        <p class="expTesxt"></p>
+        <Ul>
+            <li>First, the <b>"document-object"</b> needs to be accessed over the method <code>document</code>.</li>
+            <li>After, the <b>"element-node"</b> can be accessed (<i>can be written on one line</i>). <ul>
+                    <li>Evaluates to the "element-node" and its child-nodes if it has any:<ul>
+                            <li>"text-node" if it has any</li>
+                            <li>"attribute-node" if it has any</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Evaluates to <code>null</code> if no element-node is found.</li>
+        </Ul>
+        <!-- access by id ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>access by id</h3>
+        <dl>
+            <dt><code>document.getElementById(' ')</code></dt>
+            <dd>
+                <ul>
+                    <li>takes as an argument the id of the html element as a string</li>
+                    <img src="/images/DOM/HTMLCollection_Id.JPG" alt="">
+                </ul>
+            </dd>
+        </dl>
+        <!-- access by tag name ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>access by tag name</h3>
+        <dl>
+            <dt><code>document.getElementsByTagName(' ')</code></dt>
+            <dd>
+                <ul>
+                    <li>Takes as an argument the html element tag name (e.g. <code>&lt;p></code>) as a string without
+                        &lt; > (e.g. <code>"p"</code>).
+                    </li>
+                    <li>All elements with the referenced tag are <b>combined into one array</b>, even if there is only
+                        one element, remember to use the [index] to access the elements individually.
+                    </li>
+                    <li><code>let pElement = document.getElementsByTagName("p");</code><br><i> //get all the &lt;p>
+                            elements and assign it to the variable "pElement"</i>
+                        <ul>
+                            <li><code>console.log(pElement);</code>
+                                <img style="display: block;" src="/images/DOM/HTMLCollection.JPG" alt=""></li>
+                            <li><code>console.log(pElement[0]);</code> <i>//selects the first element of the "pElement"
+                                    array</i>
+                                <img style="display: block;" src="/images/DOM/HTMLCollection_index0.JPG" alt=""></li>
+                            <li><code>.length</code> evaluates to the length of the array</li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <hr>
+        <!-- Accessing text-node and attribute-node /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h2>Accessing text-node and attribute-node</h2>
+        <p class="expText"><b>Can be only accessed over the "element-node"</b>. Remember, that the "...ByTagName" is an
+            array,
+            a specific element needs to be selected through the index.</p>
+        <!-- access text-element //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>access text-element</h3>
+        <dl>
+            <dt>Element.Node<code>.firstChild.nodeValue</code></dt>
+            <dd>
+                <ul>
+                    <li>Evaluates to the "text-node" of the "element-node", which is a string.</li>
+                    <li><code>let textNode = Element_Node.firstChild.nodeValue;</code><br><i>//saves the
+                            value of the "text-node" to the variable textNode</i></li>
+                    <li><code>Element_Node.firstChild.nodeValue = 'new text';</code><br><i>//assigns 'new text' string
+                            to the "text-node".</i>
+                </ul>
+            </dd>
+        </dl>
+        <!-- access attribute-node //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>access attribute-node</h3>
+        <dl>
+            <dt>Element.Node<code>.getAttribute('<span class="attri">style</span>')</code></dt>
+            <dd>
+                <ul>
+                    <li>Evaluates to the "attribute-node" of the "element-node", which is a string.</li>
+                    <li><span class="attri">style</span> evaluates to a string which contains the value of the style
+                        attribute (<code>color: red;</code>)
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+
+    </main>
+</body>
+
+</html>

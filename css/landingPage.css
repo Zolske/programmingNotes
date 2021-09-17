@@ -1,0 +1,17 @@
+/* logos replace bullets //////////////////////////////////////////////////////*/
+.b1 {
+    list-style-image: url(/images/LOGO/javascript.svg);
+}
+
+.logoZoltan {
+    list-style-image: url(/images/LOGO/Profile\ Zoltan\ 2020\ round.png);
+}
+
+/* end logo replace bullets ////////////////////////////////////////////////////// */
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    border-radius: 50%;
+}

@@ -6,6 +6,8 @@
     --backColorPage: white;
     --fontColor: black;
     --attributeBackground: greenyellow;
+    --childNode: Lime;
+    --elementNode: aqua;
 }
 
 main {
@@ -37,6 +39,17 @@ th {
 td {
     background-color: var(--tableDataColor);
 }
+
+/* //////////////////////////////////////////////////////// important */
+.cN {
+    background-color: var(--childNode) !important;
+}
+
+.eN {
+    background-color: var(--elementNode) !important;
+}
+
+/* //////////////////////////////////////////////////////// important */
 
 td ul {
     margin-top: 0;
@@ -207,4 +220,8 @@ dd {
 
 .flex>figure {
     display: inline-block;
+}
+
+.unli {
+    text-decoration: underline;
 }
