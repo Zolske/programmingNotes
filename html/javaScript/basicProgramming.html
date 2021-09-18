@@ -13,13 +13,41 @@
 <body>
     <main>
         <h1>The basic</h1>
+        <details>
+            <summary class="overView"></summary>
+            <ul>
+                <li><a href="#variable">Variable</a>
+                    <ul>
+                        <li><a href="#naming variables">naming variables</a></li>
+                        <li><a href="#variable types">variable types</a></li>
+                        <li><a href="#scope">scope</a></li>
+                        <li><a href="#destructuring assignment">1.4 destructuring assignment</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Data Types">Data Types</a>
+                    <ul>
+                        <li><a href="#the string data type">the string data type</a></li>
+                        <li><a href="#the number data type">the number data type</a></li>
+                        <li><a href="#the boolean data type">the boolean data type</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Operator">Operator</a>
+                    <ul>
+                        <li><a href="#operator returning boolean values">operator returning boolean values</a></li>
+                        <li><a href="#boolean context">boolean context</a></li>
+                        <li><a href="#logical operators and short circuit">logical operators and short circuit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+
         <!-- variable -->
-        <h2>variable</h2>
+        <h2 id="variable">variable</h2>
         <p>A variable reserves and references space in memory. Data can be stored and recalled from that space. The name
             of the variable is than evaluated to the data which is stored at its location.<br>The type of the data dose
             not need to be defined before and can change when the variable is updated.</p>
         <!-- naming variables ///////////////////////////////////////////////////////////////////////////////////////////// -->
-        <h3>naming variables</h3>
+        <h3 id="naming variables">naming variables</h3>
         <ul>
             <li class="listH">naming rules:</li>
             <li>can contain only letters, numbers, underscore _ , dollar sign $</li>
@@ -36,7 +64,7 @@
             <li>the name should be descriptive</li>
         </ul>
         <!-- variable types ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        <h3>variable types</h3>
+        <h3 id="variable types">variable types</h3>
         <!-- type -->
         <table>
             <thead>
@@ -86,7 +114,7 @@ Constant can not be overwritten with other variable or objects.">
             </li>
         </ul>
         <!-- scoop /////////////////////////////////////////////////////////////////////////////////// -->
-        <h3>scope</h3>
+        <h3 id="scope">scope</h3>
         <p class="expText">Defines where a variable is accessible in the code.</p>
         <ul>
             <li>a <b>block</b> is <code>{ }</code> <mark title="In some cases the block can be omitted if only a single statement is followed after a function, if, a loop, ... 
@@ -286,7 +314,7 @@ console.log(greeter) // "say Hello instead"</pre>
             </tbody>
         </table>
         <!-- Destructuring assignment ///////////////////////////////////////////////////////////////////////////////// -->
-        <h3>Destructuring assignment</h3>
+        <h3 id="destructuring assignment">Destructuring assignment</h3>
         <p class="expText">The destructuring assignment syntax is a JavaScript expression that makes it possible to
             unpack values from arrays, or properties from objects, into distinct variables.</p>
         <h4>... variable</h4>
@@ -464,7 +492,9 @@ console.log(greeter) // "say Hello instead"</pre>
             </tbody>
         </table>
         <!-- data types -->
-        <h2>data types</h2>
+        <h2 id="#Data Types">data types</h2>
+        <p class="expText">The data type is defined by the value of the variable, not the variable itself like in other
+            programming languages.</p>
         <table>
             <thead>
                 <tr>
@@ -500,9 +530,9 @@ console.log(greeter) // "say Hello instead"</pre>
                     </td>
                 </tr>
                 <tr>
-                    <td>single value</td>
-                    <td>collection of values</td>
-                    <td>absence of an value</td>
+                    <th>single value</th>
+                    <th>collection of values</th>
+                    <th>absence of an value</th>
                 </tr>
             </tbody>
         </table>
@@ -529,7 +559,7 @@ console.log(typeof undeclaredVariable); // expected output: "undefined"</pre>
             </tbody>
         </table>
         <!-- The String Data Type -->
-        <h3>The String Data Type</h3>
+        <h3 id="the string data type">The String Data Type</h3>
         <ul>
             <li>A sequence of <b>letters, numbers, special characters and arithmetic values</b> or combination of all.
             </li>
@@ -781,7 +811,7 @@ document.write(result); // Prints: hello world!</pre>
             </tbody>
         </table>
         <!-- Numbers -->
-        <h3>the number data type</h3>
+        <h3 id="the number data type">the number data type</h3>
         <ul>
             <li>Can be represented in decimal (2.1), hexadecimal (0xff) or octal notation.</li>
             <li>JavaScript does not treat integer (2) and floating-point (3.14) numbers differently.</li>
@@ -1146,13 +1176,12 @@ console.log((255).toString(16));  // 'ff'</pre>
             </tbody>
         </table>
         <!-- The Boolean Data Type -->
-        <h3>The Boolean Data Type</h3>
+        <h3 id="the boolean data type">The Boolean Data Type</h3>
         <ul>
             <li>The Boolean data type can hold only two values: true or false.</li>
         </ul>
-        <hr>
         <!-- Operators -->
-        <h2>Operator</h2>
+        <h2 id="Operator">Operator</h2>
         <ul>
             <li>Operations are solved from left to right but higher priority operations are solved first.</li>
             <li><code>**</code> exponentiation has the highest priority</li>
@@ -1220,8 +1249,8 @@ console.log((255).toString(16));  // 'ff'</pre>
                         base^exponent. <code>2 ** 3</code> // returns 8 (2*2*2)</td>
                 </tr>
                 <tr>
-                    <td colspan="3"><b>Note:</b><br><code>let x = 10; let y = x++;</code> <b>y is 10 !</b> because x is
-                        first assigned to y and than x is incremented
+                    <td colspan="3"><b>Note:</b><br><code>let x = 10; let y = x++;</code> <b>y is 10 </b> because x is
+                        first assigned to y and than x is incremented <b>x is 11</b>
                         <br><code>let x = 10; let y = ++x;</code> <b>y is 11 !</b> because x is first incremented and
                         than assigned to y</td>
                 </tr>
@@ -1282,7 +1311,7 @@ console.log(+'hello'); // expected output: NaN </pre>
         </table>
         <br>
         <hr>
-        <h4>operator returning boolean values</h4>
+        <h4 id="operator returning boolean values">operator returning boolean values</h4>
         <!-- comparison operators -->
         <table>
             <thead>
@@ -1308,7 +1337,7 @@ console.log(+'hello'); // expected output: NaN </pre>
         </table>
         <br>
         <!-- boolean context -->
-        <h4>boolean context</h4>
+        <h4 id="boolean context">boolean context</h4>
         <ul>
             <li>Non boolean values are treated as false (falsy) or true (truthy) in an "boolean context".</li>
             <li>A "boolean context" is created when "logical operator" or "if condition" evaluate.</li>
@@ -1332,7 +1361,7 @@ console.log(+'hello'); // expected output: NaN </pre>
             </tbody>
         </table>
         <!-- logical operators and short circuit ///////////////////////////////////////////////////////////////////////// -->
-        <h4>logical operators and short circuit</h4>
+        <h4 id="logical operators and short circuit">logical operators and short circuit</h4>
         <table>
             <thead>
                 <tr>

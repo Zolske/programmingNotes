@@ -9,6 +9,7 @@
     --childNode: Lime;
     --elementNode: aqua;
     --important: rgb(247, 109, 109);
+    --overView: rgb(250, 172, 112);
 }
 
 main {
@@ -122,6 +123,16 @@ code {
 }
 
 /* end highlights /////////////////////////////////////////////////////////////////////////// */
+.overView {
+    background-color: var(--overView);
+}
+
+.overView::before {
+    content: 'overview';
+    font-style: italic;
+    letter-spacing: 0.2rem;
+}
+
 /* start navBar /////////////////////////////////////////////////////////////////////////////////// */
 nav {
     position: -webkit-sticky;
