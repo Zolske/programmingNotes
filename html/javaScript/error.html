@@ -6,28 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Error</title>
 </head>
 
 <body>
     <main>
-        <h1>Error</h1>
-        <p class="expText">There are two types of errors: <ol>
-                <li>syntax error (code dose not work)</li>
-                <li>logical error (code works but not as intended)</li>
-            </ol>
-        </p>
+        <h1>Exceptions ("Errors")</h1>
+        <details>
+            <summary class="overView"></summary>
+            <ul>
+                <li><a href="#onerror (window.onerror)">onerror (window.onerror)</a></li>
+                <li><a href="#try{}catch(){}finally{})">try{}catch(){}finally{})</a></li>
+                <li><a href="#throw">throw</a></li>
+            </ul>
+        </details>
+        <p class="expText">If a <b>syntax error or runtime error occurs in JavaScript, the “program” crashes</b>. If the
+            error
+            is caught, the program continues and an error can be handled (error message printed to console or user
+            informed). "Errors" are called "<b>exceptions</b>".<br>Nested functions pass exceptions to the next function
+            if not caught. This process repeats till the exception is caught or it crashes the program if it reaches the
+            "global" code.</p>
 
-        <h2>finding syntax errors</h2>
-        <!-- onerror (window.onerror) //////////////////////////////////////////////////////////////////////////////// -->
-        <h3>onerror (window.onerror)</h3>
+        <h2 id="onerror (window.onerror)">onerror (window.onerror)</h2>
         <p class="expText">Triggers a before defined function with the information of the error, <b>if</b> an error
             occurs.</p>
         <ul>
             <li>When a <b>JavaScript runtime error</b> occurs, an error event is "fired" at window.</li>
             <li>A (in the head declared) function can be assigned to <code>onerror</code>, the function is than invoked
-                if an
-                error occurs.</li>
+                if an error occurs.</li>
             <li>The parameters of the function are filled with the information of the error.</li>
         </ul>
         <ol>
@@ -74,23 +81,68 @@
         </details>
         <a href="/html/javaScript/zExampleCodeJavaScript/zExampleCodeOnerror.htm" target="_blank">see example page</a>
         <!-- try … catch ///////////////////////////////////////////////////////////////////////////////////////////// -->
-        <h3>try … catch (exception handling)</h3>
+        <h2 id="try{}catch(){}finally{})">try{}catch(){}finally{})</h2>
         <p class="expText">Code which is contained within a "try-block" can in case of an error, return a specific error
-            message or follow for that case specified instructions. The code in the "finally-block" is executed in an
-            case.</p>
-        <ol>
-            <li>contain the buggy code in the "try-block"<br>
-                <code>try { BUGGY CODE; }</code>
-            </li>
-            <li>set up the "catch-block" and process the error message<br>
-                <code>catch(<mark title="error object, usually e (error) but it could have any arbitrary name">e</mark>)
-                    {
-                    alert(<mark title="the error object is passed to the alert() method">e</mark>); }</code></li>
-            <li>(optional) set the "finally-block", which is executed in any case<br><code>finally { STATEMENT; }</code>
-            </li>
-        </ol>
+            message (throw) or follow for that case specified instructions. The code in the "finally-block" is executed
+            in an case.</p>
         <ul>
-            <li>none of the "blocks" have a <code>;</code> at the end</li>
+            <li><code>try{STATEMENT;}catch(errorObject){STATEMENT;}finally{STATEMENT;}</code>
+                <ul>
+                    <li>each block is followed by the next block without the <code>;</code> in between</li>
+                    <li>the blocks can be in or around functions</li>
+                </ul>
+            </li>
+        </ul>
+        <!-- try /////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>try{}</h3>
+        <ul>
+            <li><code>try{</code>BUGGY CODE;<code>}</code>
+                <p class="expText">Marks the code in which the exception ("error") can occur.</p>
+                <ul>
+                    <li>errors (<i>exceptions</i>) occurring within an try-block are passed to the following catch-block
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- catch ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>catch(){}</h3>
+        <ul>
+            <li><code>catch(<b>errorObject</b>){</code>STATEMENT;<code>}</code>
+                <ul>
+
+                    <li>is only executed if there is an error (<i>exception</i>) in the previews try-block</li>
+                    <li>there can be only one catch block for every try block</li>
+                    <li>the catch-parameter contains the error-object and can have any arbitrary name</li>
+                    <li>the error-object can be used to pass back the error -type and -description <ul>
+                            <li><code>errorObject<b>.name</b></code> error type</li>
+                            <li><code>errorObject<b>.message</b></code> error description</li>
+                            <li><code>errorObject</code> entire error-object including location of error</li>
+                        </ul>
+                    </li>
+                    <li>the errorObject can be more specific if an "Error" object is thrown with <code>throw</code>
+                    </li>
+                    <li>statements after the catch block are executed if there is not an error within
+                        the catch block</li>
+                </ul>
+            </li>
+        </ul>
+        </li>
+        </ul>
+
+        <!-- finally ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3>finally{}</h3>
+        <ul>
+            <li><code>finally{</code>STATEMENTS;<code>}</code>
+                <ul>
+                    <li>statements within the finally block are always executed, with or without exception
+                        (<i>"error"</i>)</li>
+                    <li>Is useful if a function should be terminated after an exception (<i>"error"</i>) but statements
+                        to be executed which would have been also executed if the function would not have been
+                        terminated. It helps to prevent code repetition (<b>d</b>on't <b>r</b>epet <b>y</b>ourself).
+                    </li>
+                </ul>
+            </li>
         </ul>
         <details>
             <summary></summary>
@@ -108,26 +160,81 @@
         }
     &lt;/script></pre><img src="/images/error/tryCatch.svg" alt="">
         </details>
-        <a href="/html/javaScript/zExampleCodeJavaScript/zExampleCodeTry_catch.htm" target="_blank">see example page</a>
-        <!-- throw (throws to catch) ///////////////////////////////////////////////////////////////////////////////////// -->
-        <h3>throw (throws to catch)</h3>
-        <p class="expText">Statements which are marked with <code>throw</code> and are contained within the "try-block"
-            are passed to the "catch-block".</p>
-        <ol>
-            <li>mark the statement which should be <code>throw</code>n to the "catch-block" in the "try-block"
-                <pre><code>
-try { if (CONDITION1) throw STATEMENT1;
-      if (CONDITION2) throw STATEMENT2; }</code></pre>
-            </li>
-            <li>only the statement marked with throw is passed to the "catch-block"<br>
-                <code>catch(<mark title="error object, usually e (error) but it could have any arbitrary name">e</mark>)
-                    {
-                    alert(<mark title="the error object is passed to the alert() method">e</mark>); }</code></li>
-            <li>(optional) set the "finally-block", which is executed in any case<br><code>finally { STATEMENT; }</code>
-            </li>
-        </ol>
+        <a href="/html/javaScript/zExampleCodeJavaScript/zExampleCodeTry_catch.htm" target="_blank">see example
+            page</a>
+        <!-- throw //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h2 id="throw">throw</h2>
+        <p class="expText">Needs to be thrown in an try-block and caught in an catch-block or the program
+            crashes!<br>Allows a more customized exception ("error") to be thrown.</p>
         <ul>
-            <li>none of the "blocks" have a <code>;</code> at the end</li>
+            <li><code>throw new Error(</code>error_description;<code>);</code>
+                <ul>
+                    <li><code>new</code> is the keyword for the constructor which creates an insistence of the
+                        <code>Error</code> type object (choose a type which indicates what kind of exception
+                        (<i>"error"</i>) was thrown)
+                        <details>
+                            <summary class="plain">error-type table</summary>
+                            <table>
+                                <tr>
+                                    <th>error type</th>
+                                    <th>description</th>
+                                </tr>
+                                <tr>
+                                    <td class="tabCode">Error</td>
+                                    <td>Creates an instance representing a general error.</td>
+                                </tr>
+                                <tr>
+                                    <td class="tabCode">EvalError</td>
+                                    <td>Creates an instance representing an error that occurs regarding the global
+                                        function
+                                        eval().
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tabCode">RangeError</td>
+                                    <td>Creates an instance representing an error that occurs when a numeric variable or
+                                        parameter
+                                        is outside of its valid range.</td>
+                                </tr>
+                                <tr>
+                                    <td class="tabCode">ReferenceError</td>
+                                    <td>Creates an instance representing an error that occurs when de-referencing an
+                                        invalid
+                                        reference.</td>
+                                </tr>
+                                <tr>
+                                    <td class="tabCode">SyntaxError</td>
+                                    <td>Creates an instance representing a syntax error.</td>
+                                </tr>
+                                <tr>
+                                    <td class="tabCode">TypeError</td>
+                                    <td>Creates an instance representing an error that occurs when a variable or
+                                        parameter is
+                                        not of
+                                        a valid type.</td>
+                                </tr>
+                                <tr>
+                                    <td class="tabCode">URIError</td>
+                                    <td>Creates an instance representing an error that occurs when encodeURI() or
+                                        decodeURI()
+                                        are
+                                        passed invalid parameters.</td>
+                                </tr>
+                            </table>
+                        </details>
+                    </li>
+                    <li>is always executed, exits function (<i>none of the following statements is executed</i>)</li>
+                    <li>should be 'conditioned' with an if statement</li>
+                    <li>creates an instance of the errorObject which can be caught in an catch-block if thrown in an
+                        try-block<Ul>
+                            <li><code>errorObject<b>.name</b></code> error type</li>
+                            <li><code>errorObject<b>.message</code></b> error description</li>
+                            <li><code>errorObject</code> entire error-object including location of error</li>
+                        </Ul>
+                    </li>
+                    <li>must be caught, or the <b>error (<i>exception</i>) crashes the programme</b></li>
+                </ul>
+            </li>
         </ul>
         <details>
             <summary></summary>
@@ -147,8 +254,11 @@ try { if (CONDITION1) throw STATEMENT1;
    }
 &lt;/script></pre><img src="/images/error/throw.svg" alt="">
         </details>
-        <a href="/html/javaScript/zExampleCodeJavaScript/zExampleCodeThrow.htm" target="_blank">see example page</a>
+        <a href="/html/javaScript/zExampleCodeJavaScript/zExampleCodeThrow.htm" target="_blank">see example
+            page</a>
+
     </main>
+    <script src="/js/navBar.js"></script>
 </body>
 
 </html>

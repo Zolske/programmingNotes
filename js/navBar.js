@@ -11,9 +11,10 @@
 // ];
 
 const navBar = [
-    [['home'],['indexJavaScript.html'],['JavaScript Notes'],['indexJavaScript.html'],['Zoltans Page'], ['../../index.html']],
-    [['the basic'],['/html/javaScript/basicProgramming.html'],   ['Topic_1'],['#'],
-                        ['Topic_2'],['#']   ],
+    [['HOME'],['#'], ['Zoltans Page'], ['../../index.html'],['JavaScript Notes'],['indexJavaScript.html']],
+    [['BASIC'],['#'], ['the basic'],['/html/javaScript/basicProgramming.html'],['conditional statements'],['/html/javaScript/conditionalStatements.html'],
+     ['exceptions (errors)'],['/html/javaScript/error.html']
+],
    [['DOM'],['DOM.html']]
    //[['DOM'],['#']]
             

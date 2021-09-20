@@ -6,25 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styleJavaScript.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Conditional statements</title>
 </head>
 
 <body>
     <main>
         <h1>conditional statements</h1>
-        <ul>
-            <li>Condition evaluates to true or truthy, the code inside the block is executed.</li>
-            <li>Condition evaluates to false or falsy, the code inside the block is <b>NOT</b> executed.</li>
-            <li>A default code block can be run if the condition is false / falsy.</li>
-        </ul>
-        <h3>if statement</h3>
-        <ul>
-            <li>"if - else if - else", statements are parsed from top to bottom.</li>
-            <li><b>Only the first</b> "true-condition-statement-block" is executed, any following conditions are not
-                checked!
-            </li>
-            <li><b>No brackets</b> {} are needed if there is only <b>one statement</b> after the condition.</li>
-        </ul>
+        <details>
+            <summary class="overView"></summary>
+            <ul>
+                <li><a href="#if statement">if statement</a></li>
+                <li><a href="#switch statement">switch statement</a></li>
+                <li><a href="#Ternary Operator">Ternary Operator</a></li>
+            </ul>
+        </details>
+        <p class="expText">
+            <ul class="expText">
+                <li>Condition evaluates to true or truthy, the code inside the block is executed.</li>
+                <li>Condition evaluates to false or falsy, the code inside the block is <b>NOT</b> executed.</li>
+                <li>A default code block can be run if the condition is false / falsy.</li>
+            </ul>
+            <h3 id="if statement">if statement</h3>
+            <ul>
+                <li>"<code>if</code> - <code>else if</code> - <code>else</code>", statements are parsed from top to
+                    bottom.</li>
+                <li><b>Only the first</b> "true-condition-statement-block" is executed, any following conditions are not
+                    checked!
+                </li>
+                <li><b>No brackets</b> {} are needed if there is only <b>one statement</b> after the condition.</li>
+            </ul>
+        </p>
         <table>
             <thead>
                 <tr>
@@ -114,7 +126,7 @@ else // no true / truthy condition previous
             </tbody>
         </table>
         <!-- switch -->
-        <h3>switch statement</h3>
+        <h3 id="switch statement">switch statement</h3>
         <ul>
             <li>It is not possible to define a range for the case to match the condition<br>e.g. <code>case &lt;
                     10 :</code> or <code>case
@@ -186,7 +198,7 @@ switch(country)
             </tbody>
         </table>
         <!-- Ternary Operator -->
-        <h3>Ternary Operator</h3>
+        <h3 id="Ternary Operator">Ternary Operator</h3>
         <p><code>CONDITION ? TRUE : FALSE</code></p>
         <ul>
             <li>If the <code>CONDITION</code> evaluates to ...</li>
@@ -209,6 +221,7 @@ switch(country)
                 isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');</pre>
         </details>
     </main>
+    <script src="/js/navBar.js"></script>
 </body>
 
 </html>

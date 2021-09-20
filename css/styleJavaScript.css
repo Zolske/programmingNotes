@@ -98,6 +98,10 @@ p {
     max-width: 80ch;
 }
 
+ul.expText {
+    padding-left: 3ch;
+}
+
 h3 {
     text-transform: lowercase;
     border-top: solid dimgray 1px;

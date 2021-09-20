@@ -10,6 +10,7 @@
     --elementNode: aqua;
     --important: rgb(247, 109, 109);
     --overView: rgb(250, 172, 112);
+    --plainUnfoldBox: rgba(243, 187, 45, 0.3);
 }
 
 main {
@@ -131,6 +132,27 @@ code {
     content: 'overview';
     font-style: italic;
     letter-spacing: 0.2rem;
+}
+
+.plain {
+    font-style: italic;
+    letter-spacing: 0.2rem;
+    background-color: var(--plainUnfoldBox);
+}
+
+.plain::before {
+    content: '';
+}
+
+summary {
+    background-color: var(--exampleBackColor);
+    text-align: center;
+}
+
+summary::before {
+    content: "for example: ";
+    letter-spacing: 0.2rem;
+    font-style: italic;
 }
 
 /* start navBar /////////////////////////////////////////////////////////////////////////////////// */
