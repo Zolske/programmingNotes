@@ -13,7 +13,9 @@
 const navBar = [
     [['HOME'],['#'], ['Zoltans Page'], ['../../index.html'],['JavaScript Notes'],['indexJavaScript.html']],
     [['BASIC'],['#'], ['the basic'],['/html/javaScript/basicProgramming.html'],['conditional statements'],['/html/javaScript/conditionalStatements.html'],
-     ['exceptions (errors)'],['/html/javaScript/error.html']
+     ['exceptions (errors)'],['/html/javaScript/error.html'], ['forms and events'],['/html/javaScript/V2FormEvents.html'],
+     ['functions'], ['/html/javaScript/functions.html'], ['loops'],['/html/javaScript/loops.html'],
+     ['objects'],['/html/javaScript/object.html']
 ],
    [['DOM'],['DOM.html']]
    //[['DOM'],['#']]
