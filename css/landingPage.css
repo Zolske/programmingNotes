@@ -7,6 +7,11 @@
     list-style-image: url(/images/LOGO/Profile\ Zoltan\ 2020\ round.png);
 }
 
+/* software development ///////////////////////////////////////////////////////////// */
+.htmlLogo {
+    list-style-image: url(/images/LOGO/379494_coding_html_icon.png);
+}
+
 /* end logo replace bullets ////////////////////////////////////////////////////// */
 #logo {
     display: block;
