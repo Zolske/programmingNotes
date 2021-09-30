@@ -16,52 +16,54 @@
         <p class="expText">Programming paradigms are a way to classify programming languages based on their features.
             Languages can be classified into multiple paradigms.
         </p>
-        <h2>declarative & imperative paradigms</h2>
+        <h2>declarative vs imperative paradigms</h2>
         <p class="expText">Most languages can be categorized in
-            <b>declarative</b>- and <b>imperative</b>- paradigms.<br><br>In an analogy, the waiter in an restaurant
-            would
-            be the declarative paradigm, he is only concerned with taking and bringing the right order not how the meal
-            was made. The chef in the kitchen would be the imperative paradigm, because they are concerned how the meal
-            is made.</p>
+            <b>declarative</b>- and <b>imperative</b>- paradigms.<br>The two are often used together (HTML and CSS
+            together with JavaScript for websites).</p>
+        <details>
+            <summary>an analogy</summary>
+            <p class="expText">In an analogy, the waiter in an restaurant would
+                be the declarative paradigm, he is only concerned with taking and bringing the right order not how the
+                meal is made. The chefs in the kitchen would be the imperative paradigm, because they are concerned how
+                the meal is made.<br>
+                The state of our sandwich changes over time as data (the ingredients) are added and mixed. The initial
+                state might be an empty plate the final state is a prepared sandwich ready to be eaten. This is all
+                done according to the sequenced instructions (the recipe) and the mutable data which is the composition
+                of the sandwich.</p>
+        </details>
         <table>
             <tr>
-                <th>paradigm</th>
-                <th>focus</th>
-                <th>explanation</th>
-                <th>languages</th>
+                <th></th>
+                <th style="width: 42ch;">declarative</th>
+                <th style="width: 42ch;">imperative</th>
             </tr>
             <tr>
-                <th>declarative</th>
-                <td>"what happens"</td>
-                <td>It's a form of programming that removes as much as possible from the low-level
+                <th>focus</th>
+                <td>"<b>what</b> happens"</td>
+                <td>"<b>how</b> something happens"</td>
+            </tr>
+            <tr>
+                <th>how they work ...</th>
+                <td>Removes as much as possible from the low-level
                     details of how things happen. It tries to concern itself only with what happens. Work usually
                     together with "imperative" programming languages.</td>
-                <td>HTML, CSS, SQL</td>
+                <td>Explicitly tells the computer what to do and how to do it. Can work independently.</td>
             </tr>
             <tr>
-                <th>imperative</th>
-                <td>"how something happens"</td>
-                <td>Explicitly tells the computer what to do and how to do it.</td>
+                <th>languages</th>
+                <td>HTML, CSS, SQL</td>
                 <td>Java, C#, C++, JavaScript, Python, Ruby</td>
             </tr>
-
             <tr>
-                <th>paradigm</th>
-                <th colspan="3">advantages & disadvantage</th>
-            </tr>
-            <tr>
-                <th>declarative</th>
-                <td colspan="3">
+                <th>advantages & disadvantage</th>
+                <td>
                     <ul>
-                        <li class="thumbUp">ease of use and a shallow learning curve</li>
+                        <li class="thumbUp">easy to use and a shallow learning curve (<i>simple instructions</i>)</li>
                         <li class="thumbDown">often limited to a relatively small set of instructions</li>
                         <li class="thumbDown">limited control over the results</li>
                     </ul>
                 </td>
-            </tr>
-            <tr>
-                <th>imperative</th>
-                <td colspan="3">
+                <td>
                     <ul>
                         <li class="thumbUp">much more control over what the programs can do</li>
                         <li class="thumbUp">more complex in what they can achieve</li>
@@ -69,9 +71,79 @@
                     </ul>
                 </td>
             </tr>
+            <tr>
+                <th rowspan="3">essential aspects</th>
+                <td colspan="2">
+                    <ul>
+                        <li class="listH">sequenced instructions:</li>
+                        <li>instructions are represented as lines of code, which are executed one at a time from top to
+                            bottom
+                        </li>
+                    </ul>
+                </td>
+                <!-- <td>
+                    <ul>
+                        <li class="listH">mutable data</li>
+                    </ul>
+                </td> -->
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <ul>
+                        <li class="listH">algorithm:</li>
+                        <li>is the ability to apply logic and decision-making within
+                            instruction</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <ul>
+                        <li class="listH">mutable data:</li>
+                        <li>data that can change over
+                            the duration of a program</li>
+                        <li>is usually stored in variables</li>
+                    </ul>
+                </td>
+            </tr>
+
         </table>
+        <h3>the evolution of imperative programming</h3>
+        <ul>
+            <li class="listH">"spaghetti" code:</li>
+            <li>"jumps" to other parts of the code through "<i><code>Go To line X</code></i>" executions</li>
+            <li>this made code difficult to read and follow (<i>"spaghetti" code</i>)</li>
+        </ul>
+        <p class="expText">The following programming paradigms are in the group of imperative programming.</p>
 
-
+        <ul>
+            <li class="listH">structured programming:</li>
+            <li>directs the code execution based on a true-or-false condition</li>
+            <li><b>if</b>: executes or ignores code based on a condition being true or false</li>
+            <li><b>loop</b>: repeats code as long as the condition is true</li>
+            <ul><br>
+                <li class="listH">procedural programming:</li>
+                <li><i>(extension of structured programming)</i></li>
+                <li><b>function</b>: groups related code together which can be used with different arguments multiple
+                    times</li>
+                <ul><br>
+                    <li class="listH">object oriented programming:</li>
+                    <li><i>(extension of procedural programming)</i></li>
+                    <li>groups related data and functions into <b>objects</b></li>
+                    <li>classes are used as blueprint for the creation of similar object</li>
+                    <li>objects are instances of there class, they are created in the computers memory when the code of
+                        there class is executed</li>
+                </ul>
+                <ul><br>
+                    <li class="listH">event <i>(driven)</i> programming:</li>
+                    <li><i>(extension of procedural programming)</i></li>
+                    <li>code is running in the background, <b>waiting for an event</b> to take place</li>
+                    <li>once the event occurs, code that is listening for that event is triggered into action</li>
+                </ul>
+            </ul>
+        </ul>
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>

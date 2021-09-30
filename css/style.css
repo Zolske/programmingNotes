@@ -62,7 +62,7 @@ p {
 }
 
 li {
-    max-width: 90ch;
+    max-width: 80ch;
 }
 
 li>ul {
@@ -112,6 +112,10 @@ th {
 
 td {
     background-color: var(--tableDataColor);
+}
+
+td li {
+    text-align: left;
 }
 
 .tabCode {
@@ -166,13 +170,17 @@ code {
 summary {
     background-color: var(--exampleBackColor);
     text-align: center;
+    letter-spacing: 0.2rem;
+    font-style: italic;
+    margin-bottom: 0.5ch;
+    max-width: 100ch;
 }
 
-summary::before {
+/* summary::before {
     content: "for example: ";
     letter-spacing: 0.2rem;
     font-style: italic;
-}
+} */
 
 /* start navBar /////////////////////////////////////////////////////////////////////////////////// */
 nav {
