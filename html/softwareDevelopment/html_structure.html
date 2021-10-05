@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>html syntax</title>
+</head>
+
+<body>
+    <main>
+        <h1>html</h1>
+        <p class="expText">HTML (<b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage) defines the
+            meaning and structure of web content. ... HTML uses "markup" to annotate text, images, and other content for
+            display in a Web browser.<br>"Hypertext" refers to links that connect web pages to one another, either
+            within a single website or between websites.</p>
+        <h2>html structure</h2>
+        <img src="/images/softDevImages/html/html structure.svg" alt="">
+        <h2>html element</h2>
+        <p class="expText">Elements mark text or work as placeholder for images, videos, ...</p>
+
+        <ul>
+            <li class="listH">element syntax</li>
+            <li>is not case sensitive (<code>&lt;img&gt;</code> == <code>&lt;IMG&gt;</code>) but the convention is lower
+                case
+            </li>
+            <li>elements are made up of either ...<ul>
+                    <br>
+                    <li>a pair of <b>start-end-tags</b> <i>(can hold "text-contend" between tags)</i>
+                        <table>
+                            <tr>
+                                <th colspan="3">html element</th>
+                            </tr>
+                            <tr>
+                                <th class="borderLeRi">start tag</th>
+                                <th class="borderLeRi">content</th>
+                                <th class="borderLeRi">end tag</th>
+                            </tr>
+                            <tr>
+                                <td class="tabCode">&lt;h1 <span class="attri">ATTRIBUTE</span>&gt;</td>
+                                <td class="tabCode">text content</td>
+                                <td class="tabCode">&lt;/h1&gt;</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <br>
+                    <li>just <b>self-closing-tag</b> <i>(works as placeholder)</i>
+                        <table>
+                            <tr>
+                                <th colspan="3">html element</th>
+                            </tr>
+                            <tr>
+                                <th colspan="3" class="borderLeRi">self-closing tag</th>
+                            </tr>
+                            <tr>
+                                <td class="tabCode" colspan="3">&lt;img <span class="attri">ATTRIBUTE</span>&gt;</td>
+                            </tr>
+                            <tr>
+                                <td class="empCell">or</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="tabCode">&lt;img <span class="attri">ATTRIBUTE</span><b>/</b>&gt;
+                                </td>
+                                <td class="borderToBo">in older versions, redundant since html5</td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+        </ul>
+
+        <ul>
+            <li class="listH"><span class="attri">ATTRIBUTES</span></li>
+            <li>types <ul>
+                    <li><b>element specific attributes</b>, only certain elements can have (<code>src</code>
+                        <code>target</code>)
+                    </li>
+                    <li><b>universal attributes</b>, every element can have (<code>id</code> <code>class</code>
+                        <code>title</code>)</li>
+                </ul>
+            </li>
+            <li>
+                syntax <ul>
+                    <li>there is no limit of how many attributes an element can have <br><i>(e.g. <code>&lt;p
+                                class="city"
+                                id="country"&gt;Berlin&lt;/p&gt;</code>)</i></li>
+                    <li><b>boolean</b>, either "true" or "false", no <b>value</b>, the presence of the attribute makes
+                        it "true" <br>(e.g. <code>required</code>)</li>
+                    <li><b>property-value</b> pair, <code>ATTRIBUTE="VALUE1 VALUE2"</code> <i>(can have multiple values
+                            separate by space)</i> <br>(e.g. <code>class="city country"</code>)</li>
+                </ul>
+            </li>
+        </ul>
+        <h2>semantically neutral / structural elements</h2>
+
+
+    </main>
+    <script src="/js/softDevNavBar.js"></script>
+</body>
+
+</html>
