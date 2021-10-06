@@ -15,7 +15,8 @@ const navBar = [
 
     [ ['BASIC'],['#'], ['Programming Paradigms'],['../../html/softwareDevelopment/paradigms.html']
 ],
-    [ ['HTML'],['#'], ['HTML & Syntax'],['../../html/softwareDevelopment/html_structure.html']]     
+    [ ['HTML'],['#'], ['HTML & Syntax'],['../../html/softwareDevelopment/html_structure.html'], ['Semantic'],['../../html/softwareDevelopment/html_semantic.html'],
+      ['Links & Media'],['../../html/softwareDevelopment/html_link_media.html']]     
 ];
 document.body.onload = createNavBar;                    //calls function "creatNavBar" when body is loaded
 

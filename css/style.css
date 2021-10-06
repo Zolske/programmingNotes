@@ -6,6 +6,7 @@
     --backColorPage: white;
     --fontColor: black;
     --attributeBackground: greenyellow;
+    --valueBackground: rgb(156, 228, 84);
     --childNode: Lime;
     --elementNode: aqua;
     --important: rgb(247, 109, 109);
@@ -118,6 +119,10 @@ td li {
     text-align: left;
 }
 
+td ul {
+    margin: 0.1ch;
+}
+
 .tabCode {
     background-color: var(--codeBackColor);
     font-family: monospace;
@@ -166,6 +171,10 @@ td li {
 /* start highlights /////////////////////////////////////////////////////////////////////////// */
 .attri {
     background-color: var(--attributeBackground);
+}
+
+.val {
+    background-color: var(--valueBackground);
 }
 
 .import::after {

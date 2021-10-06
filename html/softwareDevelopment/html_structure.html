@@ -86,16 +86,64 @@
                     <li>there is no limit of how many attributes an element can have <br><i>(e.g. <code>&lt;p
                                 class="city"
                                 id="country"&gt;Berlin&lt;/p&gt;</code>)</i></li>
-                    <li><b>boolean</b>, either "true" or "false", no <b>value</b>, the presence of the attribute makes
-                        it "true" <br>(e.g. <code>required</code>)</li>
-                    <li><b>property-value</b> pair, <code>ATTRIBUTE="VALUE1 VALUE2"</code> <i>(can have multiple values
-                            separate by space)</i> <br>(e.g. <code>class="city country"</code>)</li>
+                    <li>there are two types of attributes ... <ul>
+                            <li><b>boolean attribute</b>, either "true" or "false", no <b>value</b>, the presence of the
+                                attribute makes it "true" (e.g. <code>required</code>)</li>
+                            <li><b>property-value</b> pair, <code>ATTRIBUTE="VALUE1 VALUE2"</code> <i>(can have multiple
+                                    values
+                                    separate by space)</i> <br>(e.g. <code>class="city country"</code>)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li><br>
+            <li><span class="attri">class="</span><span class="val">VALUE1 VALUE2</span><span class="attri">"</span>
+                <ul>
+                    <li>can be applied to <b>any</b> element, they are used by CSS and JavaScript to "select" an element
+                    </li>
+                    <li>can have <b>multiple</b> values per attribute</li>
+                    <li>the same class can be used on <b>multiple</b> elements per page</li>
+                </ul>
+            </li><br>
+            <li><span class="attri">id="</span><span class="val">VALUE</span><span class="attri">"</span>
+                <ul>
+                    <li>can be applied to <b>any</b> element, they are used by CSS and JavaScript to "select" an element
+                    </li>
+                    <li>can have <b>only one</b> value per attribute but the element could have more ids</li>
+                    <li>the same id can be used on <b>only one</b> element per page <i>(ids have to be unique)</i></li>
                 </ul>
             </li>
         </ul>
         <h2>semantically neutral / structural elements</h2>
+        <p class="expText">Have no semantic meaning, they are used to mark content, so they can be selected with the
+            help of "classes" and "ids".</p>
 
+        <ul>
+            <li class="listH"><code>&lt;span&gt;</code></li>
+            <li>is a <b>inline-level</b> element <ul>
+                    <li>dose not start a new line and takes only the width and height of its content</li>
+                    <li>is used to mark up words</li>
+                    <li>can be nested within <code>&lt;div&gt;</code> but <code>&lt;div&gt;</code> can not be nested
+                        within <code>&lt;span&gt;</code></li>
+                </ul>
+            </li>
+        </ul>
 
+        <ul>
+            <li class="listH"><code>&lt;div&gt;</code></li>
+            <li>is a <b>block-level</b> element<ul>
+                    <li>takes up the entire width of its <b>parent</b> container <i>(element)</i></li>
+                    <li>starts on a new line and pushes any following element into a new line below it</li>
+                    <li>has no visible height if it is left empty</li>
+                </ul>
+            </li>
+        </ul>
+        <!-- comments ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h2>comments</h2>
+        <p class="expText">Are ignored by the browser and not visible on the page. They help to explain the code to
+            programmers.</p>
+        <ul>
+            <li><code>&lt;!--</code> <i>comment</i> <code>--&gt;</code></li>
+        </ul>
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>
