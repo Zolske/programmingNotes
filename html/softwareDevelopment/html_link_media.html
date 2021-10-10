@@ -15,7 +15,7 @@
         <h1>links and media content</h1>
 
         <h2>links</h2>
-
+        <p class="expText">Link a html-element to another page or to another part of the same page.</p>
         <table>
             <tr>
                 <th colspan="3">anchor element syntax</th>
@@ -28,7 +28,8 @@
                 <td class="borderLeRi">anchor end-tag</td>
             </tr>
             <tr>
-                <th class="tabCode">&lt;a <span class="attri">ATTRIBUTE</span> &gt;</th>
+                <th class="tabCode">&lt;a <span class="attri">href=" "</span> <span class="attri">ATTRIBUTE</span> &gt;
+                </th>
                 <td class="tabCode">on page visible content</td>
                 <th class="tabCode">&lt;/a&gt;</th>
             </tr>
@@ -47,18 +48,30 @@
                 <td class="attri">href="<span class="val">&nbsp;&nbsp;&nbsp;</span>"</td>
                 <td>
                     <ul>
-                        <li>must be set</li>
+                        <li><b>Must be set!</b></li>
                         <li>contains the path to where the link leads<ul>
                                 <li><b>external:</b> another page <ul>
                                         <li><span class="val">https://somewhere.com</span> <i>top of the page</i></li>
                                         <li><span class="val">https://somewhere.com<b>#ID</b></span> <i>to the element
-                                                with the
-                                                "ID"</i></li>
+                                                with the </i><code>id="ID"</code></li>
                                     </ul>
                                 </li>
                                 <li><b>internal:</b> another part of the same page<ul>
                                         <li><span class="val">#</span> <i>top of the page</i></li>
-                                        <li><span class="val">#ID</span> <i>to the element with the "ID"</i></li>
+                                        <li><span class="val">#ID</span> <i>to the element with the
+                                            </i><code>id="ID"</code></li>
+                                    </ul>
+                                </li>
+                                <li>opens the user's <b>email program</b>, ready to send a email to <a
+                                        href="mailto:someone@example.com"><i>someone@example.com</i></a>
+                                    <ul>
+                                        <li><span class="val">mailto:someone@example.com</span></li>
+                                    </ul>
+                                </li>
+                                <li>opens the users <b>calling app</b>, with the specified number <a
+                                        href="tel:+4733378901"><i>+4733378901</i></a>
+                                    <ul>
+                                        <li><span class="val">tel:+4733378901</span></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -75,6 +88,20 @@
                 </td>
             </tr>
             <tr>
+                <td class="attri">download</td>
+                <td>
+                    <ul>
+                        <li>is a boolean attribute <i>(no value)</i>
+                            <ul>
+                                <li>downloads the <code>href="..."</code> specified file <a
+                                        href="../../images/LOGO/Profile Zoltan 2020 round.png" download>download
+                                        file</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
                 <td class="attri">rel="<span class="val">&nbsp;&nbsp;&nbsp;</span>"</td>
                 <td>
                     <ul>
@@ -82,25 +109,29 @@
                         <li>search engines may use the information to determine how to index or display the page <ul>
                                 <li><span class="val">help</span> <i>link to a help document</i></li>
                                 <li><span class="val">prev</span> <span class="val">next</span> <i>link to previous /
-                                        next
-                                        document</i>
+                                        next document</i>
                                 </li>
                                 <li><span class="val">nofollow</span> <i>links to an unendorsed document, like a paid
                                         link.
                                         ("nofollow" is used by Google, to specify that the Google search spider should
-                                        not
-                                        follow that link)</i></li>
+                                        not follow that link)</i></li>
                                 <li><span class="val">noopener</span> <i>prevents potential malicious behaviour from the
                                         destination document, which is useful for links to social media</i></li>
                                 <li><span class="val">external</span> <i>indicates that the referenced document is not
-                                        part of
-                                        the same site as the current document</i></li>
+                                        part of the same site as the current document</i></li>
                             </ul>
                         </li>
                     </ul>
                 </td>
             </tr>
         </table>
+
+        <!-- <code>&lt;a <select>
+                <option>1.</option>
+                <option>2.</option>
+            </select> &gt;content&lt;/a&gt;
+        </code> -->
+
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>

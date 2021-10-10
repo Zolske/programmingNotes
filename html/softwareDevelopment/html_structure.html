@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/softDev.css">
     <title>html syntax</title>
 </head>
 
@@ -14,7 +14,7 @@
     <main>
         <h1>html</h1>
         <p class="expText">HTML (<b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage) defines the
-            meaning and structure of web content. ... HTML uses "markup" to annotate text, images, and other content for
+            meaning and structure of web content. HTML uses "markup" to annotate text, images, and other content for
             display in a Web browser.<br>"Hypertext" refers to links that connect web pages to one another, either
             within a single website or between websites.</p>
         <h2>html structure</h2>
@@ -139,13 +139,658 @@
         </ul>
         <!-- comments ///////////////////////////////////////////////////////////////////////////////////////////////// -->
         <h2>comments</h2>
-        <p class="expText">Are ignored by the browser and not visible on the page. They help to explain the code to
-            programmers.</p>
+        <p class="expText">Are ignored by the browser and not visible on the page.</p>
         <ul>
             <li><code>&lt;!--</code> <i>comment</i> <code>--&gt;</code></li>
+            <li>should be used to explain the code to other <i>(and yourself)</i> programmers</li>
+            <li>are useful to disable code for debugging or testing</li>
+            <li>are still visible on website, <b>everyone can see comments</b> <i>("inspect")</i></li>
         </ul>
+        <!-- lists////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h2>lists</h2>
+        <p class="expText">Are useful to group information together.</p>
+        <!-- unordered lists ////////////////////////////////////////////////////////////////////////// -->
+        <h3>unordered list</h3>
+        <p class="expText">Are used when the order of the list <b>not</b> matters.</p>
+
+
+        <!-- syntax unordered list ////////////////////////////////////////////////////////////////// -->
+        <details class="cSyn">
+            <summary> unordered list</summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>html:</figcaption>
+                    <pre class="code">
+&lt;ul&gt;
+    &lt;li&gt;<span class="cExa">1. list element</span>&lt;/li&gt;
+        &lt;li&gt;<span class="cExa">2nd list element</span>
+            &lt;ul&gt;
+                &lt;li&gt;<span class="cExa">sub list</span>
+                    &lt;ul&gt;
+                        &lt;li&gt;<span class="cExa">sub sub list</span>&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+&lt;/ul&gt;</pre>
+                </figure>
+
+                <figure>
+                    <figcaption>browser:</figcaption>
+                    <ul class="browser">
+                        <li><span class="cExa">1. list element</span></li>
+                        <li><span class="cExa">2nd list element </span>
+                            <ul>
+                                <li><span class="cExa">sub list</span>
+                                    <ul>
+                                        <li><span class="cExa">sub sub list</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </figure>
+                <figure>
+                    <figcaption>definition</figcaption>
+                    <ul>
+                        <li><span class="cCod">&lt;ul&gt;</span> <b>u</b>nordered <b>l</b>ist, <i><span
+                                    class="cCod">&lt;li&gt;</span> need to be inside <span
+                                    class="cCod">&lt;ul&gt;</span></i></li>
+                        <li><span class="cCod">&lt;li&gt;</span> <b>l</b>ist <b>i</b>tem, <i>contain each the
+                                individual list items</i></li>
+                    </ul>
+                </figure>
+            </div>
+        </details>
+
+        <!-- ordered lists ////////////////////////////////////////////////////////////////////////// -->
+        <h3>ordered list</h3>
+        <p class="expText">Are used when the order of the list matters.</p>
+
+
+        <!-- syntax ordered list ////////////////////////////////////////////////////////////////// -->
+        <details class="cSyn">
+            <summary> ordered list</summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>html:</figcaption>
+                    <pre class="cCod">
+&lt;ol&gt;
+    &lt;li&gt;<span class="cExa">1. list element</span>&lt;/li&gt;
+        &lt;li&gt;<span class="cExa">2nd list element</span>
+            &lt;ol&gt;
+                &lt;li&gt;<span class="cExa">sub list</span>
+                    &lt;ol&gt;
+                        &lt;li&gt;<span class="cExa">sub sub list</span>&lt;/li&gt;
+                    &lt;/ol&gt;
+                &lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+&lt;/ol&gt;</pre>
+                </figure>
+
+                <figure>
+                    <figcaption>browser:</figcaption>
+                    <ol class="browser">
+                        <li><span class="cExa">1. list element</span></li>
+                        <li><span class="cExa">2nd list element </span>
+                            <ol>
+                                <li><span class="cExa">sub list</span>
+                                    <ol>
+                                        <li><span class="cExa">sub sub list</span></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </figure>
+
+            </div>
+            <figure>
+                <figcaption>definition</figcaption>
+                <ul>
+                    <li><span class="cCod">&lt;ol&gt;</span> <b>o</b>rdered <b>l</b>ist, <i><span
+                                class="cCod">&lt;li&gt;</span> need to be inside <span
+                                class="cCod">&lt;ol&gt;</span></i></li>
+                    <li><span class="cCod">&lt;li&gt;</span> <b>l</b>ist <b>i</b>tem, <i>contain each the
+                            individual list items</i></li>
+                </ul>
+            </figure>
+        </details>
+        <br>
+
+        <!-- start attribute: type & start  /////////////////////////////////////////////////////////////////////////////// -->
+        <details class="cBox">
+            <summary>changing the number type & start</summary>
+            <div class="flex">
+                <div>
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <ol type="I" id="typeID" class="browser">
+                            <li>Coffee</li>
+                            <li>Tea <ol>
+                                    <li>Milk</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="cCod">
+&lt;ol <span class="cAtt">type="</span><span class="cVal" id="htmlType">I</span><span class="cAtt">"</span>&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Tea
+        &lt;ol&gt;
+            &lt;li&gt;Milk&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</pre>
+                    </figure>
+                    <label for="typeList"><i>type vale:</i></label><br>
+                    <select id="typeList" class="cVal" style="width: 24ch;">
+                        <option value="1">"1" numbers (1 default)</option>
+                        <option value="A">"A" uppercase letter (A)</option>
+                        <option value="a">"a" lowercase letter (a)</option>
+                        <option value="I">"I" uppercase roman number (I)</option>
+                        <option value="i">"i" lowercase roman number (i)</option>
+                    </select>
+                    <p><i>Changes the number<br>style of the list.</i></p>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <ol start="10" id="typeID_1" class="browser">
+                            <li>Coffee</li>
+                            <li>Tea <ol>
+                                    <li>Milk</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="cCod">
+&lt;ol <span class="cAtt">start="</span><span class="cVal" id="htmlType_1">10</span><span class="cAtt">"</span>&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Tea
+        &lt;ol&gt;
+            &lt;li&gt;Milk&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</pre>
+                    </figure>
+                    <label for="typeList_1"><i>start value:</i></label><br>
+                    <input type="number" id="typeList_1" class="cVal" style="width: 7ch;" value="10"></input>
+                    <p><i>From where the numeric value<br>of the list starts to count.</i></p>
+                </div>
+            </div>
+        </details>
+
+        <!-- styling lists //////////////////////////////////////////////////////////////////////////// -->
+
+        <h4>styling lists</h4>
+
+        <details class="cBox">
+            <summary>styling list bullets with CSS</summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>CSS code</figcaption>
+                    <div style="width: 35ch;" class="cCod">
+                        <code><mark>#ID</mark> {<br><span class="cAtt">list-style-type</span>: <span id="listValue"
+                                class="cVal">none</span>;<br>}</code>
+                    </div>
+                    <br>
+                    <label for="listStyle">select value </label>
+                    <select name="listStyle" id="listStyle" value="none" class="cVal">
+                        <option value="none">none (no style)</option>
+                        <option value="initial">initial (default)</option>
+                        <option value="inherit">inherit (from parent)</option>
+                        <option value="disc">disc (default &lt;ul&gt;)</option>
+                        <option value="circle">circle</option>
+                        <option value="square">square</option>
+                        <option value="decimal">decimal (default &lt;ol&gt;)</option>
+                        <option value="decimal-leading-zero">decimal-leading-zero</option>
+                        <option value="lower-greek">lower-greek</option>
+                        <option value="lower-latin">lower-latin</option>
+                        <option value="lower-roman">lower-roman</option>
+                        <option value="upper-greek">upper-greek</option>
+                        <option value="upper-latin">upper-latin</option>
+                        <option value="upper-roman">upper-roman</option>
+                    </select>
+                    <p><i>can be applied to &lt;ol&gt; and &lt;ul&gt;</i></p>
+                </figure>
+                <div>
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <div class="browser">
+                            <ol id="browserList">
+                                <li>first list item</li>
+                                <li>second list item</li>
+                                <li>third list item</li>
+                            </ol>
+                        </div>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="cCod">
+&lt;ol <mark>id="ID"</mark>&gt;
+    &lt;li&gt;first list item&lt;/li&gt;
+    &lt;li&gt;second list item&lt;/li&gt;
+    &lt;li&gt;third list item&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <div class="browser">
+                            <ol>
+                                <li>first list item</li>
+                                <li id="browserList_2">second list item</li>
+                                <li>third list item</li>
+                            </ol>
+                        </div>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="cCod">
+&lt;ol&gt;
+    &lt;li&gt;first list item&lt;/li&gt;
+    &lt;li <mark>id="ID"</mark>&gt;second list item&lt;/li&gt;
+    &lt;li&gt;third list item&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                    </figure>
+                </div>
+            </div>
+        </details>
+        <br>
+        <details class="cBox">
+            <summary>replacing bullets with images</summary>
+            <figure>
+                <figcaption>browser</figcaption>
+                <ol class="browser">
+                    <li>original bullet</li>
+                    <li style="list-style-image:url('/images/LOGO/smiley_icon.png')">changed bullet</li>
+                    <li>original bullet</li>
+                </ol>
+            </figure>
+            <figure>
+                <figcaption>html</figcaption>
+                <pre class="cCod">
+&lt;ol&gt;
+    &lt;li&gt;original bullet&lt;/li&gt;
+    &lt;li <span class="cExa">id="imageId"</span>&gt;changed bullet&lt;/li&gt;
+    &lt;li&gt;original bullet&lt;/li&gt;
+&lt;/ol&gt;</pre>
+            </figure>
+            <figure>
+                <figcaption>css</figcaption>
+                <pre class="cCod">
+<span class="cExa">#imageId</span> {
+    list-style-image: url('sqpurple.gif');
+}</pre>
+            </figure>
+        </details>
+        <!-- start Description Lists  ////////////////////////////////////////////////////////// -->
+        <h3>Description Lists</h3>
+        <p class="expText">Is a list of terms, with a description of each term.</p>
+        <details class="cSyn">
+            <summary> descriptive list</summary>
+            <figure>
+                <figcaption>browser</figcaption>
+                <dl class="browser">
+                    <dt><span class="cExa">Coffee</span></dt>
+                    <dd><mark>- black hot drink</mark></dd>
+                    <dt>Milk</dt>
+                    <dd>- white cold drink</dd>
+                </dl>
+            </figure>
+
+            <figure>
+                <figcaption>html</figcaption>
+                <pre class="cCod">
+&lt;dl&gt;
+    &lt;dt&gt;<span class="cExa">Coffee</span>&lt;/dt&gt;
+    &lt;dd&gt;<mark>- black hot drink</mark>&lt;/dd&gt;
+    &lt;dt&gt;Milk&lt;/dt&gt;
+    &lt;dd&gt;- white cold drink&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+            </figure>
+            <figure>
+                <figcaption>definition</figcaption>
+                <ul>
+                    <li>
+                        <span class="cCod">&lt;dl&gt;</span> <b>d</b>escription <b>l</b>ist, <i>defines the
+                            description list</i>
+                    </li>
+                    <li><span class="cCod">&lt;dt&gt;</span> <b>d</b>efines <b>t</b>erm, <i>defines the term (name)</i>
+                    </li>
+                    <li><span class="cCod">&lt;dd&gt;</span> <b>d</b>escribe <b>d</b>escription, <i>describes each
+                            term</i></li>
+                </ul>
+            </figure>
+        </details>
+        <!-- start tabels //////////////////////////////////////////////////////////////////////// -->
+        <h2>tables</h2>
+        <p class="expText">Are used to arrange data into rows and columns.</p>
+
+        <!-- table syntax /////////////////////////////////////////////////////////////////////////// -->
+        <details class="cSyn">
+            <summary> table</summary>
+            <div class="flex">
+                <img src="/images/softDevImages/html/tabel sections.svg" alt="" style="width: 60ch;">
+                <div>
+                    <dl class="dlCode">
+                        <dt>&lt;table&gt;</dt>
+                        <dd>contains the content of the table</dd>
+                    </dl>
+                    <hr>
+                    <dl class="dlCode">
+                        <dt>&lt;caption&gt;</dt>
+                        <dd>defines a table caption <ul>
+                                <li>must be inserted immediately<br> after <code>&lt;table&gt;</code></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="dlCode">
+                        <dt>&lt;thead&gt;</dt>
+                        <dd>is used to group header content in an table
+                            <ul>
+                                <li>must come after <code>&lt;table&gt;</code> <code>&lt;caption&gt;</code>
+                                </li>
+                                <li>must contain <code>&lt;tr&gt;</code></li>
+                            </ul>
+                        </dd>
+                        <dt>&lt;tbody&gt;</dt>
+                        <dd>is used to group body content in an table
+                            <ul>
+                                <li>must contain <code>&lt;tr&gt;</code></li>
+                            </ul>
+                        </dd>
+                        <dt>&lt;tfooter&gt;</dt>
+                        <dd>is used to group footer content in an table
+                            <ul>
+                                <li>must contain <code>&lt;tr&gt;</code></li>
+                            </ul>
+                        </dd>
+                        <p style="max-width: 35ch;"><i>
+                                <code>&lt;caption&gt;</code> <code>&lt;thead&gt;</code> <code>&lt;tbody&gt;</code>
+                                <code>&lt;tfooter&gt;</code><br>
+                                Are <b>not essential</b> for the table, the table can be constructed without those
+                                elements.<br><br>
+                                But the browsers can use those elements to enable scrolling of the table
+                                body independently of the
+                                header and footer. Also, when printing a large table that spans multiple pages, these
+                                elements can enable the table header and footer to be printed at the top and bottom of
+                                each page.</i></p>
+                    </dl>
+                </div>
+            </div>
+            <hr>
+            <div class="flex">
+                <img src="/images/softDevImages/html/table inersection.svg" alt="" style="width: 60ch;">
+                <dl class="dlCode" style="max-width: 40ch;">
+                    <dt>&lt;tr&gt;</dt>
+                    <dd><b>t</b>able <b>r</b>ow, each <span class="sHtml">tr</span> creates a row in the table</dd>
+                    <dt>&lt;th&gt;</dt>
+                    <dd><b>t</b>able <b>h</b>ead, each <span class="sHtml">th</span> creates a cell in the table, its
+                        content is pre styled</dd>
+                    <dt>&lt;td&gt;</dt>
+                    <dd><b>t</b>able <b>d</b>ata, each <span class="sHtml">td</span> creates a cell in the table, for
+                        the data</dd>
+                    <p>Cells are create from top to bottom and from left to right in the table.</p>
+                    <dt><span class="cAtt">colspan="<span class="cVal">VALUE</span>"</span></dt>
+                    <dd>spans columns (cells) from left to right together<ul>
+                            <li><span class="cAtt">colspan</span> attribute for <span class="sHtml">th</span> and <span
+                                    class="sHtml">td</span></li>
+                            <li><span class="cVal">VALUE</span> numeric value determines how many cells are combined to
+                                its right</li>
+                        </ul>
+                    </dd>
+                    <dt><span class="cAtt">rowspan="<span class="cVal">VALUE</span>"</span></dt>
+                    <dd>spans rows (cells) from top to bottom together<ul>
+                            <li><span class="cAtt">rowspan</span> attribute for <span class="sHtml">th</span> and <span
+                                    class="sHtml">td</span></li>
+                            <li><span class="cVal">VALUE</span> numeric value determines how many cells are combined
+                                downwards</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </details>
+        <br>
+        <!-- table styling -->
+        <details class="cBox">
+            <summary>table styling</summary>
+            <p>there are no default borders, they need to be set with css</p>
+            <figure>
+                <figcaption>browser</figcaption>
+                <table class="browser tabE" style="border: 1px none black;">
+                    <tr>
+                        <th style="border: 1px none black;" class="tabHeadE">table_head</th>
+                        <th style="border: 1px none black;" class="tabHeadE">table_head</th>
+                        <th style="border: 1px none black;" class="tabHeadE">table_head</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px none black;" class="tabDataE">table_data</td>
+                        <td style="border: 1px none black;" class="tabDataE">table_data</td>
+                        <td style="border: 1px none black;" class="tabDataE">table_data</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px none black;" class="tabDataE">table_data</td>
+                        <td style="border: 1px none black;" class="tabDataE">table_data</td>
+                        <td style="border: 1px none black;" class="tabDataE">table_data</td>
+                    </tr>
+                </table>
+            </figure>
+            <figure>
+                <figcaption>html</figcaption>
+                <pre class="cCod">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;table_head&lt;/th&gt; &lt;th&gt;table_head&lt;/th&gt; &lt;th&gt;table_head&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;table_data&lt;/td&gt; &lt;td&gt;table_data&lt;/td&gt; &lt;td&gt;table_data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;table_data&lt;/td&gt; &lt;td&gt;table_data&lt;/td&gt; &lt;td&gt;table_data&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+            </figure>
+            <figure>
+                <figcaption>css</figcaption>
+                <pre class="cCod">
+table, th, td {
+    <span class="cAtt">border</span>: <span id="borderPxValue" class="cVal">1</span>px <span id="borderStyleValue" class="cVal">none</span> <span id="borderColorValue" class="cVal">black</span>;
+    <span class="cAtt">border-collapse</span>: <span id="borderCollapseValue" class="cVal">collapse</span>;
+    <span class="cAtt">border-radius</span>: <span id="borderRadiusValue" class="cVal">1</span>px;
+}
+  
+th, td {
+  background-color: #96D4D4;
+}</pre>
+            </figure>
+            <span class="cAtt">border</span><code>: </code><input type="number" id="borderPx" value="1" class="cVal"
+                style="width:4ch"><code>px </code><select id="borderStyle" class="cVal" value="solid">
+                <option>none</option>
+                <option>outset</option>
+                <option>inset</option>
+                <option>ridge</option>
+                <option>groove</option>
+                <option>double</option>
+                <option value="solid">solid</option>
+                <option>dashed</option>
+                <option>dotted</option>
+            </select><code> </code><input type="color" id="borderColor" value="#000000"><code>;</code> <i>(short-hand,
+                any order is fine)</i><br>
+            <!-- border thickness: borderPx
+border style: borderStyle
+border color: borderColor -->
+            <code><span class="cAtt">border-collapse</span>: <select id="borderCollapse" class="cVal" value="collapse">
+                    <option>collapse</option>
+                    <option>separate</option>
+                </select>;</code><br>
+            <!-- borderCollapse -->
+            <code><span class="cAtt">border-radius</span>: <input id="borderRadius" type="number" value="1" class="cVal"
+                    style="width:4ch;">px;</code><br>
+            <!-- borderRadius -->
+        </details>
     </main>
-    <script src="/js/softDevNavBar.js"></script>
+    <script src="/js/softDevNavBar.js"> </script>
+    <script>
+        // start update list-style-type ////////////////////////////////////////////////
+        let listValue = document.getElementById('listValue');
+        let listStyle = document.getElementById('listStyle');
+        let browserList = document.getElementById('browserList');
+        let browserList_2 = document.getElementById('browserList_2');
+
+        listStyle.addEventListener('click', event => {
+            listValue.textContent = listStyle.value;
+            let styleValue = 'list-style-type:' + listStyle.value;
+            browserList.setAttribute('style', styleValue);
+            browserList_2.setAttribute('style', styleValue);
+        })
+        // end update list-style-type ////////////////////////////////////////////////
+
+        // start update type value //////////////////////////////////////////////////////
+        let htmlType = document.getElementById('htmlType');
+        let typeList = document.getElementById('typeList');
+        let typeID = document.getElementById('typeID');
+
+        typeList.addEventListener('click', event => {
+            htmlType.textContent = typeList.value;
+            let typeIDValue = typeList.value;
+            typeID.setAttribute('type', typeIDValue);
+        })
+        // end update type value //////////////////////////////////////////////////////
+
+        // start start-attribute number //////////////////////////////////////////////////////
+        let htmlType_1 = document.getElementById('htmlType_1');
+        let typeList_1 = document.getElementById('typeList_1');
+        let typeID_1 = document.getElementById('typeID_1');
+
+        typeList_1.addEventListener('click', event => {
+            htmlType_1.textContent = typeList_1.value;
+            let numberValue = typeList_1.value;
+            typeID_1.setAttribute('start', numberValue);
+        })
+        // end start-attribute number //////////////////////////////////////////////////////
+
+        // start table style ///////////////////////////////////////////////////////////////
+        // html table
+        let tabE = document.getElementsByClassName('tabE');
+        let tabHeadE = document.getElementsByClassName('tabHeadE');
+        let tabDataE = document.getElementsByClassName('tabDataE');
+        // css browser view
+        let borderPxValue = document.getElementById('borderPxValue');
+        let borderStyleValue = document.getElementById('borderStyleValue');
+        let borderColorValue = document.getElementById('borderColorValue');
+        let borderCollapseValue = document.getElementById('borderCollapseValue');
+        let borderRadiusValue = document.getElementById('borderRadiusValue');
+        // input from form elements
+        let borderPx = document.getElementById('borderPx');
+        let borderStyle = document.getElementById('borderStyle');
+        let borderColor = document.getElementById('borderColor');
+        let borderCollapse = document.getElementById('borderCollapse');
+        let borderRadius = document.getElementById('borderRadius');
+
+        let borderPxInput = 1;
+        let borderStyleInput = 'solid';
+        let borderColorInput = 'black';
+        let borderCollapseInput = 'collapse';
+        let borderRadiusInput = 10;
+
+        // border-width: border-style: border-color: border-collapse: border-radius:       
+        let styleString =
+            `border-width: ${borderPxInput}px; border-style: ${borderStyleInput}; border-color: ${borderColorInput}; border-collapse: ${borderCollapseInput}; border-radius: ${borderRadiusInput}px;`;
+
+        borderPx.addEventListener('click', event => {
+            borderPxValue.textContent = borderPx.value;
+            styleString =
+                `border-width: ${borderPx.value}px; border-style: ${borderStyle.value}; border-color: ${borderColor.value}; border-collapse: ${borderCollapse.value}; border-radius: ${borderRadius.value}px;`;
+
+            for (i = 0; i < tabE.length; i++) {
+                tabE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabHeadE.length; i++) {
+                tabHeadE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabDataE.length; i++) {
+                tabDataE[i].setAttribute('style', styleString);
+            }
+            console.log(styleString);
+        })
+
+        borderStyle.addEventListener('click', event => {
+            borderStyleValue.textContent = borderStyle.value;
+            styleString =
+                `border-width: ${borderPx.value}px; border-style: ${borderStyle.value}; border-color: ${borderColor.value}; border-collapse: ${borderCollapse.value}; border-radius: ${borderRadius.value}px;`;
+
+            for (i = 0; i < tabE.length; i++) {
+                tabE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabHeadE.length; i++) {
+                tabHeadE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabDataE.length; i++) {
+                tabDataE[i].setAttribute('style', styleString);
+            }
+            console.log(styleString);
+        })
+
+        borderColor.addEventListener('click', event => {
+            borderColorValue.textContent = borderColor.value;
+            styleString =
+                `border-width: ${borderPx.value}px; border-style: ${borderStyle.value}; border-color: ${borderColor.value}; border-collapse: ${borderCollapse.value}; border-radius: ${borderRadius.value}px;`;
+
+            for (i = 0; i < tabE.length; i++) {
+                tabE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabHeadE.length; i++) {
+                tabHeadE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabDataE.length; i++) {
+                tabDataE[i].setAttribute('style', styleString);
+            }
+            console.log(styleString);
+        })
+
+        borderCollapse.addEventListener('click', event => {
+            borderCollapseValue.textContent = borderCollapse.value;
+            styleString =
+                `border-width: ${borderPx.value}px; border-style: ${borderStyle.value}; border-color: ${borderColor.value}; border-collapse: ${borderCollapse.value}; border-radius: ${borderRadius.value}px;`;
+
+            for (i = 0; i < tabE.length; i++) {
+                tabE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabHeadE.length; i++) {
+                tabHeadE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabDataE.length; i++) {
+                tabDataE[i].setAttribute('style', styleString);
+            }
+            console.log(styleString);
+        })
+
+        borderRadius.addEventListener('click', event => {
+            borderRadiusValue.textContent = borderRadius.value;
+            styleString =
+                `border-width: ${borderPx.value}px; border-style: ${borderStyle.value}; border-color: ${borderColor.value}; border-collapse: ${borderCollapse.value}; border-radius: ${borderRadius.value}px;`;
+
+            for (i = 0; i < tabE.length; i++) {
+                tabE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabHeadE.length; i++) {
+                tabHeadE[i].setAttribute('style', styleString);
+            }
+            for (i = 0; i < tabDataE.length; i++) {
+                tabDataE[i].setAttribute('style', styleString);
+            }
+            console.log(styleString);
+        })
+        // end table style ///////////////////////////////////////////////////////////////
+    </script>
 </body>
 
 </html>

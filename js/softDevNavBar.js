@@ -16,7 +16,7 @@ const navBar = [
     [ ['BASIC'],['#'], ['Programming Paradigms'],['../../html/softwareDevelopment/paradigms.html']
 ],
     [ ['HTML'],['#'], ['HTML & Syntax'],['../../html/softwareDevelopment/html_structure.html'], ['Semantic'],['../../html/softwareDevelopment/html_semantic.html'],
-      ['Links & Media'],['../../html/softwareDevelopment/html_link_media.html']]     
+      ['Links & Media'],['../../html/softwareDevelopment/html_link_media.html'], ['Forms'],['../../html/softwareDevelopment/html_forms.html']]     
 ];
 document.body.onload = createNavBar;                    //calls function "creatNavBar" when body is loaded
 
@@ -81,4 +81,10 @@ for (i=0; i<navBar.length; i++){
 
 }
  }
+
+//  start htmlCode /////////////////////////////////////////////////////////
+// let elFigure = document.createElement('figure');
+// let elFigcaption = document.createElement('figcaption');
+
+// let htmlCode = document.getElementsByClassName('htmlCode');
 
