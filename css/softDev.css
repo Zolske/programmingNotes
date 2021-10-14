@@ -14,6 +14,25 @@
     --overView: rgb(255, 232, 210);
     --browserOutput: rgb(253, 237, 114);
     --genericDetailBox: OldLace;
+
+
+    /* color coding ....
+    /* html attribute */
+    /* --htmlAttribute: darkseagreen; */
+    /* html value */
+    --htmlValue: deepskyblue;
+    /* html element */
+    --htmlElement: gold;
+    /* css property */
+    /* --cssProperty: greenyellow; */
+    /* css property-value */
+    /* --cssPropertyValue: lightskyblue; */
+    /* JavaScript method */
+    /* --jsMethod: coral; */
+    /* JavaScript property */
+    /* --jsProperty: lawngreen; */
+    /* JavaScript value */
+    /* --jsValue: mediumturquoise; */
 }
 
 /* start headings & elements //////////////////////////////////////////////////////////////////////////////// */
@@ -136,10 +155,12 @@ ul {
 .listH {
     list-style-type: none;
     margin-left: -20px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     letter-spacing: 0.1ch;
     font-size: 1.1em;
     /* counter-increment: item;*/
+    border-bottom: 4px double black;
+    display: inline-block;
 }
 
 .thumbUp {
@@ -284,12 +305,51 @@ td ul {
 
 /* end highlights /////////////////////////////////////////////////////////////////////////// */
 
+/* start >>> marking html elements attributes */
+.ha {
+    background-color: var(--attributeBackground);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 30%;
+    box-shadow: 2px 2px 2px grey;
+    font-family: monospace;
+}
+
+.he {
+    background-color: var(--htmlElement);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20%;
+    box-shadow: 2px 2px 2px grey;
+    font-family: monospace;
+}
+
+.he::after {
+    content: '>';
+}
+
+.he::before {
+    content: '<';
+}
+
+.hv {
+    background-color: var(--htmlValue);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20%;
+    box-shadow: 2px 2px 2px grey;
+    font-family: monospace;
+}
+
+/* end >>> marking html elements attributes */
+
 /* start details / summary /////////////////////////////////////////////////////////////////////// */
 details {
     display: inline-block;
     box-shadow: 5px 5px 5px grey;
     margin-bottom: 1ch;
     padding-right: 1ch;
+    margin: 5px;
 }
 
 summary {
@@ -309,6 +369,11 @@ summary {
 
 .cExa summary::before {
     content: 'example';
+    background-color: var(--exampleBackColor);
+}
+
+details .cExa {
+    background-color: var(--genericDetailBox);
 }
 
 .cImp summary::before {

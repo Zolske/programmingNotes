@@ -63,7 +63,22 @@ for (i=0; i<navBar.length; i++){
         li.appendChild(div);
         console.log(navBar[i].length);
     }
+// start >>> add title to ha class ///////////////////////////////////////////////////////////
+let ha = document.getElementsByClassName('ha');
+for (let i = 0; i < ha.length; i++) {
+    ha[i].title = 'html attribute';
+}
 
+let he = document.getElementsByClassName('he');
+for (let i = 0; i < he.length; i++) {
+    he[i].title = 'html element';
+}
+
+let hv = document.getElementsByClassName('hv');
+for (let i = 0; i < hv.length; i++) {
+    hv[i].title = 'value';
+}
+// end <<< add title to ha class ///////////////////////////////////////////////////////////
 
 //   // console.log(navBarUlId);
 //   // let tempLiA = document.createElement('li');

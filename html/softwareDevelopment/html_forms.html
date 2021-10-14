@@ -11,6 +11,16 @@
     <style>
         td a {
             background-color: lime;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 30%;
+            box-shadow: 2px 2px 2px grey;
+            font-family: monospace;
+        }
+
+        .sNo {
+            text-decoration: line-through;
+            background-color: lime;
         }
     </style>
 </head>
@@ -21,21 +31,35 @@
 
         <!-- the form element ///////////////////////////////////////////////////////////////////////////////////////////// -->
         <h2>the form element</h2>
-        <p class="expText">As the form element is for collecting data from the user, the form needs some important
-            attributes to tell it where and how to send the data.</p>
-        <details class="cSyn">
-            <summary> form</summary>
+        <!-- <p class="expText">As the form element is for collecting data from the user, the form needs some important
+            attributes to tell it where and how to send the data.</p> -->
+        <p class="expText">The <span class="he">form</span> collects data from the user through input-control elements
+            which
+            are nested within
+            <mark title="If the 'elements' has a 'form-attribute' whose value contains the 'id' of the 'form-element',
+                than it can be also outside the 'form-element'.">*</mark>. The <span class="hv">value</span> of those
+            elements can be set
+            through the
+            <span class="ha">value</span>. The <span class="ha">name</span> of the element is than paired with the <span
+                class="hv">value</span>
+            and sends through the <span class="he">form</span> to its specified destination
+            (<span class="ha">action</span>). The <span class="ha">method</span> of the <span class="he">form</span>
+            determines how the data is used.
+            </ul>
+        </p>
+        <details class="cBox">
+            <summary>SYNTAX <span class="he">form</span></summary>
             <figure>
                 <figcaption>html</figcaption>
                 <pre class="cCod">
-&lt;form <span class="cAtt">action="<span class="cVal">VALUE</span>"</span> <span class="cAtt">method="<span class="cVal">VALUE</span>"</span>&gt;
+&lt;form <span class="ha">action="<span class="cVal">VALUE</span>"</span> <span class="ha">method="<span class="cVal">VALUE</span>"</span>&gt;
     // ... input elements ...
 &lt;/form&gt;</pre>
             </figure>
             <figure>
                 <figcaption>definition</figcaption>
                 <dl class="dlCode cBox">
-                    <dt><span class="cAtt">action</span></dt>
+                    <dt><span class="ha">action</span></dt>
                     <dd>Specifies where to send the form-data when a form is submitted.
                         <ul>
                             <li><span class="cVal">URL</span> <i>to the location where the data of the form is send
@@ -43,7 +67,7 @@
                             </li>
                         </ul>
                     </dd>
-                    <dt><span class="cAtt">method</span></dt>
+                    <dt><span class="ha">method</span></dt>
                     <dd>Tells the browser which HTTP method should be used when transmitting <ul>
                             <li><span class="cVal">POST</span> <i>is used when data needs to be update in a database
                                     (e.g. user submits a feedback form)</i>
@@ -63,192 +87,427 @@
                 </dl>
             </figure>
         </details>
-        <!-- input types -->
-        <h3>input types</h3>
-        <p class="expText">How an <span class="sHtml">input</span> works varies depending on the value of
-            its type attribute. If this attribute is not specified, the default type adopted is text.</p>
-
+        <!-- data submission -->
+        <h2>data submission</h2>
+        <p class="expText">Each <b>input-control</b> element must also have a <span class="ha">name <span
+                    class="hv">VALUE</span></span>. The <span class="ha">name <span class="hv">VALUE</span></span> is
+            essential for
+            processing the data the user has sent. It provides a key with which to pair the data in the
+            database.</p>
         <details class="cBox">
-            <summary>input type-attributes</summary>
+            <summary><span class="ha">name</span> attribute</summary>
             <ul>
-                <li>The <span class="sHtml">input</span> is a self-closing tag.</li>
-                <li>All <span class="sHtml">input</span> <b>need to have a name attribute</b>, or its value is not
-                    submitted
-                    with the form!</li>
+                <li>The <span class="ha">name <span class="hv">VALUE</span></span> is paired with the <span
+                        class="ha">value <span class="hv">VALUE</span></span> from the same <b>control-input</b> element
+                </li>
+                <li>Within the same <span class="he">form</span>, the <b>input-controls</b> <span class="ha">name
+                        <span class="hv">VALUE</span></span> has to be unique, or its <span class="ha">value <span
+                            class="hv">VALUE</span></span> gets
+                    overwritten
+                    by its duplication.</li>
+            </ul>
+            <img src="/images/softDevImages/html/data submision.svg" width="600ch" alt="">
+        </details>
+        <!-- input types -->
+        <h2>input-control element</h2>
+        <p class="expText">Input-control elements are used to gather information from the user which can be send with
+            the form as <code>name:value</code> pair.</p>
+
+        <ul>
+            <li class="listH">input-control elements</li>
+            <li><span class="he">input</span>
+                <ul>
+                    <li>the <span class="ha">type</span> determines the look and properties of the <span
+                            class="he">input</span> </li>
+                    <li>If this attribute is not specified, the default <span class="ha">type</span> adopted is <span
+                            class="hv">text</span>.</li>
+                </ul>
+            </li>
+            <li><span class="he">textarea</span>
+                <ul>
+                    <li>a text area can hold an unlimited number of characters <i>(e.g. comments or reviews)</i></li>
+                </ul>
+            </li>
+            <li><span class="he">select</span>
+                <ul>
+                    <li>a dropdown list with predefined options for the user to choose from, contains one or more <span
+                            class="he">option</span> elements</li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li class="listH"><span class="he">datalist</span> a reusable list</li>
+            <li>specifies a list of pre-defined options for one or multiple <span class="he">input</span></li>
+            <li>the <span class="he">datalist<span class="ha">id<span class="hv">VALUE</span></span></span> needs to
+                match the <span class="he">input<span class="ha">list<span class="hv">VALUE</span></span></span></li>
+            <li>
+                <details class="cBox">
+                    <summary>example for datalist</summary>
+                    <div class="browser">
+                        <label for="browser">Choose your browser from the list:</label>
+                        <input list="browsers" name="browser" id="browser">
+                        <datalist id="browsers">
+                            <option value="Edge">
+                            <option value="Firefox">
+                            <option value="Chrome">
+                            <option value="Opera">
+                            <option value="Safari">
+                        </datalist>
+
+                        <p><strong>Note:</strong> The datalist tag is not supported in Safari 12.0 (or earlier).</p>
+                    </div>
+                    <pre class="code">
+&lt;label for="browser"&gt;Choose your browser from the list:&lt;/label&gt;
+&lt;input list="browsers" name="browser" id="browser"&gt;
+&lt;datalist id="browsers"&gt;
+    &lt;option value="Edge"&gt;
+    &lt;option value="Firefox"&gt;
+    &lt;option value="Chrome"&gt;
+    &lt;option value="Opera"&gt;
+    &lt;option value="Safari"&gt;
+&lt;/datalist&gt;</pre>
+                </details>
+            </li>
+        </ul>
+        <details class="cBox">
+            <summary> input-controls</summary>
+            <ul>
+                <li>All <b>input-control elements</b> <b>need to have a <span class="ha">name</span>
+                        attribute</b>, or its <span class="hv">value</span> is not submitted with the form!</li>
             </ul>
             <table>
                 <tr>
-                    <th>Type attribute</th>
-                    <th>Description</th>
-                    <th>Example</th>
-                    <th>extra attributes</th>
+                    <th colspan="4">input-control element: <span class="he">input <span class="ha">type="<span
+                                    class="hv">VALUE</span></span>
+                            <span class="ha">ATTRIBUTES</span> </span></th>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">text</span></td>
-                    <td style="font-style: italic;">The default value. A single-line text field. Line-breaks are
-                        automatically removed from the input value.</td>
-                    <td><input type="text"></td>
-                    <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
-                            href="#pattern">pattern</a> <a href="#placeholder">placeholder</a></td>
-                </tr>
-                <tr>
-                    <td class="cCod"><span class="cAtt">number</span></td>
-                    <td style="font-style: italic;"> A control for entering a number. Displays a spinner and adds
-                        default validation when supported. Displays a numeric keypad in some devices with dynamic
-                        keypads.</td>
-                    <td><input type="number"></td>
-                    <td><a href="#max">max</a> <a href="#min">min</a></td>
-                </tr>
-                <tr>
-                    <td class="cCod"><span class="cAtt">password</span></td>
-                    <td style="font-style: italic;">A single-line text field whose value is obscured. Will alert user if
-                        site is not secure.</td>
-                    <td><input type="password"></td>
-                    <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
-                            href="#pattern">pattern</a> <a href="#placeholder">placeholder</a></td>
-                </tr>
-                <tr>
-                    <td class="cCod"><span class="cAtt">email</span></td>
-                    <td style="font-style: italic;"> A field for editing an email address. Looks like a text input, but
-                        has validation parameters and relevant keyboard in supporting browsers and devices with dynamic
-                        keyboards.</td>
-                    <td><input type="email"></td>
-                    <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
-                            href="#multiple">multiple</a></td>
-                </tr>
-                <tr>
-                    <td class="cCod"><span class="cAtt">checkbox</span></td>
-                    <td style="font-style: italic;">A check box allowing single values to be selected/deselected.</td>
-                    <td><input type="checkbox"></td>
-                    <td><a href="#checked">checked</a></td>
-                </tr>
-                <tr>
-                    <td class="cCod"><span class="cAtt">radio</span></td>
-                    <td style="font-style: italic;">A radio button, allowing a single value to be selected out of
-                        multiple choices with the same name value.</td>
-                    <td><input type="radio"></td>
-                    <td><a href="#checked">checked</a></td>
-                </tr>
-                <tr>
-                    <td class="cCod"><span class="cAtt">color</span></td>
-                    <td style="font-style: italic;">A control for specifying a color; opening a color picker when active
-                        in supporting browsers.</td>
-                    <td><input type="color"></td>
-                </tr>
-                <tr>
-                    <td class="cCod"><span class="cAtt">file</span></td>
-                    <td style="font-style: italic;"> A control that lets the user select a file. Use the accept
-                        attribute to define the types of files that the control can select.</td>
-                    <td><input type="file"></td>
-                    <td>
-                        <a href="#accept">accept</a> <a href="#multiple">multiple</a>
+                    <td colspan="4">
+                        <ul>
+                            <li><span class="he">input</span> is a self-closing tag.</li>
+                        </ul>
                     </td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">image</span></td>
-                    <td style="font-style: italic;">A graphical submit button. Displays an image defined by the src
-                        attribute. The alt attribute displays if the image src is missing.</td>
-                    <td><input type="image"></td>
+                    <th style="width: 7ch;"> <span class="ha">type="<span class="hv">VALUE</span></th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th style="width: 7ch;"><span class="ha">ATTRIBUTES</span></th>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">range</span></td>
+                    <td class="cCod"><span class="hv">text</span></td>
+                    <td style="font-style: italic;">The default value. A single-line text field. Line-breaks are
+                        automatically removed from the input value.</td>
+                    <td><input type="text"><br><code>&lt;input type="text"&gt;</code></td>
+                    <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
+                            href="#pattern">pattern</a> <a href="#placeholder">placeholder</a> <a
+                            href="#readonly">readonly</a> <a href="#required">required</a> <a href="#size">size</a> <a
+                            href="#list">list</a></td>
+                </tr>
+                <tr>
+                    <td class="cCod"><span class="hv">number</span></td>
+                    <td style="font-style: italic;"> A control for entering a number. Displays a spinner and adds
+                        default validation when supported. Displays a numeric keypad in some devices with dynamic
+                        keypads.</td>
+                    <td><input type="number"><br><code>&lt;input type="number"&gt;</code></td>
+                    <td><a href="#max">max</a> <a href="#min">min</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#step">step</a> <a href="#list">list</a></td>
+                </tr>
+                <tr>
+                    <td class="cCod"><span class="hv">password</span></td>
+                    <td style="font-style: italic;">A single-line text field whose value is obscured. Will alert user if
+                        site is not secure.</td>
+                    <td><input type="password"><br><code>&lt;input type="password"&gt;</code></td>
+                    <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
+                            href="#pattern">pattern</a> <a href="#placeholder">placeholder</a> <a
+                            href="#readonly">readonly</a> <a href="#required">required</a> <a href="#size">size</a></td>
+                </tr>
+                <tr>
+                    <td class="cCod"><span class="hv">email</span></td>
+                    <td style="font-style: italic;"> A field for editing an email address. Looks like a text input, but
+                        has validation parameters and relevant keyboard in supporting browsers and devices with dynamic
+                        keyboards.</td>
+                    <td><input type="email"><br><code>&lt;input type="email"&gt;</code></td>
+                    <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
+                            href="#multiple">multiple</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#size">size</a></td>
+                </tr>
+                <tr>
+                    <td class="cCod"><span class="hv">checkbox</span></td>
+                    <td style="font-style: italic;">A check box allowing single values to be selected/deselected. By
+                        default, the data sent to the server from a checkbox that is checked is the value of
+                        <code>on</code>. If you give the checkbox a <span class="ha">value</span>, the value you give
+                        this attribute is the value that will be sent to the server. <details class="cBox">
+                            <summary>example</summary>
+                            <pre class="code">
+&lt;input type="checkbox" name="accept_terms" value="yes" checked&gt;</pre>
+                            <p><i>In the example above, we've got a <span class="ha">name</span> with the value of
+                                    <span class="hv">accept_terms</span>, and a <span class="ha">value</span> with the
+                                    value of
+                                    <span class="hv">yes</span>. When this is submitted,
+                                    the data name/value pair sent to the server would be
+                                    <code>{ "accept_terms" : "yes" }</code>.</i></p>
+                        </details>
+                    </td>
+                    <td><input type="checkbox"><br><code>&lt;input type="checkbox"&gt;</code></td>
+                    <td><a href="#checked">checked</a> <a href="#required">required</a></td>
+                </tr>
+                <tr>
+                    <td class="cCod"><span class="hv">radio</span></td>
+                    <td style="font-style: italic;">A radio button, allowing a single value to be selected out of
+                        multiple choices with the same <span class="ha">name</span> <span class="hv">VALUE</span>.
+                        <details class="cBox">
+                            <summary>example</summary>
+                            <p>A radio group is defined by giving each of radio buttons in the group a <span
+                                    class="ha">name</span> attribute
+                                with the same <span class="hv">VALUE</span>. Once a radio group is established,
+                                selecting any radio button in that group automatically deselects any currently-selected
+                                radio button in the same
+                                group. Radio buttons also need a <span class="ha">value</span> attribute, the <span
+                                    class="hv">VALUE</span> of
+                                which is the data that is sent to the server.</p>
+                        </details>
+                    </td>
+                    <td><input type="radio"><br><code>&lt;input type="radio"&gt;</code></td>
+                    <td><a href="#checked">checked</a> <a href="#required">required</a></td>
+                </tr>
+                <tr>
+                    <td class="cCod"><span class="hv">color</span></td>
+                    <td style="font-style: italic;">A control for specifying a color; opening a color picker when active
+                        in supporting browsers.</td>
+                    <td><input type="color"><br><code>&lt;input type="color"&gt;</code></td>
+                    <td><a href="#list">list</a></td>
+                </tr>
+                <tr>
+                    <td class="cCod"><span class="hv">file</span></td>
+                    <td style="font-style: italic;"> A control that lets the user select a file. Use the accept
+                        attribute to define the types of files that the control can select.</td>
+                    <td><input type="file"><br><code>&lt;input type="file"&gt;</code></td>
+                    <td>
+                        <a href="#accept">accept</a> <a href="#multiple">multiple</a> <a href="#required">required</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cCod"><span class="hv">range</span></td>
                     <td style="font-style: italic;">A control for entering a number whose exact value is not important.
                         Displays as a range widget defaulting to the middle value. Used in conjunction min and max to
                         define the range of acceptable values.</td>
-                    <td><input type="range"></td>
-                    <td><a href="#max">max</a> <a href="#min">min</a></td>
+                    <td><input type="range"> <br><code>&lt;input type="range"&gt;</code></td>
+                    <td><a href="#max">max</a> <a href="#min">min</a> <a href="#step">step</a> <a href="#list">list</a>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">search</span></td>
+                    <td class="cCod"><span class="hv">search</span></td>
                     <td style="font-style: italic;">A single-line text field for entering search strings. Line-breaks
                         are automatically removed from the input value. May include a delete icon in supporting browsers
                         that can be used to clear the field. Displays a search icon instead of enter key on some devices
                         with dynamic keypads.</td>
-                    <td><input type="search"></td>
+                    <td><input type="search"><br><code>&lt;input type="search"&gt;</code></td>
                     <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
-                            href="#placeholder">placeholder</a></td>
+                            href="#placeholder">placeholder</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#list">list</a></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">tel</span></td>
+                    <td class="cCod"><span class="hv">tel</span></td>
                     <td style="font-style: italic;">A control for entering a telephone number. Displays a telephone
                         keypad in some devices with dynamic keypads.</td>
-                    <td><input type="tel"></td>
+                    <td><input type="tel"><br><code>&lt;input type="tel"&gt;</code></td>
                     <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
-                            href="#pattern">pattern</a> <a href="#placeholder">placeholder</a></td>
+                            href="#pattern">pattern</a> <a href="#placeholder">placeholder</a> <a
+                            href="#readonly">readonly</a> <a href="#required">required</a> <a href="#size">size</a> <a
+                            href="#list">list</a></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">url</span></td>
+                    <td class="cCod"><span class="hv">url</span></td>
                     <td style="font-style: italic;"> A field for entering a URL. Looks like a text input, but has
                         validation parameters and relevant keyboard in supporting browsers and devices with dynamic
                         keyboards.</td>
-                    <td><input type="url"></td>
+                    <td><input type="url"><br><code>&lt;input type="url"&gt;</code></td>
                     <td><a href="#maxlength">maxlength</a> <a href="#minlength">minlength</a> <a
-                            href="#placeholder">placeholder</a></td>
+                            href="#placeholder">placeholder</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#size">size</a> <a href="#list">list</a></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">hidden</span></td>
+                    <td class="cCod"><span class="hv">hidden</span></td>
                     <td style="font-style: italic;"> A control that is not displayed but whose value is submitted to the
                         server. There is an example in the next column, but it's hidden!</td>
-                    <td><input type="hidden"></td>
+                    <td><input type="hidden"><br><code>&lt;input type="hidden"&gt;</code></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">time</span></td>
+                    <td class="cCod"><span class="hv">time</span></td>
                     <td style="font-style: italic;">A control for entering a time value with no time zone.</td>
-                    <td><input type="time"></td>
-                    <td><a href="#max">max</a> <a href="#min">min</a></td>
+                    <td><input type="time"><br><code>&lt;input type="time"&gt;</code></td>
+                    <td><a href="#max">max</a> <a href="#min">min</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#step">step</a> <a href="#list">list</a></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">date</span></td>
+                    <td class="cCod"><span class="hv">date</span></td>
                     <td style="font-style: italic;">A control for entering a date (year, month, and day, with no time).
                         Opens a date picker or numeric wheels for year, month, day when active in supporting browsers.
                     </td>
-                    <td><input type="date"></td>
-                    <td><a href="#max">max</a> <a href="#min">min</a></td>
+                    <td><input type="date"><br><code>&lt;input type="date"&gt;</code></td>
+                    <td><a href="#max">max</a> <a href="#min">min</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#step">step</a> <a href="#list">list</a></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">datetime-local</span></td>
+                    <td class="cCod"><span class="hv">datetime-local</span></td>
                     <td style="font-style: italic;">A control for entering a date and time, with no time zone. Opens a
                         date picker or numeric wheels for date- and time-components when active in supporting browsers.
                     </td>
-                    <td><input type="datetime-local"></td>
-                    <td><a href="#max">max</a> <a href="#min">min</a></td>
+                    <td><input type="datetime-local"><br><code>&lt;input type="datetime-local"&gt;</code></td>
+                    <td><a href="#max">max</a> <a href="#min">min</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#step">step</a> <a href="#list">list</a></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">week</span></td>
+                    <td class="cCod"><span class="hv">week</span></td>
                     <td style="font-style: italic;">A control for entering a date consisting of a week-year number and a
                         week number with no time zone.</td>
-                    <td><input type="week"></td>
-                    <td><a href="#max">max</a> <a href="#min">min</a></td>
+                    <td><input type="week"><br><code>&lt;input type="week"&gt;</code></td>
+                    <td><a href="#max">max</a> <a href="#min">min</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#step">step</a> <a href="#list">list</a></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">month</span></td>
+                    <td class="cCod"><span class="hv">month</span></td>
                     <td style="font-style: italic;">A control for entering a month and year, with no time zone.</td>
-                    <td><input type="month"></td>
-                    <td><a href="#max">max</a> <a href="#min">min</a></td>
+                    <td><input type="month"><br><code>&lt;input type="month"&gt;</code></td>
+                    <td><a href="#max">max</a> <a href="#min">min</a> <a href="#readonly">readonly</a> <a
+                            href="#required">required</a> <a href="#step">step</a> <a href="#list">list</a></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">button</span></td>
+                    <td class="cCod"><span class="hv">button</span></td>
                     <td><i>A push button with no default behavior displaying the value of the value attribute, empty by
                             default.</i></td>
-                    <td><input type="button"></td>
+                    <td><input type="button"><br><code>&lt;input type="button"&gt;</code></td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">reset</span></td>
+                    <td class="cCod"><span class="hv">reset</span></td>
                     <td style="font-style: italic;">A button that resets the contents of the form to default values. Not
                         recommended.</td>
-                    <td><input type="reset"></td>
+                    <td><input type="reset">reset</td>
                 </tr>
                 <tr>
-                    <td class="cCod"><span class="cAtt">submit</span></td>
+                    <td class="cCod"><span class="hv">submit</span></td>
                     <td style="font-style: italic;">A button that submits the form.</td>
-                    <td><input type="submit"></td>
+                    <td><input type="submit"><br><code>&lt;input type="submit"&gt;</code></td>
                 </tr>
                 <tr>
-                    <th colspan="4">list of attributes which all type-attributes can have</th>
+                    <td class="cCod"><span class="hv">image</span></td>
+                    <td style="font-style: italic;">A graphical submit button. Displays an image defined by the src
+                        attribute. The alt attribute displays if the image src is missing.</td>
+                    <td><input type="image" src="/images/LOGO/Profile Zoltan 2020 round.png"> <br><code>&lt;input
+                            type="image" src="url"&gt;</code></td>
+                </tr>
+                <tr>
+                    <th colspan="4">all <span class="he">input</span> <span class="ha">type</span>s can have the
+                        attributes:</th>
                 </tr>
                 <tr>
                     <td colspan="4"><a href="#name">name</a> <a href="#autofocus">autofocus</a> <a
-                            href="#disabled">disabled</a> <a href="#form">form</a></td>
+                            href="#disabled">disabled</a> <a href="#form">form</a> <a href="#title">title</a> <a
+                            href="#value">value</a></td>
+                </tr>
+            </table>
+            <br>
+            <!-- textarea -->
+            <table>
+                <tr>
+                    <th colspan="4">input-control element: <span class="he">textarea</span></th>
+                </tr>
+                <tr>
+                    <th>html element</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th><span class="ha">ATTRIBUTES</span></th>
+                </tr>
+                <tr>
+                    <td><span class="he">textarea</span></td>
+                    <td>Defines a multi-line text input control.<br>
+                        The size of a text area is specified by the <span class="ha">cols</span> and <span
+                            class="ha">rows</span> attributes (or with CSS).</td>
+                    <td>
+                        <div class="browser">
+                            <textarea rows="3" cols="8">hello</textarea>
+                        </div>
+                        <pre class="code">
+&lt;textarea rows="3"
+cols="8"&gt;hello&lt;/textarea&gt;</pre>
+                    </td>
+                    <td>
+                        <a href="#maxlength">maxlength</a> <a href="#placeholder">placeholder</a> <a
+                            href="#readonly">readonly</a> <a href="#required">required</a>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <!-- select -->
+            <table>
+                <tr>
+                    <th colspan="4">input-control element: <span class="he">select</span></th>
+                </tr>
+                <tr>
+                    <th>html element</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th><span class="ha">ATTRIBUTES</span></th>
+                </tr>
+                <tr>
+                    <td><span class="he">select</span></td>
+                    <td>
+                        <ul>
+                            <li>Is used to create a drop-down list.</li>
+                            <li><span class="he">select</span>
+                                <ul>
+                                    <li>wraps around the <span class="he">option</span> and contains the <span
+                                            class="ha">name</span></li>
+                                </ul>
+                            </li>
+                            <li><span class="he">option</span>
+                                <ul>
+                                    <li>Marks the individual items of the dropdown list.</li>
+                                    <li>If the <span class="ha">value</span> is defined, than its <span
+                                            class="hv">VALUE</span> is submitted with the form, otherwise the
+                                        content between <span class="he">option</span> is submitted.</li>
+                                </ul>
+                            </li>
+                            <li><span class="he">optgroup</span>
+                                <ul>
+                                    <li>can be used to group <span class="he">option</span>s together</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="browser">
+                            <label for="carList">car list</label>
+                            <select id="carList">
+                                <optgroup label="German Cars">
+                                    <option>BMW</option>
+                                    <option value="audi">Audi</option>
+                                </optgroup>
+                                <optgroup label="French Cars">
+                                    <option>Renault</option>
+                                    <option>Peugeot</option>
+                                </optgroup>
+                            </select>
+                        </div><br>
+                        <pre class="code">
+&lt;label for="carList"&gt;car list&lt;/label&gt;
+&lt;select id="carList" name="VALUE"&gt;
+    &lt;optgroup label="German Cars"&gt;
+        &lt;option&gt;BMW&lt;/option&gt;
+        &lt;option value="audi"&gt;Audi&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label="French Cars"&gt;
+        &lt;option&gt;Renault&lt;/option&gt;
+        &lt;option&gt;Peugeot&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select></pre>
+                    </td>
+                    <td>
+                        <a href="#autofocus">autofocus</a> <a href="#disabled">disabled</a> <a href="#form">form</a> <a
+                            href="#multiple">multiple</a> <a href="#name">name</a> <a href="#required">required</a> <a
+                            href="#size">size</a>
+                    </td>
                 </tr>
             </table>
         </details><br>
@@ -264,7 +523,7 @@
                 </tr>
                 <!-- name -->
                 <tr>
-                    <td id="name"><span class="cAtt">name</span></td>
+                    <td id="name"><span class="ha">name</span></td>
                     <td>all type-attributes</td>
                     <td><i>The <b>value</b> of the input is paired with the <b>name</b> attributes-value when the form
                             is submitted. If there is no name-attribute, than no <b>input-values</b> can be
@@ -281,14 +540,15 @@
                     </td>
                     <td>
                         <div class="browser">
-                            <label>Fruit: <input type="text" name="fruit" value="cherry"></label>
+                            <label>Fruit: <input type="text" name="fruit" value="cherry"></label><br>
                             <input type="submit" />
                         </div>
                         <pre class="code">
-&lt;form action="page.html" method="post"&gt;
-    &lt;label&gt;Fruit: &lt;input type="text"
-    name="<mark>fruit</mark>" value="<mark>cherry</mark>"&gt;&lt;/label&gt;
-    &lt;input type="submit"/&gt;
+&lt;form action="page.html"
+        method="post"&gt;
+     &lt;input type="text" 
+    name="<mark>fruit</mark>" value="<mark>cherry</mark>"&gt;
+    &lt;input type="submit"&gt;
 &lt;/form&gt;</pre>
                         <br><i>data send from the form</i><br>
                         <code>page.html?<mark>fruit</mark>=<mark>cherry</mark></code>
@@ -297,8 +557,8 @@
                 </tr>
                 <!-- accept -->
                 <tr>
-                    <td id="accept"><span class="cAtt">accept</span></td>
-                    <td><span class="cAtt">file</span></td>
+                    <td id="accept"><span class="ha">accept</span></td>
+                    <td><span class="ha">file</span></td>
                     <td><i>Hint for expected file type in file upload controls, other files can be still chosen.</i>
                     </td>
                     <td><input class="browser" type="file" accept=".doc,.docx">
@@ -310,7 +570,7 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- autofocus -->
                 <tr>
-                    <td id="autofocus"><span class="cAtt">autofocus</span><br><i>boolean</i></td>
+                    <td id="autofocus"><span class="ha">autofocus</span><br><i>boolean</i></td>
                     <td>all type-attributes</td>
                     <td><i>A Boolean attribute which, if present, indicates that the input should automatically have
                             focus when the page has finished loading.<br><b>No more than one element</b> in the document
@@ -330,8 +590,8 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- checked -->
                 <tr>
-                    <td id="checked"><span class="cAtt">checked</span><br><i>boolean</i></td>
-                    <td><span class="cAtt">radio</span> <span class="cAtt">checkbox</span></td>
+                    <td id="checked"><span class="ha">checked</span><br><i>boolean</i></td>
+                    <td><span class="ha">radio</span> <span class="ha">checkbox</span></td>
                     <td><i>Radio type <span title="it indicates that the radio button is the currently
                         selected one in the group of same-named radio buttons."><mark>*</mark></span> and checkbox
                             type, are checked by
@@ -358,7 +618,7 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- disabled -->
                 <tr>
-                    <td id="#disabled"><span class="cAtt">disabled</span><br><i>boolean</i></td>
+                    <td id="disabled"><span class="ha">disabled</span><br><i>boolean</i></td>
                     <td>all type-attributes</td>
                     <td><i>Disabled inputs are typically rendered with a dimmer color or using some other form of
                             indication that the field is not available for use.<br>
@@ -376,7 +636,7 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- form -->
                 <tr>
-                    <td id="form"><span class="cAtt">form</span></td>
+                    <td id="form"><span class="ha">form</span></td>
                     <td>all type-attributes</td>
                     <td><i>The form attribute lets you place an <span class="sHtml">input</span> anywhere in the
                             document but have it included with
@@ -417,7 +677,7 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- max -->
                 <tr>
-                    <td id="max"><span class="cAtt">max</span></td>
+                    <td id="max"><span class="ha">max</span></td>
                     <td>numeric values</td>
                     <td><i>Defines the <b>greatest value</b> in the range of permitted values (integer). The form can
                             not be
@@ -435,7 +695,7 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- min -->
                 <tr>
-                    <td id="min"><span class="cAtt">min</span></td>
+                    <td id="min"><span class="ha">min</span></td>
                     <td>numeric values</td>
                     <td><i>Defines the <b>lowest value</b> in the range of permitted values (integer). The form can not
                             be
@@ -453,9 +713,9 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- maxlength -->
                 <tr>
-                    <td id="maxlength"><span class="cAtt">maxlength</span></td>
-                    <td><span class="cAtt">text</span> <span class="cAtt">search</span> <span class="cAtt">url</span>
-                        <span class="cAtt">tel</span> <span class="cAtt">email</span> <span class="cAtt">password</span>
+                    <td id="maxlength"><span class="ha">maxlength</span></td>
+                    <td><span class="ha">text</span> <span class="ha">search</span> <span class="ha">url</span>
+                        <span class="ha">tel</span> <span class="ha">email</span> <span class="ha">password</span>
                     </td>
                     <td><i>Defines the <b>maximum number</b> of characters (as UTF-16 code units) the user can enter
                             into
@@ -470,9 +730,9 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- minlength -->
                 <tr>
-                    <td id="minlength"><span class="cAtt">minlength</span></td>
-                    <td><span class="cAtt">text</span> <span class="cAtt">search</span> <span class="cAtt">url</span>
-                        <span class="cAtt">tel</span> <span class="cAtt">email</span> <span class="cAtt">password</span>
+                    <td id="minlength"><span class="ha">minlength</span></td>
+                    <td><span class="ha">text</span> <span class="ha">search</span> <span class="ha">url</span>
+                        <span class="ha">tel</span> <span class="ha">email</span> <span class="ha">password</span>
                     </td>
                     <td><i>Defines the <b>minimum number</b> of characters (as UTF-16 code units) the user can enter
                             into
@@ -490,16 +750,16 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- multiple -->
                 <tr>
-                    <td id="multiple"><span class="cAtt">multiple</span><br><i>boolean</i></td>
-                    <td><span class="cAtt">email</span> <span class="cAtt">file</span></td>
+                    <td id="multiple"><span class="ha">multiple</span><br><i>boolean</i></td>
+                    <td><span class="ha">email</span> <span class="ha">file</span></td>
                     <td><i>The user can enter comma separated email addresses in the email widget or can choose more
                             than one file with the file input.</i></td>
                     <td></td>
                 </tr>
                 <!-- pattern -->
                 <tr>
-                    <td id="pattern"><span class="cAtt">pattern</span></td>
-                    <td><span class="cAtt">password</span> <span class="cAtt">text</span> <span class="cAtt">tel</span>
+                    <td id="pattern"><span class="ha">pattern</span></td>
+                    <td><span class="ha">password</span> <span class="ha">text</span> <span class="ha">tel</span>
                     </td>
                     <td><i>Is a regular expression that the input's value must match in order for the value to pass
                             constraint validation. It must be a valid JavaScript regular expression, as used by the
@@ -521,9 +781,9 @@ accept=".doc,.docx"&gt;</pre>
                 </tr>
                 <!-- placeholder -->
                 <tr>
-                    <td id="placeholder"><span class="cAtt">placeholder</span></td>
-                    <td><span class="cAtt">password</span> <span class="cAtt">search</span> <span
-                            class="cAtt">tel</span> <span class="cAtt">text</span> <span class="cAtt">url</span></td>
+                    <td id="placeholder"><span class="ha">placeholder</span></td>
+                    <td><span class="ha">password</span> <span class="ha">search</span> <span class="ha">tel</span>
+                        <span class="ha">text</span> <span class="ha">url</span></td>
                     <td><i>Text that appears in the input-field when it has no value set. A string that provides a
                             brief hint to the user as to what kind of information is expected in the field. Is not
                             submitted and disappears when user starts to type</i></td>
@@ -537,42 +797,233 @@ accept=".doc,.docx"&gt;</pre>
 <mark>placeholder="e.g. Mike"</mark>&gt;</pre>
                     </td>
                 </tr>
-
+                <!-- readonly -->
+                <tr>
+                    <td id="readonly"><span class="ha">readonly</span><br><i>boolean</i></td>
+                    <td><span class="ha">text</span> <span class="ha">search</span> <span class="ha">url</span>
+                        <span class="ha">tel</span> <span class="ha">email</span> <span class="ha">date</span>
+                        <span class="ha">month</span> <span class="ha">week</span> <span class="ha">time</span>
+                        <span class="ha">datetime-local</span> <span class="ha">number</span> <span
+                            class="ha">password</span></td>
+                    <td><i>The difference between <code>disabled</code> and <code>readonly</code> is that read-only
+                            controls can still function
+                            and are still focusable, whereas disabled controls can not receive focus and are not
+                            submitted with the form and generally do not function as controls until they are enabled.
+                            Because a read-only field cannot have it's value changed by a user interaction,
+                            <code>required</code>
+                            does not have any effect on inputs with the readonly attribute also specified.
+                            The only way to modify dynamically the value of the readonly attribute is through a
+                            script.</i></td>
+                    <td>
+                        <div class="browser" style="text-align: left;">
+                            <input type="textbox" value="Some value" readonly>
+                            <label>Textbox</label><br>
+                            <input type="date" value="2020-01-01" readonly>
+                            <label>Date</label><br>
+                            <input type="password" value="Some value" readonly>
+                            <label>Password</label><br>
+                            <textarea readonly>Some value</textarea>
+                            <label>Message</label>
+                        </div>
+                        <pre class="code">
+&lt;input type="textbox"
+    value="Some value" readonly&gt;
+&lt;input type="date"
+    value="2020-01-01" readonly&gt;
+&lt;input type="password"
+    value="Some value" readonly&gt;
+&lt;textarea readonly&gt;
+    Some value&lt;/textarea&gt;</pre>
+                    </td>
+                </tr>
+                <!-- required -->
+                <tr>
+                    <td id="required"><span class="ha">required</span><br><i>boolean</i></td>
+                    <td><span class="ha">almost all</span></td>
+                    <td><i>The <b>user must specify a value</b> for the input before the owning form can be
+                            submitted.</i></td>
+                    <td></td>
+                </tr>
+                <!-- size -->
+                <tr>
+                    <td id="size"><span class="ha">size</span></td>
+                    <td><span class="ha">email</span> <span class="ha">password</span> <span class="ha">tel</span>
+                        <span class="ha">url</span> <span class="ha">text</span></td>
+                    <td><i>Specifies how much of the input is shown. Creates the same result as setting CSS
+                            <code>width</code> property. But the css <code>width</code> takes precedence over the
+                            <code>size</code> attribute.</i></td>
+                    <td>
+                        <div class="browser" style="text-align: left;">
+                            <input type="password" size="4"> password<br>
+                            <input type="text" size="8"> text<br>
+                        </div>
+                        <pre class="code">
+&lt;input type="password" size="4"&gt;
+&lt;input type="text" size="8"&gt;</pre>
+                    </td>
+                </tr>
+                <!-- step -->
+                <tr>
+                    <td id="step"><span class="ha">step</span></td>
+                    <td><span class="ha">number</span> <span class="ha">range</span> <span class="ha">number</span>
+                        <span class="ha">date</span> <span class="ha">month</span>
+                        <span class="ha">week</span> <span class="ha">time</span> <span class="ha">datetime-local</span>
+                    </td>
+                    <td><i>The step attribute is a number that specifies the granularity that the value must adhere
+                            to.</i></td>
+                    <td>
+                        <div class="browser" style="text-align: left;">
+                            <input type="number" step="10" style="width: 5ch;"> steps by 10<br>
+                            <input type="number" style="width: 5ch;"> no steps
+                        </div>
+                        <pre class="code">
+&lt;input type="number" step="10"&gt;
+&lt;input type="number"&gt;</pre>
+                    </td>
+                </tr>
+                <!-- title -->
+                <tr>
+                    <td id="title"><span class="ha">title</span></td>
+                    <td>all type-attributes</td>
+                    <td><i>Containing a text representing advisory information related to the element it belongs to when
+                            the user "hovers" over the element. Can be used to supplant the <span
+                                class="sHtml">label</span> but it should never replace it!</i></td>
+                    <td>
+                        <div class="browser">
+                            <i>hover over the input element<br>to see the "title"<br></i>
+                            <input type="text" title="enter your text">
+                        </div>
+                        <pre class="code">
+&lt;input type="text"
+  title="enter your text"&gt;</pre>
+                    </td>
+                </tr>
+                <!-- value -->
+                <tr>
+                    <td id="value"><span class="ha">value</span></td>
+                    <td>all type-attributes</td>
+                    <td><i>Its value sets the initial value of the input-element, but can be changed by the user through
+                            the input controls. The value is submitted with the form if not changed by the user.<br>Can
+                            be altered or retrieved using JavaScript.<br>The value attribute is always optional, but
+                            should be considered mandatory for <code>checkbox</code>, <code>radio</code>, and
+                            <code>hidden</code>.
+                        </i></td>
+                    <td>
+                        <div class="browser">
+                            <input type="text" value="change me!" id="changeUser">
+                        </div>
+                        <pre class="code">
+&lt;input type="text" value="<mark id="changeMe">change me!</mark>"&gt;</pre>
+                    </td>
+                </tr>
+                <!-- list -->
+                <tr>
+                    <td id="list"><span class="ha">list</span></td>
+                    <td>all type-attributes<br><i>except ...</i><br><span class="sNo">hidden</span> <span
+                            class="sNo">password</span> <span class="sNo">checkbox</span> <span class="sNo">radio</span>
+                        <span class="sNo">file</span><br><i>& buttons</i></td>
+                    <td><i>The value given to the <code>list</code> attribute should be the id of a <span
+                                class="sHtml">datalist</span> element located in the
+                            same document. The <span class="sHtml">datalist</span> provides a <b>list of predefined
+                                values</b>
+                            to suggest to the
+                            user for his input. Any values in the list that are not compatible with the type
+                            are not included in the suggested options <i>(or included but input dose not except)</i>.
+                            The values provided are suggestions, not
+                            requirements: users can select from this predefined list or provide a different
+                            value.</i></td>
+                    <td>
+                        <div class="browser" style="text-align: left;">
+                            <input type="text" list="mayBe"> text<br>
+                            <input type="number" list="mayBe"> number
+                            <datalist id="mayBe">
+                                <option value="Chocolate">
+                                <option value="Coconut">
+                                <option value="7">
+                                <option value="100">
+                            </datalist>
+                        </div>
+                        <pre class="code">
+&lt;input type="text" list="<mark>mayBe</mark>"&gt;
+&lt;input type="number" list="mayBe"&gt;
+&lt;datalist id="<mark>mayBe</mark>"&gt;
+    &lt;option value="Chocolate"&gt;
+    &lt;option value="Coconut"&gt;
+    &lt;option value="7"&gt;
+    &lt;option value="100"&gt;
+&lt;/datalist&gt;</pre>
+                    </td>
+                </tr>
             </table>
         </details>
+        <!-- the label element ////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h2>the label element</h2>
+        <p class="expText">Provides a name for the <b>input-control</b> element to make the purpose of it clear to the
+            user.</p>
+        <details class="cBox">
+            <summary> label</summary>
+            <p>Associating a <span class="he">label</span> with an <b>input-control</b> element offers
+                some major advantages: <ul>
+                    <li>The label text is not only visually associated with its corresponding text input; it is
+                        programmatically associated with it too. This means that, for example, a screen reader will read
+                        out the label when the user is focused on the form input, making it easier for an assistive
+                        technology user to understand what data should be entered.</li>
+                    <li>When a user clicks or touches/taps a label, the browser passes the focus to its associated input
+                        (the resulting event is also raised for the input). That increased hit area for focusing the
+                        input provides an advantage to anyone trying to activate it — including those using a
+                        touch-screen device.</li>
+                </ul>
+            </p>
 
+            <ol>
+                <li class="listH">to associate the <span class="he">label</span> with an <span class="he">input</span>,
+                    you need to ...</li>
+                <li> give the <span class="he">input</span> an <span class="ha">id</span></li>
+                <li>give the <span class="he">label</span> a <span class="ha">for</span> with the same
+                    <span class="ha">id</span>
+                    as the <span class="he">input</span>'s <span class="ha">id</span></li><br>
+                <div class="browser">
+                    <label for="Me">I am the label</label>
+                    <input type="text" id="Me">
+                </div><br>
+                <pre class="code">
+&lt;label for="Me"&gt;<mark>I am the label</mark>&lt;/label&gt;
+&lt;input type="text" id="Me"&gt;</pre>
+            </ol>
+            <hr>
+            <ol>
+                <li>nest the <span class="he">input</span> inside the <span class="he">label</span></li>
+                <li>no <span class="ha">for</span> and no <span class="ha">id</span> needed</li>
+                <div class="browser">
+                    <label>I am the label
+                        <input type="text"></label>
+                </div><br>
+                <pre class="code">
+&lt;label&gt;<mark>I am the label</mark> 
+&lt;input type="text"&gt;
+&lt;/label&gt;</pre>
+            </ol>
 
-
-
-
-
-
-
-
-
-
-
-
-
+            <!-- datalist -->
+            <h3>datalist</h3>
+            <p class="expText">Are used for a list of entries which can be connected to multiple <span
+                    class="he">select</span></p>
 
     </main>
     <script src="/js/softDevNavBar.js"></script>
     <script>
+        //start >>> do not delete again !!! Opens the details for the links to connect
+        let linkTab = document.getElementsByTagName('a');
         let speTypAtt = document.getElementById('speTypAtt');
-        let linkEvent = document.getElementsByTagName('a');
 
-        for (let i = 0; i < linkEvent.length; i++) {
-            linkEvent[i].addEventListener('click', event => {
+
+        for (let i = 0; i < linkTab.length; i++) {
+            linkTab[i].addEventListener('click', event => {
                 speTypAtt.setAttribute('open', '');
+
             })
         }
-        // linkEvent.addEventListener('click', event => {
-        //     speTypAtt.setAttribute('open', '');
-        // })
-        // linkEvent.addEventListener('click', event => {
-        //     // speTypAtt.setAttribute('open');
-        //     console.log('open');
-        // })
+        //end <<< do not delete again !!! Opens the details for the links to connect
     </script>
 </body>
 
