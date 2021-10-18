@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
+    <link rel="stylesheet" href="/css/softDev.css">
+    <title>CSS Basic</title>
+</head>
+
+<body>
+    <main>
+        <h1>CSS Basic</h1>
+        <p class="expText"><b>C</b>ascading <b>S</b>tyle <b>S</b>heets is a style sheet language used for describing the
+            presentation of a document written in a markup language such as HTML. This is done by "selecting" the html
+            element and applying the css "property:values" to it.</p>
+
+        <!-- implementing css -->
+        <h2>implementing <span style="text-transform: uppercase;">CSS</span></h2>
+        <p class="expText">There are three methods to add css style to a html document.</p>
+        <details class="cBox">
+            <summary>explain: implementing CSS</summary>
+            <ul>
+                <li class="listH">1. Inline Styles</li>
+                <ul>
+                    <li><code>&lt;tag style=”PROPERTY:VALUE;PROPERTY2:VALUE2”&gt;</code></li>
+                    <li>is implemented directly by setting the <span class="ha">style</span> of the html element to
+                        the css "property:value"</li>
+                    <li><b>overwrites all other css styles</b>, except <code>!important</code></li>
+                </ul>
+                <li class="listH">2. Embedded Styles</li>
+                <ul>
+                    <li><code>&lt;head&gt; &lt;style&gt; SELECTOR {PROPERTY:VALUE;}
+                            &lt;/style&gt; &lt;/head&gt;</code></li>
+                    <li>is implemented in the <span class="he">head</span> section of the html document, set between
+                        the <span class="he">style</span></li>
+                    <li><b>overwrites external stylesheets</b>, except <code>!important</code></li>
+                </ul>
+                <li class="listH">3. External Styles</li>
+                <ul>
+                    <li><code> &lt;head&gt; &lt;link rel="stylesheet" href="styles.css"&gt; &lt;/head&gt;</code>
+                    <li>links to the external CSS file</li>
+                    </li>
+                </ul>
+            </ul>
+            <ol>
+                <li class="listH">advantages of using an external stylesheet</li>
+                <li>multiple web pages can be styled with one stylesheet</li>
+                <li>better control over typography and page layouts. (more readable)</li>
+                <li>style can be separate from structure. (separation of concerns)</li>
+                <li>maintaining the site is simplified due to one-change-affects-all.</li>
+            </ol>
+        </details>
+        <!-- css syntax -->
+        <h2>CSS syntax</h2>
+        <p class="expText">How the CSS code has to be formed.</p>
+        <details class="cBox">
+            <summary>explain: CSS syntax</summary>
+            <img src="/images/softDevImages/css/css_syntax.svg" alt="">
+            <ul>
+                <li class="listH">syntax</li>
+                <li>CSS is case sensitive</li>
+                <li>the declaration block needs to be wrapped with curly braces <code>{ }</code></li>
+                <li>each declaration in the block must end with a semicolon <code> ; </code></li>
+                <li>properties need to be separated from there value with a colon <code> : </code></li>
+                <li>naming <b>classes</b> and <b>ids</b> should be descriptive, separate a two word name with an hyphen
+                    <code>-</code> instead of camelCase</li>
+            </ul>
+            <ul>
+                <li class="listH">rule set</li>
+                <li>the <b>selector</b> selects the html element and applies the <b>CSS rules</b> to it</li>
+                <li>can have multiple selectors and declarations</li>
+                <li>if the specificity of rules which select the same tag is the same, than the last CSS rule overwrites
+                    the previous one</li>
+            </ul>
+        </details>
+    </main>
+    <script src="/js/softDevNavBar.js"></script>
+</body>
+
+</html>
