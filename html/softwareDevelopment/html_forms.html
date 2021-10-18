@@ -378,12 +378,15 @@
                     <td><i>A push button with no default behavior displaying the value of the value attribute, empty by
                             default.</i></td>
                     <td><input type="button"><br><code>&lt;input type="button"&gt;</code></td>
+                    <td><a href="#type">type</a></td>
                 </tr>
                 <tr>
                     <td class="cCod"><span class="hv">reset</span></td>
                     <td style="font-style: italic;">A button that resets the contents of the form to default values. Not
                         recommended.</td>
-                    <td><input type="reset">reset</td>
+                    <td><input type="reset">
+                        <pre class="code">&lt;input type="reset"&gt;</pre>
+                    </td>
                 </tr>
                 <tr>
                     <td class="cCod"><span class="hv">submit</span></td>
@@ -508,6 +511,42 @@ cols="8"&gt;hello&lt;/textarea&gt;</pre>
                             href="#multiple">multiple</a> <a href="#name">name</a> <a href="#required">required</a> <a
                             href="#size">size</a>
                     </td>
+                </tr>
+            </table><br>
+            <!-- button -->
+            <table>
+                <tr>
+                    <th colspan="4">button element: <span class="he">button</span></th>
+                </tr>
+                <tr>
+                    <th>html element</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th><span class="ha">ATTRIBUTES</span></th>
+                </tr>
+                <tr>
+                    <td><span class="he">button</span></td>
+                    <td style="text-align: left;">
+                        <ul>
+                            <li class="listH"><span class="he">button</span>
+                            <li>can have <span class="ha">type <span class="hv">submit</span></span> and<br><span
+                                    class="ha">type <span class="hv">reset</span></span></li>
+                            <li>dose the same as <span class="he">input <span class="ha">type <span
+                                            class="hv">submit</span> </span> </span> and <span class="he">input
+                                    <span class="ha">type <span class="hv">reset</span> </span> </span> but the
+                                <span class="he">button</span> can have any html element between its opening and
+                                closing tag <i>(image, textContent, ...)</i> which will represent the button</li>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <button><img src="/images/LOGO/Profile Zoltan 2020 round.png" alt=""></button>
+                        <pre class="code">
+&lt;button&gt;
+    &lt;img src="images.png"&gt;
+&lt;/button&gt;</pre>
+                    </td>
+                    <td><a href="#type">type</a></td>
                 </tr>
             </table>
         </details><br>
@@ -957,11 +996,12 @@ accept=".doc,.docx"&gt;</pre>
             </table>
         </details>
         <!-- the label element ////////////////////////////////////////////////////////////////////////////////////////// -->
-        <h2>the label element</h2>
-        <p class="expText">Provides a name for the <b>input-control</b> element to make the purpose of it clear to the
+        <h2>labelling input-controls</h2>
+        <p class="expText">The <span class="he">label</span> provides a name for the <b>input-control</b> element to
+            make the purpose of it clear to the
             user.</p>
         <details class="cBox">
-            <summary> label</summary>
+            <summary>explain label</summary>
             <p>Associating a <span class="he">label</span> with an <b>input-control</b> element offers
                 some major advantages: <ul>
                     <li>The label text is not only visually associated with its corresponding text input; it is
@@ -1003,12 +1043,46 @@ accept=".doc,.docx"&gt;</pre>
 &lt;input type="text"&gt;
 &lt;/label&gt;</pre>
             </ol>
+        </details>
 
-            <!-- datalist -->
-            <h3>datalist</h3>
-            <p class="expText">Are used for a list of entries which can be connected to multiple <span
-                    class="he">select</span></p>
-
+        <!-- fieldset ///////////////////////////////////////////// -->
+        <h2>Grouping input-controls together</h2>
+        <p class="expText">The <span class="he">fieldset</span> helps to visual group <b>input-control</b> elements
+            together. The <span class="he">legend</span> gives the group <b>semantic</b> meaning.</p>
+        <details class="cBox">
+            <summary>explain fieldset</summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>browser</figcaption>
+                    <div class="browser">
+                        <fieldset>
+                            <legend>Your details</legend>
+                            <label>Name: <input type="text"></label><br>
+                            <label for="Email">Email: </label>
+                            <input type="email" id="Email">
+                        </fieldset>
+                    </div>
+                </figure>
+                <figure>
+                    <figcaption>html</figcaption>
+                    <pre class="code">
+&lt;fieldset&gt;
+    &lt;legend&gt;Your details&lt;/legend&gt;
+    &lt;label&gt;Name: &lt;input type="text"&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;label for="Email"&gt;Email: &lt;/label&gt;
+    &lt;input type="email" id="Email"&gt;
+&lt;/fieldset&gt;</pre>
+                </figure>
+            </div>
+            <ul>
+                <li class="listH"><span class="he">fieldset</span></li>
+                <li>groups related elements by drawing a box around any elements nested inside it</li><br>
+                <li class="listH"><span class="he">legend</span></li>
+                <li>defines a title for the <span class="he">fieldset</span></li>
+                <li>the legend content is displayed inside the top line of the fieldset border</li>
+                <li>the legend gives the <span class="he">fieldset</span> a <b>semantic</b> meaning</li>
+            </ul>
+        </details>
     </main>
     <script src="/js/softDevNavBar.js"></script>
     <script>

@@ -13,10 +13,12 @@
 const navBar = [
     [ ['HOME'],['#'], ['Software Development'],['../../html/softwareDevelopment/softDevIndex.html'], ['Zoltans Page'],['../../index.html'] ],
 
-    [ ['BASIC'],['#'], ['Programming Paradigms'],['../../html/softwareDevelopment/paradigms.html']
+    [ ['BASIC'],['#'], ['RESOURCES'],['../../html/softwareDevelopment/0RESOURCES.html'], ['Portfolio Assessment Guide'],['../../html/softwareDevelopment/0PORTFOLIO_ASSESSMENT_GUIDE.html'],
+      ['Programming Paradigms'],['../../html/softwareDevelopment/paradigms.html']
 ],
     [ ['HTML'],['#'], ['HTML & Syntax'],['../../html/softwareDevelopment/html_structure.html'], ['Semantic'],['../../html/softwareDevelopment/html_semantic.html'],
-      ['Links & Media'],['../../html/softwareDevelopment/html_link_media.html'], ['Forms'],['../../html/softwareDevelopment/html_forms.html']]     
+      ['Links & Media'],['../../html/softwareDevelopment/html_link_media.html'], ['Forms'],['../../html/softwareDevelopment/html_forms.html']
+]
 ];
 document.body.onload = createNavBar;                    //calls function "creatNavBar" when body is loaded
 

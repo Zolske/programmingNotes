@@ -6,35 +6,451 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/softDev.css">
     <title>Semantic</title>
 </head>
 
 <body>
     <main>
         <h1>Semantic</h1>
+        <p class="expText">Semantic HTML is the use of HTML markup to reinforce the semantics, or meaning, of the
+            information in webpages and web applications rather than merely to define its presentation or look.</p>
+        <!-- structuring the page into semantic sections ////////////////////////////////////////////////////////////////// -->
+        <h2>structuring the page into semantic sections</h2>
+        <p class="expText">A semantic element clearly describes its meaning to both the browser and the developer.<br>
+            It makes it easier for developers to understand the code and search engines / screen readers can navigate
+            the page.</p>
+        <img src="/images/softDevImages/html/Structural Elements.svg" alt="">
+        <!-- header -->
+        <h3><span class="he">header</span></h3>
+        <p class="expText">Provides introductory content.</p>
+        <ul>
+            <li class="listH">inside the <span class="he">body</span></li>
+            <li>is the "masterhead" for the web page containing the ... <ul>
+                    <li>... main heading <span class="he">h1</span></li>
+                    <li>... authorship information</li>
+                    <li>... description or introduction what the page is about</li>
+                    <li>... navigation for the page (<span class="he">nav</span>)</li>
+                    <li>... logo or icon</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li class="listH">inside the <span class="he">article</span> or <span class="he">section</span></li>
+            <li>can contain the title <i>(h2-h6)</i> and introduction/description</li>
+        </ul>
+        <p><b>Note:</b> <span class="he">header</span> cannot be placed within a <span class="he">footer</span>, <span
+                class="he">address</span> or another <span class="he">header</span> element.</p>
+        <details class="cBox">
+            <summary>example <span class="he">header</span></summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>browser</figcaption>
+                    <article class="browser">
+                        <header>
+                            <h2>What Does WWF Do?</h2>
+                            <p>WWF's mission:</p>
+                        </header>
+                        <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a
+                            future in which humans live in harmony with nature.</p>
+                    </article>
+                </figure>
+                <figure>
+                    <figcaption>html</figcaption>
+                    <pre class="code">
+&lt;article&gt;
+    &lt;header&gt;
+      &lt;h2&gt;What Does WWF Do?&lt;/h2&gt;
+      &lt;p&gt;WWF's mission:&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;p&gt;WWF's mission is to stop the degradation of our planet's natural environment,
+    and build a future in which humans live in harmony with nature.&lt;/p&gt;
+&lt;/article&gt;</pre>
+                </figure>
+            </div>
+        </details>
+        <!-- nav -->
+        <h3><span class="he">nav</span></h3>
+        <p class="expText">Represents a location on a page that links to other pages or
+            parts within the same page.</p>
+        <ul>
+            <li class="listH">examples ...</li>
+            <li>... menus</li>
+            <li>... tables of contents</li>
+            <li>... indexes</li>
+        </ul>
+
+        <ul>
+            <li class="listH">rules</li>
+            <li>is typically found near the top of ever web page</li>
+            <li>there should be only one <span class="he">nav</span> , however if the site contains a lot of
+                complex information it can have several <span class="he">nav</span> for ... <ul>
+                    <li>... site navigation</li>
+                    <li>... navigating of elements on the same page</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><b>Note:</b> not all groups of links need to be in a <span class="he">nav</span>. <b>Only major navigation
+                blocks</b> are appropriated for the <span class="he">nav</span>.<br> <i>( e.g. a <span
+                    class="he">footer</span>
+                can also contain links which do not need to be in the <span class="he">nav</span> )</i></p>
+        <!-- footer -->
+        <h3><span class="he">footer</span></h3>
+        <p class="expText">Represents a footer for its nearest section of content.
+            Usually at the bottom of a page, but can also be used within an <span class="he">article</span>.</p>
+        <ul>
+            <li class="listH">can contain ...</li>
+            <li>... authorship information</li>
+            <li>... copyright information</li>
+            <li>... contact information</li>
+            <li>... sitemap</li>
+            <li>... links to related documents</li>
+        </ul>
+        <!-- section -->
+        <h3><span class="he">section</span></h3>
+        <p class="expText">Defines sections in a document (<i>they thematic groupe
+                content, usually with a
+                heading, the title of an section would appear in an index</i>).
+        </p>
+        <ul>
+            <li class="listH">can be used for ...</li>
+            <li>... Chapters</li>
+            <li>... Introduction</li>
+            <li>... News items</li>
+            <li>... Contact information</li>
+        </ul>
+        <p><b>Note:</b> should not be used as a generic container for CSS-styling, use <span class="he">div</span>
+            instead.</p>
+        <details class="cBox">
+            <summary>example <span class="he">section</span></summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>browser</figcaption>
+                    <div class="browser">
+                        <section>
+                            <h2>WWF</h2>
+                            <p>The World Wide Fund for Nature (WWF) is an international organization working on issues
+                                regarding the conservation, research and restoration of the environment, formerly named
+                                the World Wildlife Fund. WWF was founded in 1961.</p>
+                        </section>
+
+                        <section>
+                            <h2>WWF's Panda symbol</h2>
+                            <p>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from
+                                a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the
+                                same year of the establishment of WWF.</p>
+                        </section>
+                    </div>
+                </figure>
+                <figure>
+                    <figcaption>html</figcaption>
+                    <pre class="code">
+&lt;section&gt;
+    &lt;h2&gt;WWF&lt;/h2&gt;
+    &lt;p&gt;The World Wide Fund for Nature (WWF) is an international organization
+    working on issues regarding the conservation, research and restoration of the environment,
+    formerly named the World Wildlife Fund. WWF was founded in 1961.&lt;/p&gt;
+  &lt;/section&gt;
+  
+  &lt;section&gt;
+    &lt;h2&gt;WWF's Panda symbol&lt;/h2&gt;
+    &lt;p&gt;The Panda has become the symbol of WWF. The well-known panda logo of WWF
+    originated from a panda named Chi Chi that was transferred from the Beijing Zoo to
+    the London Zoo in the same year of the establishment of WWF.&lt;/p&gt;
+  &lt;/section&gt;</pre>
+                </figure>
+            </div>
+        </details>
+        <!-- article -->
+        <h3><span class="he">article</span></h3>
+        <p class="expText">Specifies independent, self-contained content.<br><b>An
+                article should make sense on its own, and it
+                should be possible to distribute it independently from the rest of the web site.</b></p>
+        <ul>
+            <li class="listH">examples are ...</li>
+            <li>... news article</li>
+            <li>... blogs</li>
+            <li>... forum posts</li>
+            <li>... product cards</li>
+            <li>... user comments</li>
+        </ul>
+
+        <ul>
+            <li class="listH">rules</li>
+            <li>a page can have multiple <span class="he">article</span></li>
+            <li>a <span class="he">article</span> can contain <ul>
+                    <li><span class="he">header</span></li>
+                    <li><span class="he">footer</span></li>
+                    <li>multiple <span class="he">section</span></li>
+                </ul>
+            </li>
+            <li>every <span class="he">article</span> should be identified with an heading <b>as the first child</b>
+            </li>
+        </ul>
+        <details class="cBox">
+            <summary>example <span class="he">article</span></summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>browser</figcaption>
+                    <div class="browser">
+                        <article>
+                            <h2>Google Chrome</h2>
+                            <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the
+                                world's
+                                most popular web browser today!</p>
+                        </article>
+
+                        <article>
+                            <h2>Mozilla Firefox</h2>
+                            <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the
+                                second most popular web browser since January, 2018.</p>
+                        </article>
+
+                        <article>
+                            <h2>Microsoft Edge</h2>
+                            <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge
+                                replaced Internet Explorer.</p>
+                        </article>
+                    </div>
+                </figure>
+                <figure>
+                    <figcaption>html</figcaption>
+                    <PRE class="code">
+&lt;article&gt;
+    &lt;h2&gt;Google Chrome&lt;/h2&gt;
+    &lt;p&gt;Google Chrome is a web browser developed by Google, released in 2008. Chrome is the
+    world's most popular web browser today!&lt;/p&gt;
+&lt;/article
+&lt;article&gt;
+    &lt;h2&gt;Mozilla Firefox&lt;/h2&gt;
+    &lt;p&gt;Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been
+    the second most popular web browser since January, 2018.&lt;/p&gt;
+&lt;/article
+&lt;article&gt;
+    &lt;h2&gt;Microsoft Edge&lt;/h2&gt;
+    &lt;p&gt;Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft
+    Edge replaced Internet Explorer.&lt;/p&gt;
+&lt;/article&gt;</PRE>
+                </figure>
+            </div>
+        </details>
+        <!-- aside -->
+        <h3><span class="he">aside</span></h3>
+        <p class="expText">Is used for a portion of a document where its content is
+            indirectly related to the document's main content <i>(it enhances the main content but is not critical to
+                its understanding)</i>. </p>
+        <ul>
+            <li class="listH">used for ...</li>
+            <li>... sidebars</li>
+            <li>... call out boxes</li>
+        </ul>
+        <details class="cBox">
+            <summary>example <span class="he">aside</span></summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>browser</figcaption>
+                    <div class="browser">
+                        <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was
+                            amazing! I had a great summer together with my family!</p>
+
+                        <aside>
+                            <h4>Epcot Center</h4>
+                            <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                international pavilions, award-winning fireworks and seasonal special events.</p>
+                        </aside>
+                    </div>
+                </figure>
+                <figure>
+                    <figcaption>html</figcaption>
+                    <pre class="code">
+&lt;p&gt;My family and I visited The Epcot center this summer. The weather was nice,
+and Epcot was amazing! I had a great summer together with my family!&lt;/p&gt;
+
+&lt;aside&gt;
+    &lt;h4&gt;Epcot Center&lt;/h4&gt;
+    &lt;p&gt;Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+        international pavilions, award-winning fireworks and seasonal special events.&lt;/p&gt;
+&lt;/aside&gt;</pre>
+                </figure>
+            </div>
+        </details>
+        <!-- semantic elements /////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h2>semantic elements</h2>
         <!-- Headings /////////////////////////////////////////////////////////////////////////////////////////////// -->
-        <h2>Headings</h2>
+        <h3><span class="he">h_</span> Headings</h3>
         <p class="expText">Headings structure the page into a hierarchical order and describes the content of the
             article.</p>
         <ul>
-            <li class="listH"><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code></li>
-            <li>only one <code>&lt;h1&gt;</code> per page which is the title of the page, "SEO" may use it for there
+            <li class="listH"><span class="he">h1</span> - <span class="he">h6</span></li>
+            <li>only one <span class="he">h1</span> per page which is the title of the page, "SEO" may use it
+                for there
                 search results</li>
             <li>screen reader use headings to navigate the page</li>
-            <li>no heading level skipping from <code>&lt;h2&gt;</code> to <code>&lt;h6&gt;</code>, but from
-                <code>&lt;h6&gt;</code> to <code>&lt;h2&gt;</code> possible</li>
+            <li>no heading level skipping from <span class="he">h2</span> to <span class="he">h6</span>,
+                but from
+                <span class="he">h6</span> to <span class="he">h2</span> possible</li>
         </ul>
         <!-- paragraph ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        <h2>paragraph</h2>
+        <h3><span class="he">p</span> paragraph</h3>
         <p class="expText">Contain the text of the page.</p>
         <ul>
-            <li class="listH"><code>&lt;p&gt;</code></li>
+            <li class="listH"><span class="he">p</span></li>
             <li>Begins a new idea or point. An original idea should always start with a new paragraph.</li>
             <li>Provide a pause for readers.</li>
             <li>Separate contrasting information or ideas.</li>
             <li>Complete an introduction or start a conclusion.</li>
         </ul>
+        <!-- figure ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h3><span class="he">figure</span></h3>
+        <p class="expText">Specifies self-contained content.</p>
+        <p>The content of a figure element is referenced in the main flow of a document. However, it can be moved to
+            another part of the document or an appendix, without causing the flow of information to be effected.</p>
+        <ul>
+            <li class="listH">examples ...</li>
+            <li>... illustrations</li>
+            <li>... diagrams</li>
+            <li>... photos</li>
+            <li>... code snippets</li>
+            <li>... tables (<span class="he">caption</span> <i>first child</i>)</li>
+        </ul>
+        <h4><span class="he">figure</span> on <span class="he">img</span></h4>
+        <p> <span class="he">figure</span> semantically organize the content of an image in the HTML document. By
+            placing an image file into a <span class="he">figure</span>, you are telling the browser and search engines
+            that the content of the figure could be seen on its
+            own, separate from the rest of the content of the page, and still make sense. Use it when an image is not
+            just decorative but is referred to in an article.</p>
+
+        <h4><span class="he">figcaption</span></h4>
+        <p>Adds a in the browser visual caption to the <span class="he">figure</span>.</p>
+
+        <details class="cBox">
+            <summary>example <span class="he">figure</span> <span class="he">figcaption</span></summary>
+            <div class="fle">
+                <figure>
+                    <figcaption>browser</figcaption>
+                    <div class="browser">
+                        <h2>Places to Visit</h2>
+
+                        <p>Puglia's most famous sight is the unique conical houses (Trulli) found in the area around
+                            Alberobello, a declared UNESCO World Heritage Site.</p>
+
+                        <figure>
+                            <img src="/images/softDevImages/html/example_figure_pic_trulli.jpg" alt="Trulli"
+                                style="width:50%">
+                            <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+                        </figure>
+                    </div>
+                </figure>
+                <figure>
+                    <figcaption>html</figcaption>
+                    <pre class="code">
+&lt;h2&gt;Places to Visit&lt;/h
+&lt;p&gt;Puglia's most famous sight is the unique conical houses (Trulli)
+found in the area around Alberobello, a declared UNESCO World Heritage Site.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src="pic_trulli.jpg" alt="Trulli" style="width:50%"&gt;
+  &lt;figcaption&gt;Fig.1 - Trulli, Puglia, Italy.&lt;/figcaption&gt;
+&lt;/figure&gt;</pre>
+                </figure>
+            </div>
+        </details>
+        <!-- aria-label Attribute -->
+        <h2>aria-label Attribute</h2>
+        <p class="expText">Stands for <b>A</b>ccessible <b>R</b>ich <b>I</b>nternet <b>A</b>pplications and is a set of
+            attributes that define ways
+            to make web content and web applications more accessible to people with disabilities.</p>
+
+        <!-- aria-label -->
+        <h3><span class="ha">aria-label</span></h3>
+        <p class="expText">Provide information about what your links, icons and interactive elements are for, and
+            further detail about how they behave.</p>
+        <details class="cBox">
+            <summary>explain <span class="ha">aria-label</span></summary>
+            <dl>
+                <dt><span class="ha">aria-label</span></dt>
+                <dd>
+                    <ul>
+                        <li>the attribute can be set for any element</li>
+                        <li>its value contains a text string which is read out by the screen reader</li>
+                        <li>the text should contain information regarding, what the element <b>is doing and how it
+                                behaves</b></li>
+                        <li>not needed for images with an <span class="ha">alt</span> because the screen reader is
+                            reading its value</i></li>
+                    </ul>
+                </dd>
+            </dl>
+            <pre class="code">
+&lt;a href="https://twitter.com/CodersInstitute"
+aria-label="Go to our twitter page (opens in new tab)"
+target="_blank"&gt;Twitter&lt;/a&gt;</pre>
+        </details>
+        <!-- aria-labelledby -->
+        <h3><span class="ha">aria-labelledby</span></h3>
+        <p class="expText">establishes relationships between objects and their labels. The value given to the
+            aria-labelledby attribute should be one or more element IDs, which refer to elements that have the text
+            needed for labelling.</p>
+
+        <ol>
+            <li class="listH">Can be used in two ways:</li>
+            <li>to provide names for regions of a page that can be read by a screen readers<ul>
+                    <li>
+                        <details class="cBox">
+                            <summary>explain <span class="ha">aria-labelledby</span></summary>
+                            <figure>
+                                <figcaption>html</figcaption>
+                                <pre class="code">
+&lt;div <mark>aria-labelledby</mark>="<mark>heading-one</mark> <mark>heading-two</mark>"&gt;
+    &lt;h1 <mark>id</mark>="<mark>heading-one</mark>"&gt;First heading&lt;/h1&gt;
+    &lt;p&gt;Paragraph text here...&lt;/p&gt;
+    &lt;h2 <mark>id</mark>="<mark>heading-two</mark>"&gt;Second heading&lt;/h2&gt;
+    &lt;p&gt;More paragraph text here...&lt;/p&gt;
+&lt;/div&gt;</pre>
+                            </figure>
+                            <p>Screen readers use this attribute to catalogue the objects in a document so that users
+                                can navigate between them. Without an element ID, the assistive technology cannot
+                                catalog the object.</p>
+                            <p>The reason for this is to provide names for regions of a page that can be read by
+                                assistive technology. The aria-labelledby attribute associates a section of the page
+                                marked up as a region or landmarks with text that is on the page. The landmarks help
+                                assistive technology users orient themselves to a page and help them navigate easily to
+                                various sections of a page.</p>
+                        </details>
+                    </li>
+                </ul>
+            </li>
+            <li>to label image-based elements <ul>
+                    <li>
+                        <details class="cBox">
+                            <summary>explain <span class="ha">aria-labelledby</span></summary>
+                            <figure>
+                                <figcaption>html</figcaption>
+                                <pre class="code">
+&lt;img src="diagram.png" alt="" aria-labelledby="diagram-description conclusion"&gt;
+&lt;p id="diagram-description"&gt;The diagram above shows ...&lt;/p&gt;
+&lt;p id="conclusion"&gt;We can draw the following conclusions ...&lt;/p&gt;</pre>
+                            </figure>
+                            <p>The <span class="ha">aria-labelledby</span> also works to label image-based elements in
+                                the same way
+                                that the for attribute works to label a form element.</p>
+                            <p>When a project has a photograph, illustration, animation, diagram or another visual
+                                component within it, the same page may also contain a text description of this element.
+                                When this is the case, the <span class="ha">aria-labelledby</span> can be used to
+                                identify that these
+                                two elements - the visual media and the text description - go together.</p>
+                            <p>The value of the <span class="ha">aria-labelledby</span> corresponds directly to the
+                                value of the id
+                                for the element or elements that describe it.</p>
+                        </details>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p><b>Note:</b> It is not necessary to use <span class="ha">aria-label</span> if <span
+                class="ha">aria-labelledby</span> can be used. If both are included
+            screen readers will always give precedence to <span class="ha">aria-labelledby</span>.</p>
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>
