@@ -95,6 +95,8 @@ code {
     font-family: monospace;
 }
 
+
+
 /* start style html element ////////////////////////////////////// */
 .sHtml {
     background-color: var(--codeBackColor);

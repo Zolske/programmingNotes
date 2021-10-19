@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
+    <link rel="stylesheet" href="/css/softDev.css">
+    <title>CSS Selector & Specificity</title>
+</head>
+
+<body>
+    <main>
+        <h1>CSS Selector & Specificity</h1>
+
+        <!-- specificity ////////////////////////////////////////////////////////////////////////////////////////// -->
+        <h2>specificity</h2>
+        <details class="cBox">
+            <summary>explain: specificity</summary>
+            <table>
+                <tr>
+                    <th>Selector</th>
+                    <th>Specificity</th>
+                    <th>Syntax</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>!important<br><i>not a selector</i></td>
+                    <td>1,0,0,0,0</td>
+                    <td>
+                        <pre class="code">
+SELECTOR {
+    PROPERTY:VALUE <b><mark>!important</mark></b> ;
+}</pre>
+                    </td>
+                    <td>Can only be overwritten with another !important which comes after or has combined with another
+                        selector a higher specificity.
+                        <br><b>Note:</b> it is bad practice because it makes code
+                        difficult to
+                        read and debug.</td>
+                </tr>
+                <tr>
+                    <td>inline style<br><i>not a selector</i></td>
+                    <td>0,1,0,0,0</td>
+                    <td>
+                        <pre class="code">
+&lt;HTML_ELEMENT <mark>style</mark>="PROPERTY:VALUE;"&gt;</pre>
+                    </td>
+                    <td>Overwrites any embedded-style and external-stylesheet,
+                        except if they have <code>!important</code> and the
+                        inline-style has not.
+                        <br><b>Note:</b> html, css and JavaScript should be kept in separate files
+                        (<b>separation of concerns</b>)</td>
+                </tr>
+                <tr>
+                    <td>embedded Styles<br><i>not a selector</i></td>
+                    <td><i>is not in specificity system</i></td>
+                    <td>
+                        <pre class="code">
+&lt;style&gt;
+    CSS_RULE_SET
+&lt;/style&gt;</pre>
+                    </td>
+                    <td>Overwrites any external-stylesheet, except if it has <code>!important</code> and the
+                        embedded-style has not.
+                        <br><b>Note:</b> html, css and JavaScript should be kept in separate
+                        files
+                        (<b>separation of concerns</b>)</td>
+                </tr>
+                <tr>
+                    <td>id selector<br><code>#</code></td>
+                    <td>0,0,1,0,0</td>
+                    <td>
+                        <pre class="code">
+<mark>#</mark>ID_NAME {
+    PROPERTY:VALUE;
+}</pre>
+                    </td>
+                    <td>An ID <i>(name)</i> can be given only once per HTML document. But it can be used multiple
+                        times as selector in CSS.</td>
+                </tr>
+                <tr>
+                    <td>class selector<br><code>.</code></td>
+                    <td>0,0,0,1,0</td>
+                    <td>
+                        <pre class="code">
+<mark>.</mark>CLASS_NAME {
+    PROPERTY:VALUE;
+}</pre>
+                    </td>
+                    <td>The same class <i>(name)</i> can be used multiple times on HTML elements and as CSS selector.
+                    </td>
+                </tr>
+                <tr>
+                    <td>attribute selector<br><code>ELEMENT[ATTRIBUTE]</code></td>
+                    <td rowspan="2">0,0,0,1,0</td>
+                    <td>
+                        <pre class="code">
+ELEMENT<mark>[ATTRIBUTE]</mark> {
+    PROPERTY:VALUE;
+}</pre>
+                    </td>
+                    <td>Selects only the element which has the specified attribute.</td>
+                </tr>
+                <tr>
+                    <td>pseudo-class<br><code>:</code></td>
+
+                    <td>
+                        <pre class="code">
+SELECTOR<mark>:PSEUDO_CLASS</mark> {
+    PROPERTY:VALUE;
+}</pre>
+                    </td>
+                    <td>Selects the element, class or id only if it is in the state specified by the pseudo-class.</td>
+                </tr>
+                <tr>
+                    <td>element <i>(type)</i> selector<br><code>ELEMENT</code></td>
+                    <td rowspan="2">0,0,0,0,1</td>
+                    <td>
+                        <pre class="code">
+<mark>ELEMENT</mark> {
+    PROPERTY:VALUE;
+}</pre>
+                    </td>
+                    <td>Selects all elements of the given type within a document.</td>
+                </tr>
+                <tr>
+                    <td>pseudo-element<br><code>::</code></td>
+                    <td>
+                        <pre class="code">
+SELECTOR<mark>:PSEUDO_ELEMENT</mark> {
+    PROPERTY:VALUE;
+}</pre>
+                    </td>
+                    <td>The css-declaration applies only to the part of the element, class or id specified by the
+                        pseudo-element.</td>
+                </tr>
+                <tr>
+                    <td>universal selector<br><code>*</code></td>
+                    <td>0</td>
+                    <td>
+                        <pre class="code">
+<mark>*</mark> {
+    PROPERTY:VALUE;
+}</pre>
+                    </td>
+                    <td>Selects everything except pseudo-elements. Include pseudo-elements
+                        <code>*::PSEUDO_ELEMENT</code> <i>(e.g. <code>*::before</code> <code>*::after</code>
+                            )</i><br><b>Note:</b> it has the lowest specificity which means it is overwritten by any
+                        other
+                        css-rule and it cost the browser more performance.</td>
+                </tr>
+
+
+            </table>
+            <p><b>Note:</b> If the same element is selected by different selectors with the same <b>specificity</b>,
+                than the last
+                css-rule overwrites the previous matching css-property with its value.</p>
+        </details>
+        <h2>combining selectors (combinator)</h2>
+        <p class="expText">Combining two selector makes the them more specific.</p>
+        <details class="cBox">
+            <summary>explain: combinator</summary>
+            <table>
+                <tr>
+                    <th>Selector</th>
+                    <th>Syntax</th>
+                    <th style="width: 42ch;">Example</th>
+                </tr>
+                <!-- descendant -->
+                <tr>
+                    <td>descendant<br><code>&nbsp;</code></td>
+                    <td>
+                        <pre class="code">
+SELECTOR1 SELECTOR2 {
+    PROPERTY:VALUE;
+}</pre>
+                        <ul>
+                            <li><i>the descendant <b>SELECTOR2</b> of every <b>SELECTOR1</b></i></li>
+                            <li><i>every <b>SELECTOR2</b> which is nested within <b>SELECTOR1</b>
+                                    <ul>
+                                        <li><i>no matter how deep</i></li>
+                                        <li><i>no matter if other selectors are in between</i></li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="flex">
+                            <figure>
+                                <figcaption>css</figcaption>
+                                <pre class="code">
+div p {
+    color: red;
+}</pre>
+                            </figure>
+                            <figure>
+                                <figcaption>html</figcaption>
+                                <pre class="code">
+&lt;div>
+    &lt;div&gt;Not applied&lt;/div&gt;
+    <mark><mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark></mark>
+    &lt;div&gt;Not applied&lt;/div&gt;
+    &lt;article&gt;
+        <mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark>
+    &lt;/article&gt;
+    <mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark>
+&lt;/div&gt;</pre>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li><i>Is applied to all descendant <span class="he">p</span> of every <span
+                                        class="he">div</span> , no matter how deep </i></li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- Child -->
+                <tr>
+                    <td>child<br><code>&gt;</code></td>
+                    <td>
+                        <pre class="code">
+SELECTOR1 > SELECTOR2 {
+    PROPERTY:VALUE;
+}</pre>
+                        <ul>
+                            <li><i>Every <b>SELECTOR2</b> which is a direct child of <b>SELECTOR1</b>.</i></li>
+                            <li><i>only first generation</i></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="flex">
+                            <figure>
+                                <figcaption>css</figcaption>
+                                <pre class="code">
+div > p {
+    color: red;
+}</pre>
+                            </figure>
+                            <figure>
+                                <figcaption>html</figcaption>
+                                <pre class="code">
+&lt;div>
+    &lt;div&gt;Not applied&lt;/div&gt;
+    <mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark>
+    &lt;div&gt;Not applied&lt;/div&gt;
+    &lt;article&gt;
+        &lt;p&gt;Not applied&lt;/p&gt;
+    &lt;/article&gt;
+    <mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark>
+&lt;/div&gt;</pre>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li><i>Every <span class="he">p</span> which is a direct child of every <span
+                                        class="he">div</span>
+                                    .
+                                </i></li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- General Sibling -->
+                <tr>
+                    <td>general sibling<br><code>~</code></td>
+                    <td>
+                        <pre class="code">
+SELECTOR1 ~ SELECTOR2 {
+    PROPERTY:VALUE;
+}</pre>
+                        <ul>
+                            <li><i>Every <b>SELECTOR2</b> which is a sibling to <b>SELECTOR1</b>.</i></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="flex">
+                            <figure>
+                                <figcaption>css</figcaption>
+                                <pre class="code">
+h2 ~ p {
+    color: red;
+}</pre>
+                            </figure>
+                            <figure>
+                                <figcaption>html</figcaption>
+                                <pre class="code">
+&lt;div&gt;
+    &lt;h2&gt;Not applied&lt;/h2&gt;
+    <mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark>
+    &lt;h2&gt;Not applied&lt;/h2&gt;
+    &lt;h3&gt;Not applied&lt;/h3&gt;
+    <mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark>
+&lt;/div&gt;</pre>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li><i>Without <span class="he">div</span> the <span class="he">h2</span> and the <span
+                                        class="he">p</span> would be not related.</i></li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- Adjacent Sibling -->
+                <tr>
+                    <td>adjacent sibling<br><code>+</code></td>
+                    <td>
+                        <pre class="code">
+SELECTOR1 + SELECTOR2 {
+    PROPERTY:VALUE;
+}</pre>
+                        <ul>
+                            <li><i>Every <b>SELECTOR2</b> which is sibling to <b>SELECTOR1</b> and comes immediately
+                                    after it.</i></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="flex">
+                            <figure>
+                                <figcaption>css</figcaption>
+                                <pre class="code">
+h2 + p {
+    color: red;
+}</pre>
+                            </figure>
+                            <figure>
+                                <figcaption>html</figcaption>
+                                <pre class="code">
+&lt;div&gt;
+    &lt;h2&gt;Not applied&lt;/h2&gt;
+    <mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark>
+    &lt;h2&gt;Not applied&lt;/h2&gt;
+    &lt;h3&gt;Not applied&lt;/h3&gt;
+    &lt;p&gt;Not applied&lt;/p&gt;
+    &lt;h2&gt;Not applied&lt;/h2&gt;
+    <mark>&lt;p&gt;CSS applied&lt;/p&gt;</mark>
+&lt;/div&gt;</pre>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li><i>The second <span class="he">p</span> is not selected because it comes not after <span
+                                        class="he">h2</span> .</i></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <!-- chaining selectors together ///////////////////////////////// -->
+            <table>
+                <tr>
+                    <th colspan="4">chaining selectors together</th>
+                </tr>
+                <tr>
+                    <th>Method</th>
+                    <th>Syntax</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>combining class selectors</td>
+                    <td>
+                        <pre class="code">ELEMENT.CLASS_1.CLASS_2 {
+    PROPERTY:VALUE;
+}</pre>
+                        <ul>
+                            <li><i>no space between selectors</i></li>
+                            <li><i>only first & only one element selector</i></li>
+                            <li><i>increase specificity</i></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="flex">
+                            <figure>
+                                <figcaption style="text-align: left;">css</figcaption>
+                                <pre class="code">
+li.CLASS_1.CLASS_2 {
+    PROPERTY:VALUE;
+}</pre>
+                            </figure>
+                            <figure>
+                                <figcaption style="text-align: left;">html</figcaption>
+                                <pre class="code">
+&lt;li class="CLASS_1"&gt;
+&lt;<mark>li class="CLASS_1 CLASS_2"</mark>&gt;</pre>
+                            </figure>
+                        </div>
+                        only <span class="he">li</span> with the class CLASS_1 <b>and</b> CLASS_2 is selected
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Listing selectors<br><code>, </code></td>
+                    <td colspan="2">
+                        <div class="flex">
+                            <pre class="code">SELECTOR_1, SELECTOR_2, SELECTOR_3 {
+    PROPERTY:VALUE;
+}</pre>
+                            <ul>
+                                <li><i>selectors (id, class, elements, ...)</i></li>
+                                <li><i>every selector is selected</i></li>
+                                <li><i>dose not increase specificity</i></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </details>
+    </main>
+    <script src="/js/softDevNavBar.js"></script>
+</body>
+
+</html>

@@ -10,6 +10,9 @@
 //             }]
 // ];
 
+
+// standard path to softwareDevelopment >>> ['../../html/softwareDevelopment/.html']
+
 const navBar = [
     [ ['HOME'],['#'], ['Software Development'],['../../html/softwareDevelopment/softDevIndex.html'], ['Zoltans Page'],['../../index.html'] ],
 
@@ -19,7 +22,7 @@ const navBar = [
     [ ['HTML'],['#'], ['HTML & Syntax'],['../../html/softwareDevelopment/html_structure.html'], ['Semantic'],['../../html/softwareDevelopment/html_semantic.html'],
       ['Links & Media'],['../../html/softwareDevelopment/html_link_media.html'], ['Forms'],['../../html/softwareDevelopment/html_forms.html']
 ],
-    [ ['CSS'],['#'], ['CSS Basic'],['../../html/softwareDevelopment/css_basic.html']
+    [ ['CSS'],['#'], ['CSS Basic'],['../../html/softwareDevelopment/css_basic.html'], ['Selector & Specificity'],['../../html/softwareDevelopment/css_selectorSpecificity.html']
 ]
 ];
 document.body.onload = createNavBar;                    //calls function "creatNavBar" when body is loaded
