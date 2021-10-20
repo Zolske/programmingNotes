@@ -3,9 +3,35 @@
 
 <head>
     <title>Title of the page</title>
+    <style>
+        /* li:nth-child(n+4) {
+            background-color: yellow;
+        } */
+
+        #only li:last-child {
+            background-color: turquoise;
+        }
+    </style>
 </head>
 
 <body>
+
+    <div id="only">
+        <p>text</p>
+        <div>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </div>
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+
+
     <script src="/js/test.js"></script>
 </body>
 
