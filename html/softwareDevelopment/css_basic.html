@@ -76,6 +76,91 @@
                     the previous one</li>
             </ul>
         </details>
+        <!-- units of measurement ////////////////////////////////////////////////////////////////////////////////////// -->
+        <h2>units of measurement</h2>
+        <p class="expText">There are <b>absolute-</b> (fixed) and <b>relative-</b> (changes relative to ...) units to
+            measure length.
+        </p>
+
+        <!-- absolute -->
+        <details class="cBox">
+            <summary>explain: <b>absolute</b> units, <b>pixel</b></summary>
+            <p class="expText">Is fixed in relation to each other. The most common used unit is <b>pixel</b>
+                <i>(px)</i>.
+            </p>
+            <ul>
+                <li class="listH">a <b>px</b> <i>(pixel)</i> is ...</li>
+                <li>... the basic unit of programmable colour on a computer display</li>
+                <li>... the physical size of a pixel depends on the display screen resolution <ul>
+                        <li>if a pixel has a size of 1/96 of an inch <i>(0.26 mm)</i> than its screen resolution is 96
+                            dpi <i>(<b>d</b>ots <b>p</b>er <b>i</b>nch)</i> which used to be the standard but now
+                            screens have a higher screen resolution.</li>
+                    </ul>
+                </li>
+                <li>... 16px is the default font size used by most browsers</li>
+                <li>... used to set a fixed-size that will not change or be responsive to the screen size it is
+                    displayed on</li>
+            </ul>
+        </details><br>
+
+        <!-- relative -->
+        <details class="cBox">
+            <summary>explain: <b>relative</b> units, <b>em</b>, <b>rem</b>, <b>%</b>, <b>vw</b> & <b>vh</b></summary>
+            <p class="expText">Specifies a length that is relative to another object: root element, viewport, or parent.
+                The result of the relative values depends on their relation to such objects. The result is calculated by
+                the browser and converted into pixels. Relative units of measurement are responsive in their nature,
+                meaning they are most useful when you need to take into account that your website will be viewed on many
+                different screen sizes from large monitors to smartphones.</p>
+
+            <!-- em -->
+            <ul>
+                <li class="listH">a <b>em</b> :</li>
+                <li>Is relative to the font-size of the element <ul>
+                        <li><i>(e.g. 2em means 2x the size of the current font)</i></li>
+                    </ul>
+                </li>
+                <li><b>If no font-size is defined anywhere</b> in the CSS, the em unit will be equal to the browser's
+                    default font-size for the document <i>(usually 16px)</i></li>
+                <li><b>Note:</b> the font-size value is inherited from the parent element</li>
+            </ul>
+
+            <!-- rem -->
+            <ul>
+                <li class="listH">a <b>rem</b> <i>(stands for <b>r</b>oot <b>em</b>)</i> :</li>
+                <li>Is relative to font-size of the root element, <i>meaning the <span class="he">html</span>
+                        <ul>
+                            <li> (e.g. if <span class="he">html</span> is 16px than rem is also 16px)
+                    </i></li>
+            </ul>
+            </li>
+            <li><b>If no font-size is defined anywhere</b> in the CSS, the em unit will be equal to the browser's
+                default font-size for the document <i>(usually 16px)</i></li>
+            <li>Dose <b>not depend on the values of the parent</b> element.</li>
+            </ul>
+
+            <!-- % -->
+            <ul>
+                <li class="listH">a <b>%</b> <i>percentage</i> :</li>
+                <li>Relates to the size of its parent element. <ul>
+                        <li><i>(e.g. parent <span class="he">div</span> 100px wide, than the child <span
+                                    class="he">div</span> with 50% width is 50px wide)</i></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Viewport units -->
+            <ul>
+                <li class="listH">viewport units: <b>vw</b> <i>(viewport width)</i> & <b>vh</b> <i>(viewport height)</i>
+                    :
+                </li>
+                <li>Sizing elements relative to the browser viewport.</li>
+                <li>The values are a percentage of the current browser viewport <ul>
+                        <li><i>(e.g. if viewport size is 100px than 10vw makes the element 10px wide)</i></li>
+                        <li><i>(e.g. <b>vh</b> (100vh) is very useful to push the <span class="he">footer</span> to the
+                                bottom of the page when there is not enough content)</i></li>
+                </li>
+            </ul>
+        </details>
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>
