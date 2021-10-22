@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
+    <link rel="stylesheet" href="/css/softDev.css">
+    <title>Typography</title>
+</head>
+
+<body>
+    <main>
+        <h1>Typography</h1>
+        <p class="expText">Typography is the art and technique of arranging type to make written language legible,
+            readable and appealing when displayed.</p>
+
+        <!-- fonts -->
+        <h2>fonts</h2>
+        <p class="expText">Is the combination of typeface, size, weight, slope, and style to make up a printable
+            or displayable set of characters. Font characters include letters, numbers, symbols, and punctuation marks.
+        </p>
+
+        <!-- font properties -->
+        <h3>font properties</h3>
+        <p class="expText">Defines the font type.</p>
+
+        <details class="cBox">
+            <summary><code>font-family:</code></summary>
+            <figure>
+                <img src="/images/softDevImages/css/font-family.svg" alt="">
+            </figure>
+            <ul>
+                <li class="listH">font-family:</li>
+                <li>no limit of how many values the property can have</li>
+                <li>browser tries from left to right to find a font it has installed</li>
+                <li>uses the first matching font</li>
+                <li>the last font should be a font from the "generic-font-family"</li>
+            </ul>
+        </details>
+
+        <!-- Generic Font Families -->
+        <h3>Generic Font Families</h3>
+        <p class="expText">Are a group of fonts which should be used as "<b>fallback</b>" font.</p>
+        <details class="cBox">
+            <summary>explain: Generic Font Families</summary>
+            <ul>
+                <li>is a group of fonts which have the same characteristics</li>
+                <li>if no font is specified, than the browser uses the font which is set in its setting as
+                    "<b>standard font</b>"</li>
+                <li>setting the font as category of "<b>Serif</b>", "<b>San-serif</b>" or "<b>Monospace</b>", lets the
+                    browser use the font specified in its setting.</li>
+                <li>setting the font as category of "<b>Cursive</b>" or "<b>Fantasy</b>", lets the browser use a font
+                    which it has and fall into this category</li>
+                <li><b>"generic font families</b>" are very useful as "<b>fallback</b>" fonts in case the browser dose
+                    not have the specified fonts but another with similar characteristics</li>
+                <li><b>Note:</b> If the font name is more than one word, it must be in quotation marks, like: "Times New
+                    Roman".</li>
+            </ul>
+
+            <!-- serif -->
+            <dl class="dlCode">
+                <dt>Serif</dt>
+                <dd>
+                    fonts have a small stroke at the edges of each letter. They create a sense
+                    of formality and elegance.<br>
+                    <details class="cBox">
+                        <summary>example: serif
+                        </summary>
+                        <p style="font-size: xx-large ;"><span
+                                style="font-family: 'Times New Roman'; font-style: normal;">"Times
+                                New
+                                Roman", </span><span
+                                style="font-family: 'Georgia'; font-style: normal;">"Georgia"</span>, <span
+                                style="font-family: 'Garamond';font-style: normal;">"Garamond"</span></p>
+                    </details>
+                    <figure>
+                        <img src="/images/softDevImages/css/differents_serif_sanSerif.gif" alt="">
+                        <figcaption>the difference between san-serif and serif</figcaption>
+                    </figure>
+                </dd>
+            </dl>
+
+            <!-- Sans-serif -->
+            <dl class="dlCode">
+                <dt>Sans-serif</dt>
+                <dd>
+                    fonts have clean lines (no small strokes attached). They create a
+                    modern and minimalistic look.<br>
+                    <details class="cBox">
+                        <summary>example: sans-serif</summary>
+                        <p style="font-size: x-large;"><span
+                                style="font-family: 'Arial'; font-style: normal;">"Arial"</span>, <span
+                                style="font-family: Verdana; font-style: normal;">"Verdana", </span> <span
+                                style="font-family: 'Helvetica'; font-style: normal;">"Helvetica"</span>
+                        </p>
+                    </details>
+                    <p><b>Note:</b> On computer screens, sans-serif fonts are considered
+                        easier to read than serif fonts.</p>
+                </dd>
+            </dl>
+
+            <!-- Monospace -->
+            <dl class="dlCode">
+                <dt>Monospace</dt>
+                <dd>all the letters have the same fixed width. They create a mechanical
+                    look.<br>
+                    <details class="cBox">
+                        <summary>example: monospace</summary>
+                        <p style="font-size: x-large;"><span
+                                style="font-family: 'Courier New'; font-style: normal;">"Courier
+                                New"</span>, <span style="font-family: 'Lucida Console'; font-style: normal;">"Lucida
+                                Console", </span>
+                            <span style="font-family:  'Monaco'; font-style: normal;">"Monaco"</span></p>
+                    </details>
+                </dd>
+            </dl>
+
+            <!-- Cursive -->
+            <dl class="dlCode">
+                <dt>Cursive</dt>
+                <dd>
+                    fonts imitate human handwriting.<br>
+                    <details class="cBox">
+                        <summary>explain: cursive</summary>
+                        <p style="font-size: x-large;"><span
+                                style="font-family: 'Brush Script MT'; font-style: normal;">"Brush Script
+                                MT"</span>, <span style="font-family: 'Lucida Handwriting'; font-style: normal;">"Lucida
+                                Handwriting"</span>
+                        </p>
+                    </details>
+                </dd>
+            </dl>
+
+            <!-- Fantasy -->
+            <dl class="dlCode">
+                <dt>Fantasy</dt>
+                <dd>
+                    fonts are decorative/playful fonts.<br>
+                    <details class="cBox">
+                        <summary>explain: fantasy</summary>
+                        <p style="font-size: x-large;"><span
+                                style="font-family: Copperplate; font-style: normal;">"Copperplate"</span>,
+                            <span style="font-family: Papyrus; font-style: normal;">"Papyrus"</span>
+                        </p>
+                    </details>
+                </dd>
+            </dl>
+        </details>
+
+    </main>
+    <script src="/js/softDevNavBar.js"></script>
+</body>
+
+</html>
