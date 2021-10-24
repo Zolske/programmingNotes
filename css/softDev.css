@@ -24,9 +24,9 @@
     /* html element */
     --htmlElement: gold;
     /* css property */
-    /* --cssProperty: greenyellow; */
+    --cssProperty: greenyellow;
     /* css property-value */
-    /* --cssPropertyValue: lightskyblue; */
+    --cssPropertyValue: lightskyblue;
     /* JavaScript method */
     /* --jsMethod: coral; */
     /* JavaScript property */
@@ -51,6 +51,7 @@ h1 {
 
 h2 {
     text-transform: capitalize;
+    font-variant: small-caps;
     font-size: 2rem;
     border-top: solid dimgray 1px;
     margin-bottom: 00.5em;
@@ -59,13 +60,26 @@ h2 {
 }
 
 h3 {
-    text-transform: lowercase;
+    text-transform: capitalize;
     border-top: dashed dimgray 1px;
     padding-top: 0.5rem;
-    padding-left: 4ch;
+    margin-left: 4ch;
     margin-bottom: -0rem;
     font-size: 1.2rem;
     color: #333;
+}
+
+h3~details,
+h3~p,
+h3~ul,
+h3~ol,
+h3~h4 {
+    margin-left: 4ch;
+}
+
+h1+.expText,
+h2+.expText {
+    margin-left: 0ch;
 }
 
 h4 {
@@ -95,7 +109,9 @@ code {
     font-family: monospace;
 }
 
-
+img {
+    margin-left: 1ch;
+}
 
 /* start style html element ////////////////////////////////////// */
 .sHtml {
@@ -163,6 +179,21 @@ ul {
     /* counter-increment: item;*/
     border-bottom: 4px double black;
     display: inline-block;
+}
+
+.listC {
+    list-style-type: none;
+    margin-left: -20px;
+    /* text-decoration: underline; */
+    letter-spacing: 0.1ch;
+    font-size: 1.1em;
+    /* counter-increment: item;*/
+    background-color: var(--codeBackColor);
+    display: inline-block;
+}
+
+.listC~li {
+    margin-left: 3ch;
 }
 
 .thumbUp {
@@ -336,6 +367,28 @@ td ul {
 
 .hv {
     background-color: var(--htmlValue);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20%;
+    box-shadow: 2px 2px 2px grey;
+    font-family: monospace;
+}
+
+.cp {
+    background-color: var(--cssProperty);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20%;
+    box-shadow: 2px 2px 2px grey;
+    font-family: monospace;
+}
+
+.cp::after {
+    content: ':';
+}
+
+.cv {
+    background-color: var(--cssPropertyValue);
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 20%;

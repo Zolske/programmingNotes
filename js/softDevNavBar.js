@@ -70,7 +70,7 @@ for (i=0; i<navBar.length; i++){
         li.appendChild(div);
         console.log(navBar[i].length);
     }
-// start >>> add title to ha class ///////////////////////////////////////////////////////////
+// start >>> add title to html class (he ,ha, hv) ///////////////////////////////////////////////////////////
 let ha = document.getElementsByClassName('ha');
 for (let i = 0; i < ha.length; i++) {
     ha[i].title = 'html attribute';
@@ -85,7 +85,20 @@ let hv = document.getElementsByClassName('hv');
 for (let i = 0; i < hv.length; i++) {
     hv[i].title = 'value';
 }
-// end <<< add title to ha class ///////////////////////////////////////////////////////////
+// end <<< add title to html class (he ,ha, hv) ///////////////////////////////////////////////////////////
+
+// start >>> add title css class (cp and cv) ///////////////////////////////////////////////////////////
+let cp = document.getElementsByClassName('cp');
+for (let i = 0; i < cp.length; i++) {
+    cp[i].title = 'css property';
+}
+
+let cv = document.getElementsByClassName('cv');
+for (let i = 0; i < cv.length; i++) {
+    cv[i].title = 'css property:value';
+}
+
+// end <<< add title css class (cp and cv) ///////////////////////////////////////////////////////////
 
 //   // console.log(navBarUlId);
 //   // let tempLiA = document.createElement('li');

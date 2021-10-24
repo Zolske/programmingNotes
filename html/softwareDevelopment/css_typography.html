@@ -24,22 +24,571 @@
 
         <!-- font properties -->
         <h3>font properties</h3>
-        <p class="expText">Defines the font type.</p>
+        <p class="expText">Makes changes to the font style.</p>
 
         <details class="cBox">
-            <summary><code>font-family:</code></summary>
+            <summary><span class="cp">font-family</span></summary>
             <figure>
                 <img src="/images/softDevImages/css/font-family.svg" alt="">
             </figure>
             <ul>
-                <li class="listH">font-family:</li>
+                <li class="listC"><span class="cp">font-family</span></li>
                 <li>no limit of how many values the property can have</li>
                 <li>browser tries from left to right to find a font it has installed</li>
                 <li>uses the first matching font</li>
                 <li>the last font should be a font from the "generic-font-family"</li>
             </ul>
-        </details>
+        </details><br>
 
+        <!-- font-style -->
+        <details class="cBox">
+            <summary><span class="cp">font-style</span></summary>
+            <br>
+            <ul>
+                <li class="listC"><span class="cp">font-style</span> <span class="cv">VALUE</span> ;</li>
+                <li>
+                    <span class="cv">normal</span>
+                    <ul>
+                        <li>Selects a font that is classified as normal within a font-family.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">italic</span>
+                    <ul>
+                        <li>Selects a font that is classified as italic.</li>
+                        <li>If no italic version of the face is available, one classified as oblique is used instead.
+                        </li>
+                        <li>If neither is available, the style is artificially simulated.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">oblique</span>
+                    <ul>
+                        <li>Selects a font that is classified as oblique.</li>
+                        <li>If no oblique version of the face is available, one classified as italic is used instead.
+                        </li>
+                        <li>If neither is available, the style is artificially simulated.</li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- font-variant -->
+        <details class="cBox">
+            <summary><span class="cp">font-variant</span></summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>browser</figcaption>
+                    <div class="browser">
+                        <p style="font-variant: small-caps;">Hello You!</p>
+                        <p>Hello You!</p>
+                    </div>
+                </figure>
+                <figure>
+                    <figcaption>html</figcaption>
+                    <pre class="code">
+&lt;p style="font-variant: small-caps;"&gt;Hello You!&lt;/p&gt;
+&lt;p&gt;Hello You!&lt;/p&gt;</pre>
+                </figure>
+            </div>
+            <ul>
+                <li class="listC"><span class="cp">font-variant</span> <span class="cv">VALUE</span> ;</li>
+                <li><span class="cv">small-caps </span>
+                    <ul>
+                        <li class="listC"><span class="cp">font-variant</span> <span class="cv">small-caps</span> ;</li>
+                        <li>Transforms lowercase letters into small uppercase letters<br>
+                            <span class="browser" style="font-variant: small-caps;">Small-Caps</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- font-stretch -->
+        <details class="cBox">
+            <summary><span class="cp">font-stretch</span></summary>
+            <p class="expText">Selects a normal, condensed, or expanded face from a font.</p>
+            <ul>
+                <li class="listC"><span class="cp">font-stretch</span> <span class="cv">VALUE</span> ;</li>
+                <li><span class="cv">normal</span>
+                    <ul>
+                        <li>Specifies a normal font face.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">semi-condensed</span> , <span class="cv">condensed</span> , <span
+                        class="cv">extra-condensed</span> , <span class="cv">ultra-condensed</span>
+                    <ul>
+                        <li>Specifies a more condensed font face than normal, with ultra-condensed as the most
+                            condensed.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">semi-expanded</span> , <span class="cv">expanded</span> , <span
+                        class="cv">extra-expanded</span> , <span class="cv">ultra-expanded</span>
+                    <ul>
+                        <li>Specifies a more expanded font face than normal, with ultra-expanded as the most expanded.
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="cv">%</span>
+                    <ul>
+                        <li>A percentage value between 50% and 200% (inclusive). Negative values are not allowed for
+                            this property.</li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- font-weight -->
+        <details class="cBox">
+            <summary><span class="cp">font-weight</span></summary>
+            <p class="expText">Sets the thickness of the font, the value can be numeric or a keyword.</p>
+            <ul>
+                <li class="listC"><span class="cp">font-weight</span> <span class="cv">VALUE</span> ;</li>
+                <li><span class="cv">normal</span>
+                    <ul>
+                        <li>Normal font weight. Same as <code>400</code>.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">bold</span>
+                    <ul>
+                        <li>Bold font weight. Same as <code>700</code>.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">NUMERIC</span> <i>(without units)</i>
+                    <ul>
+                        <li>Numeric value to set the thickness.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">bolder</span> / <span class="cv">lighter</span>
+                    <ul>
+                        <li>changes the Inherited weight value to thicker or thinner value <i>(see table)</i></li>
+                    </ul>
+                </li>
+                <table>
+                    <tr>
+                        <th>numeric value</th>
+                        <th>keyword</th>
+                        <td class="empCell"></td>
+                        <th>Inherited value</th>
+                        <th>bolder</th>
+                        <th>lighter</th>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>thin</td>
+                        <td class="empCell"></td>
+                        <td>100</td>
+                        <td rowspan="3">400</td>
+                        <td rowspan="5">100</td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td>extra light</td>
+                        <td class="empCell"></td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>300</td>
+                        <td>light</td>
+                        <td class="empCell"></td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>400</td>
+                        <td>normal</td>
+                        <td class="empCell"></td>
+                        <td>400</td>
+                        <td rowspan="2">700</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td>medium</td>
+                        <td class="empCell"></td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <td>600</td>
+                        <td>semi bold</td>
+                        <td class="empCell"></td>
+                        <td>600</td>
+                        <td rowspan="4">900</td>
+                        <td rowspan="2">400</td>
+                    </tr>
+                    <tr>
+                        <td>700</td>
+                        <td>bold</td>
+                        <td class="empCell"></td>
+                        <td>700</td>
+                    </tr>
+                    <tr>
+                        <td>800</td>
+                        <td>extra bold</td>
+                        <td class="empCell"></td>
+                        <td>800</td>
+                        <td rowspan="2">700</td>
+                    </tr>
+                    <tr>
+                        <td>900</td>
+                        <td>black</td>
+                        <td class="empCell"></td>
+                        <td>900</td>
+                    </tr>
+                    <tr>
+                        <td>950</td>
+                        <td>extra black</td>
+                        <td class="empCell"></td>
+                        <td>950</td>
+                    </tr>
+                </table>
+            </ul>
+        </details>
+        <br>
+        <!-- font-size -->
+        <details class="cBox">
+            <summary><span class="cp">font-size</span></summary>
+            <ul>
+                <li class="listC"><span class="cp">font-size</span> <span class="cv">VALUE</span> ;</li>
+                <li><span class="cv">medium</span> <i>(default)</i>, <span class="cv">xx-small</span>, <span
+                        class="cv">x-small</span>, <span class="cv">small</span>, <span class="cv">large</span>, <span
+                        class="cv">x-large</span>, <span class="cv">xx-large</span>, <span class="cv">xxx-large</span>
+                    <ul>
+                        <li>sets the font size to the value of the keywords</li>
+                    </ul>
+                <li><span class="cv">smaller</span> <span class="cv">larger</span>
+                    <ul>
+                        <li>changes the font-size relative to the parent element's font size</li>
+                    </ul>
+                </li>
+                <li><span class="cv">px</span>
+                    <ul>
+                        <li class="thumbDown">dose not adjust to different screen sizes or pixel density</li>
+                    </ul>
+                </li>
+                <li><span class="cv">%</span>
+                    <ul>
+                        <li>sets the font-size to a percent of the parent element's font size</li>
+                    </ul>
+                </li>
+                <li><span class="cv">em</span>
+                    <ul>
+                        <li>changes in relation to its parent elements font-size value, can be
+                            difficult to control</li>
+                    </ul>
+                </li>
+                <li><span class="cv">rem</span>
+                    <ul>
+                        <li class="thumbUp">changes in relation to the <span class="he">html</span> font-size value,
+                            flexible and easy
+                            to control</li>
+                    </ul>
+                </li>
+                <li><span class="cv">vh</span> or <span class="cv">vw</span>
+                    <ul>
+                        <li>changes in relation to the view port size</li>
+                    </ul>
+                </li>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- text-align -->
+        <details class="cBox">
+            <summary><span class="cp">text-align</span></summary>
+            <div class="flex">
+                <figure>
+                    <figcaption>left</figcaption>
+                    <p style="border: 1px black solid; width: 20ch; text-align: left;" class="browser">Lorem ipsum dolor
+                        sit
+                        amet
+                        consectetur, adipisicing elit. Porro,
+                        iusto sint quisquam maxime
+                        pariatur nesciunt eaque nemo repudiandae!</p>
+                </figure>
+                <figure>
+                    <figcaption>center</figcaption>
+                    <p style="border: 1px black solid; width: 20ch; text-align: center;" class="browser">Lorem ipsum
+                        dolor sit
+                        amet
+                        consectetur, adipisicing elit. Porro,
+                        iusto sint quisquam maxime
+                        pariatur nesciunt eaque nemo repudiandae!</p>
+                </figure>
+                <figure>
+                    <figcaption>right</figcaption>
+                    <p style="border: 1px black solid; width: 20ch; text-align: right;" class="browser">Lorem ipsum
+                        dolor sit
+                        amet
+                        consectetur, adipisicing elit. Porro,
+                        iusto sint quisquam maxime
+                        pariatur nesciunt eaque nemo repudiandae!</p>
+                </figure>
+                <figure>
+                    <figcaption>justify</figcaption>
+                    <p style="border: 1px black solid; width: 20ch; text-align: justify;" class="browser">Lorem ipsum
+                        dolor sit
+                        amet
+                        consectetur, adipisicing elit. Porro,
+                        iusto sint quisquam maxime
+                        pariatur nesciunt eaque nemo repudiandae!</p>
+                </figure>
+            </div>
+            <ul>
+                <li class="listC"><span class="cp">text-align</span> <span class="cv">VALUE</span> ;</li>
+                <li><span class="cv">left</span>
+                    <ul>
+                        <li>The content aligns to the left side of the container (default).</li>
+                    </ul>
+                </li>
+                <li><span class="cv">right</span>
+                    <ul>
+                        <li>The content aligns to the right side of the container.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">center</span>
+                    <ul>
+                        <li>The content aligns to the centre of the container - note the spelling of center.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">justify</span>
+                    <ul>
+                        <li>The content aligns to fit as many string blocks onto one line as possible. The first word on
+                            that line is aligned with the left side of the container, and the last word is along the
+                            right side of the container.</li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- text-transform -->
+        <details class="cBox">
+            <summary><span class="cp">text-transform</span></summary>
+            <ul>
+                <li class="listC"><span class="cp">text-transform</span> <span class="cv">VALUE</span> ;</li>
+                <li><span class="cv">none</span> <i>default</i>
+                    <ul>
+                        <li>No capitalization. The text renders as it is.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">capitalize</span>
+                    <ul>
+                        <li>Transforms the first character of each word to uppercase.<br><span class="browser"
+                                style="text-transform: capitalize;">capitalize</span></li>
+                    </ul>
+                </li>
+                <li><span class="cv">uppercase</span>
+                    <ul>
+                        <li>Transforms all characters to uppercase.<br><span class="browser"
+                                style="text-transform: uppercase;">uppercase</span></li>
+                    </ul>
+                </li>
+                <li><span class="cv">lowercase</span>
+                    <ul>
+                        <li>Transforms all characters to lowercase.<br><span class="browser"
+                                style="text-transform: lowercase;">lowercase</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="listC"><span class="cp">font-variant</span> <span class="cv">small-caps</span> ;</li>
+                <li>Transforms lowercase letters into small uppercase letters<br>
+                    <span class="browser" style="font-variant: small-caps;">Small-Caps</span></li>
+            </ul>
+        </details>
+        <br>
+        <!-- text-decoration -->
+        <details class="cBox">
+            <summary><span class="cp">text-decoration</span></summary>
+            <ul>
+                <li class="listC"><span class="cp">text-decoration</span> <span class="cv">VALUE</span> ;</li>
+                <li style="list-style-type: none;"><i>determines <b>where</b> the line is set</i></li>
+                <li><span class="cv">underline</span>
+                    <ul>
+                        <li>underlines the text<br><span class="browser"
+                                style="text-decoration: underline;">underline</span></li>
+                    </ul>
+                </li>
+                <li><span class="cv">overline</span>
+                    <ul>
+                        <li>overlines the text<br><span class="browser"
+                                style="text-decoration: overline;">overline</span></li>
+                    </ul>
+                </li>
+                <li><span class="cv">line-through</span>
+                    <ul>
+                        <li>crosses out the text<br><span class="browser"
+                                style="text-decoration: line-through;">line-through</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="listC"><span class="cp">text-decoration-color</span> <span class="cv">COLOR_VALUE</span> ;
+                </li>
+                <li><span class="cp">text-decoration</span> <b>needs to be set as well!</b>
+                    <ul>
+                        <li>changes the color of the line<br><span class="browser"
+                                style="text-decoration: underline; text-decoration-color: red">underline</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="listC"><span class="cp">text-decoration-style</span> <span class="cv">VALUE</span> ;
+                </li>
+                <li style="list-style-type: none;"><i>determines what <b>style</b> the line is set</i></li>
+                <li><span class="cp">text-decoration</span> <b>needs to be set as well!</b></li>
+                <li><span class="cv">solid</span> <i>(default)</i>
+                    <ul>
+                        <li>changes the style of the line to solid<br><span class="browser"
+                                style="text-decoration: underline; text-decoration-style: solid">underline</span></li>
+                    </ul>
+                </li>
+                <li><span class="cv">wavy</span>
+                    <ul>
+                        <li>changes the style of the line to wavy<br><span class="browser"
+                                style="text-decoration: underline; text-decoration-style: wavy">underline</span></li>
+                    </ul>
+                </li>
+                <li><span class="cv">dotted</span>
+                    <ul>
+                        <li>changes the style of the line to dotted<br><span class="browser"
+                                style="text-decoration: underline; text-decoration-style: dotted">underline</span></li>
+                    </ul>
+                </li>
+                <li><span class="cv">dashed</span>
+                    <ul>
+                        <li>changes the style of the line to dashed<br><span class="browser"
+                                style="text-decoration: underline; text-decoration-style: dashed">underline</span></li>
+                    </ul>
+                </li>
+                <li><span class="cv">double</span>
+                    <ul>
+                        <li>changes the style of the line to double<br><span class="browser"
+                                style="text-decoration: underline; text-decoration-style: double">underline</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="listC"><span class="cp">text-decoration-thickness</span> <span class="cv">VALUE</span> ;
+                </li>
+                <li style="list-style-type: none;"><i>determines how <b>thick</b> the line is set</i></li>
+                <li><span class="cp">text-decoration</span> <b>needs to be set as well!</b></li>
+                <li><span class="cv">LENGTH</span>
+                    <ul>
+                        <li><span class="cv">%</span>, <span class="cv">px</span>, <span class="cv">em</span>, <span
+                                class="cv">rem</span>, <span class="cv">vw</span> or <span class="cv">vh</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="listC"><span class="cp">text-decoration</span> <span class="cv">VALUE1</span> <span
+                        class="cv">VALUE2</span> <span class="cv">VALUE3</span>;</li>
+                <li style="list-style-type: none;"><i>multiple values can be given, but <span
+                            class="cv">underline</span> or <span class="cv">overline</span> or <span
+                            class="cv">line-through</span> must be one of them.</i><br>
+                    <div class="flex">
+                        <figure>
+                            <figcaption>browser</figcaption>
+                            <div class="browser">
+                                <p style="text-decoration: underline overline dotted red;">this is a text
+                                </p>
+                            </div>
+                        </figure>
+                        <figure>
+                            <figcaption>html</figcaption>
+                            <pre class="code">
+&lt;p style="<mark>text-decoration:</mark> <mark>underline</mark> <mark>overline</mark> <mark>dotted</mark> <mark>red</mark>;"&gt;this is a text&lt;/p&gt;</pre>
+                        </figure>
+                    </div>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- vertical-align -->
+        <details class="cBox">
+            <summary><span class="cp">vertical-align</span></summary>
+            <img width="750px" src="/images/softDevImages/css/vertical-align.JPG" alt="">
+            <ul>
+                <li class="listC"><span class="cp">vertical-align</span> <span class="cv">VALUE</span> ;</li>
+                <li><span class="cv">baseline</span> <i>(default)</i>
+                    <ul>
+                        <li>The element is aligned with the baseline of the parent.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">sub</span>
+                    <ul>
+                        <li>The element is aligned with the subscript baseline of the parent.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">super</span>
+                    <ul>
+                        <li>The element is aligned with the superscript baseline of the parent.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">top</span>
+                    <ul>
+                        <li>The element is aligned with the top of the tallest element on the line.</li>
+                        <li>Setting <span class="he">th</span> or <span class="he">td</span> to <span
+                                class="cp">vertical-align</span><span class="cv">top</span> moves the content to the
+                            top.
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="cv">text-top</span>
+                    <ul>
+                        <li>The element is aligned with the top of the parent element's font.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">middle</span>
+                    <ul>
+                        <li>The element is placed in the middle of the parent element.</li>
+                        <li>Setting <span class="he">th</span> or <span class="he">td</span> to <span
+                                class="cp">vertical-align</span><span class="cv">middle</span> moves the content to the
+                            middle.
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="cv">bottom</span>
+                    <ul>
+                        <li>The element is aligned with the lowest element on the line.</li>
+                        <li>Setting <span class="he">th</span> or <span class="he">td</span> to <span
+                                class="cp">vertical-align</span><span class="cv">bottom</span> moves the content to the
+                            bottom.
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="cv">text-bottom</span>
+                    <ul>
+                        <li>The element is aligned with the bottom of the parent element's font.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">LENGTH</span>
+                    <ul>
+                        <li>Raises or lower an element by the specified length. Negative values are allowed.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">%</span>
+                    <ul>
+                        <li>Raises or lower an element by a percent of the "line-height" property. Negative values are
+                            allowed.</li>
+                    </ul>
+                </li>
+            </ul>
+        </details><br>
+        <!-- line-height -->
+        <details class="cBox">
+            <summary><span class="cp">line-height</span></summary>
+            <p class="expText">Sets the height of the box which contains the text.</p>
+            <ul>
+                <li class="listC"><span class="cp">line-height</span> <span class="cv">VALUE</span> ;</li>
+                <li><span class="cv">normal</span>
+                    <ul>
+                        <li>Depends on the user agent. Desktop browsers (including Firefox) use a default value of
+                            roughly 1.2, depending on the element's font-family.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">NUMERIC</span> <i>(without units)</i>
+                    <ul>
+                        <li>The numeric value is multiplied by the element's own font size.</li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
         <!-- Generic Font Families -->
         <h3>Generic Font Families</h3>
         <p class="expText">Are a group of fonts which should be used as "<b>fallback</b>" font.</p>
@@ -148,7 +697,217 @@
                 </dd>
             </dl>
         </details>
+        <!-- color -->
+        <h2>color</h2>
+        <p class="expText">Every color is made up of 3 color channels RGBs (<b>r</b>ed <b>g</b>reen <b>b</b>lue), the
+            value
+            of each color ranges between 0 (nothing) to 255 (max). This allows to represent 16,777,216 (over 16 million)
+            different colors.</p>
 
+        <!-- specifying a color -->
+        <h3>specifying a color</h3>
+        <ol>
+            <li class="listH">there are 4 ways to specify a color in css ...</li>
+            <li>... by its name <br>
+                <details class="cBox">
+                    <summary>explain: name</summary>
+                    <p class="expText"> </p>
+
+                    <ul>
+                        <li class="listC"><span class="cp">color</span> <span class="cv">VALUE</span> ;</li>
+                        <li><span class="cv">NAME</span>
+                            <ul>
+                                <li>There is a large selection of 140 predetermined colours that can be picked by
+                                    keyword (e.g. <span class="cv">red</span>, <span class="cv">lime</span> , <span
+                                        class="cv">chartreuse</span>).</li>
+                                <li><a href="https://htmlcolorcodes.com/color-names/" target="_blank">Color
+                                        Names</a> <i>links to a side with the names of all colors</i></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </li>
+            <li>... as RGB or RGBA value <br>
+                <details class="cBox">
+                    <summary>explain: RGB</summary>
+                    <img width="600px" src="/images/softDevImages/css/rgba.svg" alt="">
+                    <ul>
+                        <li class="listC"><span class="cp">color</span> <span class="cv">VALUE</span> ;</li>
+                        <li><span class="cv">rgb(000, 000, 000)</span>
+                            <ul>
+                                <li>the color is mixed with different amounts of red, green and blue</li>
+                                <li>the first value is red, green and than blue <ul>
+                                        <li>can be numeric value between 0 <i>(nothing)</i> and 255 <i>(max)</i></li>
+                                        <li>can be in % between 0% <i>(nothing)</i> and 100% <i>(max)</i></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="cv">rgb<mark>a</mark>(000, 000, 000, <mark>0.0</mark>)</span>
+                            <ul>
+                                <li>optional, is used for transparency, 0 (invisible), 1 (solid)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </li>
+            <li>... as HEX value <br>
+                <details class="cBox">
+                    <summary>explain: HEX</summary>
+                    <img width="300px" src="/images/softDevImages/css/hex.svg" alt="">
+                    <ul>
+                        <li class="listC"><span class="cp">color</span> <span class="cv">VALUE</span> ;</li>
+                        <li><span class="cv">#000000</span>
+                            <ul>
+                                <li>the color is mixed with different amounts of red, green and blue</li>
+                            </ul>
+                        <li><span class="cv">#<mark>00</mark>0000</span>
+                            <ul>
+                                <li>1st and 2nd digits are for the <b>red</b> color <i>(channel)</i></li>
+                                <li>value between 00 <i>(nothing)</i> and ff <i>(max)</i></li>
+                            </ul>
+                        </li>
+                        <li><span class="cv">#00<mark>00</mark>00</span>
+                            <ul>
+                                <li>3th and 4th digits are for the <b>green</b> color <i>(channel)</i>
+                                <li>value between 00 <i>(nothing)</i> and ff <i>(max)</i></li>
+                            </ul>
+                        </li>
+                        <li><span class="cv">#0000<mark>00</mark></span>
+                            <ul>
+                                <li>5th and 6th digits are for the <b>blue</b> color <i>(channel)</i></li>
+                                <li>value between 00 <i>(nothing)</i> and ff <i>(max)</i></li>
+                            </ul>
+                        </li>
+                        <li><span class="cv">#000000<mark>00</mark></span>
+                            <ul>
+                                <li>7th and 8th digits are optional and can be used for
+                                    <b>transparency</b></li>
+                                <li>value is between 00 <i>(not visible)</i> and ff
+                                    <i>(solid)</i></li>
+                            </ul>
+                        </li><br>
+                        <li>the hex color code can be shortened if all 3 base colors <i>(and transparency if
+                                used)</i> use the same double
+                            digits <br><i>(e.g. #f09 is the same as #ff0099 and #0f38 is the same as
+                                #00ff3388</i></li>
+                        <br>
+                        <table>
+                            <caption>hexadecimal system</caption>
+                            <tr>
+                                <th>decimal</th>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>32</td>
+                                <td>240</td>
+                                <td>255</td>
+                            </tr>
+                            <tr>
+                                <th>hexadecimal</th>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>a</td>
+                                <td>b</td>
+                                <td>c</td>
+                                <td>d</td>
+                                <td>e</td>
+                                <td>f</td>
+                                <td>10</td>
+                                <td>20</td>
+                                <td>f0</td>
+                                <td>ff</td>
+                            </tr>
+                        </table>
+                    </ul>
+                </details>
+            </li>
+            <li>... as HSL <i>(<b>h</b>ue <b>s</b>aturation <b>l</b>ightness)</i> value <br>
+                <details class="cBox">
+                    <summary>explain: HSL</summary>
+                    <div class="flex">
+                        <img width="300px" src="/images/softDevImages/css/hsl-color-wheel.png" alt="">
+                        <img width="300px" src="/images/softDevImages/css/hsl.svg" alt="">
+                    </div>
+                    <br>
+                    <ul>
+                        <li class="listC"><span class="cp">color</span> <span class="cv">VALUE</span> ;</li>
+                        <li><span class="cv">hsl(<mark>000</mark>, 000%, 000%)</span>
+                            <ul>
+                                <li>determines the <b>color</b> according the color-wheel, it ranges from 0
+                                    <i>(degree)</i> to 360 <i>(degree)</i>. <i>(e.g.: red is 0 (degree), green is 120
+                                        (degree), blue is 240 (degree), </i></li>
+                            </ul>
+                        </li>
+                        <li><span class="cv">hsl(000, <mark>000%</mark>, 000%)</span>
+                            <ul>
+                                <li><b>saturation</b> determines the "intensity" of the color and moves on the
+                                    color-wheel on
+                                    the same degree between center and outside.<ul>
+                                        <li><b>0%</b> <i>(inwards)</i>, the color is grey.</li>
+                                        <li><b>100%</b> <i>(outside)</i>, the color is fully saturated and is as
+                                            colorful as possible.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        <li><span class="cv">hsl(000, 000%, <mark>000%</mark>)</span>
+                            <ul>
+                                <li><b>luminosity</b> determines the "brightness" of an color. <ul>
+                                        <li><b>0%</b> is pure black</li>
+                                        <li><b>50%</b> the color is perfectly balanced between light and dark <i>(
+                                                unchanged)</i></li>
+                                        <li><b>100%</b> is pure white</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        <li><span class="cv">hsl<mark>a</mark>(000, 000%, 000%, <mark>0.00</mark>)</span>
+                            <ul>
+                                <li>optional, is used for transparency, 0 <i>(invisible)</i>, 1 <i>(solid)</i>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+            </li>
+        </ol>
+        <!-- contrast -->
+        <h3>contrast</h3>
+        <p class="expText">If there is not enough contrast between colors, than the user will have problems seeing the
+            differences. This can course an accessibility issue and search engines can push down such sides</p>
+        <details class="cBox">
+            <summary>explain: contrast</summary>
+            <div class="flex">
+                <img src="/images/softDevImages/css/inspect_contrast.png" alt="">
+                <p style="text-align: center; width: 20ch;">Any element can be "<b>inspected</b>" <i>(chrome dev
+                        tools)</i>
+                    and
+                    its
+                    contrast reviewed.<br><br><i>the link contains a tool which analyses the contrast ratio</i>
+                    <a href="https://webaim.org/resources/contrastchecker/" target="_blank">webaim.org</a></p>
+            </div>
+        </details>
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>
