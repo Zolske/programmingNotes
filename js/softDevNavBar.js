@@ -22,7 +22,8 @@ const navBar = [
     [ ['HTML'],['#'], ['HTML & Syntax'],['../../html/softwareDevelopment/html_structure.html'], ['Semantic'],['../../html/softwareDevelopment/html_semantic.html'],
       ['Links & Media'],['../../html/softwareDevelopment/html_link_media.html'], ['Forms'],['../../html/softwareDevelopment/html_forms.html']
 ],
-    [ ['CSS'],['#'], ['CSS Basic'],['../../html/softwareDevelopment/css_basic.html'], ['Selector & Specificity'],['../../html/softwareDevelopment/css_selectorSpecificity.html'], ['Typography'],['../../html/softwareDevelopment/css_typography.html']
+    [ ['CSS'],['#'], ['CSS Basic'],['../../html/softwareDevelopment/css_basic.html'], ['Selector & Specificity'],['../../html/softwareDevelopment/css_selectorSpecificity.html'], ['Layout'],['../../html/softwareDevelopment/css_layout.html'],
+    ['Typography'],['../../html/softwareDevelopment/css_typography.html']
 ]
 ];
 document.body.onload = createNavBar;                    //calls function "creatNavBar" when body is loaded

@@ -188,7 +188,7 @@ ul {
     letter-spacing: 0.1ch;
     font-size: 1.1em;
     /* counter-increment: item;*/
-    background-color: var(--codeBackColor);
+    /* background-color: var(--codeBackColor); */
     display: inline-block;
 }
 

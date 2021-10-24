@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
+    <link rel="stylesheet" href="/css/softDev.css">
+    <title>layout</title>
+</head>
+
+<body>
+    <main>
+        <h1>layout</h1>
+        <p class="expText">Determines how elements are arranged on the page.</p>
+
+        <!-- the box model -->
+        <h2>the box model</h2>
+        <p class="expText"><b>Every HTML element</b> is represented as a rectangular box on the page.</p>
+        <details class="cBox">
+            <summary>explain: the box model</summary>
+            <img width="450px" src="/images/softDevImages/css/the_box_model.svg" alt="">
+            <ul>
+                <li class="listH">parts of the box</li>
+                <li>
+                    <details class="cBox">
+                        <summary><b>content-box:</b></summary>
+                        <ul>
+                            <li class="listC"><span class="cp">width</span><span class="cv">VALUE</span> <span
+                                    class="cp">height</span><span class="cv">VALUE</span> </li>
+                            <li><span class="cv">%</span>
+                                <ul>
+                                    <li>percentage of the parent container</li>
+                                </ul>
+                            </li>
+                            <li><span class="cv">vw</span> <span class="cv">vh</span>
+                                <ul>
+                                    <li>percentage of the viewport size</li>
+                                </ul>
+                            </li>
+                            <li><span class="cv">rem</span>
+                                <ul>
+                                    <li>relative to the font size of the <span class="he">html</span></li>
+                                </ul>
+                            </li>
+                            <li><span class="cv">em</span>
+                                <ul>
+                                    <li>relative to the font-size of the parent element <i>(can be difficult to
+                                            control)</i></li>
+                                </ul>
+                            </li>
+                            <li><span class="cv">px</span>
+                                <ul>
+                                    <li>fixed value in pixel <i>(can look different on screens with higher pixel
+                                            density)</i></li>
+                                </ul>
+                            </li>
+                            <li><span class="cv">ch</span>
+                                <ul>
+                                    <li>size in characters</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br>
+                        <table>
+                            <tr>
+                                <th colspan="2">box-sizing</th>
+                            </tr>
+                            <tr>
+                                <th>content-box<br><i>(default)</i></th>
+                                <th>border-box</th>
+                            </tr>
+                            <tr>
+                                <td><span class="cp">box-sizing</span> <span class="cv">content-box</span><code>
+                                        ;</code></td>
+                                <td><span class="cp">box-sizing</span> <span class="cv">border-box</span><code> ;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img width="350px" src="/images/softDevImages/css/content_box.svg" alt="">
+                                </td>
+                                <td><img width="350px" src="/images/softDevImages/css/border_box.svg" alt="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>The width and height assign to an element is applied only to the element's
+                                    <b>content-box</b>.</td>
+                                <td>The width and height assign to an element is applied to the element's
+                                    <b>content-box</b>,
+                                    <b>padding</b> and <b>border</b>.</td>
+                            </tr>
+                            <tr>
+                                <td><i>e.g.:<br>If you set an element's width to 100 pixels, then the element's content
+                                        box will be 100 pixels wide, and the width of any border or padding will be
+                                        added to the final rendered width, making the element wider than 100px.</i></td>
+                                <td><i>e.g.:<br>If you set an element's width to 100 pixels, that 100 pixels will
+                                        include any border or padding you added, and the content box will shrink to
+                                        absorb that extra width.</i></td>
+                            </tr>
+                        </table>
+                    </details>
+                    <ul>
+                        <li>the area in which the content is displayed <i>(text, images, ...)</i></li>
+                    </ul>
+                </li>
+                <li>
+                    <details class="cBox">
+                        <summary><b>padding-box:</b></summary>
+                        <p class="expText">Is the distance between "content-box" and "border".</p>
+
+                        <ul>
+                            <li class="listC"><span class="cp">padding</span><span class="cv">VALUE</span> </li>
+                            <li>single <span class="cv">VALUE</span> is used for all 4 sides, <i>(sides can be set
+                                    individually <a href="/html/softwareDevelopment/css_basic.html#Shorthand_properties"
+                                        target="_blank">shorthand property</a>)</i></li>
+                        </ul>
+                        <br>
+                        <ul>
+                            <li class="listC"><span class="cp">padding-bottom</span><span class="cv">VALUE</span> ,
+                                <span class="cp">padding-left</span><span class="cv">VALUE</span> , <span
+                                    class="cp">padding-right</span><span class="cv">VALUE</span> ,
+                                <span class="cp">padding-top</span><span class="cv">VALUE</span>
+                            </li>
+
+                            <li>sets the padding according the direction of the property</li>
+                        </ul>
+                    </details>
+                    <ul>
+                        <li>clears an area around the content box, the padding is transparent</li>
+                    </ul>
+                </li>
+                <li>
+                    <details class="cBox">
+                        <summary><b>border:</b></summary>
+                        <ul>
+                            <li class="listC"><span class="cp">border-style</span><span class="cv">VALUE</span></li>
+                            <li>single <span class="cv">VALUE</span> is used for all 4 sides, sides can be set
+                                individually with different styles <i>(see <a
+                                        href="/html/softwareDevelopment/css_basic.html#Shorthand_properties"
+                                        target="_blank">shorthand property</a>)</i></li>
+                            <li><span class="cv">dotted</span><br>
+                                <span style="border-style: dotted;" class="browser">dotted</span><i> Defines a
+                                    dotted border</i></li>
+                            <li><span class="cv">dashed</span><br>
+                                <span style="border-style: dashed;" class="browser">dashed</span><i> Defines a
+                                    dashed border</i></li>
+                            <li><span class="cv">solid</span><br>
+                                <span style="border-style: solid;" class="browser">solid</span><i> Defines a
+                                    solid border</i></li>
+                            <li><span class="cv">double</span><br>
+                                <span style="border-style: double;" class="browser">double</span><i> Defines a
+                                    double border</i></li>
+                            <li><span class="cv">groove</span><br>
+                                <span style="border-width: 8px; border-style: groove;" class="browser">groove</span><i>
+                                    Defines
+                                    a 3D
+                                    grooved border. The effect depends on the border-color value</i></li>
+                            <li><span class="cv">ridge</span><br>
+                                <span style="border-width: 8px; border-style: ridge;" class="browser">ridge</span><i>
+                                    Defines a
+                                    3D ridged
+                                    border. The effect depends on the border-color value</i></li>
+                            <li><span class="cv">inset</span><br>
+                                <span style="border-width: 8px; border-style: inset;" class="browser">inset</span><i>
+                                    Defines a
+                                    3D inset
+                                    border. The effect depends on the border-color value</i></li>
+                            <li><span class="cv">outset</span><br>
+                                <span style="border-width: 8px; border-style: outset;" class="browser">outset</span><i>
+                                    Defines
+                                    a 3D outset
+                                    border. The effect depends on the border-color value</i></li>
+                            <li><span class="cv">none</span><br>
+                                <span style="border-style: none;" class="browser">none</span><i> no border</i></li>
+                        </ul>
+                        <br>
+                        <ul>
+                            <li class="listC"><span class="cp">border-width</span><span class="cv">VALUE</span></li>
+                            <li>single <span class="cv">VALUE</span> is used for all 4
+                                sides, sides can be set
+                                individually with different thickness <i>(see <a
+                                        href="/html/softwareDevelopment/css_basic.html#Shorthand_properties"
+                                        target="_blank">shorthand property</a>)</i></li>
+                            <li><span class="cv">thin</span> , <span class="cv">medium</span> , <span
+                                    class="cv">thick</span>
+                                <ul>
+                                    <li>sets the border thickness respectively</li>
+                                </ul>
+                            </li>
+                            <li><span class="cv">LENGTH</span>
+                                <ul>
+                                    <li>sets the thickness to the specified thickness</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br>
+                        <ul>
+                            <li class="listC"><span class="cp">border-color</span><span class="cv">VALUE</span></li>
+                            <li>single <span class="cv">VALUE</span> is used for all 4
+                                sides, sides can be set
+                                individually with different color <i>(see <a
+                                        href="/html/softwareDevelopment/css_basic.html#Shorthand_properties"
+                                        target="_blank">shorthand property</a>)</i></li>
+                            <li><span class="cv">rgb()</span> , <span class="cv">rgba()</span> , <span
+                                    class="cv">COLOR_NAME</span> , <span class="cv">#HEX</span> , <span
+                                    class="cv">hsl()</span> , <span class="cv">hsla()</span></li>
+                        </ul>
+                        <br>
+                        <ul>
+                            <li class="listC"><span class="cp">border-radius</span><span class="cv">VALUE</span></li>
+                            <li>is used to add rounded borders to an element</li>
+                            <li>single <span class="cv">VALUE</span> is used for all 4
+                                sides, sides can be set
+                                individually with different radius see <details class="cBox">
+                                    <summary>explain: shorthand-corner</summary>
+                                    <ul>
+                                        <li class="listH">used for:</li>
+                                        <li><span class="cp">border-radius</span></li>
+                                    </ul>
+                                    <hr>
+                                    <div class="flex">
+                                        <img width="500px" src="/images/softDevImages/css/short_hand_radius_1.svg"
+                                            alt="">
+                                        <p style="margin-left: 5ch;"><i>1st value for all sites.</i></p>
+                                    </div>
+                                    <hr>
+                                    <dev class="flex">
+                                        <img width="500px" src="/images/softDevImages/css/short_hand_radius_2.svg"
+                                            alt="">
+                                        <p style="margin-left: 5ch;"><i>1st value for left-top & right-bottom<br>2nd
+                                                value for right-top &
+                                                left-bottom.</i></p>
+                                    </dev>
+                                    <hr>
+                                    <dev class="flex">
+                                        <img width="500px" src="/images/softDevImages/css/short_hand_radius_3.svg"
+                                            alt="">
+                                        <p style="margin-left: 5ch;"><i>1st value for left-top,<br>2nd value for
+                                                right-top & left-bottom<br>3th
+                                                value for
+                                                left-bottom.</i></p>
+                                    </dev>
+                                    <hr>
+                                    <dev class="flex">
+                                        <img width="500px" src="/images/softDevImages/css/short_hand_radius_4.svg"
+                                            alt="">
+                                        <p style="margin-left: 5ch;"><i>1st value for left-top,<br>2nd value for
+                                                right-top<br>3th value for
+                                                right-bottom,<br>4th value for left-bottom</i></p>
+                                    </dev>
+                                </details>
+                            </li>
+                            <li><span class="cv">50%</span> makes a square element round</li>
+                            <li>can be used on ...<ul>
+                                    <li><i>images</i> <img width="40px" style="border-radius: 50%;"
+                                            src="/images/LOGO/Profile Zoltan 2020 square.jpg" alt=""></li><br>
+                                    <li><i>borders</i>
+                                        <span style="border-radius: 25%; border: solid 10px red;">I have a rounded
+                                            border!
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            </div>
+                </li>
+            </ul>
+            <br>
+            <ul>
+                <li class="listC"><span class="cp">border</span><span class="cv">BORDER-STYLE</span> <span
+                        class="cv">BORDER-COLOR</span> <span class="cv">BORDER-WIDTH</span>
+                    <br><img width="400px" src="/images/softDevImages/css/short_hand_border.svg" alt="">
+                </li>
+                <li>the order in which the values are set is flexible</li>
+                <li><span class="cv">BORDER-STYLE</span> need to be set, other values are optional</li>
+            </ul>
+        </details>
+        <ul>
+            <li>the border goes around the padding and content</li>
+        </ul>
+        </li>
+        <li>
+            <details class="cBox">
+                <summary><b>margin-box:</b></summary>
+                <ul>
+                    <li class="listC"><span class="cp">margin</span><span class="cv">VALUE</span></li>
+                    <li>single <span class="cv">VALUE</span> is used for all 4 sides, sides can be set
+                        individually with different lengths <i>(see <a
+                                href="/html/softwareDevelopment/css_basic.html#Shorthand_properties"
+                                target="_blank">shorthand property</a>)</i></li>
+                    <li><span class="cv">margin-top</span> , <span class="cv">margin-right</span> , <span
+                            class="cv">margin-bottom</span> , <span class="cv">margin-left</span>
+                        <ul>
+                            <li>sets the length for the sides individually</li>
+                        </ul>
+                    </li>
+                    <li><span class="cv">auto</span>
+                        <ul>
+                            <li>the browser calculates the margin <i>(horizontally center the element within its parent
+                                    container)</i></li>
+                        </ul>
+                    </li>
+                    <li><span class="cv">LENGTH</span>
+                        <ul>
+                            <li>specifies a margin in px, pt, cm, etc.</li>
+                        </ul>
+                    </li>
+                    <li><span class="cv">%</span>
+                        <ul>
+                            <li>specifies a margin in % of the width of the containing element</li>
+                        </ul>
+                    </li>
+                    <li><span class="cv">-VALUE</span>
+                        <ul>
+                            <li>negative values are allowed</li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <ul>
+                    <li class="listH">margin collapsing:</li>
+                    <li>the <b>top and bottom</b> margins of elements <b>collapse</b> into each other <ul>
+                            <li><i>e.g.: two elements on top of each other, the distance between each others border is
+                                    the
+                                    longest margin, <b>not both margins together!</b></i> </li>
+                        </ul>
+                    </li>
+                    <li>this does <b>not happen on left and right margins</b>! Only top and bottom margins!</li>
+                </ul>
+                <br>
+                <img width="500px" src="/images/softDevImages/css/margin collapsing.svg" alt="">
+            </details>
+            <ul>
+                <li>clears the area outside the border, the margin is transparent</li>
+            </ul>
+        </li>
+        </ul>
+        </details>
+    </main>
+    <script src="/js/softDevNavBar.js"></script>
+</body>
+
+</html>

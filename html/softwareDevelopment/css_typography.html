@@ -908,6 +908,137 @@
                     <a href="https://webaim.org/resources/contrastchecker/" target="_blank">webaim.org</a></p>
             </div>
         </details>
+        <br>
+        <!-- background -->
+        <h2>background</h2>
+        <p class="expText">Is the background of an element.</p>
+        <!-- background-color -->
+        <h3>background-color</h3>
+        <p class="expText">Sets the background color of an html element.</p>
+
+        <details class="cBox">
+            <summary>explain: <span class="cp">background-color</span></summary>
+            <p class="expText">Most elements can have a background-color.</p>
+            <ul>
+                <li class="listC"><span class="cp">background-color</span><span class="cv">VALUE</span></li>
+                <li>the background-color fills out the <b>content-box</b> & the <b>padding-box</b><br>but not the
+                    <b>border</b> or <b>margin-box</b></li>
+                <li>the <span class="cp">background-color</span> is rendered behind any <span
+                        class="cp">background-image</span>
+                    <ul>
+                        <li>is useful as fallback incase the <span class="cp">background-image</span> dose not load and
+                            the text color would not have enough contrast to the default white background</li>
+                        <li>the <span class="cp">background-color</span> will be visible trough an transparent image
+                        </li>
+                    </ul>
+                </li>
+                <li><b>Use a background color and a text color that makes the text easy to read!</b></li>
+                <li><span class="cv">VALUE</span> takes any color-value</li>
+                <li><span class="cv">transparent</span> <i>(default)</i>
+                    <ul>
+                        <li>specifies that the background color should be transparent.</li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- background-image -->
+        <h3>background-image</h3>
+        <p class="expText">Sets one or several images for the background of the element.</p>
+
+        <details class="cBox">
+            <summary>explain: <span class="cp">background-image</span></summary>
+            <ul>
+                <li class="listC"><span class="cp">background-image</span><span class="cv">VALUE</span></li>
+                <li>multiple background-images can be stacked on top of each other <ul>
+                        <li>the image defined first is the one closest to the user <i>(on top)</i></li>
+                    </ul>
+                </li>
+                <li>there should be always a <span class="cp">background-color</span> defined as fallback <i>(is
+                        automatically drawn
+                        behind the background-image but will shine trough if image is transparent)</i></li>
+                <li><span class="cv">url(' ')</span>
+                    <ul>
+                        <li>contains the path to the image file</li>
+                        <li>multiple <span class="cv">url(' ')</span> can be specified separate with an comma</li>
+                        <li>if the image is smaller than the element it will be repeated both horizontally and
+                            vertically</li>
+                    </ul>
+                </li>
+                <li><span class="cv">linear-gradient</span>
+                    <ul>
+                        <li>multiple colors flow into each other, very nice effect</li>
+                        <li>can be used as text color</li>
+                        <li><a href="https://cssgradient.io/" target="_blank">CSS Gradient</a> <i>generates color
+                                gradient</i></li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- background-repeat -->
+        <details class="cBox" open>
+            <summary>explain: <span class="cp">background-repeat</span></summary>
+            <p class="expText">Specifies how the background image is repeated.</p>
+            <ul>
+                <li class="listC"><span class="cp">background-repeat</span><span class="cv">VALUE</span></li>
+                <li>can be distracting unless the image has symmetry</li>
+                <li>repeated image will crop if it dose not fit</li>
+                <li><span class="cv">repeat-y</span>
+                    <ul>
+                        <li>background-image is repeat vertically</li>
+                    </ul>
+                </li>
+                <li><span class="cv">repeat-x</span>
+                    <ul>
+                        <li>background-image is repeat horizontally</li>
+                    </ul>
+                </li>
+                <li><span class="cv">no-repeat</span>
+                    <ul>
+                        <li>stops the image from being repeated</li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <br>
+        <!-- background-size -->
+        <details class="cBox" open>
+            <summary>explain: <span class="cp">background-size</span></summary>
+            <p class="expText">specifies the size of the background image</p>
+            <ul>
+                <li class="listC"><span class="cp">background-size</span><span class="cv">VALUE</span></li>
+                <li><span class="cv">cover</span>
+                    <ul>
+                        <li>the image covers the whole background but can be stretched and its sides cropped</li>
+                    </ul>
+                </li>
+                <li><span class="cv">contain</span>
+                    <ul>
+                        <li>uses the whole image unchanged, but leaves gabs on the sides if the ratio dose not fit</li>
+                    </ul>
+                </li>
+                <li><span class="cv">auto</span>
+                    <ul>
+                        <li>the browser will calculate the best size based on the actual image dimensions and aspect
+                            ratio</li>
+                    </ul>
+                </li>
+                <li><span class="cv">LENGTH</span>
+                    <ul>
+                        <li>a single value applies to the width and the height defaults to <span class="cv">auto</span>
+                        </li>
+                        <li>two values <i>(separated by space)</i>, 1st sets width, 2nd sets height</li>
+                    </ul>
+                </li>
+                <li><span class="cv">VALUE1</span> , <span class="cv">VALUE2</span> , <span class="cv">VALUE3</span>
+                    <ul>
+                        <li>multiple values separated by comma apply to multiple images, <i>(e.g.: 1st value to the
+                                background-image which was defined first, ...)</i></li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>
