@@ -8,6 +8,40 @@
     <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
     <link rel="stylesheet" href="/css/softDev.css">
     <title>Typography</title>
+    <style>
+        /* for example background image stack */
+        #exampleStack {
+            width: 250px;
+            height: 200px;
+            background-color: tomato;
+            background-image: url('/images/LOGO/Profile\ Zoltan\ 2020\ round.png'),
+                url('/images/LOGO/smiley_icon.png'),
+                url('/images/LOGO/css3.svg');
+            background-repeat: no-repeat, repeat-x, repeat-y;
+            background-position: center, left center, right center;
+            background-attachment: scroll, fixed;
+        }
+
+        #exampleStack p {
+            color: bisque;
+        }
+
+        .scrollerMain {
+            width: 272px;
+            height: 100px;
+            overflow-y: scroll;
+            scrollbar-color: rebeccapurple green;
+            scrollbar-width: thin;
+        }
+
+        .scroller {
+            width: 250px;
+            height: 100vh;
+            overflow-y: scroll;
+            scrollbar-color: rebeccapurple green;
+            scrollbar-width: thin;
+        }
+    </style>
 </head>
 
 <body>
@@ -946,7 +980,7 @@
         <h3>background-image</h3>
         <p class="expText">Sets one or several images for the background of the element.</p>
 
-        <details class="cBox">
+        <details class="cBox" open>
             <summary>explain: <span class="cp">background-image</span></summary>
             <ul>
                 <li class="listC"><span class="cp">background-image</span><span class="cv">VALUE</span></li>
@@ -973,11 +1007,41 @@
                                 gradient</i></li>
                     </ul>
                 </li>
+                <p><b>Note:</b> if multiple images are stacked, than the first image is always the first to which the
+                    first values of the other properties apply. The second defined image gets the second defined value
+                    of the other properties and so on.<br>
+                    <details class="cBox" open>
+                        <summary>example: value for stacked images</summary>
+                        <div class="flex">
+                            <figure>
+                                <figcaption>browser</figcaption>
+                                <div class="browser scrollerMain">
+                                    <div class="browser scroller" id="exampleStack">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quis
+                                            beatae
+                                            fugit ipsa, aspernatur, provident delectus eligendi dicta pariatur ullam
+                                            harum
+                                            ut minus. Eligendi unde delectus ex placeat fuga rerum. Lorem ipsum dolor
+                                            sit
+                                            amet consectetur, adipisicing elit. Dignissimos ipsa placeat voluptates
+                                            ipsam
+                                            blanditiis, quos enim debitis soluta ullam mollitia quae, inventore quod
+                                            vitae
+                                            eaque iure modi doloribus officia accusamus! Lorem, ipsum dolor sit amet
+                                            consectetur adipisicing elit. Iste minus quam vero autem officiis, eligendi
+                                            debitis architecto aspernatur sed laudantium illo sit suscipit molestiae non
+                                            doloribus cum numquam voluptatum consequuntur?</p>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </details>
+                </p>
             </ul>
         </details>
         <br>
         <!-- background-repeat -->
-        <details class="cBox" open>
+        <details class="cBox">
             <summary>explain: <span class="cp">background-repeat</span></summary>
             <p class="expText">Specifies how the background image is repeated.</p>
             <ul>
@@ -1003,7 +1067,7 @@
         </details>
         <br>
         <!-- background-size -->
-        <details class="cBox" open>
+        <details class="cBox">
             <summary>explain: <span class="cp">background-size</span></summary>
             <p class="expText">specifies the size of the background image</p>
             <ul>
@@ -1039,6 +1103,214 @@
                 </li>
             </ul>
         </details>
+        <br>
+        <!-- background-position -->
+        <details class="cBox">
+            <p class="expText">Sets the horizontal and vertical position of the image inside its parent container.</p>
+            <summary>explain: <span class="cp">background-position</span></summary>
+            <!-- 1-value syntax: -->
+            <details class="cBox">
+                <summary><b>1-value syntax:</b></summary>
+                <table>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><span class="cv">center</span>
+                                    <ul>
+                                        <li>centers the imag</li>
+                                    </ul>
+                                </li>
+                        </td>
+                        <td><img width="450px" src="/images/softDevImages/css/background-position_single-center.svg"
+                                alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><span class="cv">top</span> <span class="cv">right</span> <span
+                                        class="cv">bottom</span>
+                                    <span class="cv">left</span>
+                                    <ul>
+                                        <li>aligns the image to the middle of the side</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                        <td><img src="/images/softDevImages/css/background-position_single-keyword.svg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><span class="cv">LENGTH</span>
+                                    <ul>
+                                        <li>aligns the image along the x axis
+                                            according the <span class="cv">LENGTH</span><br><i>(from left to right)</i>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                        <td><img src="/images/softDevImages/css/background-position_single-value.svg" alt=""></td>
+                    </tr>
+                </table>
+            </details>
+            <br>
+            <!-- 2-value syntax: -->
+            <details class="cBox">
+                <summary><b>2-value syntax:</b></summary>
+                <table>
+                    <tr>
+                        <th>2-value syntax: <b>keyword pair</b></th>
+                    </tr>
+                    <tr>
+                        <td><img width="700px" src="/images/softDevImages/css/background-position_2value-keywords.svg"
+                                alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul style="text-align: left;">
+                                <li><span class="cv">left</span> <span class="cv">top</span>
+                                    <ul>
+                                        <li>aligns image to top - left corner <i>(values can be swapped around)</i></li>
+                                    </ul>
+                                </li>
+                                <li><span class="cv">right</span> <span class="cv">top</span>
+                                    <ul>
+                                        <li>aligns image to top - right corner <i>(values can be swapped around)</i>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><span class="cv">right</span> <span class="cv">bottom</span>
+                                    <ul>
+                                        <li>aligns image to bottom - right corner <i>(values can be swapped around)</i>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><span class="cv">left</span> <span class="cv">bottom</span>
+                                    <ul>
+                                        <li>aligns image to bottom - left corner <i>(values can be swapped around)</i>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p><b>Note:</b> Keywords can not be opposite! <i>(e.g.: left-right or top-bottom)</i></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>2-value syntax: <b>2 length</b></th>
+                    </tr>
+                    <tr>
+                        <td><img width="600px" src="/images/softDevImages/css/background-position_2value-length.svg"
+                                alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul style="text-align: left;">
+                                <li class="listH"><b>1st value</b>
+                                <li>1st value determines the distance from left to right <i>(x axis)</i></li>
+                                </li>
+                                <li class="listH"><b>2nd value</b>
+                                <li>2nd value determines the distance from top to bottom <i>(y axis)</i></li>
+                                </li>
+                            </ul>
+
+                        </td>
+                    </tr>
+                </table>
+            </details>
+            <br>
+            <details class="cBox">
+                <summary><b>3-value syntax:</b></summary>
+                <table>
+                    <tr>
+                        <th>3-value syntax: <b>2 keyboard + length</b></th>
+                    </tr>
+                    <tr>
+                        <td><img width="700px"
+                                src="/images/softDevImages/css/background-position_3value-2Kword_length.svg" alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul style="text-align: left;">
+                                <li><span class="cv">left</span> <span class="cv">right</span>
+                                    <ul>
+                                        <li>either of this keywords makes it to the <b>x axis</b></li>
+                                    </ul>
+                                </li>
+                                <li style="text-align: left;"><span class="cv">top</span> <span class="cv">bottom</span>
+                                    <ul>
+                                        <li>either of this keywords makes it to the <b>y axis</b></li>
+                                    </ul>
+                                </li>
+                                <li style="text-align: left;"><span class="cv">center</span>
+                                    <ul>
+                                        <li>dose not determine which axis, but it can be set if one axis is defined</li>
+                                    </ul>
+                                </li>
+                                <li><span class="cv">LENGTH</span>
+                                    <ul>
+                                        <li>last value is a length value and applies to the second value</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </details>
+            <br>
+            <!-- 4-value syntax: -->
+            <details class="cBox">
+                <summary><b>4-value syntax:</b></summary>
+                <table>
+                    <tr>
+                        <th>3-value syntax: <b>2x keyword+length</b></th>
+                    </tr>
+                    <tr>
+                        <td><img width="700px"
+                                src="/images/softDevImages/css/background-position_4value-2Kword_2length.svg" alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul style="text-align: left;">
+                                <li><span class="cv">left</span> <span class="cv">right</span>
+                                    <ul>
+                                        <li>either of this keywords makes it to the <b>x axis</b></li>
+                                    </ul>
+                                </li>
+                                <li style="text-align: left;"><span class="cv">top</span> <span class="cv">bottom</span>
+                                    <ul>
+                                        <li>either of this keywords makes it to the <b>y axis</b></li>
+                                    </ul>
+                                </li>
+                                <li style="text-align: left;"><span class="cv">center</span>
+                                    <ul>
+                                        <li>dose not determine which axis, but it can be set if one axis is defined</li>
+                                    </ul>
+                                </li>
+                                <li class="listH">1st value</li>
+                                <li>must be a <b>keyword</b> which determines one of the <b>axis</b></li>
+                                <li class="listH">2nd value</li>
+                                <li>must be a length which applies to the <b>1st value</b></li>
+                                <li class="listH">3th value</li>
+                                <li>must be a <b>keyword</b> which determines the remaining <b>axis</b></li>
+                                <li class="listH">4th value</li>
+                                <li>must be a length which applies to the <b>3th value</b></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </details>
+        </details>
+        <br>
+        <!-- background-attachment -->
+        <details class="cBox" open>
+            <summary>explain: <span class="cp">background-attachment</span></summary>
+            <p class="xplText">Sets whether a background image's position is fixed within the viewport, or scrolls with
+                its containing block.</p>
+        </details>
+
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>
