@@ -14,12 +14,117 @@
     <main>
         <h1>layout</h1>
         <p class="expText">Determines how elements are arranged on the page.</p>
-
+        <!-- element layout properties -->
+        <h2>element layout properties</h2>
+        <!-- Level Elements -->
+        <details class="cBox">
+            <summary>explain: <b>"level elements"</b></summary>
+            <table>
+                <tr>
+                    <th width="40%">Block-Level Elements</th>
+                    <th width="30%">Inline Elements</th>
+                    <th width="30%">Inline-Block Elements</th>
+                </tr>
+                <tr>
+                    <td><span class="cp">display</span><span class="cv">block</span></td>
+                    <td><span class="cp">display</span><span class="cv">inline</span></td>
+                    <td><span class="cp">display</span><span class="cv">inline-block</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>take the whole horizontal space <i>(100% width of there parent container)</i></li>
+                            <li>they always start a new line <i>(do not share there space with other elements even if
+                                    there would be enough space)</i></li>
+                            <li style="background-color: pink;">there size <i>(height and width)</i> can <b>be</b>
+                                defined</li>
+                            <li>can not be seen if content is empty or if the height is not defined</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li style="background-color: orange;">take only as much space as their content, do not
+                                stretch</li>
+                            <li style="background-color: orange;">multiple elements can fit side-by-side on one line
+                            </li>
+                            <li>there size <i>(height and width)</i> can <b>not</b> be defined</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li style="background-color: orange;">take only as much space as their content, do not
+                                stretch</li>
+                            <li style="background-color: orange;">multiple elements can fit side-by-side on one line
+                            </li>
+                            <li style="background-color: pink;">there size <i>(height and width)</i> can <b>be</b>
+                                defined</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="he">div</span> <span class="he">p</span> <span class="he">h_</span> <span
+                            class="he">li</span></td>
+                    <td><span class="he">span</span> <span class="he">a</span> <span class="he">button</span> <span
+                            class="he">input</span></td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <ul>
+                            <li class="listC"><span class="cp">max-width</span> and <span class="cp">max-height</span>
+                            </li>
+                            <li>The size of the element can not be exceeded but it can shrink if the parent element
+                                calls for it. Is used in responsive design.</li>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="listC"><span class="cp">min-width</span> and <span class="cp">min-height</span>
+                            <li>The width of the element can't be less than the value set by this property.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </details>
+        <br>
+        <!-- Visibility -->
+        <details class="cBox">
+            <summary>explain: <b>visibility</b></summary>
+            <img src="/images/softDevImages/css/visibility.svg" alt="">
+            <table>
+                <tr>
+                    <th>hide element</th>
+                    <th>removed element</th>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+                        <ul>
+                            <li class="listC"><span class="cp">visibility</span><span class="cv">VALUE</span></li>
+                            <li><span class="cv">visible</span>
+                                <ul>
+                                    <li>default value, element is visible and takes up space</li>
+                                </ul>
+                            </li>
+                            <li><span class="cv">hidden</span>
+                                <ul>
+                                    <li>the element is still there in the flow of the page, but hidden</li>
+                                    <li>it still occupies the space just like any other visible element</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td style="vertical-align: top; text-align: left;">
+                        <ul>
+                            <li class="listC"><span class="cp">display</span><span class="cv">none</span></li>
+                            <li>the element is not in the flow of the page <i>as if it never existed</i></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </details>
         <!-- the box model -->
         <h2>the box model</h2>
         <p class="expText"><b>Every HTML element</b> is represented as a rectangular box on the page.</p>
         <details class="cBox">
-            <summary>explain: the box model</summary>
+            <summary>explain: <b>the box model</b></summary>
             <img width="450px" src="/images/softDevImages/css/the_box_model.svg" alt="">
             <ul>
                 <li class="listH">parts of the box</li>
@@ -336,6 +441,8 @@
         </li>
         </ul>
         </details>
+
+
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>

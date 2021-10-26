@@ -10,28 +10,22 @@
     <title>Typography</title>
     <style>
         /* for example background image stack */
-        #exampleStack {
+        #exampleStack,
+        #exampleStack1 {
             width: 250px;
             height: 200px;
             background-color: tomato;
             background-image: url('/images/LOGO/Profile\ Zoltan\ 2020\ round.png'),
                 url('/images/LOGO/smiley_icon.png'),
                 url('/images/LOGO/css3.svg');
-            background-repeat: no-repeat, repeat-x, repeat-y;
-            background-position: center, left center, right center;
-            background-attachment: scroll, fixed;
+            background-repeat: no-repeat, repeat-x;
+            background-position: center, left bottom, right center;
+            background-attachment: scroll, fixed, local;
         }
 
-        #exampleStack p {
+        #exampleStack p,
+        #exampleStack1 p {
             color: bisque;
-        }
-
-        .scrollerMain {
-            width: 272px;
-            height: 100px;
-            overflow-y: scroll;
-            scrollbar-color: rebeccapurple green;
-            scrollbar-width: thin;
         }
 
         .scroller {
@@ -980,7 +974,7 @@
         <h3>background-image</h3>
         <p class="expText">Sets one or several images for the background of the element.</p>
 
-        <details class="cBox" open>
+        <details class="cBox">
             <summary>explain: <span class="cp">background-image</span></summary>
             <ul>
                 <li class="listC"><span class="cp">background-image</span><span class="cv">VALUE</span></li>
@@ -1010,7 +1004,7 @@
                 <p><b>Note:</b> if multiple images are stacked, than the first image is always the first to which the
                     first values of the other properties apply. The second defined image gets the second defined value
                     of the other properties and so on.<br>
-                    <details class="cBox" open>
+                    <details class="cBox">
                         <summary>example: value for stacked images</summary>
                         <div class="flex">
                             <figure>
@@ -1034,7 +1028,36 @@
                                     </div>
                                 </div>
                             </figure>
+                            <figure>
+                                <figcaption>css</figcaption>
+                                <pre class="code">
+exampleStack {
+    width: 250px;
+    height: 200px;
+    background-color: tomato;
+    background-image:
+    <mark>url('round_me.png')</mark>,
+    <span style="background-color: coral;">url('smiley_icon.png')</span>,
+    <span style="background-color: orange;">url('LOGO.svg')</span>;
+    background-repeat:
+    <mark>no-repeat</mark>, <span style="background-color: coral;">repeat-x</span> <span style="background-color: orange;">&nbsp;&nbsp;&nbsp;</span>;
+    background-position:
+    <mark>center</mark>, <span style="background-color: coral;">left bottom</span>, <span style="background-color: orange;">right center</span>;
+    background-attachment:
+    <mark>scroll</mark>, <span style="background-color: coral;">fixed</span>, <span style="background-color: orange;">local</span>;
+}</pre>
+                            </figure>
                         </div>
+                        <ul style="font-style: italic;">
+                            <li>3 images are stucked</li>
+                            <li>every value which is <mark>set 1st</mark> applies to the <mark>1st
+                                    image</mark></li>
+                            <li>every value which is <span style="background-color: coral;">set 2nd</span>
+                                applies to the <span style="background-color: coral;">2nd image</span></li>
+                            <li>every value which is <span style="background-color: orange;">set 3th</span>
+                                applies to the <span style="background-color: orange;">3th image</span></li>
+
+                        </ul>
                     </details>
                 </p>
             </ul>
@@ -1305,12 +1328,138 @@
         </details>
         <br>
         <!-- background-attachment -->
-        <details class="cBox" open>
+        <details class="cBox">
             <summary>explain: <span class="cp">background-attachment</span></summary>
-            <p class="xplText">Sets whether a background image's position is fixed within the viewport, or scrolls with
+            <p class="expText">Sets whether a background image's position is fixed within the viewport, or scrolls with
                 its containing block.</p>
+            <ul>
+                <li class="listC"><span class="cp">background-attachment</span><span class="cv">VALUE</span></li>
+                <li><span class="cv">fixed</span>
+                    <ul>
+                        <li>The background is fixed relative to the viewport. Even if an element has a scrolling
+                            mechanism, the background doesn't move with the element. <i>(This is not compatible with
+                                background-clip: text.)</i></li>
+                    </ul>
+                </li>
+                <li><span class="cv">local</span>
+                    <ul>
+                        <li>The background is fixed relative to the element's contents. If the element has a scrolling
+                            mechanism, the background scrolls with the element's contents, and the background painting
+                            area and background positioning area are relative to the scrollable area of the element
+                            rather than to the border framing them.</li>
+                    </ul>
+                </li>
+                <li><span class="cv">scroll</span>
+                    <ul>
+                        <li>The background is fixed relative to the element itself and does not scroll with its
+                            contents. (It is effectively attached to the element's border.)</li>
+                    </ul>
+                </li>
+                <div class="flex">
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <div class="browser scrollerMain">
+                            <div class="browser scroller" id="exampleStack1">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quis
+                                    beatae
+                                    fugit ipsa, aspernatur, provident delectus eligendi dicta pariatur ullam
+                                    harum
+                                    ut minus. Eligendi unde delectus ex placeat fuga rerum. Lorem ipsum dolor
+                                    sit
+                                    amet consectetur, adipisicing elit. Dignissimos ipsa placeat voluptates
+                                    ipsam
+                                    blanditiis, quos enim debitis soluta ullam mollitia quae, inventore quod
+                                    vitae
+                                    eaque iure modi doloribus officia accusamus! Lorem, ipsum dolor sit amet
+                                    consectetur adipisicing elit. Iste minus quam vero autem officiis, eligendi
+                                    debitis architecto aspernatur sed laudantium illo sit suscipit molestiae non
+                                    doloribus cum numquam voluptatum consequuntur?</p>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure>
+                        <figcaption>css</figcaption>
+                        <pre class="code">
+exampleStack {
+    width: 250px;
+    height: 200px;
+    background-color: tomato;
+    background-image:
+    <mark>url('round_me.png')</mark>,
+    <span style="background-color: coral;">url('smiley_icon.png')</span>,
+    <span style="background-color: orange;">url('LOGO.svg')</span>;
+    background-repeat:
+    <mark>no-repeat</mark>, <span style="background-color: coral;">repeat-x</span> <span style="background-color: orange;">&nbsp;&nbsp;&nbsp;</span>;
+    background-position:
+    <mark>center</mark>, <span style="background-color: coral;">left bottom</span>, <span style="background-color: orange;">right center</span>;
+    background-attachment:
+    <mark>scroll</mark>, <span style="background-color: coral;">fixed</span>, <span style="background-color: orange;">local</span>;
+}</pre>
+                    </figure>
+                </div>
+                <img src="/images/LOGO/Profile Zoltan 2020 round.png" alt="">
+                <ul>
+                    <li><span class="cv">scroll</span> <mark>url('round_me.png')</mark>
+                        <ul>
+                            <li>Is attached to the background and dose not change its position when scrolling.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <img src="/images/LOGO/smiley_icon.png" alt="">
+                <ul>
+                    <li><span class="cv">fixed</span> <span
+                            style="background-color: coral;">url('smiley_icon.png')</span>
+                        <ul>
+                            <li>Is fixed to the viewports position, only visible when the position of the view port and
+                                the position of the element match.<br><i>(in the example, when the "browser" window is
+                                    at the bottom of the viewport)</i></li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <img src="/images/LOGO/317756_badge_css_css3_achievement_award_icon.png" alt="">
+                <ul>
+                    <li><span class="cv">local</span>
+                        <ul>
+                            <li>The "css logo" is fixed relative to the element's contents <i>("text")</i>.</li>
+                        </ul>
+                    </li>
+                </ul>
         </details>
+        <br>
+        <!-- background-Shorthand-->
+        <details class="cBox">
+            <summary>explain: <span class="cp">background</span> -Shorthand</summary>
+            <p class="expText">Allows to specify all the background properties in one single property.</p>
 
+            <ul>
+                <li class="listC"><span class="cp">background</span> <span class="cv">color</span> <span
+                        class="cv">image</span> <span class="cv">position</span> <b>/</b><span class="cv">size</span>
+                    <span class="cv">repeat</span> <span class="cv">attachment</span></li>
+                <li>the order of the values dose not matter, except: <span class="cv">position</span> <b>must be
+                        followed
+                        by</b> <span class="cv">size</span> and they must be separated with an dash</li>
+                <li>values can be left out, they will be inheritate or set to default</li>
+                <li>the 1sr numeric value for <span class="cv">position</span> defines the horizontal <i>(x axis)</i>
+                    and
+                    the 2nd
+                    vertical
+                    <i>(y axis)</i> position. <i>The order of position keywords is not important.</i> </li>
+                <figure>
+                    <figcaption>example:</figcaption>
+                    <pre class="code">
+body {
+    background:
+       red                      /* background-color */
+       url(sunset.jpg)          /* background-image */
+       top center / 200px 200px /* background-position / background-size */
+       no-repeat                /* background-repeat */
+       fixed;                   /* background-attachment */
+}</pre>
+                </figure>
+            </ul>
+        </details>
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>
