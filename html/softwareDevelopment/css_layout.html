@@ -8,6 +8,48 @@
     <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
     <link rel="stylesheet" href="/css/softDev.css">
     <title>layout</title>
+    <style>
+        #exaFixed {
+            width: 200px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+
+        #exaAbsolute {
+            width: 200px;
+            position: absolute;
+            top: 120%;
+            left: 0;
+        }
+
+        #exaSticky {
+            width: 200px;
+            position: sticky;
+            bottom: 0;
+        }
+
+        /* >>> start example text on picture */
+        .container {
+            position: relative;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        #img {
+            width: 100%;
+            height: auto;
+            opacity: 0.3;
+        }
+
+        /* <<< end example text on picture */
+    </style>
 </head>
 
 <body>
@@ -43,8 +85,7 @@
                     </td>
                     <td>
                         <ul>
-                            <li style="background-color: orange;">take only as much space as their content, do not
-                                stretch</li>
+                            <li style="background-color: orange;">take only as much space as their content</li>
                             <li style="background-color: orange;">multiple elements can fit side-by-side on one line
                             </li>
                             <li>there size <i>(height and width)</i> can <b>not</b> be defined</li>
@@ -52,8 +93,7 @@
                     </td>
                     <td>
                         <ul>
-                            <li style="background-color: orange;">take only as much space as their content, do not
-                                stretch</li>
+                            <li style="background-color: orange;">take only as much space as their content</li>
                             <li style="background-color: orange;">multiple elements can fit side-by-side on one line
                             </li>
                             <li style="background-color: pink;">there size <i>(height and width)</i> can <b>be</b>
@@ -114,11 +154,257 @@
                     <td style="vertical-align: top; text-align: left;">
                         <ul>
                             <li class="listC"><span class="cp">display</span><span class="cv">none</span></li>
-                            <li>the element is not in the flow of the page <i>as if it never existed</i></li>
+                            <li>the element is not in the flow of the page <i>(as if it never existed)</i></li>
                         </ul>
                     </td>
                 </tr>
             </table>
+        </details>
+        <!-- Positioning -->
+        <h2>Positioning </h2>
+        <p class="expText">The flow of the page is the arrangement of the elements set by their <span
+                class="cp">position</span> and
+            the order of HTML elements. All elements on a web page are positioned static by default, and this is what is
+            considered “normal flow” of the page.</p>
+        <details class="cBox">
+            <summary>explain: <span class="cp">position</span></summary>
+            <p class="expText">Changing the the value of <span class="cp">position</span> changes how the element flows
+                in the document. Its position "new" position needs to be defined after.</p>
+            <table>
+                <tr>
+                    <td colspan="2"></td>
+                    <td>
+                        <details class="cBox">
+                            <summary>example: <span class="cv">relative</span></summary>
+                            <img width="600px" src="/images/softDevImages/css/position_relative.svg" alt="">
+                        </details>
+                    </td>
+                    <td>
+                        <details class="cBox">
+                            <summary>example: <span class="cv">fixed</span></summary>
+                            <div class="browser" id="exaFixed">
+                                <span class="cv">fixed</span>
+                                <p>&lt;&lt; scroll up and down >></p>
+                            </div>
+                            <pre class="code">
+// html ///////////////////////////////////////////////////////////
+&lt;div id="exaFixed"&gt;
+    &lt;span class="cv"&gt;fixed&lt;/span&gt;
+    &lt;p&gt;&lt;&lt; scroll up and down &gt;&gt;&lt;/p&gt;&lt;/div&gt;
+
+// css///////////////
+#exaFixed {
+    width: 200px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}</pre>
+                        </details>
+                    </td>
+                    <td>
+                        <details class="cBox">
+                            <summary>example: <span class="cv">absolute</span></summary>
+                            <div style="position: relative;">
+                                <pre class="code">
+// html //////////////////////
+&lt;div style="position: relative;"&gt;
+    &lt;div id="exaAbsolute"&gt;
+        &lt;span class="cv"&gt;absolute&lt;/span&gt;
+        &lt;p&gt;&lt;&lt; dose not move &gt;&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+//css /////////////////////
+#exaAbsolute {
+    width: 200px;
+    position: absolute;
+    top: 120%;
+    left: 0;
+}</pre>
+
+
+                                <div class="browser" id="exaAbsolute">
+                                    <span class="cv">absolute</span>
+                                    <p>&lt;&lt; dose not move >></p>
+                                </div>
+
+                            </div>
+
+                        </details>
+                    </td>
+                    <td>
+                        <details class="cBox">
+                            <summary>example: <span class="cv">sticky</span></summary>
+                            <div>
+                                <pre class="code">
+// html //////////////////////
+&lt;p&gt; .... &lt;/p&gt;
+
+&lt;div id="exaSticky"&gt;
+    &lt;span class="cv"&gt;sticky&lt;/span&gt;
+    &lt;p&gt;&lt;&lt; sticks at the bottom &gt;&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt; .... &lt;/p&gt;
+
+
+// css ////////////////////////
+#exaSticky {
+    width: 200px;
+    position: sticky;
+    bottom: 0;
+}</pre>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate doloremque
+                                    nesciunt
+                                    recusandae, ducimus odit, ipsam vero necessitatibus temporibus tenetur amet
+                                    consectetur,
+                                    aliquid perspiciatis voluptates earum. Quibusdam id vel omnis nemo!</p>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate doloremque
+                                    nesciunt
+                                    recusandae, ducimus odit, ipsam vero necessitatibus temporibus tenetur amet
+                                    consectetur,
+                                    aliquid perspiciatis voluptates earum. Quibusdam id vel omnis nemo!</p>
+                                <div class="browser" id="exaSticky">
+                                    <span class="cv">sticky</span>
+                                    <p>&lt;&lt; sticks at the bottom >></p>
+                                </div>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate doloremque
+                                    nesciunt
+                                    recusandae, ducimus odit, ipsam vero necessitatibus temporibus tenetur amet
+                                    consectetur,
+                                    aliquid perspiciatis voluptates earum. Quibusdam id vel omnis nemo!</p>
+                            </div>
+
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <th><span class="cp">position</span><span class="cv">VALUE</span></th>
+                    <th><span class="cv">static</span><br><i>(default)</i></th>
+                    <th width="20%"><span class="cv">relative</span></th>
+                    <th width="20%"><span class="cv">fixed</span></th>
+                    <th width="20%"><span class="cv">absolute</span></th>
+                    <th width="20%"><span class="cv">sticky</span></th>
+                </tr>
+                <tr>
+                    <th>status</th>
+                    <td></td>
+                    <td colspan="4">"positioned element"</td>
+                </tr>
+                <tr>
+                    <th>original position respected by the document flow</th>
+                    <td colspan="2">yes</td>
+                    <td colspan="3">no</td>
+                </tr>
+                <tr>
+                    <th>new position respected by the document flow</th>
+                    <td rowspan="2"></td>
+                    <td colspan="4">no</td>
+                </tr>
+                <tr>
+                    <th>new position relative to</th>
+                    <td>original position</td>
+                    <td>viewport</td>
+                    <td>nearest ancestor with <span class="cv">relative</span> , if none than, viewport
+                    </td>
+                    <td rowspan="2">depending on scroll position, changes from background to viewport when offset
+                        position is reached</td>
+                </tr>
+                <tr>
+                    <th>scrolling behavior</th>
+                    <td colspan="2">fixed to the background</td>
+                    <td>moves with the viewport</td>
+                    <td>fixed to the background</td>
+                </tr>
+            </table>
+            <br>
+            <ul>
+                <li class="listC"><span class="cp">top</span><span class="cv">VALUE</span> , <span
+                        class="cp">right</span><span class="cv">VALUE</span> , <span class="cp">bottom</span><span
+                        class="cv">VALUE</span> , <span class="cp">left</span><span class="cv">VALUE</span></li>
+                <li>the position is measured from the "new" position to the "relative" position</li>
+                <li><span class="cv">VALUE</span>
+                    <ul>
+                        <li>the negative opposite direction has the same position<br><i>(e.g.: <code>top: -10;</code> is
+                                the same as <code>bottom: 10;</code>)</i></li>
+                        <li>elements which are <span class="cp">absolute</span> and nested within an container which is
+                            <span class="cp">relative</span>, are measured to the border of there container</li>
+                    </ul>
+                </li>
+            </ul>
+            <img width="50%" src="/images/softDevImages/css/position_newPosition.svg" alt="">
+            <details class="cBox">
+                <summary>example: Place text in center of an image</summary>
+                <figure>
+                    <figcaption>browser</figcaption>
+                    <div class="browser">
+                        <h2>Image Text</h2>
+
+                        <p>Center text in image:</p>
+
+                        <div class="container">
+                            <img id="img" src="/images/softDevImages/css/img_5terre_wide.jpg" alt="Cinque Terre"
+                                width="1000" height="300">
+                            <div class="center">Centered</div>
+                        </div>
+                    </div>
+                </figure>
+                <div class="flex">
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="code">
+&lt;h2&gt;Image Text&lt;/h2&gt;
+&lt;p&gt;Center text in image:&lt;/p&gt;
+&lt;div class="container"&gt;
+    &lt;img id="img" src="/images/softDevImages/css/img_5terre_wide.jpg"
+    alt="Cinque Terre"
+        width="1000" height="300"&gt;
+    &lt;div class="center"&gt;Centered&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                    <figure>
+                        <figcaption>css</figcaption>
+                        <pre class="code">
+.container {
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+#img {
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+}</pre>
+                    </figure>
+                </div>
+            </details>
+        </details>
+        <!-- Z-index -->
+        <h2>Z-index</h2>
+        <p class="expText">The purpose of the z-index property is to control the vertical stacking of overlapping
+            elements.</p>
+        <details class="cBox">
+            <summary>explain: <span class="cp"><b>z-index</b></span></summary>
+
+            <img style="display: inline-block" width="200px" src="/images/softDevImages/css/z-index.svg" alt="">
+            <ul>
+                <li class="listC"><span class="cp">z-index</span><span class="cv">VALUE</span></li>
+                <li>a higher z-index value appears to be physically closer to the viewer</li>
+                <li>values can be negative</li>
+                <li>with no z-index value set the elements stack in the same order as they appear in the HTML <ul>
+                        <li>the lowest in the hierarchy will appear closest to you</li>
+                        <li>if element A is on top of element B, no child element of A can be higher in the stack
+                            than element B</li>
+                    </ul>
+                </li>
+            </ul>
         </details>
         <!-- the box model -->
         <h2>the box model</h2>
