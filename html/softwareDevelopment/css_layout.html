@@ -49,6 +49,37 @@
         }
 
         /* <<< end example text on picture */
+
+        /* >>> start float */
+        .float_container {
+            width: 270px;
+            height: 180px;
+            background-color: white;
+        }
+
+        .menu {
+            background-color: green;
+            height: 20px;
+        }
+
+        .sidebar {
+            background-color: orange;
+            width: 80px;
+            height: 40px;
+        }
+
+        .box {
+            background-color: orangered;
+            width: 145px;
+            height: 100px;
+        }
+
+        .footer {
+            background-color: powderblue;
+            height: 20px;
+        }
+
+        /* <<< end float */
     </style>
 </head>
 
@@ -406,6 +437,408 @@
                 </li>
             </ul>
         </details>
+        <!-- overflow -->
+        <h2>overflow</h2>
+        <p class="expText">Controls the content that falls out of the boundaries of the container.</p>
+        <details class="cBox">
+            <summary>explain: <span class="cp">overflow</span></summary>
+            <p class="expText">When the content is bigger than its container, than overflow occurs. The content
+                "overflows" into the following elements which overlaps if there is not enough space in between, they are
+                not pushed away. <br>Therefore it is
+                generally a bad idea to give a static height to any element containing text.</p>
+
+            <ul>
+                <li class="listC"><span class="cp">overflow</span><span class="cv">VALUE</span> <i>(all)</i>, <span
+                        class="cp">overflow-y</span><span class="cv">VALUE</span> <i>(vertical)</i>, <span
+                        class="cp">overflow-x</span><span class="cv">VALUE</span> <i>(horizontal)</i></li>
+                <li><span class="cv">visible</span> <i>(default)</i>
+                    <ul>
+                        <li>is the default behavior, courses the content to overflow if its parent is to small</li>
+                    </ul>
+                </li>
+                <li><span class="cv">auto</span>
+                    <ul>
+                        <li>a scrollbar will be shown only if it is needed <br><i>(if content exceeds container)</i>
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="cv">scroll</span>
+                    <ul>
+                        <li>always adds a scrollbar whether it is needed or not, for <span class="cp">overflow</span>
+                            both horizontally and vertically</li>
+                    </ul>
+                </li>
+                <li><span class="cv">hidden</span>
+                    <ul>
+                        <li>hides the overflowing content, can not be accessed by the user</li>
+                        <li>can be useful when dealing with dynamically generated content where an overflow will cause
+                            major layout issues</li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <!-- FLOATS -->
+        <h2>Floats</h2>
+        <p class="expText">“Floats” let you put block-level elements side-by-side instead of on top of each other.</p>
+        <details class="cBox" open>
+            <summary>explain: <span class="cp">float</span> & <span class="cp">clear</span></summary>
+            <h2>floats</h2>
+            <p class="expText">Setting the float property courses the element to float to the side of it's patent
+                element. Floated elements are removed from the normal flow of the page. They are ignored by the
+                following element (they flow behind it) till the space behind the floated elements is filled out or the
+                following element has the <span class="cp">clear</span>.</p>
+            <ul>
+                <li class="listC"><span class="cp">float</span> <span class="cv">left</span> <i>or</i> <span
+                        class="cv">right</span></li>
+                <li>floats the element respectively to the <b>left</b> or to the <b>right</b> side</li>
+            </ul>
+            <details class="cBox">
+                <summary>example: <span class="cp">float</span></summary>
+                <!-- no floats -->
+                <h3>no floats</h3>
+                <div class="flex">
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <div class="browser">
+                            <div class="float_container">
+                                <div class="menu">menu</div>
+                                <div class="sidebar">sidebar</div>
+                                <div class="box">box<br><span style="font-size:x-small; color:darkslateblue;">Lorem
+                                        ipsum
+                                        dolor sit amet consectetur adipisicing elit. Consectetur quidem
+                                        necessitatibus</span></div>
+                                <div class="footer">footer</div>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="code">
+&lt;div class="float_container"&gt;
+    &lt;div class="menu"&gt;
+        <mark>menu</mark>&lt;/div&gt;
+    &lt;div class="sidebar"&gt;
+        <mark>sidebar</mark>&lt;/div&gt;
+    &lt;div class="box"&gt;
+        <mark>box</mark>&lt;/div&gt;
+    &lt;div class="footer"&gt;
+        <mark>footer</mark>&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                    <figure>
+                        <figcaption>css</figcaption>
+                        <pre class="code">
+.menu {
+    background-color: green;
+    height: 20px;
+
+.sidebar {
+    background-color: orange;
+    width: 80px;
+    height: 80px;
+
+.box {
+    background-color: orangered;
+    width: 100px;
+    height: 100px;
+
+.footer {
+    background-color: powderblue;
+    height: 20px;
+}</pre>
+                    </figure>
+                </div>
+                <ul>
+                    <li><i>no floats, default behavior</i></li>
+                </ul>
+                <h3 style="text-transform: lowercase;"><span class="cp">float</span><span class="cv">left</span></h3>
+                <!-- float left -->
+                <div class="flex">
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <div class="browser">
+                            <div class="float_container">
+                                <div class="menu">menu</div>
+                                <div class="sidebar" style="float: left;">sidebar</div>
+                                <div class="box">box<br><span style="font-size:x-small; color:darkslateblue;">Lorem
+                                        ipsum
+                                        dolor sit amet consectetur adipisicing elit. Consectetur quidem
+                                        necessitatibus</span></div>
+                                <div class="footer">footer</div>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="code">
+&lt;div class="float_container"&gt;
+    &lt;div class="menu"&gt;
+        <mark>menu</mark>&lt;/div&gt;
+    &lt;div class="sidebar"&gt;
+        <mark>sidebar</mark>&lt;/div&gt;
+    &lt;div class="box"&gt;
+        <mark>box</mark>&lt;/div&gt;
+    &lt;div class="footer"&gt;
+        <mark>footer</mark>&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                    <figure>
+                        <figcaption>css</figcaption>
+                        <pre class="code">
+.menu {
+    background-color: green;
+    height: 20px;
+
+.sidebar {
+    background-color: orange;
+    width: 80px;
+    height: 80px;
+    <mark>float: left;</mark>
+
+.box {
+    background-color: orangered;
+    width: 100px;
+    height: 100px;
+
+.footer {
+    background-color: powderblue;
+    height: 20px;
+}</pre>
+                    </figure>
+                </div>
+                <ul>
+                    <!-- <li>the <span class="cp">float</span> of the <span class="he">div sidebar</span> has been set to <span class="cv">left</span> -->
+                    <li>the <span class="cp">float</span> of the <span class="he">div sidebar</span> has been set to
+                        <span class="cv">left</span>
+                    </li>
+                    <li><span class="he">div sidebar</span> is aligned to the left side</li>
+                    <li>this curses the following <span class="he">div box</span> to "flow" behind the
+                        <span class="he">div sidebar</span></li>
+                    <li><b>Note:</b> how the text flows around the floated <span class="he">div sidebar</span> and not
+                        behind it</li>
+                </ul>
+                <h3 style="text-transform: lowercase;"><span class="cp">float</span><span class="cv">right</span></h3>
+                <!-- float right -->
+                <div class="flex">
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <div class="browser">
+                            <div class="float_container">
+                                <div class="menu">menu</div>
+                                <div class="sidebar" style="float: left;">sidebar</div>
+                                <div class="box" style="float: right;">box<br><span
+                                        style="font-size:x-small; color:darkslateblue;">Lorem ipsum
+                                        dolor sit amet consectetur adipisicing elit. Consectetur quidem
+                                        necessitatibus</span></div>
+                                <div class="footer">footer</div>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="code">
+&lt;div class="float_container"&gt;
+    &lt;div class="menu"&gt;
+        <mark>menu</mark>&lt;/div&gt;
+    &lt;div class="sidebar"&gt;
+        <mark>sidebar</mark>&lt;/div&gt;
+    &lt;div class="box"&gt;
+        <mark>box</mark>&lt;/div&gt;
+    &lt;div class="footer"&gt;
+        <mark>footer</mark>&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                    <figure>
+                        <figcaption>css</figcaption>
+                        <pre class="code">
+.menu {
+    background-color: green;
+    height: 20px;
+
+.sidebar {
+    background-color: orange;
+    width: 80px;
+    height: 80px;
+    <mark>float: left;</mark>
+
+.box {
+    background-color: orangered;
+    width: 100px;
+    height: 100px;
+    <mark>float: right;</mark>
+
+.footer {
+    background-color: powderblue;
+    height: 20px;
+}</pre>
+                    </figure>
+                </div>
+                <ul>
+                    <li>the <span class="cp">float</span> of the <span class="he">div box</span> has been set to <span
+                            class="cv">right</span>
+                    </li>
+                    <li><span class="he">div box</span> is aligned to the right side</li>
+                    <li>this curses the following <span class="he">div footer</span> to "flow" behind the
+                        <span class="he">div box</span> and the
+                        <span class="he">div sidebar</span></li>
+                    <li>if there would be more elements after <span class="he">div footer</span>, than they would also
+                        "flow" behind the floated
+                        elements</li>
+                </ul>
+            </details>
+            <!-- clear -->
+            <h2>clear</h2>
+            <p class="expText">Stops the element from flowing behind a floated element.</p>
+            <ul>
+                <li class="listC"><span class="cp">clear</span><span class="cv">VALUE</span></li>
+                <li><span class="cv">left</span> <i>or</i> <span class="cv">right</span>
+                    <ul>
+                        <li>clears the float respectively on the <b>left</b> side and <b>right</b> side</li>
+                    </ul>
+                </li>
+                <li><span class="cv">both</span>
+                    <ul>
+                        <li>clears both sides of the float</li>
+                    </ul>
+                </li>
+            </ul>
+            <details class="cBox">
+                <summary>example: <span class="cp">clear</span></summary>
+                <!-- clear left -->
+                <h3 style="text-transform: lowercase;"><span class="cp">clear</span><span class="cv">left</span></h3>
+                <div class="flex">
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <div class="browser">
+                            <div class="float_container">
+                                <div class="menu">menu</div>
+                                <div class="sidebar" style="float: left;">sidebar</div>
+                                <div class="box" style="float: right;">box<br><span
+                                        style="font-size:x-small; color:darkslateblue;">Lorem ipsum
+                                        dolor sit amet consectetur adipisicing elit. Consectetur quidem
+                                        necessitatibus</span></div>
+                                <div class="footer" style="clear: left;">footer</div>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="code">
+&lt;div class="float_container"&gt;
+    &lt;div class="menu"&gt;
+        <mark>menu</mark>&lt;/div&gt;
+    &lt;div class="sidebar"&gt;
+        <mark>sidebar</mark>&lt;/div&gt;
+    &lt;div class="box"&gt;
+        <mark>box</mark>&lt;/div&gt;
+    &lt;div class="footer"&gt;
+        <mark>footer</mark>&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                    <figure>
+                        <figcaption>css</figcaption>
+                        <pre class="code">
+.menu {
+    background-color: green;
+    height: 20px;
+
+.sidebar {
+    background-color: orange;
+    width: 80px;
+    height: 80px;
+    <mark>float: left;</mark>
+
+.box {
+    background-color: orangered;
+    width: 100px;
+    height: 100px;
+    <mark>float: right;</mark>
+
+.footer {
+    background-color: powderblue;
+    height: 20px;
+    <mark>clear: left;</mark>
+}</pre>
+                    </figure>
+                </div>
+                <ul>
+                    <li>the <span class="cp">clear</span> of the <span class="he">div footer</span> has been set to
+                        <span class="cv">left</span>
+                    </li>
+                    <li>only the left side is <b>"cleared"</b> of the float <i>(no flowing behind)</i>, the right side
+                        is
+                        still floating <i>(flowing behind)</i></li>
+                </ul>
+                <!-- clear both -->
+                <h3 style="text-transform: lowercase;"><span class="cp">clear</span><span class="cv">both</span></h3>
+                <div class="flex">
+                    <figure>
+                        <figcaption>browser</figcaption>
+                        <div class="browser">
+                            <div class="float_container">
+                                <div class="menu">menu</div>
+                                <div class="sidebar" style="float: left;">sidebar</div>
+                                <div class="box" style="float: right;">box<br><span
+                                        style="font-size:x-small; color:darkslateblue;">Lorem ipsum
+                                        dolor sit amet consectetur adipisicing elit. Consectetur quidem
+                                        necessitatibus</span></div>
+                                <div class="footer" style="clear: both;">footer</div>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure>
+                        <figcaption>html</figcaption>
+                        <pre class="code">
+&lt;div class="float_container"&gt;
+    &lt;div class="menu"&gt;
+        <mark>menu</mark>&lt;/div&gt;
+    &lt;div class="sidebar"&gt;
+        <mark>sidebar</mark>&lt;/div&gt;
+    &lt;div class="box"&gt;
+        <mark>box</mark>&lt;/div&gt;
+    &lt;div class="footer"&gt;
+        <mark>footer</mark>&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </figure>
+                    <figure>
+                        <figcaption>css</figcaption>
+                        <pre class="code">
+.menu {
+    background-color: green;
+    height: 20px;
+
+.sidebar {
+    background-color: orange;
+    width: 80px;
+    height: 80px;
+    <mark>float: left;</mark>
+
+.box {
+    background-color: orangered;
+    width: 100px;
+    height: 100px;
+    <mark>float: right;</mark>
+
+.footer {
+    background-color: powderblue;
+    height: 20px;
+    <mark>clear: both;</mark>
+}</pre>
+                    </figure>
+                </div>
+                <ul>
+                    <li>the <span class="cp">clear</span> of the <span class="he">div footer</span> has been set to
+                        <span class="cv">both</span>
+                    </li>
+                    <li>both sids are <b>"cleared"</b> of the float <i>(no flowing behind)</i></li>
+                </ul>
+            </details>
+
+        </details>
+
+
+
+
         <!-- the box model -->
         <h2>the box model</h2>
         <p class="expText"><b>Every HTML element</b> is represented as a rectangular box on the page.</p>

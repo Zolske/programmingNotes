@@ -145,9 +145,7 @@ figcaption+* {
     background-color: var(--browserOutput);
     display: inline-block;
     box-shadow: 5px 5px 5px grey;
-    padding-top: 0.5ch;
-    padding-right: 0.5ch;
-    padding-bottom: 0.5ch;
+    padding: 0.5ch;
 }
 
 .flex {
@@ -334,6 +332,7 @@ td ul {
 
 .cBox {
     background-color: var(--genericDetailBox);
+    padding-left: 1ch;
 }
 
 /* end highlights /////////////////////////////////////////////////////////////////////////// */
