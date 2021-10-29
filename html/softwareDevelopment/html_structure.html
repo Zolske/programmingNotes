@@ -137,6 +137,37 @@
                 </ul>
             </li>
         </ul>
+        <!-- File Paths -->
+        <h2>File Paths & Structure</h2>
+        <details class="cBox">
+            <summary>explain: file path & structure</summary>
+            <img src="../../images/softDevImages/css/file_path.svg" alt="">
+            <ul>
+                <li class="listH">naming convention for file- and folder- names
+                <li>in lowercase letters</li>
+                <li>avoid special characters or spaces</li>
+            </ul>
+            <ul>
+                <li><b>absolute path</b> <i>(dose not work in "github pages")</i>
+                    <ul>
+                        <li>contains the full path from the root directory</li>
+                        <li>starting the file path with <code>/</code>, start from root directory</li>
+                        <li><i>(e.g.: <code>../assets/images/picture.png</code> leads to picture.png from any
+                                location)</i></li>
+                    </ul>
+                </li>
+                <li><b>relative path</b>
+                    <ul>
+                        <li>contains the path relative from where the file is linked from</li>
+                        <li><code>../</code> moves one folder up</li>
+                        <li><i>(e.g.: <code>../images/picture.png</code> leads from style.css to picture.png</i></li>
+                    </ul>
+                </li>
+                <li><code>./FOLDER</code> is telling you that you are in the directory of "FOLDER"</li>
+                </li>
+
+            </ul>
+        </details>
         <!-- comments ///////////////////////////////////////////////////////////////////////////////////////////////// -->
         <h2>comments</h2>
         <p class="expText">Are ignored by the browser and not visible on the page.</p>

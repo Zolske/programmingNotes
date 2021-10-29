@@ -33,6 +33,9 @@
     /* --jsProperty: lawngreen; */
     /* JavaScript value */
     /* --jsValue: mediumturquoise; */
+    /* commands for the command line */
+    --commandLineBack: black;
+    --commandLineText: white;
 }
 
 /* start headings & elements //////////////////////////////////////////////////////////////////////////////// */
@@ -388,6 +391,16 @@ td ul {
 
 .cv {
     background-color: var(--cssPropertyValue);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20%;
+    box-shadow: 2px 2px 2px grey;
+    font-family: monospace;
+}
+
+.cli {
+    background-color: var(--commandLineBack);
+    color: var(--commandLineText);
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 20%;

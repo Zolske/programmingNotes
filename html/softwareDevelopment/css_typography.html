@@ -382,7 +382,7 @@
                     </ul>
                 </li>
             </ul>
-        </details>
+        </details> <i>(not just for text but also for elements)</i>
         <br>
         <!-- text-transform -->
         <details class="cBox">
@@ -426,6 +426,11 @@
             <ul>
                 <li class="listC"><span class="cp">text-decoration</span> <span class="cv">VALUE</span> ;</li>
                 <li style="list-style-type: none;"><i>determines <b>where</b> the line is set</i></li>
+                <li><span class="cv">none</span><i>(default)</i>
+                    <ul>
+                        <li>removes all decoration</li>
+                    </ul>
+                </li>
                 <li><span class="cv">underline</span>
                     <ul>
                         <li>underlines the text<br><span class="browser"
@@ -531,6 +536,16 @@
         <details class="cBox">
             <summary><span class="cp">vertical-align</span></summary>
             <img width="750px" src="/images/softDevImages/css/vertical-align.JPG" alt="">
+            <p class="expText">The vertical-align property can be used in two contexts:</p>
+            <ul>
+                <li>To vertically align an inline element's box inside its containing line box. For example, it
+                    could be used to vertically position an image in a line of text.</li>
+                <li>To vertically align the content of a cell in a table.</li>
+            </ul>
+            <p><b>Note:</b> that vertical-align only applies to inline, inline-block and table-cell elements: you can't
+                use it
+                to vertically align block-level elements.</p>
+
             <ul>
                 <li class="listC"><span class="cp">vertical-align</span> <span class="cv">VALUE</span> ;</li>
                 <li><span class="cv">baseline</span> <i>(default)</i>

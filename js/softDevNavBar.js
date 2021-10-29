@@ -16,7 +16,7 @@
 const navBar = [
     [ ['HOME'],['#'], ['Software Development'],['../../html/softwareDevelopment/softDevIndex.html'], ['Zoltans Page'],['../../index.html'] ],
 
-    [ ['BASIC'],['#'], ['RESOURCES'],['../../html/softwareDevelopment/0RESOURCES.html'], ['Portfolio Assessment Guide'],['../../html/softwareDevelopment/0PORTFOLIO_ASSESSMENT_GUIDE.html'],
+    [ ['BASIC'],['#'], ['RESOURCES'],['../../html/softwareDevelopment/0RESOURCES.html'], ['Command Line'],['../../html/softwareDevelopment/cli_command_line.html'], ['Portfolio Assessment Guide'],['../../html/softwareDevelopment/0PORTFOLIO_ASSESSMENT_GUIDE.html'],
       ['Programming Paradigms'],['../../html/softwareDevelopment/paradigms.html']
 ],
     [ ['HTML'],['#'], ['HTML & Syntax'],['../../html/softwareDevelopment/html_structure.html'], ['Semantic'],['../../html/softwareDevelopment/html_semantic.html'],
@@ -100,6 +100,13 @@ for (let i = 0; i < cv.length; i++) {
 }
 
 // end <<< add title css class (cp and cv) ///////////////////////////////////////////////////////////
+
+// start >>> add title to cli command line interface ///////////////////////////////////////////////////
+let cli = document.getElementsByClassName('cli');
+for (let i = 0; i < cli.length; i++) {
+    cli[i].title = 'cli command';
+}
+// end <<< add title to cli command line interface ///////////////////////////////////////////////////
 
 //   // console.log(navBarUlId);
 //   // let tempLiA = document.createElement('li');

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
+    <link rel="stylesheet" href="/css/softDev.css">
+    <title>the command line</title>
+</head>
+
+<body>
+    <main>
+        <h1>the command line</h1>
+        <p class="expText"><b>C</b>ommand <b>L</b>ine <b>I</b>nterface <i>(<b>CLI</b>)</i> connects a user to a computer
+            program or operating system. Through the
+            CLI, users interact with a system or application by typing in text (commands). The command is typed on a
+            specific line following a visual prompt from the computer.</p>
+
+        <ul>
+            <li class="listH">basic commands:</li>
+            <li><span class="cli">clear</span>
+                <ul>
+                    <li><i>clears the terminal workspace (but not from history)</i>
+                    </li>
+                </ul>
+            </li>
+            <li><span class="cli">echo</span><code> STRING</code>
+                <ul>
+                    <li><i>prints the string which follows the command to the terminal<br>(e.g.: <code>echo hello
+                                world</code> prints hello world to the terminal)</i></li>
+            </li>
+        </ul>
+        <li><span class="cli">history</span>
+            <ul>
+                <li><i>shows a list of the last commands which can be called again by selecting its referencing
+                        number preceded by an <code>!</code><br>(e.g.: <code>!3</code> recalls the 3th command from the
+                        history)</i></li>
+            </ul>
+        </li>
+        </ul>
+        <ul>
+            <li class="listH">navigating the file and folder system</li>
+            <li><span class="cli">pwd</span> <i>(<b>p</b>rint <b>w</b>orking <b>d</b>irectory)</i>
+                <ul>
+                    <li><i>shows current directory</i></li>
+                </ul>
+            </li>
+            <li><span class="cli">ls</span> <i>(<b>l</b>ist <b>f</b>iles)</i>
+                <ul>
+                    <li>lists all visible files in current directory</li>
+                    <li>files are shown in regular text and folders in bold text</li>
+                </ul>
+            </li>
+            <li><span class="cli">ls -la</span> <i>(<b>l</b>ist <b>f</b>iles -<b>l</b>ist <b>a</b>ll)</i>
+                <ul>
+                    <li>lists all (including hidden) files in current directory</li>
+                </ul>
+            </li>
+            <li><span class="cli">cd ..</span> <i><b>c</b>hange <b>d</b>irectory</i>
+                <ul>
+                    <li>moves one folder up</li>
+                </ul>
+            </li>
+            <li><span class="cli">cd</span><code> FOLDER_NAME</code>
+                <ul>
+                    <li><i>changes into specified folder</i></li>
+                    <li><span class="cli">cd ~</span> <i>changes back into home directory</i></li>
+                    <li><span class="cli">cd /</span> <i>moves back to the root directory</i></li>
+                </ul>
+        </ul>
+        </li>
+        </ul>
+        <ul>
+            <li class="listH">working with files and folders:</li>
+            <li><span class="cli">touch</span><code> FILE</code>
+                <ul>
+                    <li>creates a file with the specified name and file ending in the current directory</li>
+                </ul>
+            </li>
+            <li><span class="cli">rm</span><code> FILE</code> <i>(<b>r</b>e<b>m</b>ove)</i>
+                <ul>
+                    <li>removes the specified file</li>
+                </ul>
+            </li>
+            <li><span class="cli">rm -fl</span><code> FOLDER</code> <i>(<b>r</b>e<b>m</b>ove)</i>
+                <ul>
+                    <li>removes the specified folder including all its content and sub folders</li>
+                </ul>
+            </li>
+            <li><span class="cli">mkdir</span><code> FOLDER</code> <i>(<b>m</b>a<b>k</b>e<b>dir</b>ectory)</i>
+                <ul>
+                    <li>creates a new directory with the specified name in the current directory</li>
+                </ul>
+            </li>
+            <li><span class="cli">cp</span><code> FILE FOLDER</code> <i>(<b>c</b>o<b>py)</b></i>
+                <ul>
+                    <li>copies file into folder</li>
+                </ul>
+            </li>
+            <li><span class="cli">cp</span><code> FILE FILE_2</code> <i>(<b>c</b>o<b>py)</b></i>
+                <ul>
+                    <li>copies file into same directory with the name of the second file</li>
+                </ul>
+            </li>
+            <li><span class="cli">mv</span><code> FILE FOLDER</code> <i>(<b>m</b>o<b>v</b>e</i>
+                <ul>
+                    <li>moves file into folder</li>
+                </ul>
+            </li>
+            <li><span class="cli">mv</span><code> FILE FILE_2</code> <i>(<b>m</b>o<b>v</b>e</i>
+                <ul>
+                    <li>renames file into file_2</li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    <script src="/js/softDevNavBar.js"></script>
+</body>
+
+</html>
