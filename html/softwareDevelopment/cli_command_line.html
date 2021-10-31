@@ -22,21 +22,33 @@
             <li class="listH">basic commands:</li>
             <li><span class="cli">clear</span>
                 <ul>
-                    <li><i>clears the terminal workspace (but not from history)</i>
+                    <li>clears the terminal workspace (but not from history)
                     </li>
                 </ul>
             </li>
             <li><span class="cli">echo</span><code> STRING</code>
                 <ul>
-                    <li><i>prints the string which follows the command to the terminal<br>(e.g.: <code>echo hello
-                                world</code> prints hello world to the terminal)</i></li>
+                    <li>prints the string which follows the command to the terminal window<br>(e.g.: <code>echo hello
+                            world</code> prints hello world to the terminal)</li>
             </li>
+        </ul>
+        <li><span class="cli">echo</span><code> "STRING" <b>></b> FILE.txt</code>
+            <ul>
+                <li>writes the command following string <i>("STRING")</i> into the file specified after
+                    <i>(FILE.txt)</i></li>
+        </li>
         </ul>
         <li><span class="cli">history</span>
             <ul>
-                <li><i>shows a list of the last commands which can be called again by selecting its referencing
-                        number preceded by an <code>!</code><br>(e.g.: <code>!3</code> recalls the 3th command from the
-                        history)</i></li>
+                <li>shows a list of the last commands which can be called again by selecting its referencing
+                    number preceded by an <code>!</code><br>(e.g.: <code>!3</code> recalls the 3th command from the
+                    history)</li>
+            </ul>
+        </li>
+        <li><span class="cli">&#8593;</span> , <span class="cli">&#8595;</span>
+            <ul>
+                <li>moves in the "history" <b>up</b> and <b>down</b>, without calling the history command (last
+                    commands)</li>
             </ul>
         </li>
         </ul>
@@ -44,7 +56,7 @@
             <li class="listH">navigating the file and folder system</li>
             <li><span class="cli">pwd</span> <i>(<b>p</b>rint <b>w</b>orking <b>d</b>irectory)</i>
                 <ul>
-                    <li><i>shows current directory</i></li>
+                    <li>shows current directory</li>
                 </ul>
             </li>
             <li><span class="cli">ls</span> <i>(<b>l</b>ist <b>f</b>iles)</i>
@@ -65,7 +77,7 @@
             </li>
             <li><span class="cli">cd</span><code> FOLDER_NAME</code>
                 <ul>
-                    <li><i>changes into specified folder</i></li>
+                    <li>changes into specified folder</li>
                     <li><span class="cli">cd ~</span> <i>changes back into home directory</i></li>
                     <li><span class="cli">cd /</span> <i>moves back to the root directory</i></li>
                 </ul>
@@ -74,19 +86,22 @@
         </ul>
         <ul>
             <li class="listH">working with files and folders:</li>
-            <li><span class="cli">touch</span><code> FILE</code>
+            <li><b>Note:</b> all commands work from the current location. You can not remove a file if you are not in
+                the
+                directory in which the file is located.</li>
+            <li><span class="cli">touch</span><code> FILE.txt</code>
                 <ul>
-                    <li>creates a file with the specified name and file ending in the current directory</li>
+                    <li>creates a FILE with the specified name and FILE ending in the current directory</li>
                 </ul>
             </li>
-            <li><span class="cli">rm</span><code> FILE</code> <i>(<b>r</b>e<b>m</b>ove)</i>
+            <li><span class="cli">rm</span><code> FILE.txt</code> <i>(<b>r</b>e<b>m</b>ove)</i>
                 <ul>
-                    <li>removes the specified file</li>
+                    <li>removes the specified FILE</li>
                 </ul>
             </li>
             <li><span class="cli">rm -fl</span><code> FOLDER</code> <i>(<b>r</b>e<b>m</b>ove)</i>
                 <ul>
-                    <li>removes the specified folder including all its content and sub folders</li>
+                    <li>removes the specified FOLDER including all its content and sub FOLDERs</li>
                 </ul>
             </li>
             <li><span class="cli">mkdir</span><code> FOLDER</code> <i>(<b>m</b>a<b>k</b>e<b>dir</b>ectory)</i>
@@ -94,27 +109,52 @@
                     <li>creates a new directory with the specified name in the current directory</li>
                 </ul>
             </li>
-            <li><span class="cli">cp</span><code> FILE FOLDER</code> <i>(<b>c</b>o<b>py)</b></i>
+            <li><span class="cli">cp</span><code> FILE.txt FOLDER</code> <i>(<b>c</b>o<b>py)</b></i>
                 <ul>
-                    <li>copies file into folder</li>
+                    <li>copies FILE into FOLDER</li>
                 </ul>
             </li>
-            <li><span class="cli">cp</span><code> FILE FILE_2</code> <i>(<b>c</b>o<b>py)</b></i>
+            <li><span class="cli">cp</span><code> FILE.txt FILE_2.txt</code> <i>(<b>c</b>o<b>py)</b></i>
                 <ul>
-                    <li>copies file into same directory with the name of the second file</li>
+                    <li>copies FILE into same directory with the name of the second FILE</li>
                 </ul>
             </li>
-            <li><span class="cli">mv</span><code> FILE FOLDER</code> <i>(<b>m</b>o<b>v</b>e</i>
+            <li><span class="cli">mv</span><code> FILE.txt FOLDER</code> <i>(<b>m</b>o<b>v</b>e)</i>
                 <ul>
-                    <li>moves file into folder</li>
+                    <li>moves FILE into FOLDER</li>
                 </ul>
             </li>
-            <li><span class="cli">mv</span><code> FILE FILE_2</code> <i>(<b>m</b>o<b>v</b>e</i>
+            <li><span class="cli">mv</span><code> FILE.txt FILE_2</code> <i>(<b>m</b>o<b>v</b>e)</i>
                 <ul>
-                    <li>renames file into file_2</li>
+                    <li>renames FILE.txt into FILE_2.txt</li>
                 </ul>
             </li>
         </ul>
+        <ul>
+            <li class="listH">text editor and comparing files</li>
+            <li><b>Note:</b> <code>^</code> stands for <b>Ctrl</b> on the keyboard</li>
+            <li><span class="cli">nano</span><code> FILE.txt</code>
+                <ul>
+                    <li>opens the text editor "nano" with the FILE <ul>
+                            <li><code>^x</code> saves file</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><span class="cli">cat</span><code> FILE.txt</code>
+                <ul>
+                    <li>prints the content of the FILE to the terminal window</li>
+                </ul>
+            </li>
+            <li><span class="cli">diff</span><code> FILE_1.txt FILE_2.txt</code>
+                <ul>
+                    <li>compares FILE_1 with FILE_2 <ul>
+                            <li><code>&nbsp;&nbsp;&nbsp;</code> if nothing is returned, than there is no difference
+                                between FILE_1 and FILE_2</li>
+                        </ul>
+                        <img width="500px" src="/images/softDevImages/css/cli_diff.svg" alt="">
+                    </li>
+                </ul>
     </main>
     <script src="/js/softDevNavBar.js"></script>
 </body>

@@ -16,8 +16,11 @@
 const navBar = [
     [ ['HOME'],['#'], ['Software Development'],['../../html/softwareDevelopment/softDevIndex.html'], ['Zoltans Page'],['../../index.html'] ],
 
-    [ ['BASIC'],['#'], ['RESOURCES'],['../../html/softwareDevelopment/0RESOURCES.html'], ['Command Line'],['../../html/softwareDevelopment/cli_command_line.html'], ['Portfolio Assessment Guide'],['../../html/softwareDevelopment/0PORTFOLIO_ASSESSMENT_GUIDE.html'],
+    [ ['BASIC'],['#'], ['RESOURCES'],['../../html/softwareDevelopment/0RESOURCES.html'], ['Basic Knowledge'],['../../html/softwareDevelopment/bas_basic_knowledge.html'],
+      ['Command Line'],['../../html/softwareDevelopment/cli_command_line.html'], ['Portfolio Assessment Guide'],['../../html/softwareDevelopment/0PORTFOLIO_ASSESSMENT_GUIDE.html'],
       ['Programming Paradigms'],['../../html/softwareDevelopment/paradigms.html']
+],
+    [ ['GIT'],['#'], ['Basic'],['../../html/softwareDevelopment/git_basic.html']
 ],
     [ ['HTML'],['#'], ['HTML & Syntax'],['../../html/softwareDevelopment/html_structure.html'], ['Semantic'],['../../html/softwareDevelopment/html_semantic.html'],
       ['Links & Media'],['../../html/softwareDevelopment/html_link_media.html'], ['Forms'],['../../html/softwareDevelopment/html_forms.html']
@@ -107,6 +110,13 @@ for (let i = 0; i < cli.length; i++) {
     cli[i].title = 'cli command';
 }
 // end <<< add title to cli command line interface ///////////////////////////////////////////////////
+
+// start >>> add title to git command ///////////////////////////////////////////////////
+let git = document.getElementsByClassName('git');
+for (let i = 0; i < git.length; i++) {
+    git[i].title = 'git command';
+}
+// end <<< add title to git command ///////////////////////////////////////////////////
 
 //   // console.log(navBarUlId);
 //   // let tempLiA = document.createElement('li');

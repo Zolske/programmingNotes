@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/LOGO/Profile Zoltan 2020 square.jpg" type="image/jpg" sizes="16x16">
+    <link rel="stylesheet" href="/css/softDev.css">
+    <title>basic git</title>
+</head>
+
+<body>
+    <main>
+        <h1>basic git</h1>
+        <h2>git workflow overview</h2>
+        <img src="../../images/softDevImages/git/git_workflow.svg" alt="">
+
+        <h2>initializing a local repository</h2>
+        <details class="cBox">
+            <summary>explain: initialize local repository</summary>
+            <ul>
+                <li>run the command <code>git init</code> in the folder which you want to put under version control</li>
+                <li>the hidden <code>.git</code> folder is created <i>(git stores all information it needs in that
+                        folder)</i></li>
+            </ul>
+        </details>
+        <h2>commit messages</h2>
+        <details class="cBox">
+            <summary>explain: commit message</summary>
+            <ul>
+                <li class="listH">rules for writing a good commit message</li>
+                <li>no more than 50 characters long</li>
+                <li>use the imperative mood <ul>
+                        <li><i>as if it is a command or request</i></li>
+                        <li><i>imagine that you're prefacing every commit message with the words, "This commit
+                                will..."</i>
+                        </li>
+                    </ul>
+                </li>
+                <li>prefix commit message <ul>
+                        <li><code>add:</code>
+                            <ul>
+                                <li>add to existing content</li>
+                            </ul>
+                        </li>
+                        <li><code>feat:</code>
+                            <ul>
+                                <li>for feature</li>
+                            </ul>
+                        </li>
+                        <li><code>fix:</code>
+                            <ul>
+                                <li>for a bugfix</li>
+                            </ul>
+                        </li>
+                        <li><code>style:</code>
+                            <ul>
+                                <li>for changes to your CSS</li>
+                            </ul>
+                        </li>
+                        <li><code>docs:</code>
+                            <ul>
+                                <li>for changes related to documentation</li>
+                            </ul>
+                        </li>
+                        <li><code>refactor:</code>
+                            <ul>
+                                <li>for refactored code <i>restructuring code without changing or adding
+                                        to its external behavior and functionality</i></li>
+                            </ul>
+                        </li>
+                        <li><code>maint:</code>
+                            <ul>
+                                <li>for general maintenance</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="listH">How often to commit?</li>
+                <li>Commit after every ... <ul>
+                        <li>... major change</li>
+                        <li>... addition of a new page </li>
+                        <li>... feature</li>
+                    </ul>
+                </li>
+                <li>Smaller changes ... <ul>
+                        <li>... grammar and spelling</li>
+                        <li>... minor content changes</li>
+                    </ul>can be grouped together <i>(4 to 5)</i></li>
+            </ul>
+        </details>
+        <h2>Git Basics</h2>
+        <!-- repository -->
+        <h3>repository (repo)</h3>
+        <details class="cBox">
+            <summary>explain: repository</summary>
+            <ul>
+                <li class="listH">repository</li>
+                <li>the repository is made up of the data <i>(from the current active branch)</i> from the working
+                    directory and the "repository-database" from the <code>.git</code> folder</li>
+                <li>it contains all the data which has been tracked and its history</li>
+            </ul>
+            <ul>
+                <li class="listH">history</li>
+                <li>the <b>history</b>, contains information about ... <ul>
+                        <li>the different versions of the tracked data, from its first commit till the last commit</li>
+                        <li>who has changed, added or committed what data at what time</li>
+                    </ul>
+            </ul>
+            </li>
+            </ul>
+            <ul>
+                <li class="listH">branches</li>
+                <li>there can be multiple branches within the repository <ul>
+                        <li><b>branches</b>
+                            <ul>
+                                <li>allow the development of different features independently from each other
+                                    without breaking the main project</li>
+                                <li>each branch has its own set of data and versions of that data</li>
+                            </ul>
+                        </li>
+
+                        <li>the <b>master branch</b>: <ul>
+                                <li>is usually the branch on which the project is build on </li>
+                                <li>is the only branch which is automatically generated when the repository is
+                                    initialized
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+        <!-- Commits -->
+        <h3>Commits</h3>
+        <details class="cBox">
+            <summary>explain: commits</summary>
+            <ul>
+                <li class="listH">staging area</li>
+                <li>stage == staging area == index == cache <i>(they all mean the same)</i></li>
+                <li>before something can be saved permanently in the repository, it needs to be staged <ul>
+                        <li>the <b>staging area</b> contains the entire <b>active branch</b> and all <b>tracked
+                                files</b> which have been added to it and will be included in the next commit</li>
+
+                        <li><span class="git">git add</span><code>FILE</code> or <span class="git">git
+                                stage</span><code>FILE</code> to add new or modified
+                            files to the staging area</li>
+                    </ul>
+                </li>
+                <li>with every commit, the content of the staging-area is permanently saved in the repositories-database
+                </li>
+                <li>the branch and therefore its data can be later combined with another branch or reverted to its
+                    previous stage</li>
+            </ul>
+            <ul>
+                <li class="listH">head:</li>
+                <li>the last commit in <b>every branch</b> is the "<b>head</b>" <i>(lowercase letters)</i></li>
+                <li>the last commit in the <b>active</b> branch is the "<b>HEAD</b>" <i>(capital letters)</i></li>
+            </ul>
+            <ul>
+                <li class="listH">checkout</li>
+                <li>a <b>checkout</b>, changes the active branch into another branch <ul>
+                        <li>all data in the "project-directory" is replaced with the data of the new active branch
+                        </li>
+                        <li>new files can appear, previous files be modified or disappear</li>
+                        <li><b>Note:</b> before every <b>checking out</b> there should be a commit, otherwise data can
+                            get lost.</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="listH">stash</li>
+                <li>stores data temporary without committing it <ul>
+                        <li>is useful when the code is not ready for an commit but you need to "checkout" to a different
+                            branch</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="listH">merge</li>
+                <li>combines two branches into a single branch</li>
+                <li>happens also if two repositories are synchronized</li>
+                <li>a merge-conflict happens when the same data has two different versions <ul>
+                        <li>if the difference dose not effect each other than git can solve the conflict</li>
+                        <li>the conflict needs to be resolved manually if the case is to complicated</li>
+                        <li>the changes are saved in an new commit</li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            <ul>
+                <li class="listH">rebasing</li>
+                <li>through merging, the local repository gets "messy" <i>(branches are opening and closing)</i></li>
+                <li><b>rebasing</b> allows to straighten the local <b>history</b></li>
+            </ul>
+            <ul>
+                <li class="listH">tags</li>
+                <li>commits are identified through a hexadecimal hash-code</li>
+                <li>tags allow to mark or name commits</li>
+                <li>is usually used to mark "milestones" or "versions"</li>
+            </ul>
+        </details>
+        <!-- Log & Logging -->
+        <h3>Log & Logging</h3>
+        <details class="cBox">
+            <summary>explain: Log & Logging</summary>
+            <ul>
+                <li class="listH"><span class="git">git log</span></li>
+                <li>the history <i>(the sequence of commits)</i> of one or more branches which leads to the current
+                    stage can be viewed with <span class="git">git log</span></li>
+                <li>it shows the hash-code for every commit</li>
+                <li>every commit references a previous commit</li>
+                <li>commits which are created through merging have more than one previous commit</li>
+                <li><b>Note:</b> there is no logging-file which can be referenced, it is all based on the previous
+                    commit</li>
+            </ul>
+            <ul>
+                <li class="listH">reference-log or short <b>reflog</b></li>
+                <li>contains the sequence of local commands which change the head of an branch</li>
+                <li>is not synchronize with other repositories</li>
+                <li>it can be used in some cases to revert wrong commands</li>
+            </ul>
+        </details>
+        <!-- local & remote repositories -->
+        <h3>local & remote repositories</h3>
+        <details class="cBox">
+            <summary>explain: local & remote repositories</summary>
+            <ul>
+                <li class="listH"></li>
+                <li>git is communicating to remote repositories over HTTP and SSH protocols</li>
+                <li><span class="git">clone</span> copies a external repository to the local computer</li>
+                <li><span class="git">pull</span> gets the current version of the active branch from the remote
+                    repository to the local repository, which can be locally merged <i>(creates new a commit)</i></li>
+                <li><span class="git">push</span> transfers local commits to the remote repository <ul>
+                        <li>there should be always a <span class="git">pull</span> command before a <span
+                                class="git">push</span></li>
+                        <li>in this case the local repository is up to date and there is not a complex merge required
+                        </li>
+                        <li>only the commits have to be uploaded and the indicator for the updated branch adjusted</li>
+                        <li>the simple version of merging is called "<b>fast-forward-merge</b>"</li>
+                    </ul>
+                </li>
+                <li>the <b>origin</b>-repository is the remote-repository from which the project is cloned or which is
+                    set as default-repository</li>
+                <li><span class="git">push</span> and <span class="git">pull</span> are by default referencing
+                    <b>origin</b> if not otherwise specified</li>
+            </ul>
+        </details>
+    </main>
+    <script src="/js/softDevNavBar.js"></script>
+</body>
+<!-- start >>
+<details class="cBox"open><summary></summary>
+</details>
+>> end -->
+
+</html>
